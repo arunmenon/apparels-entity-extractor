@@ -1,0 +1,7 @@
+{
+    "gpt4_prompt": "Extract entities from this page image in a structured hierarchy based on the apparel style guide for Walmart fashion. Ensure that the structure includes either 'apparel_category' and 'product_type' for apparel-related guidelines, or a 'guideline_concept' for top-level concepts (e.g., 'Copy Standards', 'Grouping Standards', 'Product Naming Guidelines'). The response should be in valid JSON format with the following structure:\n\n{\n  \"apparel_category\": \"<name_of_apparel_category>\" (if applicable),\n  \"product_type\": \"<name_of_product_type>\" (if applicable),\n  \"guideline_concept\": \"<Copy Standards, Grouping Standards, Product Naming Guidelines, etc.>\",\n  \"guidelines\": {\n    \"guideline_type\": \"<Photo Direction, Grouping Standards, Copy Standards, or Naming Guidelines>\",\n    \"details\": [\n      {\n        \"step_name\": \"<name_of_step_or_attribute>\",\n        \"description\": \"<description_or_formula_of_the_step>\"\n      }\n    ]\n  }\n}\n\nEnsure that 'guideline_concept' is used for top-level concepts that aren't tied to specific apparel categories or product types, and remove any unnecessary section labels.",
+    "api_model": "gpt-4o-mini",
+    "image_threads": 6,
+    "gpt4_threads": 3
+  }
+  
