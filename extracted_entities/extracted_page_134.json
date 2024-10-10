@@ -1,10 +1,10 @@
 {
     "apparel_category": "All Pants",
     "product_type": "Pants",
-    "guideline_concept": "Attribute Guidelines",
+    "guideline_concept": "Attributes",
     "guidelines": {
-        "guideline_type": "Naming Guidelines",
-        "attribute_requirements": [
+        "guideline_type": "Additional Attributes",
+        "attributes": [
             {
                 "step_name": "Pant Style",
                 "description": "Style terms specific to pants."
@@ -25,10 +25,8 @@
     },
     "graph": [
         {
-            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> attribute_requirements"
-        },
-        {
-            "linkage": "Guideline_Concept -> Guideline_Type -> attribute_requirements"
+            "linkage": "All Pants-(Apparel_Category)->Pants-(Product_Type)->Additional Attributes-(Guideline_Type)->Attributes"
         }
-    ]
+    ],
+    "summary": "This page outlines mandatory attributes for pant product types. It specifies terms for pant styles, leg cuts, lengths, and bottom opening styles, highlighting the importance of using the specified terms to avoid validation issues."
 }

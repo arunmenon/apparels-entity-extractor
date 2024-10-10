@@ -1,13 +1,13 @@
 {
     "apparel_category": "Bras",
     "product_type": "Bra",
-    "guideline_concept": "Additional Attributes",
+    "guideline_concept": "Attributes",
     "guidelines": {
-        "guideline_type": "Naming Guidelines",
+        "guideline_type": "Copy Standards",
         "attribute_requirements": [
             {
                 "step_name": "Bra Style",
-                "description": "Brasiere styles/defining features. Enter as many as are relevant to the bra. Do not enter strap styles here."
+                "description": "Brassiere styles/defining features. Enter as many as are relevant to the bra."
             },
             {
                 "step_name": "Bra Impact Level",
@@ -17,10 +17,7 @@
     },
     "graph": [
         {
-            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> attribute_requirements"
-        },
-        {
-            "linkage": "Guideline_Concept -> Guideline_Type -> attribute_requirements"
+            "linkage": "Bras-(Apparel_Category)->Bra-(Product_Type)->Copy Standards-(Guideline_Type)->attribute_requirements-(Context_Specific_Label)"
         }
     ]
 }

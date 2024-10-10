@@ -1,19 +1,20 @@
 {
-    "apparel_category": "Women\u2019s Tops & T-Shirts",
+    "apparel_category": "Women's Tops",
+    "product_type": "T-Shirts",
     "guideline_concept": "Grouping Standards",
     "guidelines": {
         "guideline_type": "Grouping Standards",
-        "incorrect_examples": [
+        "context_specific_label": [
             {
-                "step_name": "Grouping Prints",
+                "step_name": "Example of Incorrect Grouping",
                 "description": "This page has both floral and striped prints on the same page."
             }
         ]
     },
     "graph": [
         {
-            "linkage": "Apparel_Category -> Guideline_Concept -> Guideline_Type -> incorrect_examples"
+            "linkage": "Women's Tops-(Apparel_Category)->T-Shirts-(Product_Type)->Grouping Standards-(context_specific_label)"
         }
     ],
-    "summary": "The page illustrates incorrect groupings where floral and striped prints are featured together, violating the fashion grouping standards."
+    "summary": "The page demonstrates an incorrect example of grouping standards by placing floral and striped prints together."
 }

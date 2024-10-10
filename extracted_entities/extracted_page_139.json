@@ -1,0 +1,20 @@
+{
+    "apparel_category": "Maternity Lower Body",
+    "product_type": "Maternity Bottoms",
+    "guideline_concept": "Attributes",
+    "guidelines": {
+        "guideline_type": "Additional Attributes",
+        "attribute_requirements": [
+            {
+                "step_name": "Clothing Bottoms Panel Style",
+                "description": "In maternity bottoms, this refers to the style and coverage of the elastic support found at the waist area of the garment."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Maternity Lower Body-(Apparel_Category)->Maternity Bottoms-(Product_Type)->Additional Attributes-(Guideline_Type)->attribute_requirements"
+        }
+    ],
+    "summary": "The page outlines mandatory attributes specifically for Maternity Lower Body Apparel, focusing on the 'Clothing Bottoms Panel Style' attribute and its importance for compliance."
+}

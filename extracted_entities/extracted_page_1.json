@@ -1,25 +1,19 @@
 {
     "apparel_category": "Apparel",
-    "guideline_concept": "Content Standards",
+    "guideline_concept": "Grouping Standards",
     "guidelines": {
-        "guideline_type": "General Guidelines",
-        "writing_guidelines": [
+        "guideline_type": "Grouping Standards",
+        "context_specific_label": [
             {
-                "step_name": "Tone",
-                "description": "Maintain a friendly and approachable tone."
-            },
-            {
-                "step_name": "Voice",
-                "description": "Use clear, concise language."
+                "step_name": "Walmart Fashion Content Standards",
+                "description": "Standards for creating apparel-related content for Walmart."
             }
         ]
     },
     "graph": [
         {
-            "linkage": "Apparel_Category -> Guideline_Type -> Writing_Guidelines"
-        },
-        {
-            "linkage": "Guideline_Concept -> Guideline_Type -> Writing_Guidelines"
+            "linkage": "Apparel-(Apparel_Category)->Apparel-(Guideline_Concept)->Grouping Standards-(Guideline_Type)->Walmart Fashion Content Standards-(Context_Specific_Label)"
         }
-    ]
+    ],
+    "summary": "This page outlines the Walmart Fashion Content Standards specifically focused on apparel, establishing guidelines for content related to apparel categories."
 }

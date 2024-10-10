@@ -1,39 +1,97 @@
 {
-    "apparel_category": "All Apparel Attributes",
+    "apparel_category": "All Upper Body Garments",
+    "product_type": [
+        "All Tops",
+        "Jackets & Coats",
+        "All Traditional Garments",
+        "Baptism Gowns & Outfits",
+        "Traditional Cholis",
+        "Traditional Cheongsams",
+        "Traditional Kilts",
+        "Traditional Sporrans",
+        "All Swimwear",
+        "Bikinis & Tankini Tops",
+        "Swimsuit Sets",
+        "Swimsuit Cover-Ups",
+        "All Underwear, Nightwear & Lingerie",
+        "All Bras, Lingerie & Shapewear",
+        "All Shapewear"
+    ],
     "guideline_concept": "Copy Standards",
     "guidelines": {
         "guideline_type": "Copy Standards",
         "copy_guidelines": [
             {
                 "step_name": "Search Engine Optimization",
-                "description": "Guidelines for optimizing content for search engines."
+                "description": "Guidelines to enhance visibility through search engines."
             },
             {
                 "step_name": "Copy Definitions for Fashion",
-                "description": "Definitions that clarify key terminology used in fashion descriptions."
+                "description": "Terminology and usage specific to fashion guidelines."
             },
             {
                 "step_name": "Product Name Guidelines",
-                "description": "Standards for naming products accurately."
+                "description": "Standards for naming products effectively."
             },
             {
                 "step_name": "Shelf Description Guidelines",
-                "description": "Guidelines for writing effective shelf descriptions."
+                "description": "Descriptions for products displayed on shelves."
             },
             {
                 "step_name": "Site Description Guidelines",
-                "description": "Standards for describing site features and offerings."
+                "description": "Standards for product descriptions on online platforms."
             },
             {
                 "step_name": "Key Features Guidelines",
-                "description": "Guidelines for highlighting key features of products."
+                "description": "Instructions for highlighting key features of apparel."
             }
         ]
     },
     "graph": [
         {
-            "linkage": "Apparel_Category -> Guideline_Concept -> Guideline_Type -> copy_guidelines"
+            "linkage": "All Upper Body Garments-(Apparel_Category)->All Tops-(Product_Type)->Copy Standards-(Guideline_Type)->copy_guidelines"
+        },
+        {
+            "linkage": "All Upper Body Garments-(Apparel_Category)->Jackets & Coats-(Product_Type)->Copy Standards-(Guideline_Type)->copy_guidelines"
+        },
+        {
+            "linkage": "All Upper Body Garments-(Apparel_Category)->All Traditional Garments-(Product_Type)->Copy Standards-(Guideline_Type)->copy_guidelines"
+        },
+        {
+            "linkage": "All Upper Body Garments-(Apparel_Category)->Baptism Gowns & Outfits-(Product_Type)->Copy Standards-(Guideline_Type)->copy_guidelines"
+        },
+        {
+            "linkage": "All Upper Body Garments-(Apparel_Category)->Traditional Cholis-(Product_Type)->Copy Standards-(Guideline_Type)->copy_guidelines"
+        },
+        {
+            "linkage": "All Upper Body Garments-(Apparel_Category)->Traditional Cheongsams-(Product_Type)->Copy Standards-(Guideline_Type)->copy_guidelines"
+        },
+        {
+            "linkage": "All Upper Body Garments-(Apparel_Category)->Traditional Kilts-(Product_Type)->Copy Standards-(Guideline_Type)->copy_guidelines"
+        },
+        {
+            "linkage": "All Upper Body Garments-(Apparel_Category)->Traditional Sporrans-(Product_Type)->Copy Standards-(Guideline_Type)->copy_guidelines"
+        },
+        {
+            "linkage": "All Upper Body Garments-(Apparel_Category)->All Swimwear-(Product_Type)->Copy Standards-(Guideline_Type)->copy_guidelines"
+        },
+        {
+            "linkage": "All Upper Body Garments-(Apparel_Category)->Bikinis & Tankini Tops-(Product_Type)->Copy Standards-(Guideline_Type)->copy_guidelines"
+        },
+        {
+            "linkage": "All Upper Body Garments-(Apparel_Category)->Swimsuit Sets-(Product_Type)->Copy Standards-(Guideline_Type)->copy_guidelines"
+        },
+        {
+            "linkage": "All Upper Body Garments-(Apparel_Category)->Swimsuit Cover-Ups-(Product_Type)->Copy Standards-(Guideline_Type)->copy_guidelines"
+        },
+        {
+            "linkage": "All Upper Body Garments-(Apparel_Category)->All Underwear, Nightwear & Lingerie-(Product_Type)->Copy Standards-(Guideline_Type)->copy_guidelines"
+        },
+        {
+            "linkage": "All Upper Body Garments-(Apparel_Category)->All Bras, Lingerie & Shapewear-(Product_Type)->Copy Standards-(Guideline_Type)->copy_guidelines"
+        },
+        {
+            "linkage": "All Upper Body Garments-(Apparel_Category)->All Shapewear-(Product_Type)->Copy Standards-(Guideline_Type)->copy_guidelines"
         }
-    ],
-    "summary": "The page outlines copy guidelines and attribution definitions for Walmart fashion, covering various aspects like search engine optimization, product naming standards, and descriptions to ensure effective communication of apparel attributes."
+    ]
 }

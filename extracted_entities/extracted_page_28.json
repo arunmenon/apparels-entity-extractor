@@ -1,12 +1,12 @@
 {
-    "apparel_category": "Women's Apparel",
+    "apparel_category": "Women\u2019s Apparel",
     "product_type": "Maternity Tops",
-    "guideline_concept": "Photo Direction",
+    "guideline_concept": "Copy Standards",
     "guidelines": {
         "guideline_type": "Photo Direction",
         "image_requirements": [
             {
-                "step_name": "Hero (Main) Image",
+                "step_name": "Hero Image",
                 "description": "\u00be side angle, cropped above lip to below fingertips."
             },
             {
@@ -33,8 +33,8 @@
     },
     "graph": [
         {
-            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> image_requirements"
+            "linkage": "Women\u2019s Apparel-(Apparel_Category)->Maternity Tops-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
         }
     ],
-    "summary": "The page provides photo direction guidelines for Maternity Tops within the Women's Apparel category, detailing required and recommended image types to effectively showcase the product."
+    "summary": "The page provides photo direction guidelines for Maternity Tops in Women's Apparel, detailing required and recommended image types to effectively showcase the product."
 }

@@ -1,7 +1,7 @@
 {
     "apparel_category": "Women\u2019s Swimwear",
     "product_type": "Cover-Ups & Swim Parkas",
-    "guideline_concept": "Copy Standards",
+    "guideline_concept": "Photo Direction",
     "guidelines": {
         "guideline_type": "Photo Direction",
         "image_requirements": [
@@ -22,17 +22,14 @@
                 "description": "Ghost view."
             },
             {
-                "step_name": "4th Alternate",
-                "description": "Alternate detail. Highlight embellishments and design elements not captured in required shots if present."
+                "step_name": "4th Alternates",
+                "description": "Highlight embellishments and design elements not captured in required shots if present."
             }
         ]
     },
     "graph": [
         {
-            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> image_requirements"
-        },
-        {
-            "linkage": "Guideline_Concept -> Guideline_Type -> image_requirements"
+            "linkage": "Women\u2019s Swimwear-(Apparel_Category)->Cover-Ups & Swim Parkas-(Product_Type)->Photo Direction-(Image_Requirements)"
         }
     ]
 }

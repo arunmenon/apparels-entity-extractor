@@ -1,42 +1,51 @@
 {
-    "apparel_category": "Site Description Guidelines",
+    "apparel_category": "Apparel",
+    "product_type": "Short Description",
     "guideline_concept": "Copy Standards",
     "guidelines": {
-        "guideline_type": "Writing Guidelines",
+        "guideline_type": "Copy Standards",
         "writing_guidelines": [
             {
-                "step_name": "Short Description Requirement",
-                "description": "Information entered should be in HTML code, sentence case, paragraph form with no bullet points."
+                "step_name": "Information Format",
+                "description": "Information should be entered in HTML code, sentence case, paragraph form with no bullet points."
             },
             {
-                "step_name": "No Promotional Text",
+                "step_name": "SEO Importance",
+                "description": "The description is key to Search Engine Optimization (SEO) because customers search in ways that match real-life uses and concerns."
+            },
+            {
+                "step_name": "Promotional Text Restrictions",
                 "description": "No promotional text like free shipping or discounts, no special characters or hyperlinks to other retailers."
             },
             {
-                "step_name": "SEO Focus",
-                "description": "For SEO purposes, repeat the product name within the body of the description."
+                "step_name": "Unique Description Requirement",
+                "description": "For SEO purposes, repeat the product name within the body of the description and ensure it is unique and truly useful for customers."
             },
             {
-                "step_name": "Unique and Useful Content",
-                "description": "Ensure your description is unique, not copied from other sites, and useful for customers."
-            },
-            {
-                "step_name": "Engagement with Customers",
-                "description": "Write in a way that helps customers make an informed decision and captures important keywords."
-            },
-            {
-                "step_name": "Keywords Usage",
-                "description": "Use related keywords organically within the sentences."
+                "step_name": "Avoiding Redundant Information",
+                "description": "Do not fill with information that would be pointless to the buyer."
             },
             {
                 "step_name": "Conversational Tone",
-                "description": "Be clear and conversational while writing."
+                "description": "Write in a conversational tone to help customers make informed decisions."
+            },
+            {
+                "step_name": "Related Keywords Usage",
+                "description": "Use related keywords within the short description effectively."
+            },
+            {
+                "step_name": "Descriptive Keywords",
+                "description": "Keywords should describe what the item is, how it is used, what it looks and feels like, and its uniqueness."
             }
         ]
     },
     "graph": [
         {
-            "linkage": "Guideline_Concept -> Guideline_Type -> Writing Guidelines"
+            "linkage": "Apparel-(Apparel_Category)->Short Description-(Product_Type)->Copy Standards-(Guideline_Type)->writing_guidelines"
+        },
+        {
+            "linkage": "Copy Standards-(Guideline_Concept)->Copy Standards-(Guideline_Type)->writing_guidelines"
         }
-    ]
+    ],
+    "summary": "This page outlines the site description guidelines focused on writing effective short descriptions for apparel products, emphasizing the importance of SEO, uniqueness, conversational tone, and the avoidance of promotional content."
 }

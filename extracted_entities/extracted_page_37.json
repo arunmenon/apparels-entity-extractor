@@ -1,51 +1,35 @@
 {
-    "apparel_category": "Women's Intimates",
+    "apparel_category": "Women\u2019s Intimates",
     "product_type": "Shapewear",
     "guideline_concept": "Photo Direction",
     "guidelines": {
         "guideline_type": "Photo Direction",
         "image_requirements": [
             {
-                "step_name": "Hero Image (Shapewear Tops)",
+                "step_name": "Hero Image",
                 "description": "Front facing, cropped above lip to below fingertips."
             },
             {
-                "step_name": "1st Alternate (Shapewear Tops)",
+                "step_name": "1st Alternate",
                 "description": "Front facing, head to toe, unrecognizable."
             },
             {
-                "step_name": "2nd Alternate (Shapewear Tops)",
+                "step_name": "2nd Alternate",
                 "description": "Back facing, cropped to just below hairline to below fingertips."
             },
             {
-                "step_name": "3rd Alternate (Shapewear Tops)",
-                "description": "Ghost view."
-            },
-            {
-                "step_name": "Hero Image (Shapewear Bottoms)",
-                "description": "Front facing, cropped above lip to below fingertips."
-            },
-            {
-                "step_name": "1st Alternate (Shapewear Bottoms)",
-                "description": "Front facing, head to toe, unrecognizable."
-            },
-            {
-                "step_name": "2nd Alternate (Shapewear Bottoms)",
-                "description": "Back facing, cropped to just below hairline to below fingertips."
-            },
-            {
-                "step_name": "3rd Alternate (Shapewear Bottoms)",
+                "step_name": "3rd Alternate",
                 "description": "Ghost view."
             },
             {
                 "step_name": "4th Alternate",
-                "description": "Highlight embellishments and design elements not captured in required shots if present."
+                "description": "Alternate detail. Highlight embellishments and design elements not captured in required shots if present."
             }
         ]
     },
     "graph": [
         {
-            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> image_requirements"
+            "linkage": "Women\u2019s Intimates-(Apparel_Category)->Shapewear-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
         }
     ]
 }

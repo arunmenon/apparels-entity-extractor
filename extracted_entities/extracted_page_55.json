@@ -1,58 +1,41 @@
 {
     "apparel_category": "Women\u2019s Swimwear",
     "product_type": [
-        "Swimwear (One-Piece)",
-        "Swimwear (Two-Piece)"
+        "One-Piece",
+        "Two-Piece"
     ],
-    "guideline_concept": null,
+    "guideline_concept": "Photo Direction",
     "guidelines": {
         "guideline_type": "Photo Direction",
         "image_requirements": [
             {
-                "step_name": "Hero Image (One-Piece)",
+                "step_name": "Hero (Main) Image",
                 "description": "Front facing, cropped above lip to below fingertips."
             },
             {
-                "step_name": "1st Alternate (One-Piece)",
+                "step_name": "1st Alternate",
                 "description": "Front facing, head to toe, unrecognizable."
             },
             {
-                "step_name": "2nd Alternate (One-Piece)",
+                "step_name": "2nd Alternate",
                 "description": "Back facing, cropped to just below hairline to below fingertips."
             },
             {
-                "step_name": "3rd Alternate (One-Piece)",
+                "step_name": "3rd Alternate",
                 "description": "Ghost view."
             },
             {
-                "step_name": "4th Alternate (One-Piece)",
-                "description": "Alternate detail. Highlight embellishments and design elements not captured in required shots if present."
-            },
-            {
-                "step_name": "Hero Image (Two-Piece)",
-                "description": "Front facing, cropped above lip to below fingertips."
-            },
-            {
-                "step_name": "1st Alternate (Two-Piece)",
-                "description": "Front facing, head to toe, unrecognizable."
-            },
-            {
-                "step_name": "2nd Alternate (Two-Piece)",
-                "description": "Back facing, cropped to just below hairline to below fingertips."
-            },
-            {
-                "step_name": "3rd Alternate (Two-Piece)",
-                "description": "Ghost view."
-            },
-            {
-                "step_name": "4th Alternate (Two-Piece)",
+                "step_name": "4th Alternate",
                 "description": "Alternate detail. Highlight embellishments and design elements not captured in required shots if present."
             }
         ]
     },
     "graph": [
         {
-            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> image_requirements"
+            "linkage": "Women\u2019s Swimwear-(Apparel_Category)->One-Piece-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
+        },
+        {
+            "linkage": "Women\u2019s Swimwear-(Apparel_Category)->Two-Piece-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
         }
     ]
 }

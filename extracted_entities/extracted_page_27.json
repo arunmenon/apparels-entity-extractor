@@ -1,8 +1,8 @@
 {
     "apparel_category": "Women\u2019s Apparel",
     "product_type": [
-        "Hats/Facemask",
-        "Socks"
+        "Apparel with Accessories (Hats/Facemask)",
+        "Apparel with Accessories (Socks)"
     ],
     "guideline_concept": "Photo Direction",
     "guidelines": {
@@ -32,8 +32,10 @@
     },
     "graph": [
         {
-            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> image_requirements"
+            "linkage": "Women\u2019s Apparel-(Apparel_Category)->Apparel with Accessories (Hats/Facemask)-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
+        },
+        {
+            "linkage": "Women\u2019s Apparel-(Apparel_Category)->Apparel with Accessories (Socks)-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
         }
-    ],
-    "summary": "The page provides photo direction guidelines for women's apparel featuring accessories such as hats, facemasks, and socks. It specifies requirements for various image types, emphasizing the need for clear representation of the accessories in the context of the apparel."
+    ]
 }

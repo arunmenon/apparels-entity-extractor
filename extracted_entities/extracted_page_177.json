@@ -1,10 +1,10 @@
 {
     "apparel_category": "Items with Collars",
-    "product_type": null,
-    "guideline_concept": "Additional Attributes",
+    "product_type": "",
+    "guideline_concept": "",
     "guidelines": {
-        "guideline_type": "Copy Standards",
-        "copy_requirements": [
+        "guideline_type": "Additional Attributes",
+        "attribute_requirements": [
             {
                 "step_name": "Collar Style",
                 "description": "Style of collar, as expressed by shape or design."
@@ -13,8 +13,8 @@
     },
     "graph": [
         {
-            "linkage": "Apparel_Category -> Guideline_Type -> Copy Standards"
+            "linkage": "Items with Collars-(Apparel_Category)->Additional Attributes-(Guideline_Type)->attribute_requirements-(Context_Specific_Label)"
         }
     ],
-    "summary": "The page outlines mandatory attributes for items with collars, emphasizing the collar style requirement and providing a list of acceptable collar types."
+    "summary": "This page outlines additional mandatory attributes for items with collars, specifically focusing on the required collar style and its specific key and description. Failure to comply with these guidelines may lead to validation failures and publishing delays."
 }

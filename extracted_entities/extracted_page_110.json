@@ -3,8 +3,8 @@
     "product_type": "Scrub Bottoms",
     "guideline_concept": "Key Feature Directions",
     "guidelines": {
-        "guideline_type": "Key Feature Directions",
-        "feature_requirements": [
+        "guideline_type": "Grouping Standards",
+        "key_feature_directions": [
             {
                 "step_name": "Material",
                 "description": "Fabric content including linings & any trims 5% or more or makeup."
@@ -15,7 +15,7 @@
             },
             {
                 "step_name": "Country of Origin",
-                "description": "Imported, Made in USA, Made in USA of imported materials."
+                "description": "Imported, Made in USA, Made in USA of imported materials, Made in USA and Imported."
             },
             {
                 "step_name": "Includes",
@@ -35,7 +35,7 @@
             },
             {
                 "step_name": "Rise & Inseam",
-                "description": "Low rise, 00\" inseam; 00\" leg opening (if applicable)."
+                "description": "Low rise, 00\u201d inseam; 00\u201d leg opening. (if applicable)"
             },
             {
                 "step_name": "Pockets",
@@ -49,10 +49,7 @@
     },
     "graph": [
         {
-            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> feature_requirements"
-        },
-        {
-            "linkage": "Guideline_Concept -> Guideline_Type -> feature_requirements"
+            "linkage": "Uniform/Scrub Bottoms & Coveralls-(Apparel_Category)->Scrub Bottoms-(Product_Type)->Grouping Standards-(Guideline_Type)->key_feature_directions"
         }
     ]
 }

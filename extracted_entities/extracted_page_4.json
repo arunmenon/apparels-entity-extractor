@@ -1,0 +1,33 @@
+{
+    "apparel_category": null,
+    "product_type": null,
+    "guideline_concept": "Grouping Standards",
+    "guidelines": {
+        "guideline_type": "Grouping Standards",
+        "grouping_guidelines": [
+            {
+                "step_name": "Correct Examples",
+                "description": "Detailed examples demonstrating appropriate grouping standards."
+            },
+            {
+                "step_name": "Incorrect Examples",
+                "description": "Examples showing common mistakes in grouping standards."
+            },
+            {
+                "step_name": "Grouping Examples",
+                "description": "Further illustrative examples of various grouping practices."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Grouping Standards-(Guideline_Concept)->Grouping Standards-(Guideline_Type)->Correct Examples"
+        },
+        {
+            "linkage": "Grouping Standards-(Guideline_Concept)->Grouping Standards-(Guideline_Type)->Incorrect Examples"
+        },
+        {
+            "linkage": "Grouping Standards-(Guideline_Concept)->Grouping Standards-(Guideline_Type)->Grouping Examples"
+        }
+    ]
+}

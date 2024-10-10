@@ -1,5 +1,5 @@
 {
-    "apparel_category": "Men's Apparel",
+    "apparel_category": "Men\u2019s Apparel",
     "product_type": "Basic Shirt",
     "guideline_concept": "Photo Direction",
     "guidelines": {
@@ -10,22 +10,23 @@
                 "description": "Laydown imagery that depicts number of items in pack."
             },
             {
-                "step_name": "1st Alternate Image",
+                "step_name": "1st Alternate",
                 "description": "Front facing, cropped above the lip to below fingertips."
             },
             {
-                "step_name": "2nd Alternate Image",
+                "step_name": "2nd Alternate",
                 "description": "Back facing, cropped to just below hairline to below fingertips."
             },
             {
-                "step_name": "3rd Alternate Image",
+                "step_name": "3rd Alternate",
                 "description": "Back facing, cropped to just below hairline to below fingertips."
             }
         ]
     },
     "graph": [
         {
-            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> image_requirements"
+            "linkage": "Men\u2019s Apparel-(Apparel_Category)->Basic Shirt-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
         }
-    ]
+    ],
+    "summary": "The page provides photo direction requirements for Basic Shirt Multipacks in Men's Apparel, detailing the specific imagery needed for both packaged and non-packaged versions."
 }

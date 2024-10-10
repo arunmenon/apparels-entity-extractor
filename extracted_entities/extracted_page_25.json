@@ -29,10 +29,8 @@
     },
     "graph": [
         {
-            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> image_requirements"
-        },
-        {
-            "linkage": "Guideline_Concept -> Guideline_Type -> image_requirements"
+            "linkage": "Women\u2019s Bundled Apparel-(Apparel_Category)->Tops-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
         }
-    ]
+    ],
+    "summary": "The page outlines the photo direction requirements for Women's Bundled Apparel, specifically focusing on the types of images needed, including required hero and alternate images to showcase the garments effectively."
 }

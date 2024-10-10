@@ -1,0 +1,36 @@
+{
+    "apparel_category": "Women\u2019s Apparel",
+    "product_type": "Wide Leg Jumpsuit",
+    "guideline_concept": "Video Specifications",
+    "guidelines": {
+        "guideline_type": "Video Specs",
+        "video_requirements": [
+            {
+                "step_name": "File Format & Encoding",
+                "description": "Must be MP4 files with h.254 video and AAC audio encoding."
+            },
+            {
+                "step_name": "File Size",
+                "description": "Less than 100MB (15MB - 20MB is more than sufficient)."
+            },
+            {
+                "step_name": "Title",
+                "description": "Max 200 Characters."
+            },
+            {
+                "step_name": "Language",
+                "description": "en-US."
+            },
+            {
+                "step_name": "Length",
+                "description": "Recommended 30 seconds - 1 minute unless additional time is needed for assembly video."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Women\u2019s Apparel-(Apparel_Category)->Wide Leg Jumpsuit-(Product_Type)->Video Specs-(Guideline_Type)->video_requirements"
+        }
+    ],
+    "summary": "The document outlines video guidelines and specifications for suppliers, including formats, sizes, and other requirements for proper submission to Walmart's platform."
+}

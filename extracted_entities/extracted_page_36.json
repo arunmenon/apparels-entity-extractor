@@ -1,7 +1,7 @@
 {
-    "apparel_category": "Women\u2019s Intimates",
+    "apparel_category": "Women's Intimates",
     "product_type": "Lingerie/Intimate Sets",
-    "guideline_concept": "Photo Direction",
+    "guideline_concept": null,
     "guidelines": {
         "guideline_type": "Photo Direction",
         "image_requirements": [
@@ -21,8 +21,10 @@
     },
     "graph": [
         {
-            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> image_requirements"
+            "linkage": "Women's Intimates-(Apparel_Category)->Lingerie/Intimate Sets-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
+        },
+        {
+            "linkage": "Women's Intimates-(Apparel_Category)->Body Shapewear-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
         }
-    ],
-    "summary": "This page outlines photo direction guidelines for Women's Intimates, specifically Lingerie/Intimate Sets. It specifies the required images in a particular order, detailing the attributes and angles desired for each shot."
+    ]
 }

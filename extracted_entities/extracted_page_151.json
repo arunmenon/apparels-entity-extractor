@@ -1,8 +1,9 @@
 {
     "apparel_category": "Traditional Cheongsams",
-    "guideline_concept": "Additional Attributes",
+    "product_type": "Closure Type",
+    "guideline_concept": "Product Naming Guidelines",
     "guidelines": {
-        "guideline_type": "Copy Standards",
+        "guideline_type": "Additional Attributes",
         "attribute_requirements": [
             {
                 "step_name": "Closure Type",
@@ -12,8 +13,8 @@
     },
     "graph": [
         {
-            "linkage": "Apparel_Category -> Guideline_Concept -> Guideline_Type -> attribute_requirements"
+            "linkage": "Traditional Cheongsams-(Apparel_Category)->Closure Type-(Product_Type)->Additional Attributes-(Guideline_Type)->attribute_requirements"
         }
     ],
-    "summary": "This section outlines additional mandatory attributes for Traditional Cheongsams items concerning closure types, specifying examples and requirements for proper compliance."
+    "summary": "This page outlines the mandatory attributes for Traditional Cheongsams, specifically focusing on the type of closure fasteners required for these items to ensure compliance with the style guide."
 }

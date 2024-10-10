@@ -1,10 +1,10 @@
 {
-    "apparel_category": "Women's Upper Body",
-    "product_type": "Bras, Swimsuit Tops, Leotards",
-    "guideline_concept": "Product Naming Guidelines",
+    "apparel_category": "Women\u2019s Upper Body",
+    "product_type": "Swimsuit Tops",
+    "guideline_concept": "Additional Attributes",
     "guidelines": {
-        "guideline_type": "Attributes",
-        "mandatory_attributes": [
+        "guideline_type": "Naming Guidelines",
+        "attribute_requirements": [
             {
                 "step_name": "Upper Body Strap Configuration",
                 "description": "Strap configuration style for bras, swimsuit tops, leotards, and other clothing tops."
@@ -13,10 +13,8 @@
     },
     "graph": [
         {
-            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> mandatory_attributes"
-        },
-        {
-            "linkage": "Guideline_Concept -> Guideline_Type -> mandatory_attributes"
+            "linkage": "Women\u2019s Upper Body-(Apparel_Category)->Swimsuit Tops-(Product_Type)->Naming Guidelines-(attribute_requirements)"
         }
-    ]
+    ],
+    "summary": "The page provides mandatory attributes for items with shoulder straps, emphasizing that compliance is required to avoid validation failure in publishing."
 }

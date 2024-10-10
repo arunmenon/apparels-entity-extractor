@@ -1,10 +1,10 @@
 {
     "apparel_category": null,
     "product_type": null,
-    "guideline_concept": "Rich Media Index",
+    "guideline_concept": "Rich Media",
     "guidelines": {
         "guideline_type": "Rich Media Guidelines",
-        "rich_media_types": [
+        "rich_media_examples": [
             {
                 "step_name": "360 Spin",
                 "description": "A 360 spin is a series of photos that gives the impression of the product rotating."
@@ -23,7 +23,7 @@
             },
             {
                 "step_name": "PDF Manuals",
-                "description": "PDF Manuals should be included with any item that has assembly instructions, and you can upload guarantee and warranty documents here."
+                "description": "PDF Manuals should be included with any item that has assembly instructions."
             },
             {
                 "step_name": "Item Hot Spots",
@@ -33,7 +33,8 @@
     },
     "graph": [
         {
-            "linkage": "Guideline_Concept -> Guideline_Type -> Rich Media Types"
+            "linkage": "Rich Media-(Guideline_Concept)->Rich Media Guidelines-(Guideline_Type)->rich_media_examples"
         }
-    ]
+    ],
+    "summary": "The Rich Media Index provides definitions and examples for different types of rich media recommended for creating item pages, including 360 spins, videos, marketing content, shoppable modules, PDF manuals, and item hot spots."
 }

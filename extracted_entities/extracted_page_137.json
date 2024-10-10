@@ -1,8 +1,9 @@
 {
-    "apparel_category": "Sweatpants",
+    "apparel_category": "Men\u2019s Lower Body",
+    "product_type": "Sweatpants",
     "guideline_concept": "Additional Attributes",
     "guidelines": {
-        "guideline_type": "Attribute Standards",
+        "guideline_type": "Naming Guidelines",
         "attribute_requirements": [
             {
                 "step_name": "Activity",
@@ -12,11 +13,8 @@
     },
     "graph": [
         {
-            "linkage": "Apparel_Category -> Guideline_Type -> attribute_requirements"
-        },
-        {
-            "linkage": "Guideline_Concept -> Guideline_Type -> attribute_requirements"
+            "linkage": "Men\u2019s Lower Body-(Apparel_Category)->Sweatpants-(Product_Type)->Naming Guidelines-(attribute_requirements)"
         }
     ],
-    "summary": "This section outlines additional mandatory attributes for sweatpants, specifically highlighting the importance of the 'Activity' attribute, which defines the type of activity the product is meant for. Adhering to this attribute is essential to avoid validation failures."
+    "summary": "The page outlines mandatory attributes for sweatpants, focusing on the 'Activity' attribute, which specifies the general type of activity the product is associated with, providing various examples such as backpacking and yoga."
 }

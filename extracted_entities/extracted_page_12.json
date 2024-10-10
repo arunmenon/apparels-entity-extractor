@@ -1,0 +1,19 @@
+{
+    "apparel_category": "Apparel",
+    "guideline_concept": "Zeekit Requirements",
+    "guidelines": {
+        "guideline_type": "Photo Direction",
+        "image_requirements": [
+            {
+                "step_name": "Image Requirements",
+                "description": "There are image requirements and limitations to comply with to ensure compatibility with Zeekit's technology."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Apparel-(Apparel_Category)->Zeekit Requirements-(Guideline_Concept)->Photo Direction-(Context_Specific_Label)"
+        }
+    ],
+    "summary": "The page outlines the requirements for using Zeekit Simulations, an optional virtual try-on feature for apparel, emphasizing the need for specific image requirements to ensure compatibility."
+}

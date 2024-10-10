@@ -1,34 +1,38 @@
 {
     "apparel_category": "Underwear/Intimates, Nightwear & Sleepwear",
     "product_type": [
-        "Upper Intimates (Women)",
-        "Sleepwear & Nightwear (Men/Women/Unisex)",
-        "Underwear/Bottoms (Women/Men)"
+        "All Upper Intimates (Women)",
+        "All Sleepwear & Nightwear (Men/Women/Unisex)",
+        "All Underwear/Bottoms (Women/Men)"
     ],
-    "guideline_concept": "Product Name Guidelines",
+    "guideline_concept": "Product Naming Guidelines",
     "guidelines": {
         "guideline_type": "Naming Guidelines",
-        "naming_format": [
+        "naming_formulas": [
             {
-                "step_name": "Upper Intimates (Women)",
-                "description": "Global Brand License + ' by ' + Brand + Product Line + Bra Style/Bra Feature/Bra Impact Level/Body Descriptor/Upper Body Strap Configuration/Features/Activity/Pattern/Sports League/Sports Team/Fabric Material Name + Clothing Type + Count Per Pack + (Clothing Size Group)"
+                "step_name": "Upper Intimates Naming Formula",
+                "description": "Global Brand License + ' by ' + Brand + Product Line + Bra Style/Bra Feature/Bra Impact Level/Body Descriptor/Upper Body Strap Configuration/Features/Activity/Pattern/Sports Team/Fabric Material Name + Clothing Type + Count Per Pack + (Clothing Size Group)"
             },
             {
-                "step_name": "Sleepwear & Nightwear (Men/Women/Unisex)",
+                "step_name": "Sleepwear Naming Formula",
                 "description": "Global Brand License + ' by ' + Brand + Product Line + Sleepwear Style/Clothing Length Style/Clothing Fit/Features/Activity/Pattern/Sports Team/Fabric Material Name + Clothing Type + Count Per Pack + (Clothing Size Group)"
             },
             {
-                "step_name": "Underwear/Bottoms (Women/Men)",
-                "description": "Global Brand License + ' by ' + Brand + Product Line + Skirt Style/Pant Style/Clothing Length Style/Clothing Fit/Features/Activity/Pattern/Sports League/Sports Team/Fabric Material Name + Clothing Type + Count Per Pack + (Clothing Size Group)"
+                "step_name": "Underwear/Bottoms Naming Formula",
+                "description": "Global Brand License + ' by ' + Brand + Product Line + Skirt Style/Pant Style/Clothing Length Style/Clothing Fit/Features/Activity/Pattern/Sports League/Fabric Material Name + Clothing Type + Count Per Pack + (Clothing Size Group)"
             }
         ]
     },
     "graph": [
         {
-            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> naming_format"
+            "linkage": "Underwear/Intimates, Nightwear & Sleepwear-(Apparel_Category)->All Upper Intimates (Women)-(Product_Type)->Naming Guidelines-(Naming_Formulas"
         },
         {
-            "linkage": "Guideline_Concept -> Guideline_Type -> naming_format"
+            "linkage": "Underwear/Intimates, Nightwear & Sleepwear-(Apparel_Category)->All Sleepwear & Nightwear (Men/Women/Unisex)-(Product_Type)->Naming Guidelines-(Naming_Formulas"
+        },
+        {
+            "linkage": "Underwear/Intimates, Nightwear & Sleepwear-(Apparel_Category)->All Underwear/Bottoms (Women/Men)-(Product_Type)->Naming Guidelines-(Naming_Formulas"
         }
-    ]
+    ],
+    "summary": "The document outlines the naming guidelines for various apparel categories under Underwear, Intimates, Nightwear, and Sleepwear. It provides specific formulas for naming items in Upper Intimates for women, Sleepwear for both men and women, and Underwear/Bottoms for both genders."
 }

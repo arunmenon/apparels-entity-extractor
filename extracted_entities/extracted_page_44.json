@@ -11,7 +11,7 @@
             },
             {
                 "step_name": "1st Alt",
-                "description": "Laydown imagery that depicts number of items in pack."
+                "description": "LayoOut imagery that depicts number of items in pack."
             },
             {
                 "step_name": "2nd Alt",
@@ -33,7 +33,8 @@
     },
     "graph": [
         {
-            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> Image_Requirements"
+            "linkage": "Men & Womens Bundled Apparel-(Apparel_Category)->Graphic Tees-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
         }
-    ]
+    ],
+    "summary": "The page outlines photo direction for bundled graphic tees in the Men & Womens apparel category, specifying required images for product presentation."
 }

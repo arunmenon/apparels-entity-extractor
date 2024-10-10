@@ -1,10 +1,13 @@
 {
     "apparel_category": "Children's Apparel",
-    "product_type": "Pajamas",
+    "product_type": [
+        "Pajamas",
+        "Tunic and Capri pants"
+    ],
     "guideline_concept": "Key Feature Directions",
     "guidelines": {
         "guideline_type": "Key Feature Direction",
-        "context_specific_label": [
+        "key_feature_requirements": [
             {
                 "step_name": "Material",
                 "description": "Fabric content including linings & any trims 5% or more of makeup."
@@ -45,11 +48,10 @@
     },
     "graph": [
         {
-            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> context_specific_label"
+            "linkage": "Children's Apparel-(Apparel_Category)->Pajamas-(Product_Type)->Key Feature Direction-(Guideline_Type)->key_feature_requirements"
         },
         {
-            "linkage": "Guideline_Concept -> Guideline_Type -> context_specific_label"
+            "linkage": "Children's Apparel-(Apparel_Category)->Tunic and Capri pants-(Product_Type)->Key Feature Direction-(Guideline_Type)->key_feature_requirements"
         }
-    ],
-    "summary": "The guidelines for Children's Apparel focus on the essential features that need to be included, such as material, care instructions, fit, neckline, and specific characteristics for pajamas, emphasizing compliance with safety and quality standards."
+    ]
 }

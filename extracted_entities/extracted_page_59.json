@@ -1,7 +1,10 @@
 {
     "apparel_category": "Women\u2019s Swimwear",
-    "product_type": "Reversible Swim Tops",
-    "guideline_concept": "Photo Direction",
+    "product_type": [
+        "Reversible Swim Tops",
+        "Reversible Swim Bottoms"
+    ],
+    "guideline_concept": "Copy Standards",
     "guidelines": {
         "guideline_type": "Photo Direction",
         "image_requirements": [
@@ -10,31 +13,33 @@
                 "description": "Front facing, cropped just above lip to above belly button."
             },
             {
-                "step_name": "1st Alternate Image",
+                "step_name": "1st Alt",
                 "description": "Front facing, head to toe, unrecognizable."
             },
             {
-                "step_name": "2nd Alternate Image",
+                "step_name": "2nd Alt",
                 "description": "Front facing, cropped above lip to above belly button reverse."
             },
             {
-                "step_name": "3rd Alternate Image",
+                "step_name": "3rd Alt",
                 "description": "Back facing, cropped to just below hairline to below fingertips."
             },
             {
-                "step_name": "4th Alternate Image",
+                "step_name": "4th Alt",
                 "description": "Ghost view."
             },
             {
-                "step_name": "Recommended 4th Alternate",
+                "step_name": "Recommended Alternate Detail",
                 "description": "Highlight embellishments and design elements captured in required shots if present."
             }
         ]
     },
     "graph": [
         {
-            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> image_requirements"
+            "linkage": "Women\u2019s Swimwear-(Apparel_Category)->Reversible Swim Tops-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
+        },
+        {
+            "linkage": "Women\u2019s Swimwear-(Apparel_Category)->Reversible Swim Bottoms-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
         }
-    ],
-    "summary": "The page provides photography guidelines for women's swimwear, specifically for reversible swim tops, detailing required images and recommended alternates."
+    ]
 }

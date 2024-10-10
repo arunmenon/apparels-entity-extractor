@@ -21,8 +21,10 @@
     },
     "graph": [
         {
-            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> image_requirements"
+            "linkage": "Surgical & Hospital Gowns-(Apparel_Category)->Gowns-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
+        },
+        {
+            "linkage": "Overall & Coveralls-(Apparel_Category)->Coveralls-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
         }
-    ],
-    "summary": "The page outlines photo direction guidelines for Surgical & Hospital Gowns, requiring a main hero image and alternates that include showing the package and a ghost view."
+    ]
 }

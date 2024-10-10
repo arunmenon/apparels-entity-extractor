@@ -6,15 +6,15 @@
         "writing_guidelines": [
             {
                 "step_name": "Brand Name",
-                "description": "The name provided by the brand owner intended to be recognized by the consumer."
+                "description": "The name provided by the brand owner intended to be recognized by the consumer as represented on the product."
             },
             {
                 "step_name": "Designer",
-                "description": "Name of the person who planned the form, look, or workings of the product."
+                "description": "Name of the person who planned the form, look, or workings of the product to be made or built."
             },
             {
                 "step_name": "Brand License",
-                "description": "A brand name that is not owned by the product brand, but licensed for the product."
+                "description": "A brand name that is not owned by the product brand, but is licensed for the product."
             },
             {
                 "step_name": "Manufacturer Name",
@@ -22,14 +22,13 @@
             },
             {
                 "step_name": "Product Line",
-                "description": "Product lines exist as a sub-structure of brands."
+                "description": "Product lines exist as a sub-structure of brands and frequently, as a super-structure of models."
             }
         ]
     },
     "graph": [
         {
-            "linkage": "Apparel_Category -> Guideline_Concept -> Guideline_Type -> writing_guidelines"
+            "linkage": "All Apparel Attributes-(Apparel_Category)->Copy Standards-(Guideline_Concept)->Copy Standards-(Guideline_Type)->writing_guidelines"
         }
-    ],
-    "summary": "The document outlines mandatory attributes for apparel items, including guidelines for brand names, designers, brand licenses, manufacturer names, and product lines."
+    ]
 }

@@ -1,41 +1,25 @@
 {
     "apparel_category": "All Outerwear",
-    "guideline_concept": "Attributes",
+    "guideline_concept": "Additional Attributes",
     "guidelines": {
-        "guideline_type": "Additional Attributes",
+        "guideline_type": "Copy Standards",
         "attributes": [
             {
-                "attribute": "Clothing Weight",
-                "key": "clothingWeight",
-                "description": "Commonly used in retail clothing, these terms describe the density or weight of fabric material.",
-                "examples": [
-                    "Lightweight",
-                    "Mid-Weight",
-                    "Heavyweight"
-                ],
-                "list_type": "Closed",
-                "multiple_values": "No",
-                "requirement_level": "Required"
+                "step_name": "Clothing Weight",
+                "description": "Commonly used in retail clothing, these terms describe the density or weight of fabric material. Examples: Lightweight, Mid-Weight, Heavyweight."
             },
             {
-                "attribute": "Fill Material",
-                "key": "fillMaterial",
-                "description": "The material used to stuff the item (in a cushion or plush toy, for example).",
-                "examples": [
-                    "Down",
-                    "Down Alternative",
-                    "Polyester"
-                ],
-                "list_type": "Open",
-                "multiple_values": "Yes",
-                "requirement_level": "Recommended"
+                "step_name": "Fill Material",
+                "description": "The material used to stuff the item (in a cushion or plush toy, for example). Examples: Down, Down Alternative, Polyester."
             }
         ]
     },
     "graph": [
         {
-            "linkage": "Apparel_Category -> Guideline_Concept -> Guideline_Type -> Attributes"
+            "linkage": "All Outerwear-(Apparel_Category)->Clothing Weight-(Guideline_Type)->Attributes"
+        },
+        {
+            "linkage": "All Outerwear-(Apparel_Category)->Fill Material-(Guideline_Type)->Attributes"
         }
-    ],
-    "summary": "This section outlines mandatory additional attributes for all outerwear items, specifying requirements related to clothing weight and fill material, along with examples and categorization of value lists."
+    ]
 }

@@ -1,0 +1,52 @@
+{
+    "apparel_category": null,
+    "product_type": null,
+    "guideline_concept": "Image Requirements",
+    "guidelines": {
+        "guideline_type": "Photo Direction",
+        "image_requirements": [
+            {
+                "step_name": "Image Focus",
+                "description": "All images must be in focus, professionally lit and photographed."
+            },
+            {
+                "step_name": "Backgrounds",
+                "description": "Clean styling and white backgrounds only for all required images (RGB 255, 255, 255; hex #FFFFFF). Non-white backgrounds are only permitted for 'Additional Alternate' lifestyle/editorial shots only."
+            },
+            {
+                "step_name": "Color Requirement",
+                "description": "Images must be in color."
+            },
+            {
+                "step_name": "Model Limitations",
+                "description": "Only one model per image."
+            },
+            {
+                "step_name": "Centering",
+                "description": "Image of product/model should be centered in the frame."
+            },
+            {
+                "step_name": "Full Product Show",
+                "description": "Image must show the entire product and follow cropping standards."
+            },
+            {
+                "step_name": "Cropping Standards",
+                "description": "Images should be cropped with a 5% buffer from the end of the product image to nearest vertical or horizontal border."
+            },
+            {
+                "step_name": "Shadow Management",
+                "description": "Shadow: Light & Natural (remove for ghost images)."
+            },
+            {
+                "step_name": "Image Sizing",
+                "description": "Do NOT enlarge small images to fill space or meet required pixel dimensions."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Image Requirements-(Guideline_Concept)->Photo Direction-(Image_Requirements)"
+        }
+    ],
+    "summary": "The page outlines the image requirements for Walmart fashion, emphasizing the need for images to be in focus, lit properly, and handled with specific cropping and background standards. It details prohibited imagery and defines specifications required for image file types and resolutions."
+}

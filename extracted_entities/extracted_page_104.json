@@ -1,7 +1,6 @@
 {
     "apparel_category": "Shapewear",
-    "product_type": null,
-    "guideline_concept": null,
+    "guideline_concept": "Key Feature Directions",
     "guidelines": {
         "guideline_type": "Key Feature Directions",
         "key_feature_directions": [
@@ -19,7 +18,7 @@
             },
             {
                 "step_name": "Size",
-                "description": "Model is 0.0\" and is wearing a size X."
+                "description": "Model is 0.0' and is wearing a size X."
             },
             {
                 "step_name": "Type of Cups",
@@ -49,8 +48,8 @@
     },
     "graph": [
         {
-            "linkage": "Apparel_Category -> Guideline_Type -> Key Feature Directions"
+            "linkage": "Shapewear-(Apparel_Category)->Key Feature Directions-(Guideline_Type)->key_feature_directions"
         }
     ],
-    "summary": "The document outlines key feature guidelines for shapewear, detailing material specifications, care instructions, country of origin, size information, cup types, coverage options, support levels, closure styles, strap types, and additional features."
+    "summary": "The page outlines key feature guidelines for shapewear, detailing essential attributes such as material, care instructions, country of origin, sizing information, cup types, coverage, support level, closures, strap types, and additional features required for the product."
 }

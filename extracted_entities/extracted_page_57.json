@@ -9,7 +9,7 @@
         "guideline_type": "Photo Direction",
         "image_requirements": [
             {
-                "step_name": "Hero (Main) Image",
+                "step_name": "Hero Image",
                 "description": "Front facing, cropped above lip to above belly button."
             },
             {
@@ -28,10 +28,10 @@
     },
     "graph": [
         {
-            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> image_requirements"
+            "linkage": "Women\u2019s Swimwear-(Apparel_Category)->Swimwear Separates (Tops)-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
         },
         {
-            "linkage": "Guideline_Concept -> Guideline_Type -> image_requirements"
+            "linkage": "Women\u2019s Swimwear-(Apparel_Category)->Swimwear Separates (Bottoms)-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
         }
     ]
 }

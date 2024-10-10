@@ -1,0 +1,23 @@
+{
+    "apparel_category": "Hosiery & Tights",
+    "product_type": "Compression Sleeves",
+    "guideline_concept": "Photo Direction",
+    "guidelines": {
+        "guideline_type": "Photo Direction",
+        "image_requirements": [
+            {
+                "step_name": "Hero Image",
+                "description": "Item in Packaging."
+            },
+            {
+                "step_name": "2nd Additional Alternate",
+                "description": "Flat shot or On-Figure. Imagery depicts product."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Hosiery & Tights-(Apparel_Category)->Compression Sleeves-(Product_Type)->Photo Direction-(image_requirements)"
+        }
+    ]
+}

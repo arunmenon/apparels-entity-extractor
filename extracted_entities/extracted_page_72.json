@@ -1,5 +1,5 @@
 {
-    "apparel_category": "Children\u2019s Apparel",
+    "apparel_category": "Children's Apparel",
     "product_type": [
         "2-Packs Tops",
         "2-Packs Bottoms",
@@ -11,37 +11,31 @@
         "guideline_type": "Photo Direction",
         "image_requirements": [
             {
-                "step_name": "2-Packs Tops",
-                "description": "Required in order below (3 images): 1. Hero (Main) Image: Front facing, straight on, laydown of all garments. 2. 1st Alternate: Cropped in detail shot #1. 3. 2nd Alternate: Cropped in detail shot #2."
+                "step_name": "Hero (Main) Image",
+                "description": "Front facing, straight on, laydown of all garments."
             },
             {
-                "step_name": "Styling Note for 2-Packs Tops",
-                "description": "Pieces should cascade downward to the right."
+                "step_name": "1st Alternate",
+                "description": "Cropped in detail shot #1."
             },
             {
-                "step_name": "2-Packs Bottoms",
-                "description": "Required in order: 1. Hero (Main) Image: Front facing, straight on, laydown of all garments. Styling Note: Pieces should cascade downward to the right."
-            },
-            {
-                "step_name": "3-Packs Tops",
-                "description": "Required in order below (3 images): 1. Hero (Main) Image: Front facing, straight on, laydown of all garments. 2. 1st Alternate: Cropped in detail shot #1. 3. 2nd Alternate: Cropped in detail shot #2."
-            },
-            {
-                "step_name": "Styling Note for 3-Packs Tops",
-                "description": "Pieces should be staggered, showing all pieces in pack."
-            },
-            {
-                "step_name": "3-Packs Bottoms",
-                "description": "Required in order: 1. Hero (Main) Image: Front facing, straight on, laydown of all garments. Styling Note: Pieces should cascade downward to the right."
+                "step_name": "2nd Alternate",
+                "description": "Cropped in detail shot #2."
             }
         ]
     },
     "graph": [
         {
-            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> image_requirements"
+            "linkage": "Children's Apparel-(Apparel_Category)->2-Packs Tops-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
         },
         {
-            "linkage": "Guideline_Concept -> Guideline_Type -> image_requirements"
+            "linkage": "Children's Apparel-(Apparel_Category)->2-Packs Bottoms-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
+        },
+        {
+            "linkage": "Children's Apparel-(Apparel_Category)->3-Packs Tops-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
+        },
+        {
+            "linkage": "Children's Apparel-(Apparel_Category)->3-Packs Bottoms-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
         }
     ]
 }

@@ -1,0 +1,24 @@
+{
+    "apparel_category": "Men\u2019s Lower Body",
+    "product_type": "Athletic Compression Socks",
+    "guideline_concept": "Product Naming Guidelines",
+    "guidelines": {
+        "guideline_type": "Additional Attributes",
+        "attributes": [
+            {
+                "step_name": "Sock Type",
+                "description": "Specifies the type of Socks for the product."
+            },
+            {
+                "step_name": "Sock Rise",
+                "description": "Descriptive terms for sock height."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Men\u2019s Lower Body-(Apparel_Category)->Athletic Compression Socks-(Product_Type)->Additional Attributes-(Guideline_Type)->attributes"
+        }
+    ],
+    "summary": "This page provides additional mandatory attributes for Athletic Compression Socks, including guidelines on specifying the type of socks and the descriptive terms for sock height, which are essential for compliance."
+}

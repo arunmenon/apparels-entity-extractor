@@ -1,5 +1,5 @@
 {
-    "apparel_category": "Grouped Dresses",
+    "apparel_category": "Women\u2019s Dresses",
     "product_type": "Dresses",
     "guideline_concept": "Grouping Standards",
     "guidelines": {
@@ -7,20 +7,17 @@
         "grouping_examples": [
             {
                 "step_name": "Grouped Dresses",
-                "description": "These items have the same style and fabric, same print and come in multiple colors = grouped."
+                "description": "These items have the same style and fabric, same print and come in multiple colors = grouped. The below items should be one item page."
             },
             {
                 "step_name": "Ungrouped Tops",
-                "description": "These items may be the same style and fabric, but they have different patterns = ungrouped."
+                "description": "These items may be the same style and fabric, but they have different patterns = ungrouped. The below items should be two separate item pages."
             }
         ]
     },
     "graph": [
         {
-            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> grouping_examples"
-        },
-        {
-            "linkage": "Guideline_Concept -> Guideline_Type -> grouping_examples"
+            "linkage": "Women\u2019s Dresses-(Apparel_Category)->Dresses-(Product_Type)->Grouping Standards-(Guideline_Type)->grouping_examples"
         }
     ]
 }

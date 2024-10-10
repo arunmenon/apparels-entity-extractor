@@ -1,0 +1,31 @@
+{
+    "apparel_category": "All Apparel Attributes",
+    "product_type": null,
+    "guideline_concept": null,
+    "guidelines": {
+        "guideline_type": "Attribute Guidelines",
+        "attribute_requirements": [
+            {
+                "step_name": "Sports League",
+                "description": "If your item has any association with a specific sports league, enter the league name. Abbreviations are fine."
+            },
+            {
+                "step_name": "Sports Team",
+                "description": "If your item has any association with a specific sports team, enter the team name."
+            },
+            {
+                "step_name": "Season Code",
+                "description": "Enter the Code for the apparel season: 0- Basic; 1- Spring; 2- Summer; 3- BTS/Fall; 4- Winter."
+            },
+            {
+                "step_name": "Season Year",
+                "description": "The four-digit year."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "All Apparel Attributes-(Apparel_Category)->Attribute Guidelines-(Guideline_Type)->attribute_requirements"
+        }
+    ]
+}

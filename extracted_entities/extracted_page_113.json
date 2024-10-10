@@ -1,0 +1,31 @@
+{
+    "apparel_category": null,
+    "product_type": null,
+    "guideline_concept": "Grouping Standards",
+    "guidelines": {
+        "guideline_type": "Copy Standards",
+        "writing_guidelines": [
+            {
+                "step_name": "Fill required attributes",
+                "description": "Fill out all required attributes outlined in this guide, on the following pages + any related attributes."
+            },
+            {
+                "step_name": "Recommended attributes",
+                "description": "Scroll to the section named 'Recommended to improve search & browse on Walmart.com'."
+            },
+            {
+                "step_name": "Add additional attributes",
+                "description": "Insert the last two columns for as many attributes as you wish to add."
+            },
+            {
+                "step_name": "Attribute key",
+                "description": "Add the attribute_key in the 'Additional Product Attribute Name' column."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Grouping Standards-(Guideline_Concept)->Copy Standards-(Guideline_Type)->writing_guidelines"
+        }
+    ]
+}

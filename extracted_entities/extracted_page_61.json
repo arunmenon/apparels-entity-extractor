@@ -1,5 +1,5 @@
 {
-    "apparel_category": "Women\u2019s Swimwear",
+    "apparel_category": "Women's Swimwear",
     "product_type": "Rash Guards",
     "guideline_concept": "Photo Direction",
     "guidelines": {
@@ -25,7 +25,7 @@
     },
     "graph": [
         {
-            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> image_requirements"
+            "linkage": "Women's Swimwear-(Apparel_Category)->Rash Guards-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
         }
     ]
 }

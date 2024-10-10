@@ -1,10 +1,10 @@
 {
     "apparel_category": "Uniform/Scrub Tops & Layering Scrub Tops",
-    "product_type": "Layering Scrub Tops",
-    "guideline_concept": "Key Feature Directions",
+    "product_type": "Scrub Tops",
+    "guideline_concept": "Copy Standards",
     "guidelines": {
         "guideline_type": "Key Feature Directions",
-        "key_feature_details": [
+        "key_feature": [
             {
                 "step_name": "Material",
                 "description": "Fabric content including linings & any trims 5% or more or makeup."
@@ -53,8 +53,8 @@
     },
     "graph": [
         {
-            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> key_feature_details"
+            "linkage": "Uniform/Scrub Tops & Layering Scrub Tops-(Apparel_Category)->Scrub Tops-(Product_Type)->Key Feature Directions-(Guideline_Type)->key_feature"
         }
     ],
-    "summary": "The page outlines key feature guidelines for uniform/scrub tops and layering scrub tops, detailing required attributes related to material, care instructions, country of origin, fit, and design specifications."
+    "summary": "The page outlines key feature directions for Uniform/Scrub Tops and Layering Scrub Tops, detailing material, care instructions, sizing, fit, neckline, closure, sleeves, pockets, and other features necessary for proper product specification."
 }

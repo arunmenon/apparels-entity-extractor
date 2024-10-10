@@ -1,38 +1,24 @@
 {
     "apparel_category": "Women\u2019s Swimwear",
-    "product_type": [
-        "One-Piece",
-        "Rash Guards",
-        "Board Shorts",
-        "Tunic",
-        "Swim Dress",
-        "Tankinis",
-        "Bikinis",
-        "Two-Piece Sets",
-        "Cover-Ups",
-        "Hybrids",
-        "Skirt"
-    ],
+    "product_type": "Swimwear",
     "guideline_concept": "Additional Attributes",
     "guidelines": {
         "guideline_type": "Naming Guidelines",
         "attribute_requirements": [
             {
                 "step_name": "Swimsuit Style",
-                "description": "Describe styles common to swimwear, specifically for the bottom half under the Underpant/Swim Bottom Style attribute."
+                "description": "Descriptive styles common to swimwear. Style terms specific to the bottom half of swimwear appear under the Underpant/Swim Bottom Style attribute."
             },
             {
                 "step_name": "Closure Type",
-                "description": "Specify the type of fastener used to keep the item closed and to facilitate putting on the item."
+                "description": "The type of fastener used to keep an item closed and to facilitate putting on the item."
             }
         ]
     },
     "graph": [
         {
-            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> attribute_requirements"
-        },
-        {
-            "linkage": "Guideline_Concept -> Guideline_Type -> attribute_requirements"
+            "linkage": "Women\u2019s Swimwear-(Apparel_Category)->Swimwear-(Product_Type)->Naming Guidelines-(Guideline_Type)->attribute_requirements"
         }
-    ]
+    ],
+    "summary": "The document outlines mandatory attributes for women's swimwear product types, emphasizing the essential requirements for 'Swimsuit Style' and 'Closure Type' to ensure compliance with the style guide."
 }

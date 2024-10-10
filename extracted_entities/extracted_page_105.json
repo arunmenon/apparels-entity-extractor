@@ -1,6 +1,6 @@
 {
     "apparel_category": "Men\u2019s Swimwear",
-    "product_type": "Swimwear",
+    "product_type": "Men's Underwear",
     "guideline_concept": "Key Feature Directions",
     "guidelines": {
         "guideline_type": "Key Feature Directions",
@@ -31,7 +31,7 @@
             },
             {
                 "step_name": "Closure",
-                "description": "Elastic drawstring waist, elastic waist with interior drawstring closure."
+                "description": "Elastic drawstring waist, elastic waist with interior drawstring closure, etc."
             },
             {
                 "step_name": "Pockets",
@@ -49,8 +49,7 @@
     },
     "graph": [
         {
-            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> feature_requirements"
+            "linkage": "Men\u2019s Swimwear-(Apparel_Category)->Men's Underwear-(Product_Type)->Key Feature Directions-(Guideline_Type)->feature_requirements"
         }
-    ],
-    "summary": "The page outlines key feature directions for men's swimwear, detailing material, care, country of origin, sizing, fit, rise and inseam, closure, pocket specifications, features, and notes regarding color appearance."
+    ]
 }

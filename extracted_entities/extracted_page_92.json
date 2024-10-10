@@ -1,22 +1,24 @@
 {
     "apparel_category": "Children's Apparel",
-    "product_type": "Children\u2019s Multipacks",
+    "product_type": "Children's Multipacks",
     "guideline_concept": "Product Naming Guidelines",
     "guidelines": {
         "guideline_type": "Naming Guidelines",
-        "naming_formula": [
+        "naming_formulas": [
             {
-                "step_name": "Formula",
+                "step_name": "Formula for Children's Apparel",
+                "description": "Global Brand License + 'by' + Brand + Style Name + Apparel Style + Product Type + (Clothing Size Group)"
+            },
+            {
+                "step_name": "Formula for Children's Multipacks",
                 "description": "Global Brand License + 'by' + Brand + Style Name + Apparel Style + Product Type + (Clothing Size Group) + Count"
             }
         ]
     },
     "graph": [
         {
-            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> naming_formula"
-        },
-        {
-            "linkage": "Guideline_Concept -> Guideline_Type -> naming_formula"
+            "linkage": "Children's Apparel-(Apparel_Category)->Children's Multipacks-(Product_Type)->Naming Guidelines-(Guideline_Type)->naming_formulas"
         }
-    ]
+    ],
+    "summary": "The document outlines the product naming guidelines for children's apparel, specifically focusing on the naming structure for both standard children's apparel and multipacks."
 }

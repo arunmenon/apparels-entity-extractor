@@ -1,0 +1,36 @@
+{
+    "apparel_category": null,
+    "product_type": null,
+    "guideline_concept": "Shelf Description Guidelines",
+    "guidelines": {
+        "guideline_type": "Copy Standards",
+        "writing_guidelines": [
+            {
+                "step_name": "Content Format",
+                "description": "Information should be in HTML form, sentence case, bulleted form."
+            },
+            {
+                "step_name": "Bullet Point Order",
+                "description": "Put the most important feature first, typically the first 3-5 bullets from the Key Features List."
+            },
+            {
+                "step_name": "Detail Specification",
+                "description": "Call out specific details and provide complete information without generic phrases."
+            },
+            {
+                "step_name": "Bullet Point Capitalization",
+                "description": "Begin each bullet point with a capital letter."
+            },
+            {
+                "step_name": "Sentence Fragmentation",
+                "description": "Write in sentence fragments without ending punctuation."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Shelf Description Guidelines-(Guideline_Concept)->Copy Standards-(Guideline_Type)->writing_guidelines"
+        }
+    ],
+    "summary": "The page outlines the Shelf Description Guidelines for Walmart fashion, specifying how product descriptions should be formatted and what information to include, emphasizing details like bullet formatting, capitalization, content order, and clarity."
+}

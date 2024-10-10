@@ -1,7 +1,7 @@
 {
     "apparel_category": "Skirts",
-    "product_type": "Skirts",
-    "guideline_concept": "Additional Attributes",
+    "product_type": "All Skirt Product Type Items",
+    "guideline_concept": "",
     "guidelines": {
         "guideline_type": "Naming Guidelines",
         "attribute_requirements": [
@@ -13,8 +13,8 @@
     },
     "graph": [
         {
-            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> attribute_requirements"
+            "linkage": "Skirts-(Apparel_Category)->All Skirt Product Type Items-(Product_Type)->Naming Guidelines-(attribute_requirements)"
         }
     ],
-    "summary": "The page outlines mandatory attributes for all skirt product types, specifically focusing on the 'Skirt Style' attribute, which includes various terms to describe different skirt styles."
+    "summary": "The page outlines mandatory attributes required for all skirt product types, emphasizing the importance of correctly describing skirt styles to ensure validation and avoid publishing delays."
 }

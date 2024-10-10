@@ -4,34 +4,50 @@
         "Basic Tops (Undershirts)",
         "Underwear/Boxers & Briefs"
     ],
-    "guideline_concept": "Photo Direction",
+    "guideline_concept": "",
     "guidelines": {
         "guideline_type": "Photo Direction",
         "image_requirements": [
             {
-                "step_name": "Hero (Main) Image",
+                "step_name": "Hero (Main) Image for Basic Tops",
                 "description": "Front facing, cropped above lip to below fingertips."
             },
             {
-                "step_name": "2nd Alternate",
+                "step_name": "2nd Alternate for Basic Tops",
                 "description": "Back facing, cropped to just below hairline to below fingertips."
             },
             {
-                "step_name": "3rd Alternate",
+                "step_name": "3rd Alternate for Basic Tops",
                 "description": "Ghost view."
             },
             {
-                "step_name": "4th Alternate",
+                "step_name": "4th Alternate for Basic Tops",
+                "description": "Highlight embellishments and design elements not captured in required shots if present."
+            },
+            {
+                "step_name": "Hero (Main) Image for Underwear/Boxers",
+                "description": "Front facing, cropped above lip to below fingertips."
+            },
+            {
+                "step_name": "2nd Alternate for Underwear/Boxers",
+                "description": "Back facing, cropped to just below hairline to below fingertips."
+            },
+            {
+                "step_name": "3rd Alternate for Underwear/Boxers",
+                "description": "Ghost view."
+            },
+            {
+                "step_name": "4th Alternate for Underwear/Boxers",
                 "description": "Highlight embellishments and design elements not captured in required shots if present."
             }
         ]
     },
     "graph": [
         {
-            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> image_requirements"
+            "linkage": "Men\u2019s Intimates-(Apparel_Category)->Basic Tops (Undershirts)-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
         },
         {
-            "linkage": "Guideline_Concept -> Guideline_Type -> image_requirements"
+            "linkage": "Men\u2019s Intimates-(Apparel_Category)->Underwear/Boxers & Briefs-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
         }
     ]
 }

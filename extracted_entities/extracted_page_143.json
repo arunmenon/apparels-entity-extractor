@@ -1,35 +1,20 @@
 {
-    "apparel_category": "Upper Body Garments",
-    "product_type": "Full Body Garments",
+    "apparel_category": "Full Body Garments & Upper Body Garments",
+    "product_type": "Clothing",
     "guideline_concept": "Attributes",
     "guidelines": {
-        "guideline_type": "Naming Guidelines",
-        "clothing_neck_style": [
+        "guideline_type": "Attribute Standards",
+        "attribute_details": [
             {
-                "step_name": "Definition",
+                "step_name": "Clothing Neck Style",
                 "description": "A garment's neckline or neck style."
-            },
-            {
-                "step_name": "Examples/List",
-                "description": "Scrunch Neck, Hooded, Henley, Round Neck, Collared, Crew Neck, Mock Neck, Square Neck, Notch Neck, High Neck, Cowl Neck, Keyhole Neck, V-Neck, Turtleneck, Draped Neck, Funnel Neck, Scoop Neck, Wide Neck, Deep V-Neck, Boat Neck, Sit Neck."
-            },
-            {
-                "step_name": "List Type",
-                "description": "Closed."
-            },
-            {
-                "step_name": "Multiple Values",
-                "description": "No."
-            },
-            {
-                "step_name": "Requirement Level",
-                "description": "Required."
             }
         ]
     },
     "graph": [
         {
-            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> clothing_neck_style"
+            "linkage": "Full Body Garments & Upper Body Garments-(Apparel_Category)->Clothing-(Product_Type)->Attribute Standards-(Guideline_Type)->attribute_details"
         }
-    ]
+    ],
+    "summary": "The document specifies mandatory attributes for all Upper Body and Full Body Garment Apparel Product Types, emphasizing the importance of complying with the style guide to avoid validation issues."
 }

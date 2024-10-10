@@ -1,30 +1,37 @@
 {
-    "apparel_category": "Women\u2019s Swim",
+    "apparel_category": "Women's Intimates",
     "product_type": [
-        "Rash Guards",
-        "One-Piece & Sets",
-        "Separates w/ No Matching Separates",
-        "Separates w/ Matching Separates",
-        "Reversible Separates (Not Matching)",
-        "Reversible Separates (Matching)",
-        "Cover-Ups & Parkas"
+        "Shapewear",
+        "Multipacks Bottoms",
+        "Lingerie",
+        "Lingerie Sets & Bodysuits"
     ],
-    "guideline_concept": "Grouping Standards",
+    "guideline_concept": "Product Type Photo Direction",
     "guidelines": {
         "guideline_type": "Product Type Photo Direction",
-        "photo_direction": [
+        "photo_requirements": [
             {
-                "step_name": "Image Requirements",
-                "description": "Specify the guidelines for product photography."
+                "step_name": "Hero Image",
+                "description": "Main image showcasing the product for visual capture."
+            },
+            {
+                "step_name": "Alternate Image",
+                "description": "Additional images highlighting details and variations."
             }
         ]
     },
     "graph": [
         {
-            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> photo_direction"
+            "linkage": "Women's Intimates-(Apparel_Category)->Shapewear-(Product_Type)->Product Type Photo Direction-(Guideline_Type)->photo_requirements"
         },
         {
-            "linkage": "Guideline_Concept -> Guideline_Type -> photo_direction"
+            "linkage": "Women's Intimates-(Apparel_Category)->Multipacks Bottoms-(Product_Type)->Product Type Photo Direction-(Guideline_Type)->photo_requirements"
+        },
+        {
+            "linkage": "Women's Intimates-(Apparel_Category)->Lingerie-(Product_Type)->Product Type Photo Direction-(Guideline_Type)->photo_requirements"
+        },
+        {
+            "linkage": "Women's Intimates-(Apparel_Category)->Lingerie Sets & Bodysuits-(Product_Type)->Product Type Photo Direction-(Guideline_Type)->photo_requirements"
         }
     ]
 }

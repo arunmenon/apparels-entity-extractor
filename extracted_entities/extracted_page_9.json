@@ -1,7 +1,7 @@
 {
-    "apparel_category": null,
+    "apparel_category": "Image Styling",
     "product_type": null,
-    "guideline_concept": "Image Styling",
+    "guideline_concept": null,
     "guidelines": {
         "guideline_type": "Photo Direction",
         "image_requirements": [
@@ -11,30 +11,30 @@
             },
             {
                 "step_name": "Silo Angles & Views",
-                "description": "Photograph each unique side of the product package. The 'Front View' should highlight the predominant brand labeling."
+                "description": "Photograph each unique and meaningful side of the product package, presenting the side(s) with centered branding."
             },
             {
                 "step_name": "Silo Lighting",
-                "description": "Ensure products are evenly lit and colors correctly represent the item, avoiding flare or spill."
+                "description": "Products should be evenly lit from side to side and top to bottom to accurately represent the item."
             },
             {
                 "step_name": "Silo Post Production",
-                "description": "Items should be clipped from the background, cleaning any dirt, dust, or stickers."
+                "description": "Items should be clipped from the background and retouched to remove any imperfections."
             },
             {
                 "step_name": "Props",
-                "description": "Be selective with props, avoiding distractions from the product."
+                "description": "Be selective about props and avoid distracting elements in photos."
             },
             {
                 "step_name": "Model Usage",
-                "description": "Diversity is encouraged; use natural expressions and engage models with the product."
+                "description": "Encourage diversity in talent; show models engaging with the product naturally."
             }
         ]
     },
     "graph": [
         {
-            "linkage": "Guideline_Concept -> Guideline_Type -> Image Requirements"
+            "linkage": "Image Styling-(Apparel_Category)->Photo Direction-(Guideline_Type)->image_requirements"
         }
     ],
-    "summary": "The page outlines guidelines for image styling, emphasizing high-quality settings, specific angles and views, effective lighting, post-production editing, prop selection, and model usage to showcase products authentically."
+    "summary": "The document outlines guidelines for photo direction in apparel styling, emphasizing the importance of setting, angles, lighting, post-production, props, and model usage to create high-quality product imagery."
 }

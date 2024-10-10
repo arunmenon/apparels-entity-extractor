@@ -1,10 +1,16 @@
 {
     "apparel_category": "Men\u2019s Apparel",
+    "product_type": [
+        "Snowsuits",
+        "Overalls",
+        "Suits"
+    ],
+    "guideline_concept": "Photo Direction",
     "guidelines": {
         "guideline_type": "Photo Direction",
         "image_requirements": [
             {
-                "step_name": "Hero Image",
+                "step_name": "Hero (Main) Image",
                 "description": "Front facing, cropped above lip to below fingertips."
             },
             {
@@ -13,22 +19,27 @@
             },
             {
                 "step_name": "2nd Alternate",
-                "description": "Back facing, cropped to just below hairline to below finger tips."
+                "description": "Back facing, cropped to just below hairline to below fingertips."
             },
             {
                 "step_name": "3rd Alternate",
                 "description": "Ghost view."
             },
             {
-                "step_name": "4th Alternate (Recommended)",
-                "description": "Highlight embellishments and design elements not captured in required shots if present."
+                "step_name": "4th Alternate",
+                "description": "Alternate detail. Highlight embellishments and design elements not captured in required shots if present."
             }
         ]
     },
     "graph": [
         {
-            "linkage": "Apparel_Category -> Guideline_Type -> Image_Requirements"
+            "linkage": "Men\u2019s Apparel-(Apparel_Category)->Snowsuits-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
+        },
+        {
+            "linkage": "Men\u2019s Apparel-(Apparel_Category)->Overalls-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
+        },
+        {
+            "linkage": "Men\u2019s Apparel-(Apparel_Category)->Suits-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
         }
-    ],
-    "summary": "The page outlines photo direction guidelines for 'Men's Apparel', focusing on 'Snowsuits & Overalls' and 'Suits'. It specifies the required and recommended types of images to capture for each apparel category."
+    ]
 }

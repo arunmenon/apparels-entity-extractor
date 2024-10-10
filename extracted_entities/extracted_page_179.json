@@ -6,34 +6,41 @@
         "Swimsuits",
         "Shapewear"
     ],
-    "guideline_concept": "Attributes for Bras, Lingerie, Swimsuits & Shapewear",
+    "guideline_concept": "Additional Attributes",
     "guidelines": {
-        "guideline_type": "Additional Attributes",
-        "attribute_details": [
+        "guideline_type": "Naming Guidelines",
+        "attribute_requirements": [
             {
                 "step_name": "Bra Size",
-                "description": "Bra size, consisting of band and cup."
+                "description": "Bra size, consisting of band and cup. Use this attribute if the garment has both measurements."
             },
             {
                 "step_name": "Bra Band Size",
-                "description": "Measurement in inches of the band of the bra."
+                "description": "Measurement in inches of the band of the bra, fitting around the ribcage."
             },
             {
                 "step_name": "Bra Cup Size",
-                "description": "Letter size to optimize bra fit."
+                "description": "Letter size to optimize bra fit, using chest measurements."
             },
             {
                 "step_name": "Bra Feature",
-                "description": "Features specific to brassieres."
+                "description": "Features specific to brassieres that garments can have."
             }
         ]
     },
     "graph": [
         {
-            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> attribute_details"
+            "linkage": "All Bras, Lingerie, Swimsuits & Shapewear-(Apparel_Category)->Bras-(Product_Type)->Naming Guidelines-(attribute_requirements)"
         },
         {
-            "linkage": "Guideline_Concept -> Guideline_Type -> attribute_details"
+            "linkage": "All Bras, Lingerie, Swimsuits & Shapewear-(Apparel_Category)->Lingerie-(Product_Type)->Naming Guidelines-(attribute_requirements)"
+        },
+        {
+            "linkage": "All Bras, Lingerie, Swimsuits & Shapewear-(Apparel_Category)->Swimsuits-(Product_Type)->Naming Guidelines-(attribute_requirements)"
+        },
+        {
+            "linkage": "All Bras, Lingerie, Swimsuits & Shapewear-(Apparel_Category)->Shapewear-(Product_Type)->Naming Guidelines-(attribute_requirements)"
         }
-    ]
+    ],
+    "summary": "The page outlines mandatory attributes for bras, lingerie, swimsuits, and shapewear with bras or built-in bras, emphasizing the importance of various size measurements and features to ensure items meet Walmart's style guide standards."
 }

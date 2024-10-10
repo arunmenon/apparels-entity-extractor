@@ -9,33 +9,46 @@
         "guideline_type": "Photo Direction",
         "image_requirements": [
             {
-                "step_name": "Hero (Main) Image",
+                "step_name": "Hero Image",
                 "description": "Front facing, cropped above lip to below fingertips."
             },
             {
-                "step_name": "1st Alternate",
+                "step_name": "1st Alternate for Tops",
                 "description": "Front facing, head to toe, unrecognizable."
             },
             {
-                "step_name": "2nd Alternate",
+                "step_name": "2nd Alternate for Tops",
                 "description": "Back facing, cropped to just below hairline to below fingertips."
             },
             {
-                "step_name": "3rd Alternate",
+                "step_name": "3rd Alternate for Tops",
+                "description": "Ghost view."
+            },
+            {
+                "step_name": "1st Alternate for Bottoms",
+                "description": "Front facing, crop approx. 2\u201d above garment (arms down)."
+            },
+            {
+                "step_name": "2nd Alternate for Bottoms",
+                "description": "Back facing, crop approx. 2\u201d above garment (arms down)."
+            },
+            {
+                "step_name": "3rd Alternate for Bottoms",
                 "description": "Ghost view."
             },
             {
                 "step_name": "4th Alternate",
-                "description": "Alternate detail. Highlight embellishments and design elements not captured in required shots if present."
+                "description": "Highlight embellishments and design elements not captured in required shots if present."
             }
         ]
     },
     "graph": [
         {
-            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> image_requirements"
+            "linkage": "Women's Apparel-(Apparel_Category)->Tops-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
         },
         {
-            "linkage": "Guideline_Concept -> Guideline_Type -> image_requirements"
+            "linkage": "Women's Apparel-(Apparel_Category)->Bottoms-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
         }
-    ]
+    ],
+    "summary": "The page provides photo direction guidelines for Women's Apparel, detailing requirements and recommendations for capturing images of tops and bottoms. It specifies steps for hero images, alternates, and highlights the need to showcase design details."
 }

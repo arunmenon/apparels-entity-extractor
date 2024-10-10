@@ -1,9 +1,6 @@
 {
     "apparel_category": "Men\u2019s Apparel",
-    "product_type": [
-        "Tops",
-        "Bottoms"
-    ],
+    "product_type": "Tops",
     "guideline_concept": "Photo Direction",
     "guidelines": {
         "guideline_type": "Photo Direction",
@@ -32,10 +29,8 @@
     },
     "graph": [
         {
-            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> image_requirements"
-        },
-        {
-            "linkage": "Guideline_Concept -> Guideline_Type -> image_requirements"
+            "linkage": "Men\u2019s Apparel-(Apparel_Category)->Tops-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
         }
-    ]
+    ],
+    "summary": "The document outlines photo direction requirements for men's apparel, specifically for tops and bottoms. It lists required images, including the main image and various alternates to showcase different views and details."
 }

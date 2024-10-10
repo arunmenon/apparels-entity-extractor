@@ -1,5 +1,5 @@
 {
-    "apparel_category": "Women\u2019s Intimates",
+    "apparel_category": "Women's Intimates",
     "product_type": [
         "Camisoles",
         "Lingerie Tops",
@@ -10,53 +10,33 @@
         "guideline_type": "Photo Direction",
         "image_requirements": [
             {
-                "step_name": "Camisoles/Lingerie Tops - Hero Image",
+                "step_name": "Hero Image",
                 "description": "Front facing, cropped above lip to below fingertips."
             },
             {
-                "step_name": "Camisoles/Lingerie Tops - 1st Alternate",
+                "step_name": "1st Alternate",
                 "description": "Front facing, head to toe, unrecognizable."
             },
             {
-                "step_name": "Camisoles/Lingerie Tops - 2nd Alternate",
+                "step_name": "2nd Alternate",
                 "description": "Back facing, cropped to just below hairline to below fingertips."
             },
             {
-                "step_name": "Camisoles/Lingerie Tops - 3rd Alternate",
+                "step_name": "3rd Alternate",
                 "description": "Ghost view."
             },
             {
-                "step_name": "Camisoles/Lingerie Tops - 4th Alternate",
-                "description": "Highlight embellishments and design elements not captured in required shots if present."
-            },
-            {
-                "step_name": "Lingerie Skirt Bottoms - Hero Image",
-                "description": "Front facing, crop approx 2 above garment (arms down)."
-            },
-            {
-                "step_name": "Lingerie Skirt Bottoms - 1st Alternate",
-                "description": "Front facing, head to toe, unrecognizable."
-            },
-            {
-                "step_name": "Lingerie Skirt Bottoms - 2nd Alternate",
-                "description": "Back facing, crop approx. 2' above garment (arms down)."
-            },
-            {
-                "step_name": "Lingerie Skirt Bottoms - 3rd Alternate",
-                "description": "Ghost view."
-            },
-            {
-                "step_name": "Lingerie Skirt Bottoms - 4th Alternate",
-                "description": "Highlight embellishments and design elements not captured in required shots if present."
+                "step_name": "4th Alternate",
+                "description": "Alternate detail. Highlight embellishments and design elements not captured in required shots if present."
             }
         ]
     },
     "graph": [
         {
-            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> image_requirements"
+            "linkage": "Women's Intimates-(Apparel_Category)->Camisoles-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
         },
         {
-            "linkage": "guideline_concept -> guideline_type -> image_requirements"
+            "linkage": "Women's Intimates-(Apparel_Category)->Lingerie Skirt Bottoms-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
         }
     ]
 }

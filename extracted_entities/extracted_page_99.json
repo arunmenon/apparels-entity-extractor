@@ -1,10 +1,16 @@
 {
-    "apparel_category": "Men\u2019s Upper Body",
-    "product_type": "Tops, Jackets, Sweaters, Sweatshirts, Hoodies, Outerwear",
+    "apparel_category": "Men's Upper Body",
+    "product_type": [
+        "Tops",
+        "Outerwear",
+        "Active Shirts",
+        "Golf Shirts",
+        "Performance Polos"
+    ],
     "guideline_concept": "Key Feature Directions",
     "guidelines": {
         "guideline_type": "Key Feature Directions",
-        "features": [
+        "context_specific_label": [
             {
                 "step_name": "Material",
                 "description": "Fabric content including linings & any trims 5% or more or makeup."
@@ -31,7 +37,7 @@
             },
             {
                 "step_name": "Closure",
-                "description": "Pullover style, Half-zip front, Zipper front, etc."
+                "description": "Pullover style, Half-zip front, Zipper front, Button front closure, Back button with keyhole, etc."
             },
             {
                 "step_name": "Sleeves",
@@ -44,13 +50,28 @@
             {
                 "step_name": "Features",
                 "description": "Trims, special hems, decorative details, unlined or lined, etc."
+            },
+            {
+                "step_name": "Weight",
+                "description": "Lightweight, Midweight, Heavyweight, Fine gauge, etc."
             }
         ]
     },
     "graph": [
         {
-            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> features"
+            "linkage": "Men's Upper Body-(Apparel_Category)->Tops-(Product_Type)->Key Feature Directions-(Guideline_Type)->Key Feature Directions"
+        },
+        {
+            "linkage": "Men's Upper Body-(Apparel_Category)->Outerwear-(Product_Type)->Key Feature Directions-(Guideline_Type)->Key Feature Directions"
+        },
+        {
+            "linkage": "Men's Upper Body-(Apparel_Category)->Active Shirts-(Product_Type)->Key Feature Directions-(Guideline_Type)->Key Feature Directions"
+        },
+        {
+            "linkage": "Men's Upper Body-(Apparel_Category)->Golf Shirts-(Product_Type)->Key Feature Directions-(Guideline_Type)->Key Feature Directions"
+        },
+        {
+            "linkage": "Men's Upper Body-(Apparel_Category)->Performance Polos-(Product_Type)->Key Feature Directions-(Guideline_Type)->Key Feature Directions"
         }
-    ],
-    "summary": "The guidelines for Men's Upper Body apparel include detailed specifications on materials, care instructions, country of origin, size, fit, and design features."
+    ]
 }

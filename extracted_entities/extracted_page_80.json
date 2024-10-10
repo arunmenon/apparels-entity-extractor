@@ -7,25 +7,29 @@
         "writing_guidelines": [
             {
                 "step_name": "Using the Right Voice",
-                "description": "Deliver a friendly, straightforward & authentic tone that embodies Walmart's ideals."
+                "description": "Deliver a friendly, straightforward, and authentic tone that embodies Walmart's ideals."
             },
             {
-                "step_name": "You Should",
-                "description": "Use an active voice, speak to benefits, and say more with fewer words."
+                "step_name": "Attributes of Walmart Voice",
+                "description": "Use attributes like Charming, Positive, Caring, Genuine, etc. for effective communication."
             },
             {
-                "step_name": "You Should Avoid",
-                "description": "Avoid hyperbolic statements, guarantees, and all-caps usage."
+                "step_name": "Use an Active Voice",
+                "description": "Promote active language rather than passive to highlight product benefits clearly."
             },
             {
-                "step_name": "Base-Variant Copy",
-                "description": "Do not include color and size information in base-variant copy."
+                "step_name": "Speak to Benefits",
+                "description": "Focus on the benefits of products in descriptions to enhance understanding."
+            },
+            {
+                "step_name": "Say More with Fewer Words",
+                "description": "Use concise language for clear communication, avoiding unnecessary length."
             }
         ]
     },
     "graph": [
         {
-            "linkage": "Guideline_Concept -> Guideline_Type -> writing_guidelines"
+            "linkage": "Copy Standards-(Guideline_Concept)->Copy Standards-(Guideline_Type)->writing_guidelines"
         }
     ]
 }

@@ -1,24 +1,36 @@
 {
-    "apparel_category": null,
-    "product_type": null,
-    "guideline_concept": "Apparel Attributes",
+    "apparel_category": "General Apparel Attributes",
+    "product_type": "Clothing Size",
+    "guideline_concept": "Clothing Size Group",
     "guidelines": {
-        "guideline_type": "Attributes",
-        "attributes": [
+        "guideline_type": "Attribute Guidelines",
+        "clothing_size_group": [
             {
-                "step_name": "Clothing Size Group",
+                "step_name": "Definition",
                 "description": "The common sizing groups used by the retail clothing industry."
             },
             {
-                "step_name": "Clothing Size",
-                "description": "Clothing size as it appears on the garment label."
+                "step_name": "Examples",
+                "description": "Includes groups such as Women, Men's, Big & Tall, Petite, Shorts, Maternity, Infant, Toddler, etc."
+            }
+        ],
+        "clothing_size": [
+            {
+                "step_name": "Definition",
+                "description": "Clothing size as it appears on the garment label, including general sizes (S, M, L) and numbered sizes (2, 4, 6, etc.)."
+            },
+            {
+                "step_name": "Examples",
+                "description": "Sizes such as One Size, 2, 22, 10-12, M, M-L, 4P, 20 Plus, etc."
             }
         ]
     },
     "graph": [
         {
-            "linkage": "Guideline_Concept -> Guideline_Type -> Attributes"
+            "linkage": "General Apparel Attributes-(Apparel_Category)->Clothing Size-(Product_Type)->Attribute Guidelines-(Guideline_Type)->clothingSizeGroup"
+        },
+        {
+            "linkage": "General Apparel Attributes-(Apparel_Category)->Clothing Size-(Product_Type)->Attribute Guidelines-(Guideline_Type)->clothingSize"
         }
-    ],
-    "summary": "This page outlines the common sizing groups and the clothing sizes for various apparel items as required in the Walmart fashion apparel attributes guidelines."
+    ]
 }

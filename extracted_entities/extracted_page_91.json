@@ -7,16 +7,33 @@
         "naming_formula": [
             {
                 "step_name": "Global Brand License",
-                "description": "Add 'by' + Brand + Product Line + Dress Style/Jacket Style/Jacket Breasting Style/Jacket Length/Clothing Neck Style/Collar Type/Clothing Top Style/Sleeve Style/Sleeve Length Style/Pant Style/Pant Leg Cut/Pant Length/Shorts Style/Clothing Bottoms Panel Style/Clothing Length Style/Skirt Style/Clothing Weight/Fill Material/Clothing Fit/Features/Activity/Pattern/Character/Theme/Ocasion/Sports League/Sports Team/Fabric Material Name + Clothing Type + Count Per Pack + (Clothing Size Group)"
+                "description": "'+' indicating presence of Global Brand License"
+            },
+            {
+                "step_name": "Brand",
+                "description": "'+' Brand of the product"
+            },
+            {
+                "step_name": "Product Line",
+                "description": "'+' Name of the product line"
+            },
+            {
+                "step_name": "Dress Style",
+                "description": "'+' Dress Style (if applicable)"
+            },
+            {
+                "step_name": "Clothing Attributes",
+                "description": "'+' Details like Sleeve Length, Jacket Style, etc."
+            },
+            {
+                "step_name": "Clothing Type",
+                "description": "'+' Type of clothing, e.g., Count Per Pack"
             }
         ]
     },
     "graph": [
         {
-            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> naming_formula"
-        },
-        {
-            "linkage": "Guideline_Concept -> Guideline_Type -> naming_formula"
+            "linkage": "Uniforms/Scrubs & Traditional Garments-(Apparel_Category)->Traditional Garments-(Product_Type)->Naming Guidelines-(Guideline_Type)->naming_formula"
         }
     ]
 }

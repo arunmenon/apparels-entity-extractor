@@ -1,30 +1,36 @@
 {
     "apparel_category": "Men\u2019s Upper Body",
     "product_type": "T-Shirts",
-    "guideline_concept": "Product Packaging Guidelines",
+    "guideline_concept": "Image Requirements",
     "guidelines": {
         "guideline_type": "Photo Direction",
         "image_requirements": [
             {
-                "step_name": "Required Packaging Images",
-                "description": "Product packaging images will be required for all product sold in stores in 'packaging'."
-            },
-            {
-                "step_name": "Usage of Images",
+                "step_name": "Purpose of Packaging Images",
                 "description": "These images will be used by the Store Ops teams to help locate product in stores for customers who purchase online and choose to 'Pick Up In Store'."
             },
             {
-                "step_name": "Image Designation",
+                "step_name": "Requirement Status",
+                "description": "Yes. The image studio has been taking photos of products in packaging for the last year now, it is required."
+            },
+            {
+                "step_name": "Required Product Categories",
+                "description": "All product categories that are sold in packaging in stores."
+            },
+            {
+                "step_name": "Designated Shot",
                 "description": "Packaging product shots will continue to be designated as the 1st alternate shot online \u2013 the primary shot being out of packaging and/or on model."
+            },
+            {
+                "step_name": "Update Note",
+                "description": "If updates are made to packaging, vendors must send updated imagery or packaging to shoot."
             }
         ]
     },
     "graph": [
         {
-            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> Image_Requirements"
-        },
-        {
-            "linkage": "Guideline_Concept -> Guideline_Type -> Image_Requirements"
+            "linkage": "Men\u2019s Upper Body-(Apparel_Category)->T-Shirts-(Product_Type)->Photo Direction-(Guideline_Type)->Image Requirements"
         }
-    ]
+    ],
+    "summary": "The document outlines the requirements for product packaging images necessary for all apparel sold in stores. It specifies the importance of these images for store operations, confirms their necessity, and details the required categories, shot designations, and update protocols."
 }

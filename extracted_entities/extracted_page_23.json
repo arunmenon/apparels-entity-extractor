@@ -1,5 +1,5 @@
 {
-    "apparel_category": "Women\u2019s Apparel",
+    "apparel_category": "Women's Apparel",
     "product_type": [
         "Fashion Jackets",
         "Coats & Outerwear (Full Body)"
@@ -32,10 +32,11 @@
     },
     "graph": [
         {
-            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> image_requirements"
+            "linkage": "Women's Apparel-(Apparel_Category)->Fashion Jackets-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
         },
         {
-            "linkage": "Guideline_Concept -> Guideline_Type -> image_requirements"
+            "linkage": "Women's Apparel-(Apparel_Category)->Coats & Outerwear (Full Body)-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
         }
-    ]
+    ],
+    "summary": "The page outlines photo direction guidelines for Women's Apparel, specifically for Fashion Jackets and Coats & Outerwear. It details the required images and additional recommendations for displaying the garments."
 }

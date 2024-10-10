@@ -11,7 +11,7 @@
             },
             {
                 "step_name": "1st Alternate",
-                "description": "Back facing, crop approx. 2\" above garment (arms down)."
+                "description": "Back facing, crop approx. 2\u201d above garment (arms down)."
             },
             {
                 "step_name": "2nd Alternate",
@@ -19,16 +19,13 @@
             },
             {
                 "step_name": "3rd Alternate",
-                "description": "Highlight embellishments and design elements not captured in required shots if present."
+                "description": "Alternate detail. Highlight embellishments and design elements not captured in required shots if present."
             }
         ]
     },
     "graph": [
         {
-            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> image_requirements"
-        },
-        {
-            "linkage": "Guideline_Concept -> Guideline_Type -> image_requirements"
+            "linkage": "Men\u2019s Swimwear-(Apparel_Category)->Swimwear Parkas-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
         }
     ]
 }

@@ -1,10 +1,10 @@
 {
-    "apparel_category": "Additional Features",
+    "apparel_category": null,
     "product_type": null,
-    "guideline_concept": null,
+    "guideline_concept": "Additional Features",
     "guidelines": {
         "guideline_type": "Naming Guidelines",
-        "attribute_definitions": [
+        "feature_attributes": [
             {
                 "step_name": "Attribute",
                 "description": "The distinguishing characteristics of a product that describe its appearance, components, and capabilities."
@@ -15,11 +15,11 @@
             },
             {
                 "step_name": "Description",
-                "description": "Features often highlight the usefulness/advantages of the product to consumers. Input each feature as a unique value."
+                "description": "Features often highlight the usefulness/advantages of the product to consumers."
             },
             {
                 "step_name": "Examples/Value List",
-                "description": "A list of attributes such as Abrasion Resistant, Breathable, Quick Drying, etc."
+                "description": "List of potential features applicable to products."
             },
             {
                 "step_name": "List Type",
@@ -37,8 +37,7 @@
     },
     "graph": [
         {
-            "linkage": "Apparel_Category -> Guideline_Type -> attribute_definitions"
+            "linkage": "Additional Features-(Guideline_Concept)->Naming Guidelines-(Guideline_Type)->feature_attributes"
         }
-    ],
-    "summary": "The page lists various attributes related to apparel features, providing definitions, examples, and guidelines for naming these features. It emphasizes the importance of specifying each feature individually and allows for multiple values."
+    ]
 }

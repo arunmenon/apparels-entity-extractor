@@ -1,29 +1,26 @@
 {
-    "apparel_category": "All Sets & Suits",
-    "product_type": [
-        "Clothing Sets",
-        "All Suits - Tuxedos, Two-piece suits, Three-piece suits"
-    ],
+    "apparel_category": "Clothing Sets",
+    "product_type": "N/A",
     "guideline_concept": "Product Naming Guidelines",
     "guidelines": {
         "guideline_type": "Naming Guidelines",
-        "naming_formulas": [
+        "naming_formula": [
             {
-                "step_name": "Clothing Sets",
-                "description": "Global Brand License ' + 'by' + Brand + Product Line + Jacket Style/Jacket Breasting Style/Jacket Length/Clothing Neck Style/Upper Body Strap Configuration/Clothing Back Style/Clothing Shoulder Style/Clothing Top Style/Sleeve Style/Sleeve Length Style/Pant Style/Pant Length/Shorts Style/Clothing Length Style/Skirt Style/Clothing Fit/Features/Activity/Pattern/Character/Theme/Occasion/Sports League/Sports Team/Fabric Material Name, Clothing Type + Count Per Pack + (Clothing Size Group)"
+                "step_name": "Formula",
+                "description": "Global Brand License + ' by ' + Brand + Product Line + Jacket Style/Jacket Breasting Style/Jacket Length/Clothing Neck Style/Upper Body Strap Configuration/Clothing Back Style/Clothing Shoulder Style/Clothing Top Style/Sleeve Style/Sleeve Length Style/Pant Style/Pant Leg Cut/Pant Length/Shorts Style/Clothing Length Style/Skirt Style/Clothing Fit/Features/Activity/Pattern/Character/Theme/Occasion/Sports League/Sports Team/Fabric Material Name + Clothing Type + Count Per Pack + (Clothing Size Group)"
             },
             {
-                "step_name": "All Suits",
-                "description": "Global Brand License ' + 'by' + Brand + Product Line + Jacket Style/Jacket Breasting Style/Jacket Length/Collar Type/Sleeve Style/Sleeve Length Style/Pant Leg Cut/Clothing Fit/Features/Activity/Pattern/Character/Theme/Occasion/Sports League/Sports Team/Fabric Material Name, Clothing Type + Count Per Pack + (Clothing Size Group)"
+                "step_name": "Example",
+                "description": "Time and Tru Long Sleeve Blouse & Boot Cut Pant Set (Women's)"
             }
         ]
     },
     "graph": [
         {
-            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> naming_formulas"
+            "linkage": "Clothing Sets-(Apparel_Category)->N/A-(Product_Type)->Naming Guidelines-(Guideline_Type)->naming_formula"
         },
         {
-            "linkage": "Guideline_Concept -> Guideline_Type -> naming_formulas"
+            "linkage": "Product Naming Guidelines-(Guideline_Concept)->Naming Guidelines-(Guideline_Type)->naming_formula"
         }
     ]
 }

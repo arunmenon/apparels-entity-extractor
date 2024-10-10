@@ -1,0 +1,24 @@
+{
+    "apparel_category": null,
+    "product_type": null,
+    "guideline_concept": "Content Standards",
+    "guidelines": {
+        "guideline_type": "Copy Standards",
+        "writing_guidelines": [
+            {
+                "step_name": "Importance of Content Standards",
+                "description": "Complete and consistent high-quality content drives sales, increases customer satisfaction, lowers return rates, and improves discoverability."
+            },
+            {
+                "step_name": "What is 'good' content?",
+                "description": "Content that provides complete, accurate, relevant, and engaging information."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Content Standards-(Guideline_Concept)->Copy Standards-(Guideline_Type)->writing_guidelines"
+        }
+    ],
+    "summary": "The content emphasizes the importance of high-quality product information, highlighting that good content can drive sales, enhance customer satisfaction, and improve product discoverability. It categorizes 'good' content as complete, accurate, relevant, and engaging."
+}

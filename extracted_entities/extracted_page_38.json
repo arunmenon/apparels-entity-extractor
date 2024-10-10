@@ -23,16 +23,15 @@
             {
                 "step_name": "3rd Alternate",
                 "description": "Ghost view."
-            },
-            {
-                "step_name": "4th Alternate",
-                "description": "Alternate detail. Highlight embellishments and design elements not captured in required shots if present."
             }
         ]
     },
     "graph": [
         {
-            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> image_requirements"
+            "linkage": "Loungewear-(Apparel_Category)->Loungewear Tops-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
+        },
+        {
+            "linkage": "Loungewear-(Apparel_Category)->Loungewear Bottoms-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
         }
     ]
 }

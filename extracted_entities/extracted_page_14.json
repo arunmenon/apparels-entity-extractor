@@ -1,0 +1,51 @@
+{
+    "apparel_category": null,
+    "product_type": null,
+    "guideline_concept": "Photo Direction",
+    "guidelines": {
+        "guideline_type": "Photo Direction",
+        "image_requirements": [
+            {
+                "step_name": "File Format & Encoding",
+                "description": "JPEG; High Res Quality"
+            },
+            {
+                "step_name": "File Size",
+                "description": "Minimum dimension of file is: 2500 px; Maximum 36 px"
+            },
+            {
+                "step_name": "Lighting",
+                "description": "Use professional studio lighting. Studio lighting should not produce any harsh shadows or bright back-lighting."
+            },
+            {
+                "step_name": "Camera Positioning",
+                "description": "Do NOT shoot the products from far away and crop. Move the camera closer to the model or mannequin."
+            },
+            {
+                "step_name": "Model or Mannequin",
+                "description": "It is preferred you use a fit model. The model should stand with a straight pose, with no hip rotation or fixed limb movement."
+            },
+            {
+                "step_name": "Mannequin Selection",
+                "description": "Consider a mannequin with joints for better adjustment for special clothing features."
+            },
+            {
+                "step_name": "Mannequin Color",
+                "description": "The mannequin color should be white; other colors can make it hard for the program to recognize."
+            },
+            {
+                "step_name": "Framing the Model",
+                "description": "The model's face should be out of frame when capturing."
+            },
+            {
+                "step_name": "Image Provisions",
+                "description": "Flat-lay images cannot be used. Products require volume of a body to work."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Photo Direction-(Guideline_Concept)->Photo Direction-(Guideline_Type)->Image Requirements"
+        }
+    ]
+}

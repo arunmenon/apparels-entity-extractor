@@ -2,8 +2,8 @@
     "apparel_category": "Baby Layette & Gift Sets",
     "guideline_concept": "Attributes",
     "guidelines": {
-        "guideline_type": "Additional Attributes",
-        "attribute_requirements": [
+        "guideline_type": "Naming Guidelines",
+        "attribute_guidelines": [
             {
                 "step_name": "Diaper Size",
                 "description": "Specific size relating to diapers."
@@ -14,22 +14,22 @@
             },
             {
                 "step_name": "Text",
-                "description": "This is the predominant text displayed on an item, representing the theme or headline."
+                "description": "The predominant text displayed on an item. Not intended to necessarily be inclusive of every single word that is present on the product."
             },
             {
                 "step_name": "Jacket Style",
-                "description": "Describes the style of the jacket, including options like Bomber and Cardigan."
+                "description": "The style of jackets available, such as Bomber, Cardigan, Denim, etc."
             },
             {
                 "step_name": "Skirt Style",
-                "description": "Describes the style of the skirt, including options like A-Frame and Bubble."
+                "description": "The style of skirts available, such as A-Frame, Bubble, Flare, etc."
             }
         ]
     },
     "graph": [
         {
-            "linkage": "Apparel_Category -> Guideline_Concept -> Additional Attributes"
+            "linkage": "Baby Layette & Gift Sets-(Apparel_Category)->Attributes-(Guideline_Concept)->Naming Guidelines-(Guideline_Type)->attribute_guidelines"
         }
     ],
-    "summary": "This page outlines additional attributes for the Baby Layette & Gift Sets, detailing specific attributes like Diaper Size, Season, Text, Jacket Style, and Skirt Style along with their descriptions."
+    "summary": "The page outlines additional attributes for Baby Layette & Gift Sets, including specifics on Diaper Size, Season, Text, Jacket Style, and Skirt Style. Each attribute includes a description and examples where relevant."
 }

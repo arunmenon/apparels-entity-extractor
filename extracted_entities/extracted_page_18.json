@@ -2,14 +2,16 @@
     "apparel_category": "Women\u2019s Apparel",
     "product_type": [
         "Dresses",
-        "Rompers, Jumpsuits, and Overalls"
+        "Rompers",
+        "Jumpsuits",
+        "Overalls"
     ],
-    "guideline_concept": "Photo Direction",
+    "guideline_concept": null,
     "guidelines": {
         "guideline_type": "Photo Direction",
         "image_requirements": [
             {
-                "step_name": "Hero Image",
+                "step_name": "Hero (Main) Image",
                 "description": "Front facing, head to toe, unrecognizable."
             },
             {
@@ -25,17 +27,23 @@
                 "description": "Ghost view."
             },
             {
-                "step_name": "4th Alternate (Recommended)",
-                "description": "Highlight embellishments and design elements not captured in required shots if present."
+                "step_name": "4th Alternate",
+                "description": "Alternate detail. Highlight embellishments and design elements not captured in required shots if present."
             }
         ]
     },
     "graph": [
         {
-            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> image_requirements"
+            "linkage": "Women\u2019s Apparel-(Apparel_Category)->Dresses-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
         },
         {
-            "linkage": "Guideline_Concept -> Guideline_Type -> image_requirements"
+            "linkage": "Women\u2019s Apparel-(Apparel_Category)->Rompers-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
+        },
+        {
+            "linkage": "Women\u2019s Apparel-(Apparel_Category)->Jumpsuits-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
+        },
+        {
+            "linkage": "Women\u2019s Apparel-(Apparel_Category)->Overalls-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
         }
     ]
 }

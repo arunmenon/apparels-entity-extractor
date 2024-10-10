@@ -1,7 +1,12 @@
 {
-    "apparel_category": "Robes",
-    "product_type": null,
-    "guideline_concept": null,
+    "apparel_category": "Women\u2019s Apparel",
+    "product_type": [
+        "Robes",
+        "Slips",
+        "Nightgowns",
+        "Sleepshirts"
+    ],
+    "guideline_concept": "Photo Direction",
     "guidelines": {
         "guideline_type": "Photo Direction",
         "image_requirements": [
@@ -25,8 +30,16 @@
     },
     "graph": [
         {
-            "linkage": "Apparel_Category -> Guideline_Type -> image_requirements"
+            "linkage": "Women\u2019s Apparel-(Apparel_Category)->Robes-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
+        },
+        {
+            "linkage": "Women\u2019s Apparel-(Apparel_Category)->Slips-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
+        },
+        {
+            "linkage": "Women\u2019s Apparel-(Apparel_Category)->Nightgowns-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
+        },
+        {
+            "linkage": "Women\u2019s Apparel-(Apparel_Category)->Sleepshirts-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
         }
-    ],
-    "summary": "The page outlines photo direction requirements for 'Robes' in the Women & Men's Apparel category, including specific image steps for various views and optional details."
+    ]
 }

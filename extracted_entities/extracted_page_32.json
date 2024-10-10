@@ -1,37 +1,53 @@
 {
     "apparel_category": "Women\u2019s Intimates",
     "product_type": [
-        "Bras",
-        "Panties"
+        "Lingerie (Bras)",
+        "Lingerie (Panties)"
     ],
     "guideline_concept": "Photo Direction",
     "guidelines": {
         "guideline_type": "Photo Direction",
         "image_requirements": [
             {
-                "step_name": "Hero (Main) Image",
+                "step_name": "Hero (Main) Image for Bras",
                 "description": "Front facing, cropped above lip to above belly button."
             },
             {
-                "step_name": "1st Alternate",
+                "step_name": "1st Alternate for Bras",
                 "description": "Back facing, cropped in to garment."
             },
             {
-                "step_name": "2nd Alternate",
+                "step_name": "2nd Alternate for Bras",
                 "description": "Ghost view."
             },
             {
-                "step_name": "3rd Alternate",
+                "step_name": "3rd Alternate for Bras (Recommended)",
+                "description": "Alternate detail. Highlight embellishments and design elements not captured in required shots if present."
+            },
+            {
+                "step_name": "Hero (Main) Image for Panties",
+                "description": "Front facing, crop above belly button to above knee (arms up)."
+            },
+            {
+                "step_name": "1st Alternate for Panties",
+                "description": "Back facing, cropped in to garment (arms up)."
+            },
+            {
+                "step_name": "2nd Alternate for Panties",
+                "description": "Ghost view."
+            },
+            {
+                "step_name": "3rd Alternate for Panties (Recommended)",
                 "description": "Alternate detail. Highlight embellishments and design elements not captured in required shots if present."
             }
         ]
     },
     "graph": [
         {
-            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> image_requirements"
+            "linkage": "Women\u2019s Intimates-(Apparel_Category)->Lingerie (Bras)-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
         },
         {
-            "linkage": "Guideline_Concept -> Guideline_Type -> image_requirements"
+            "linkage": "Women\u2019s Intimates-(Apparel_Category)->Lingerie (Panties)-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
         }
     ]
 }

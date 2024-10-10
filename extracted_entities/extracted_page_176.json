@@ -3,18 +3,18 @@
     "product_type": null,
     "guideline_concept": null,
     "guidelines": {
-        "guideline_type": "Attributes",
-        "attribute_requirements": [
+        "guideline_type": "Additional Attributes",
+        "clothing_length_style": [
             {
-                "step_name": "Clothing Length Style",
+                "step_name": "clothingLengthStyle",
                 "description": "Descriptive terms for where on the lower-body a garment ends."
             }
         ]
     },
     "graph": [
         {
-            "linkage": "Apparel_Category -> Guideline_Type -> attribute_requirements"
+            "linkage": "All Skirts, Dresses, Gowns, Slips & Robes-(Apparel_Category)->clothingLengthStyle-(Attribute)->Additional Attributes-(Guideline_Type)->clothing_length_style"
         }
     ],
-    "summary": "The page outlines the mandatory attribute 'Clothing Length Style' for apparel items, specifying descriptive terms that categorize how garment lengths are defined."
+    "summary": "This section outlines additional mandatory attributes for skirts, dresses, gowns, slips, and robes, specifically focusing on clothing length style. It includes a key and description for 'clothingLengthStyle', listing various acceptable terms for garment lengths."
 }

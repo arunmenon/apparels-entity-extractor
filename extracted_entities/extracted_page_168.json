@@ -1,0 +1,24 @@
+{
+    "apparel_category": "Pantyhose & Tights",
+    "product_type": "Tights",
+    "guideline_concept": "Attributes",
+    "guidelines": {
+        "guideline_type": "Grouping Standards",
+        "attribute_requirements": [
+            {
+                "step_name": "Hosiery Style",
+                "description": "Styles/features specific to tights and hosiery."
+            },
+            {
+                "step_name": "Sheerness",
+                "description": "Sheerness/opacities specific to tights and hosiery."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Pantyhose & Tights-(Apparel_Category)->Tights-(Product_Type)->Grouping Standards-(Guideline_Type)->attribute_requirements"
+        }
+    ],
+    "summary": "This page outlines additional mandatory attributes for Pantyhose & Tights items, detailing specific styles and sheerness related to hosiery."
+}

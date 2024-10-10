@@ -23,19 +23,15 @@
             {
                 "step_name": "3rd Alternate",
                 "description": "Ghost view."
-            },
-            {
-                "step_name": "Recommended 3rd Alternate",
-                "description": "Alternate detail. Highlight embellishments and design elements not captured in required shots if present."
             }
         ]
     },
     "graph": [
         {
-            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> image_requirements"
+            "linkage": "Women\u2019s Intimates-(Apparel_Category)->Lingerie (Bras)-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
         },
         {
-            "linkage": "Guideline_Concept -> Guideline_Type -> image_requirements"
+            "linkage": "Women\u2019s Intimates-(Apparel_Category)->Lingerie (Panties)-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
         }
     ]
 }

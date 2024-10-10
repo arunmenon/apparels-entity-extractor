@@ -1,39 +1,53 @@
 {
-    "apparel_category": "Men\u2019s Apparel",
+    "apparel_category": "Men's Apparel",
     "product_type": [
         "Thermal Tops",
         "Thermal & Sleepwear Sets"
     ],
-    "guideline_concept": "Photo Direction",
+    "guideline_concept": null,
     "guidelines": {
         "guideline_type": "Photo Direction",
         "image_requirements": [
             {
-                "step_name": "Hero (Main) Image",
+                "step_name": "Thermal Tops - Hero Image",
                 "description": "Front facing, cropped above the lip to below fingertips."
             },
             {
-                "step_name": "1st Alternate",
+                "step_name": "Thermal Tops - 1st Alternate",
                 "description": "Front facing, head to toe, unrecognizable."
             },
             {
-                "step_name": "2nd Alternate",
-                "description": "Back facing, head to toe, unrecognizable."
+                "step_name": "Thermal Tops - 2nd Alternate",
+                "description": "Back facing, cropped to just below hairline to below fingertips."
             },
             {
-                "step_name": "3rd Alternate",
+                "step_name": "Thermal Tops - 3rd Alternate",
                 "description": "Ghost view."
             },
             {
-                "step_name": "Recommended: Additional Alternates",
+                "step_name": "Thermal & Sleepwear Sets - Hero Image",
+                "description": "Front facing, head to toe, flat shot, unrecognizable."
+            },
+            {
+                "step_name": "Thermal & Sleepwear Sets - 1st Alternate",
+                "description": "Ghost view."
+            },
+            {
+                "step_name": "Thermal & Sleepwear Sets - 2nd Alternate",
+                "description": "Back facing, head to toe, unrecognizable."
+            },
+            {
+                "step_name": "Additional Alternates",
                 "description": "Zoom image of garment detail, pattern, and/or ghost views. Highlight embellishments and design elements not captured in required shots, when present."
             }
         ]
     },
     "graph": [
         {
-            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> image_requirements"
+            "linkage": "Men's Apparel-(Apparel_Category)->Thermal Tops-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
+        },
+        {
+            "linkage": "Men's Apparel-(Apparel_Category)->Thermal & Sleepwear Sets-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
         }
-    ],
-    "summary": "The page provides photo direction guidelines for Men's Apparel, focusing on Thermal Tops and Thermal & Sleepwear Sets. It specifies required images for each product type along with additional recommendations for showcasing garment details."
+    ]
 }

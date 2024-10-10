@@ -1,39 +1,26 @@
 {
     "apparel_category": "Children\u2019s Apparel",
-    "product_type": [
-        "12-Piece Set",
-        "14-Piece Set"
-    ],
-    "guideline_concept": null,
+    "product_type": "12-Piece Set",
+    "guideline_concept": "Photo Direction",
     "guidelines": {
         "guideline_type": "Photo Direction",
         "image_requirements": [
             {
-                "step_name": "12-Piece Set Hero Image",
-                "description": "Front facing, straight on, lay down all pieces in set."
+                "step_name": "Hero (Main) Image",
+                "description": "Front facing, straight on, lay down of all pieces in set."
             },
             {
-                "step_name": "12-Piece Set Alternates",
+                "step_name": "1st - 6th Alternates",
                 "description": "Individual shots of each outfit in pack."
-            },
-            {
-                "step_name": "14-Piece Set Hero Image",
-                "description": "Front facing, straight on, lay down all pieces in set."
-            },
-            {
-                "step_name": "14-Piece Set Alternates",
-                "description": "Individual shots of each outfit in pack."
-            },
-            {
-                "step_name": "Styling Note",
-                "description": "Style tops over pants. Pant should not be covering any part of the shirts."
             }
         ]
     },
     "graph": [
         {
-            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> image_requirements"
+            "linkage": "Children\u2019s Apparel-(Apparel_Category)->12-Piece Set-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
+        },
+        {
+            "linkage": "Children\u2019s Apparel-(Apparel_Category)->14-Piece Set-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
         }
-    ],
-    "summary": "The page outlines photo direction for children's apparel, detailing requirements for both 12-piece and 14-piece sets, including hero images and alternate shots for each outfit. Additionally, it provides a styling note regarding the arrangement of tops and pants."
+    ]
 }

@@ -1,6 +1,6 @@
 {
     "apparel_category": "Men\u2019s Apparel",
-    "product_type": "Facemask",
+    "product_type": "Accessories",
     "guideline_concept": "Photo Direction",
     "guidelines": {
         "guideline_type": "Photo Direction",
@@ -33,7 +33,8 @@
     },
     "graph": [
         {
-            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> Image_Requirements"
+            "linkage": "Men\u2019s Apparel-(Apparel_Category)->Accessories-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
         }
-    ]
+    ],
+    "summary": "The page outlines the required photo direction for men's apparel and accessories, detailing specific steps for capturing images of products and accessories in a specified order."
 }

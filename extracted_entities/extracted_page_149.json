@@ -1,10 +1,9 @@
 {
     "apparel_category": "Baptism Gowns & Outfits",
-    "product_type": null,
-    "guideline_concept": null,
+    "guideline_concept": "Attributes",
     "guidelines": {
-        "guideline_type": "Attributes",
-        "attribute_details": [
+        "guideline_type": "Grouping Standards",
+        "attribute_requirements": [
             {
                 "step_name": "Closure Type",
                 "description": "The type of fastener used to keep an item closed and to facilitate putting on the item."
@@ -13,8 +12,7 @@
     },
     "graph": [
         {
-            "linkage": "Apparel_Category -> Attribute Details"
+            "linkage": "Baptism Gowns & Outfits-(Apparel_Category)->Closure Type-(Guideline_Concept)->Grouping Standards-(attribute_requirements)"
         }
-    ],
-    "summary": "This section outlines additional attributes specifically for Baptism Gowns & Outfits items, focusing on closure types and providing examples for proper validation compliance."
+    ]
 }

@@ -1,0 +1,20 @@
+{
+    "apparel_category": null,
+    "product_type": null,
+    "guideline_concept": "Apparel Grouping Standards",
+    "guidelines": {
+        "guideline_type": "Grouping Standards",
+        "context_specific_label": [
+            {
+                "step_name": "Photo Direction",
+                "description": "Specific instructions for each unique apparel grouping."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Apparel Grouping Standards-(Guideline_Concept)->Grouping Standards-(Guideline_Type)->Photo Direction"
+        }
+    ],
+    "summary": "The document outlines apparel grouping standards and provides photo direction for unique apparel groupings."
+}

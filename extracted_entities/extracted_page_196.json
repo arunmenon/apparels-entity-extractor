@@ -1,24 +1,32 @@
 {
     "apparel_category": null,
     "product_type": null,
-    "guideline_concept": "Content Standards",
+    "guideline_concept": "Copy Standards",
     "guidelines": {
-        "guideline_type": "Syndication",
-        "syndication_details": [
+        "guideline_type": "Content Flow",
+        "context_specific_label": [
             {
-                "step_name": "Data Submission",
-                "description": "Submitting existing supplier content through the CCP partner to Walmart."
+                "step_name": "Syndication",
+                "description": "Submitting existing supplier content through the CCP partner to Walmart, ensuring compliance with Walmart\u2019s Style Guides."
             },
             {
-                "step_name": "Validation Checks",
-                "description": "Partners implement validation checks based on Walmart\u2019s Style Guides."
+                "step_name": "Enrichment",
+                "description": "Creating optimized and structured titles and detailed descriptive copy to enhance product visibility and discoverability."
+            },
+            {
+                "step_name": "Rich Media",
+                "description": "Incorporating immersive experiences such as videos, interactive charts, and user manuals to enhance product engagement."
+            },
+            {
+                "step_name": "User Generated Content",
+                "description": "Leveraging customer-created content like reviews and unboxing videos to gain insights and enhance product appeal."
             }
         ]
     },
     "graph": [
         {
-            "linkage": "Guideline_Concept -> Guideline_Type -> syndication_details"
+            "linkage": "Copy Standards-(Guideline_Concept)->Content Flow-(Guideline_Type)->Syndication, Enrichment, Rich Media, User Generated Content-(Context_Specific_Label)"
         }
     ],
-    "summary": "The page outlines the Connected Content Partners (CCPs) program at Walmart, detailing processes for syndication, content enrichment, rich media integration, and user-generated content. It emphasizes the importance of compliance with Walmart's Style Guides and provides an overview of the services offered by CCP partners."
+    "summary": "The document outlines the Connected Content Partners (CCPs) program, focusing on content submission processes, enrichment techniques for product visibility, the use of rich media for engagement, and the importance of user-generated content in enhancing customer insights."
 }

@@ -1,12 +1,13 @@
 {
     "apparel_category": "Reusable Training Pants",
-    "product_type": "Training Pants",
+    "product_type": "",
     "guideline_concept": "Attributes",
     "guidelines": {
-        "guideline_type": "Attribute Guidelines",
-        "attribute_details": [
+        "guideline_type": "Attributes",
+        "attributes": [
             {
                 "attribute_name": "Closure Type",
+                "key": "fastenerType",
                 "description": "The type of fastener used to keep an item closed and to facilitate putting on the item.",
                 "examples": [
                     "Button",
@@ -25,6 +26,7 @@
             },
             {
                 "attribute_name": "Minimum Weight",
+                "key": "minimumWeight",
                 "description": "The lower weight limit or capability of an item, often used in conjunction with 'Maximum Weight'.",
                 "examples": [
                     "20 lbs.",
@@ -36,6 +38,7 @@
             },
             {
                 "attribute_name": "Maximum Weight",
+                "key": "maximumWeight",
                 "description": "The upper weight limit or capability of an item, often used in conjunction with 'Minimum Weight'.",
                 "examples": [
                     "20 lbs.",
@@ -47,6 +50,7 @@
             },
             {
                 "attribute_name": "Season",
+                "key": "season",
                 "description": "If designed to be used during a specific type of year, the appropriate season this item may be used.",
                 "examples": [
                     "All-Season",
@@ -63,8 +67,17 @@
     },
     "graph": [
         {
-            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> attribute_details"
+            "linkage": "Reusable Training Pants-(Apparel_Category)->Attributes-(Guideline_Type)->Closure Type-(Context_Specific_Label)"
+        },
+        {
+            "linkage": "Reusable Training Pants-(Apparel_Category)->Attributes-(Guideline_Type)->Minimum Weight-(Context_Specific_Label)"
+        },
+        {
+            "linkage": "Reusable Training Pants-(Apparel_Category)->Attributes-(Guideline_Type)->Maximum Weight-(Context_Specific_Label)"
+        },
+        {
+            "linkage": "Reusable Training Pants-(Apparel_Category)->Attributes-(Guideline_Type)->Season-(Context_Specific_Label)"
         }
     ],
-    "summary": "The page provides guidelines for attributes related to Reusable Training Pants, including the types of closures, weight specifications, and seasonal use. Each attribute contains descriptions, examples, and requirement levels."
+    "summary": "The page outlines additional attributes for Reusable Training Pants, detailing various aspects such as Closure Type, Minimum Weight, Maximum Weight, and Season. Each attribute includes a description, key, examples, list type, whether multiple values are allowed, and the requirement level."
 }

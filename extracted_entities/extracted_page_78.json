@@ -6,22 +6,26 @@
         "guideline_type": "Copy Standards",
         "writing_guidelines": [
             {
-                "step_name": "Attract Customers",
-                "description": "Great copy can attract more customers through SEO and SEM."
+                "step_name": "SEO and SEM Integration",
+                "description": "Create copy that attracts customers and enhances conversion through effective SEO and SEM strategies."
             },
             {
-                "step_name": "Conversion Optimization",
-                "description": "Effective writing helps customers convert and reduces returns."
+                "step_name": "Legal Obligations",
+                "description": "Include all legally required content in your copy."
             },
             {
-                "step_name": "Legal Requirements",
-                "description": "Include legally obligated copy and formatting requirements."
+                "step_name": "Cohesive Formatting",
+                "description": "Ensure formatting consistency for a better customer experience."
+            },
+            {
+                "step_name": "Compliance Consequences",
+                "description": "Non-compliance with copy standards may result in delays or rejection of new items and potential removal of existing items."
             }
         ]
     },
     "graph": [
         {
-            "linkage": "Guideline_Concept -> Guideline_Type -> writing_guidelines"
+            "linkage": "Copy Standards-(Guideline_Concept)->Copy Standards-(Guideline_Type)->writing_guidelines"
         }
     ]
 }

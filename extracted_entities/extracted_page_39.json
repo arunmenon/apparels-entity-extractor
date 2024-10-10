@@ -1,6 +1,9 @@
 {
     "apparel_category": "Sleepwear",
-    "product_type": "Tops",
+    "product_type": [
+        "Sleepwear Tops",
+        "Sleepwear Bottoms"
+    ],
     "guideline_concept": "Photo Direction",
     "guidelines": {
         "guideline_type": "Photo Direction",
@@ -24,13 +27,19 @@
             {
                 "step_name": "4th Alternate",
                 "description": "Alternate detail. Highlight embellishments and design elements not captured in required shots if present."
+            },
+            {
+                "step_name": "Styling Note",
+                "description": "Please style with NO shoes."
             }
         ]
     },
     "graph": [
         {
-            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> image_requirements"
+            "linkage": "Sleepwear-(Apparel_Category)->Sleepwear Tops-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
+        },
+        {
+            "linkage": "Sleepwear-(Apparel_Category)->Sleepwear Bottoms-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
         }
-    ],
-    "summary": "The page provides photo direction guidelines for sleepwear, detailing the required and recommended image specifications for both tops and bottoms, focusing on various perspectives and details."
+    ]
 }

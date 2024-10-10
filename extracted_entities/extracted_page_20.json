@@ -1,12 +1,12 @@
 {
     "apparel_category": "Women\u2019s Apparel",
     "product_type": "Outfit Sets",
-    "guideline_concept": null,
+    "guideline_concept": "Photo Direction",
     "guidelines": {
         "guideline_type": "Photo Direction",
         "image_requirements": [
             {
-                "step_name": "Hero (Main) Image",
+                "step_name": "Hero Image",
                 "description": "Front facing, head to toe, unrecognizable."
             },
             {
@@ -19,7 +19,7 @@
             },
             {
                 "step_name": "3rd Alternate",
-                "description": "Front view, cropped in to garment."
+                "description": "Front view, cropped in garment."
             },
             {
                 "step_name": "4th Alternate",
@@ -33,8 +33,8 @@
     },
     "graph": [
         {
-            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> image_requirements"
+            "linkage": "Women\u2019s Apparel-(Apparel_Category)->Outfit Sets-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
         }
     ],
-    "summary": "The page outlines photo direction requirements for Women's Outfit Sets, specifying required images and alternate views to ensure clarity and detail in product presentation."
+    "summary": "The guidelines detail the photo direction for 'Outfit Sets' in Women's Apparel, specifying required images, including view angles and additional recommended details."
 }

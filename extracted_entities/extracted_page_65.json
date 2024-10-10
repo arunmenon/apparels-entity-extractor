@@ -1,12 +1,15 @@
 {
-    "apparel_category": "Scrub Sets",
-    "product_type": "Scrub Sets",
+    "apparel_category": "Men/Womens Uniform",
+    "product_type": [
+        "Scrub Sets",
+        "Jackets & Robes"
+    ],
     "guideline_concept": "Photo Direction",
     "guidelines": {
         "guideline_type": "Photo Direction",
         "image_requirements": [
             {
-                "step_name": "Hero (Main) Image",
+                "step_name": "Hero Image",
                 "description": "Front facing, head to toe, unrecognizable."
             },
             {
@@ -23,14 +26,16 @@
             },
             {
                 "step_name": "4th Alternate Image",
-                "description": "Alternate detail. Highlight embellishments and design elements not captured in required shots if present."
+                "description": "Highlight embellishments and design elements not captured in required shots if present."
             }
         ]
     },
     "graph": [
         {
-            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> image_requirements"
+            "linkage": "Men/Womens Uniform-(Apparel_Category)->Scrub Sets-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
+        },
+        {
+            "linkage": "Men/Womens Uniform-(Apparel_Category)->Jackets & Robes-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
         }
-    ],
-    "summary": "The page provides photo direction for Scrub Sets and Jackets & Robes, detailing required and recommended image types for proper presentation."
+    ]
 }

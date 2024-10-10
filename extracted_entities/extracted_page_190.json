@@ -6,18 +6,19 @@
         "guideline_type": "Grouping Standards",
         "grouping_examples": [
             {
-                "step_name": "Ungrouping Criteria",
-                "description": "These shirts may have some of the same attributes, but since they have drastically different patterns, they are ungrouped."
+                "step_name": "Ungrouped Items",
+                "description": "Items with drastically different patterns should be ungrouped."
+            },
+            {
+                "step_name": "Grouped Family PJs",
+                "description": "Family PJs should be grouped by size for single family members to communicate the collection aspect."
             }
         ]
     },
     "graph": [
         {
-            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> grouping_examples"
-        },
-        {
-            "linkage": "Guideline_Concept -> Guideline_Type -> grouping_examples"
+            "linkage": "Men's Tops-(Apparel_Category)->Grouped Mens Tops-(Product_Type)->Grouping Standards-(Guideline_Type)->grouping_examples"
         }
     ],
-    "summary": "The page outlines grouping standards for men's tops, indicating that shirts with drastically different patterns should be placed on separate item pages. Additionally, there are guidelines for grouping family PJs by size for single family members, encouraging a cohesive collection display."
+    "summary": "The guidelines provide examples for grouping men's tops and family pajamas, emphasizing ungrouping items with different patterns and the necessity of grouping family PJs by size."
 }

@@ -1,10 +1,10 @@
 {
     "apparel_category": "Long Underwear",
     "product_type": "Long Underwear Type",
-    "guideline_concept": "Additional Attributes",
+    "guideline_concept": "Copy Standards",
     "guidelines": {
-        "guideline_type": "Attributes",
-        "additional_attributes": [
+        "guideline_type": "Naming Guidelines",
+        "attribute_requirements": [
             {
                 "step_name": "Long Underwear Type",
                 "description": "Specifies the type of Long Underwear."
@@ -13,8 +13,8 @@
     },
     "graph": [
         {
-            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> additional_attributes"
+            "linkage": "Long Underwear-(Apparel_Category)->Long Underwear Type-(Product_Type)->Naming Guidelines-(Guideline_Type)->attribute_requirements"
         }
     ],
-    "summary": "This section outlines the additional mandatory attributes for Long Underwear items, specifying that compliance with this style guide is required to avoid potential validation failures in publishing."
+    "summary": "The page provides mandatory attributes for Long Underwear items, emphasizing that compliance with the style guide is essential to prevent validation failures that may delay publishing."
 }

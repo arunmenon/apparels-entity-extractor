@@ -1,0 +1,24 @@
+{
+    "apparel_category": null,
+    "product_type": null,
+    "guideline_concept": "Attributes",
+    "guidelines": {
+        "guideline_type": "Copy Standards",
+        "writing_guidelines": [
+            {
+                "step_name": "Unit",
+                "description": "The unit of measure as defined on the product labeling."
+            },
+            {
+                "step_name": "Net Content Statement",
+                "description": "Complete product net content statement, as it appears on product packaging."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Attributes-(Guideline_Concept)->Copy Standards-(Guideline_Type)->writing_guidelines"
+        }
+    ],
+    "summary": "The page provides guidelines on the attributes related to apparel measurements and net content statements, emphasizing the required structure for product labeling."
+}

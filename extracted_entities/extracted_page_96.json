@@ -2,9 +2,8 @@
     "apparel_category": "Women's Upper Body",
     "product_type": [
         "All Tops",
-        "All Jackets & Coats (Outerwear)"
+        "All Jackets & Coats"
     ],
-    "guideline_concept": "Key Feature Directions",
     "guidelines": {
         "guideline_type": "Key Feature Directions",
         "key_feature_directions": [
@@ -49,25 +48,18 @@
                 "description": "Trims, special hems, decorative details, unlined or lined, etc."
             },
             {
-                "step_name": "Weight",
+                "step_name": "Weight (for Sweaters)",
                 "description": "Lightweight, Mid-weight, Heavyweight, Fine gauge, traditional jersey stitch, etc."
-            },
-            {
-                "step_name": "Length",
-                "description": "00\" long."
-            },
-            {
-                "step_name": "Collar",
-                "description": "Point, double, crossover, etc.; attached hood (if applicable)."
             }
         ]
     },
     "graph": [
         {
-            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> Key Feature Directions"
+            "linkage": "Women's Upper Body-(Apparel_Category)->All Tops-(Product_Type)->Key Feature Directions-(Guideline_Type)->key_feature_directions"
         },
         {
-            "linkage": "Guideline_Concept -> Guideline_Type -> Key Feature Directions"
+            "linkage": "Women's Upper Body-(Apparel_Category)->All Jackets & Coats-(Product_Type)->Key Feature Directions-(Guideline_Type)->key_feature_directions"
         }
-    ]
+    ],
+    "summary": "The page provides key feature directions for women's apparel, specifically for upper body categories including all tops and jackets & coats. It outlines various guidelines such as material, care instructions, country of origin, size, fit, neckline, closure types, sleeve styles, pocket details, and special features."
 }

@@ -1,46 +1,55 @@
 {
     "apparel_category": "Women\u2019s Swimwear",
+    "product_type": "Swimwear Separates (Tops)",
     "guideline_concept": "Photo Direction",
     "guidelines": {
         "guideline_type": "Photo Direction",
         "image_requirements": [
             {
-                "step_name": "Hero (Main) Image - Tops",
+                "step_name": "Hero (Main) Image",
                 "description": "Front facing, cropped above lip to above belly button."
             },
             {
-                "step_name": "1st Alternate - Tops",
+                "step_name": "1st Alternate",
                 "description": "Back facing, cropped above lip to above belly button reverse."
             },
             {
-                "step_name": "2nd Alternate - Tops",
+                "step_name": "2nd Alternate",
                 "description": "Ghost view."
             },
             {
-                "step_name": "Hero (Main) Image - Bottoms",
+                "step_name": "3rd Alternate",
+                "description": "Highlight embellishments and design elements not captured in required shots if present."
+            }
+        ]
+    },
+    "guidelines_2": {
+        "guideline_type": "Photo Direction",
+        "image_requirements": [
+            {
+                "step_name": "Hero (Main) Image",
                 "description": "Front facing, cropped above belly button to above the knees."
             },
             {
-                "step_name": "1st Alternate - Bottoms",
+                "step_name": "1st Alternate",
                 "description": "Back facing, cropped above belly button to above the knees."
             },
             {
-                "step_name": "2nd Alternate - Bottoms",
+                "step_name": "2nd Alternate",
                 "description": "Ghost view."
             },
             {
-                "step_name": "3rd Alternate - Both",
+                "step_name": "3rd Alternate",
                 "description": "Highlight embellishments and design elements not captured in required shots if present."
             }
         ]
     },
     "graph": [
         {
-            "linkage": "Apparel_Category -> Guideline_Type -> Image_Requirements"
+            "linkage": "Women\u2019s Swimwear-(Apparel_Category)->Swimwear Separates (Tops)-(Product_Type)->Photo Direction-(Image_Requirements)"
         },
         {
-            "linkage": "Guideline_Concept -> Guideline_Type -> Image_Requirements"
+            "linkage": "Women\u2019s Swimwear-(Apparel_Category)->Swimwear Separates (Bottoms)-(Product_Type)->Photo Direction-(Image_Requirements)"
         }
-    ],
-    "summary": "The page outlines photo direction guidelines for Women's Swimwear, specifying required and recommended image types for swimwear separates, including guidelines for both tops and bottoms."
+    ]
 }

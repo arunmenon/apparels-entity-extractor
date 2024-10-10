@@ -1,0 +1,60 @@
+{
+    "apparel_category": "Jackets & Coats",
+    "product_type": null,
+    "guideline_concept": null,
+    "guidelines": {
+        "guideline_type": "Attributes",
+        "additional_attributes": [
+            {
+                "attribute": "Jacket Style",
+                "key": "jacketStyle",
+                "description": "Styles specific to coats and jackets.",
+                "examples": [
+                    "Anorak",
+                    "Bomber",
+                    "Cape",
+                    "Denim",
+                    "Duster",
+                    "Open Front",
+                    "Pullover",
+                    "Quilted",
+                    "Suit",
+                    "Tuxedo",
+                    "Convertible",
+                    "Smoking"
+                ]
+            },
+            {
+                "attribute": "Jacket Length",
+                "key": "jacket_length",
+                "description": "Length term descriptive of jackets and coats.",
+                "examples": [
+                    "Cropped",
+                    "Long",
+                    "Mid-Length",
+                    "Short"
+                ]
+            },
+            {
+                "attribute": "Suit Breasting Style",
+                "key": "suitBreastingStyle",
+                "description": "The closure style of a suit jacket or coat; Double-Breasted suits have more fabric where they overlap in front and commonly have 2 rows of buttons.",
+                "examples": [
+                    "Double-Breasted",
+                    "Single-Breasted"
+                ]
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Jackets & Coats-(Apparel_Category)->Jacket Style-(Attribute)->Attributes-(Additional_Attributes)"
+        },
+        {
+            "linkage": "Jackets & Coats-(Apparel_Category)->Jacket Length-(Attribute)->Attributes-(Additional_Attributes)"
+        },
+        {
+            "linkage": "Jackets & Coats-(Apparel_Category)->Suit Breasting Style-(Attribute)->Attributes-(Additional_Attributes)"
+        }
+    ]
+}

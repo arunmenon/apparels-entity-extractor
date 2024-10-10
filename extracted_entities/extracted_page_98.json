@@ -3,12 +3,13 @@
     "product_type": [
         "Jeans",
         "Pants",
-        "Capri's",
+        "Capris",
         "Shorts",
         "Leggings",
         "Skirts",
         "Skorts"
     ],
+    "guideline_concept": "Key Feature Directions",
     "guidelines": {
         "guideline_type": "Key Feature Directions",
         "key_feature_directions": [
@@ -18,11 +19,11 @@
             },
             {
                 "step_name": "Care",
-                "description": "Machine washable, Hand wash, Dry clean, Spot clean, Wipe clean, etc. Professionally leather or suede clean."
+                "description": "Machine washable, Hand wash, Dry clean, Spot clean, Wipe clean, etc."
             },
             {
                 "step_name": "Country of Origin",
-                "description": "Imported, Made in USA, Made in USA of imported materials."
+                "description": "Imported, Made in USA, Made in USA of imported materials, Made in USA and imported, etc."
             },
             {
                 "step_name": "Size",
@@ -52,8 +53,26 @@
     },
     "graph": [
         {
-            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> Key Feature Directions"
+            "linkage": "Women's Lower Body-(Apparel_Category)->Jeans-(Product_Type)->Key Feature Directions-(Guideline_Type)->key_feature_directions"
+        },
+        {
+            "linkage": "Women's Lower Body-(Apparel_Category)->Pants-(Product_Type)->Key Feature Directions-(Guideline_Type)->key_feature_directions"
+        },
+        {
+            "linkage": "Women's Lower Body-(Apparel_Category)->Capris-(Product_Type)->Key Feature Directions-(Guideline_Type)->key_feature_directions"
+        },
+        {
+            "linkage": "Women's Lower Body-(Apparel_Category)->Shorts-(Product_Type)->Key Feature Directions-(Guideline_Type)->key_feature_directions"
+        },
+        {
+            "linkage": "Women's Lower Body-(Apparel_Category)->Leggings-(Product_Type)->Key Feature Directions-(Guideline_Type)->key_feature_directions"
+        },
+        {
+            "linkage": "Women's Lower Body-(Apparel_Category)->Skirts-(Product_Type)->Key Feature Directions-(Guideline_Type)->key_feature_directions"
+        },
+        {
+            "linkage": "Women's Lower Body-(Apparel_Category)->Skorts-(Product_Type)->Key Feature Directions-(Guideline_Type)->key_feature_directions"
         }
     ],
-    "summary": "The page outlines key feature directions for women's lower body apparel, including guidelines on material, care, country of origin, size, fit, rise, inseam, closure, pockets, and features, applicable to jeans, pants, capris, shorts, leggings, skirts, and skorts."
+    "summary": "The guidelines outline the key features and requirements for various types of women's lower body apparel including jeans, pants, capris, shorts, leggings, skirts, and skorts. Specific aspects include material content, care instructions, country of origin, size, fit, rise, inseam, closure, pockets, and features."
 }

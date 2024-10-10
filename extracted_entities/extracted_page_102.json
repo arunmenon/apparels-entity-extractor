@@ -1,7 +1,7 @@
 {
     "apparel_category": "Men\u2019s Loungewear/Sleepwear",
     "product_type": null,
-    "guideline_concept": "Key Feature Directions",
+    "guideline_concept": null,
     "guidelines": {
         "guideline_type": "Key Feature Directions",
         "features": [
@@ -45,7 +45,10 @@
     },
     "graph": [
         {
-            "linkage": "Apparel_Category -> Guideline_Type -> features"
+            "linkage": "Men\u2019s Loungewear/Sleepwear-(Apparel_Category)->Key Feature Directions-(Guideline_Type)->features"
+        },
+        {
+            "linkage": "Women\u2019s Loungewear/Sleepwear-(Apparel_Category)->Key Feature Directions-(Guideline_Type)->features"
         }
     ]
 }

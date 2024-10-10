@@ -1,13 +1,13 @@
 {
     "apparel_category": "Men\u2019s Intimates",
-    "product_type": "Underwear Multipacks",
+    "product_type": "Underwear",
     "guideline_concept": "Photo Direction",
     "guidelines": {
         "guideline_type": "Photo Direction",
         "image_requirements": [
             {
                 "step_name": "Hero (Main) Image",
-                "description": "Lay down imagery that depicts number of items in pack."
+                "description": "Lay down imagery that depicts the number of items in the pack."
             },
             {
                 "step_name": "1st Alternate",
@@ -25,8 +25,8 @@
     },
     "graph": [
         {
-            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> image_requirements"
+            "linkage": "Men\u2019s Intimates-(Apparel_Category)->Underwear-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
         }
     ],
-    "summary": "The page outlines photo direction guidelines for men's intimates underwear multipacks, detailing specific requirements for hero and alternate images with and without packaging."
+    "summary": "The document provides photo direction guidelines for photographing men's intimates, specifically for underwear multipacks, detailing the required images to showcase the product effectively."
 }

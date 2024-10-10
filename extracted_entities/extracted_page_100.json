@@ -1,10 +1,9 @@
 {
     "apparel_category": "Men\u2019s Suits",
     "product_type": "Jacket",
-    "guideline_concept": "Key Feature Directions",
     "guidelines": {
-        "guideline_type": "Photo Direction",
-        "image_requirements": [
+        "guideline_type": "Key Feature Directions",
+        "jacket_features": [
             {
                 "step_name": "Material",
                 "description": "Fabric content including linings & any trims 5% or more or makeup."
@@ -19,7 +18,7 @@
             },
             {
                 "step_name": "Size",
-                "description": "Jacket sizing is indicated by a number and a letter. The number refers to chest size; the letter refers to the length of the Jacket based upon height: S=57\" & under, R=58\"-511\", L=6' & up."
+                "description": "Jacket sizing indicated by a number and a letter; the number refers to chest size."
             },
             {
                 "step_name": "Lapel Type",
@@ -45,11 +44,8 @@
     },
     "graph": [
         {
-            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> image_requirements"
-        },
-        {
-            "linkage": "guideline_concept -> guideline_type -> image_requirements"
+            "linkage": "Men\u2019s Suits-(Apparel_Category)->Jacket-(Product_Type)->Key Feature Directions-(Guideline_Type)->jacket_features"
         }
     ],
-    "summary": "The page outlines key feature directions for Men's Suits and Sportcoats & Blazers, detailing required attributes such as material, care instructions, country of origin, size, and specific features for jackets and trousers."
+    "summary": "The guidelines detail key features and directions for Men's Suits and Sportcoats, covering material, care, country of origin, sizing, lapel types, closures, sleeve details, pockets, and other features required for accurate product description."
 }

@@ -1,0 +1,36 @@
+{
+    "apparel_category": "Children\u2019s Apparel",
+    "product_type": "Reversible Item",
+    "guideline_concept": "",
+    "guidelines": {
+        "guideline_type": "Photo Direction",
+        "image_requirements": [
+            {
+                "step_name": "Hero (Main) Image",
+                "description": "Front facing, straight on, laydown of the garment."
+            },
+            {
+                "step_name": "1st Alternate",
+                "description": "Back facing, straight on, laydown of the garment."
+            },
+            {
+                "step_name": "2nd Alternate",
+                "description": "Front facing, straight on, laydown of reversible side of garment."
+            },
+            {
+                "step_name": "3rd Alternate",
+                "description": "Back facing, straight on, laydown of the garment."
+            },
+            {
+                "step_name": "4th Alternate",
+                "description": "Details shots highlighting the reversible pattern."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Children\u2019s Apparel-(Apparel_Category)->Reversible Item-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
+        }
+    ],
+    "summary": "The page outlines the photo direction for children's reversible items, specifying a total of five required images, each with specific angles and focuses."
+}

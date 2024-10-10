@@ -1,58 +1,47 @@
 {
-    "apparel_category": "General Apparel",
-    "product_type": "Product Title",
+    "apparel_category": null,
+    "product_type": null,
     "guideline_concept": "Product Naming Guidelines",
     "guidelines": {
         "guideline_type": "Naming Guidelines",
-        "naming_requirements": [
+        "naming_guidelines": [
             {
-                "step_name": "Maximum Length",
-                "description": "Product names should be no longer than 90 characters."
+                "step_name": "Optimal Length",
+                "description": "Product names should be between short and long, ideally fitting within the 'Goldilocks Zone' and under 90 characters."
             },
             {
-                "step_name": "Lead with Key Attributes",
-                "description": "Start with the most defining parts of your product title."
+                "step_name": "Unique Product Name",
+                "description": "Create a unique, specific product name that isn't word-for-word on other websites."
             },
             {
-                "step_name": "Unique Naming",
-                "description": "Create a unique product name that is not used verbatim on other websites."
-            },
-            {
-                "step_name": "Include Color When Relevant",
-                "description": "If color is a notable feature, include it in the product name."
-            },
-            {
-                "step_name": "Variant Grouping",
-                "description": "Use available variant attributes only in Key Features & Description, not in the product name."
+                "step_name": "Use of Color",
+                "description": "If relevant, include color of the item in the product name."
             },
             {
                 "step_name": "Capitalization Rules",
-                "description": "Capitalize the first letter of each word, excluding articles and conjunctions, unless legally required."
+                "description": "Capitalize the first letter of each word, except for articles, conjunctions, and prepositions."
             },
             {
-                "step_name": "Subject Keyword Inclusion",
-                "description": "The title should include subject keywords that describe the product."
+                "step_name": "Descriptive Keywords",
+                "description": "The title should include keywords that describe the product, avoiding generic titles."
             },
             {
-                "step_name": "Avoid Special Characters",
-                "description": "Do not use characters like '~', '!', '$', or '&' unless representing the brand."
+                "step_name": "Special Characters",
+                "description": "Avoid using special characters such as '!', '?', '$', etc., unless they represent the brand legally."
             },
             {
-                "step_name": "Avoid Promotional Phrases",
-                "description": "Do not include promotional phrases such as 'best selling' or 'free shipping'."
+                "step_name": "Promotional Phrases",
+                "description": "Do not include promotional phrases like 'best selling' or 'free shipping' in titles."
             },
             {
-                "step_name": "Avoid 'Or' Language",
-                "description": "Do not use 'or' in the title when it implies multiple product types."
+                "step_name": "Mandatory Attribute",
+                "description": "The product name is a required attribute."
             }
         ]
     },
     "graph": [
         {
-            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> naming_requirements"
-        },
-        {
-            "linkage": "Guideline_Concept -> Guideline_Type -> naming_requirements"
+            "linkage": "Product Naming Guidelines-(Guideline_Concept)->Naming Guidelines-(Guideline_Type)->naming_guidelines"
         }
     ]
 }

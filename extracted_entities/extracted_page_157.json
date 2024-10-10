@@ -1,21 +1,21 @@
 {
-    "apparel_category": "Women's Swimwear",
+    "apparel_category": "Women\u2019s Swimwear",
     "product_type": "Swimsuit Cover-Ups",
     "guideline_concept": "Attributes",
     "guidelines": {
-        "guideline_type": "Grouping Standards",
-        "additional_attributes": [
+        "guideline_type": "Copy Standards",
+        "attribute_requirements": [
             {
                 "step_name": "Condition",
-                "description": "Use this to describe the state of an item."
+                "description": "Use this to describe the state of an item, with examples such as New, New Without Tags, New With Damaged Box, Refurbished, Manufacturer Refurbished, Restored."
             },
             {
                 "step_name": "Original Product ID",
-                "description": "For refurbished items, this is the original/new equivalent product identifier ID which is different from the restored product identifier ID."
+                "description": "For refurbished items, this is the original/new equivalent product identifier ID different from the restored product identifier ID."
             },
             {
                 "step_name": "Original Product ID Type",
-                "description": "To be used for refurbished items: This refers to the original/new equivalent product identifier."
+                "description": "Refers to the original/new equivalent product identifier for refurbished items."
             },
             {
                 "step_name": "Original/New Equivalent Product Identifier",
@@ -25,8 +25,7 @@
     },
     "graph": [
         {
-            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> additional_attributes"
+            "linkage": "Women\u2019s Swimwear-(Apparel_Category)->Swimsuit Cover-Ups-(Product_Type)->Copy Standards-(Guideline_Type)->attribute_requirements"
         }
-    ],
-    "summary": "The page outlines mandatory attributes for Swimsuit Cover-Ups, including 'Condition', 'Original Product ID', 'Original Product ID Type', and 'Original/New Equivalent Product Identifier', emphasizing the necessity of compliance to avoid validation failures."
+    ]
 }

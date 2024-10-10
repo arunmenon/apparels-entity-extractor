@@ -1,31 +1,28 @@
 {
     "apparel_category": null,
     "product_type": null,
-    "guideline_concept": "Product Naming Guidelines",
+    "guideline_concept": null,
     "guidelines": {
-        "guideline_type": "Product Naming Guidelines",
-        "description": [
+        "guideline_type": "Copy Standards",
+        "writing_guidelines": [
             {
                 "step_name": "Benefits of CCP",
-                "description": "The CCP integrates Walmart Style Guide requirements for compliant content submission."
+                "description": "Integrating Walmart Style Guide requirements into processes."
             },
             {
-                "step_name": "Responsibility for Cost",
-                "description": "Suppliers are responsible for the cost of participating in the CCP Program."
+                "step_name": "Responsibility for Costs",
+                "description": "Suppliers are responsible for costs associated with the CCP Program."
             },
             {
-                "step_name": "Content Updates in Item 360",
-                "description": "Teams can access items through Item 360 to maintain following content ingestion by the CCP."
+                "step_name": "Content Updates",
+                "description": "Items managed by a CCP can be updated through Item 360."
             },
             {
-                "step_name": "Difference between Item 360 and CCP",
-                "description": "Item 360/Seller Center is used by suppliers/sellers to create and update items without CCP access."
+                "step_name": "Differences between Item 360 and CCP",
+                "description": "Item 360 is for manual item updates while CCP partners use a backend API."
             }
         ]
     },
-    "graph": [
-        {
-            "linkage": "Guideline_Concept -> Guideline_Type -> description"
-        }
-    ]
+    "graph": [],
+    "summary": "The FAQ page provides details about the benefits and responsibilities of participating in the CCP Program, alongside information on updating content for items managed by CCP, and clarifies the differences between Item 360 and CCP."
 }

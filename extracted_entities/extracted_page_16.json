@@ -1,5 +1,6 @@
 {
-    "apparel_category": "General Apparel",
+    "apparel_category": null,
+    "product_type": null,
     "guideline_concept": "Styling Guidelines",
     "guidelines": {
         "guideline_type": "Photo Direction",
@@ -9,43 +10,34 @@
                 "description": "DO iron or steam the clothing before photographing it."
             },
             {
-                "step_name": "Natural Resting Position",
-                "description": "DON'T stretch the garment on the model or mannequin. Garment should rest naturally."
+                "step_name": "Garment Fit",
+                "description": "DON'T stretch the garment on the model or mannequin. The garment should rest naturally."
             },
             {
-                "step_name": "Avoid Obstructions",
+                "step_name": "Obstruction Avoidance",
                 "description": "DON'T have any items or hair obstructing the garment."
             },
             {
-                "step_name": "Scrunchy Look",
-                "description": "DO keep the garment a little bit scrunchy, as it normally would hang on a body."
+                "step_name": "Natural Draping",
+                "description": "DO keep the garment a little bit scrunchy to mimic how it normally hangs."
             },
             {
                 "step_name": "Proper Fit on Mannequin",
-                "description": "On mannequin, the garment should NOT be too loose, droopy on sides, and no puckering."
+                "description": "The garment should not be too loose or droopy on sides, and no puckering anywhere."
             },
             {
-                "step_name": "Tucking Strategy",
-                "description": "DON'T tuck in the shirt or top; the system can adjust that."
+                "step_name": "Tucking Garment",
+                "description": "DON'T tuck in the shirt or top unless styled that way."
             },
             {
-                "step_name": "Sleeve Management",
-                "description": "If you have long sleeves, style them how you want, rolled up if appropriate."
+                "step_name": "Sleeves and Bottoms",
+                "description": "When styling long sleeves or bottoms, roll up as necessary."
             },
             {
-                "step_name": "Capturing Bottoms",
-                "description": "DON'T have the top obstructing the bottoms; roll the top up evenly."
-            },
-            {
-                "step_name": "Minimal Styling",
+                "step_name": "Minimize Styling",
                 "description": "DO follow the rule to do the least amount of styling possible."
             }
         ]
     },
-    "graph": [
-        {
-            "linkage": "Guideline_Concept -> Guideline_Type -> image_requirements"
-        }
-    ],
-    "summary": "This page outlines styling guidelines for photographing apparel, emphasizing the importance of natural presentation, avoiding obstructions, and minimal styling for optimal visual representation."
+    "graph": []
 }

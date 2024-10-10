@@ -4,19 +4,21 @@
     "guideline_concept": "Product Naming Guidelines",
     "guidelines": {
         "guideline_type": "Naming Guidelines",
-        "naming_formula": [
+        "naming_formulas": [
             {
-                "step_name": "Global Brand License",
-                "description": "'by' + Brand + Product Line + Swimwear attributes + Clothing Type + Count Per Pack + (Clothing Size Group)"
+                "step_name": "Shapewear Naming Formula",
+                "description": "Global Brand License + 'by' + Brand + Product Line + Shapewear Control Level/Bra Feature/Sleeve Length Style/Clothing Neck Style/Body Descriptor/Upper Body Strap Configuration/Clothing Back Style/Underpant/Swim Bottom Style/Clothing Length Style/Features/Activity/Pattern/Character/Theme/Ocassion/Sports League/Sports Team/Fabric Material Name + Clothing Type + Count Per Pack + (Clothing Size Group)"
+            },
+            {
+                "step_name": "All Swimwear Naming Formula",
+                "description": "Global Brand License + 'by' + Brand + Product Line + Swimsuit Style/Underpant/Swim Bottom Style/Upper Body Strap Configuration/Bra Feature/Clothing Back Style/Clothing Neck Style/Features/Activity/Pattern/Character/Theme/Ocassion/Sports League/Sports Team/Fabric Material Name + Clothing Type + Count Per Pack + (Clothing Size Group)"
             }
         ]
     },
     "graph": [
         {
-            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> naming_formula"
-        },
-        {
-            "linkage": "Guideline_Concept -> Guideline_Type -> naming_formula"
+            "linkage": "Swimwear & Shapewear-(Apparel_Category)->Shapewear-(Product_Type)->Naming Guidelines-(Guideline_Type)->naming_formulas"
         }
-    ]
+    ],
+    "summary": "The content outlines the product naming guidelines for Swimwear and Shapewear, providing specific formulas for naming products in these categories. It includes descriptions of the parameters to be used in product names."
 }

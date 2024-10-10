@@ -3,20 +3,58 @@
     "guideline_concept": "Grouping Standards",
     "guidelines": {
         "guideline_type": "Grouping Standards",
-        "grouping_items": [
+        "grouping_on_one_item_page": [
             {
-                "step_name": "Grouping on ONE item page",
-                "description": "Items that are of the same fabrication, price, style and print pattern (if applicable) should be grouped together on the item page. Examples of item attributes that would constitute grouping include: Same fabric, Same print, Same neckline, Same sleeve length, Multiple Colors."
+                "step_name": "Same Fabric",
+                "description": "Items made from the same fabric should be grouped together."
             },
             {
-                "step_name": "Items that should NOT be grouped on one page",
-                "description": "If the item attributes do not apply consistently to all items in the grouping, that is an indicator that the items should not be grouped together. This includes: Different fabric, Different print/pattern, Different neckline, Different sleeve length, Consider grouping Plus Size Separately."
+                "step_name": "Same Print",
+                "description": "Items with the same print should be grouped together."
+            },
+            {
+                "step_name": "Same Neckline",
+                "description": "Items with the same neckline should be grouped together."
+            },
+            {
+                "step_name": "Same Sleeve Length",
+                "description": "Items with the same sleeve length should be grouped together."
+            },
+            {
+                "step_name": "Multiple Colors",
+                "description": "Items available in multiple colors should be grouped together."
+            }
+        ],
+        "items_not_grouped": [
+            {
+                "step_name": "Different Fabric",
+                "description": "Items made from different fabrics should not be grouped together."
+            },
+            {
+                "step_name": "Different Print/Pattern",
+                "description": "Items with different prints or patterns should not be grouped together."
+            },
+            {
+                "step_name": "Different Neckline",
+                "description": "Items with different necklines should not be grouped together."
+            },
+            {
+                "step_name": "Different Sleeve Length",
+                "description": "Items with different sleeve lengths should not be grouped together."
+            },
+            {
+                "step_name": "Consider Grouping Plus Size Separately",
+                "description": "Items in plus sizes should be considered for separate grouping."
             }
         ]
     },
     "graph": [
         {
-            "linkage": "Apparel_Category -> Guideline_Concept -> Grouping Standards"
+            "linkage": "Apparel Grouping Standards-(Apparel_Category)->Grouping Standards-(Guideline_Concept)->Grouping Standards-(Guideline_Type)->grouping_on_one_item_page"
+        },
+        {
+            "linkage": "Apparel Grouping Standards-(Apparel_Category)->Grouping Standards-(Guideline_Concept)->Grouping Standards-(Guideline_Type)->items_not_grouped"
         }
-    ]
+    ],
+    "summary": "The Apparel Grouping Standards outline the criteria for grouping items based on shared characteristics like fabric, print, neckline, sleeve length, and color. It also specifies attributes that should not be used for grouping, such as differing fabric or print patterns, and advises that plus sizes be grouped separately."
 }

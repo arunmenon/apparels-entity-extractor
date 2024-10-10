@@ -1,34 +1,45 @@
 {
-    "apparel_category": "Women\u2019s Garments",
+    "apparel_category": "Women's Garments",
+    "product_type": [
+        "Tops",
+        "Sweatshirts",
+        "Pants",
+        "Jumpsuits",
+        "Bikinis"
+    ],
     "guideline_concept": "Image Requirements",
     "guidelines": {
-        "guideline_type": "Photo Direction",
+        "guideline_type": "Image Requirements",
         "image_requirements": [
             {
-                "step_name": "Ghost Imagery Requirement",
-                "description": "Ghost imagery is required for all Women's garments for the Zeekit virtual try-on feature."
+                "step_name": "Ghost Imagery Required",
+                "description": "A ghost image must be provided for the virtual try-on feature."
             },
             {
-                "step_name": "Product Categories Required",
-                "description": "All Women's Garments are required for the ghost imagery, excluding Women's Maternity Wear, Shapewear, Lingerie, Undergarments, Hosiery & Socks."
+                "step_name": "Exclusions",
+                "description": "Products with thumb holes, White Lace, See-through, Netted, or Mesh Materials cannot be captured for Zeekit."
             },
             {
-                "step_name": "Products That Cannot Be Captured",
-                "description": "Any products with thumb holes, White Lace, See-through, Netted, or Mesh Materials cannot be captured."
-            },
-            {
-                "step_name": "Packaging Product Shots",
-                "description": "Packaging product shots will be designated as the 1st alternate shot online, with the primary shot being out of packaging and/or on model."
+                "step_name": "Packaging Shot Designation",
+                "description": "Packaging product shots will be designated as the 1st alternate shot online."
             }
         ]
     },
     "graph": [
         {
-            "linkage": "Apparel_Category -> Guideline_Type -> Image_Requirements"
+            "linkage": "Women's Garments-(Apparel_Category)->Tops-(Product_Type)->Image Requirements-(Guideline_Type)->image_requirements"
         },
         {
-            "linkage": "Guideline_Concept -> Guideline_Type -> Image_Requirements"
+            "linkage": "Women's Garments-(Apparel_Category)->Sweatshirts-(Product_Type)->Image Requirements-(Guideline_Type)->image_requirements"
+        },
+        {
+            "linkage": "Women's Garments-(Apparel_Category)->Pants-(Product_Type)->Image Requirements-(Guideline_Type)->image_requirements"
+        },
+        {
+            "linkage": "Women's Garments-(Apparel_Category)->Jumpsuits-(Product_Type)->Image Requirements-(Guideline_Type)->image_requirements"
+        },
+        {
+            "linkage": "Women's Garments-(Apparel_Category)->Bikinis-(Product_Type)->Image Requirements-(Guideline_Type)->image_requirements"
         }
-    ],
-    "summary": "The Zeekit image requirements specify that ghost imagery is mandatory for all Women's garments for the virtual try-on feature, detailing the exclusions and providing guidelines for capturing images."
+    ]
 }

@@ -1,0 +1,36 @@
+{
+    "apparel_category": "Baby Layette & Gift Sets",
+    "product_type": null,
+    "guideline_concept": "Attributes",
+    "guidelines": {
+        "guideline_type": "Attribute Standards",
+        "attribute_details": [
+            {
+                "step_name": "Baby Layette & Gift Set Type",
+                "description": "Defines the type of Baby Layette & Gift Sets. A layette is a collection of clothing and accessories for a newborn child."
+            },
+            {
+                "step_name": "Sleeve Length",
+                "description": "The distance from the shoulder to the bottom hem of the sleeve, measured in inches."
+            },
+            {
+                "step_name": "Clothing Weight",
+                "description": "Describes the density or weight of fabric material, categorized as Mid-Weight, Heavyweight, or Lightweight."
+            },
+            {
+                "step_name": "Waist Style",
+                "description": "Defines waist styles, including options like Banded Waist, Elastic Waist, and more."
+            },
+            {
+                "step_name": "Closure Type",
+                "description": "The type of fastener used to keep an item closed and facilitate putting it on."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Baby Layette & Gift Sets-(Apparel_Category)->Attributes-(Guideline_Concept)->Attribute Standards-(Guideline_Type)->attribute_details"
+        }
+    ],
+    "summary": "The document outlines additional attributes for Baby Layette & Gift Sets, including definitions of the types of layette, sleeve length measurements, clothing weight classifications, waist styles, and closure types. Each attribute is crucial for compliance with the apparel style guide."
+}

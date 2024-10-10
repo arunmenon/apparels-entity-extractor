@@ -1,5 +1,5 @@
 {
-    "apparel_category": "Women\u2019s Apparel",
+    "apparel_category": "Women's Apparel",
     "product_type": "Maternity Bottoms",
     "guideline_concept": "Photo Direction",
     "guidelines": {
@@ -26,15 +26,15 @@
                 "description": "Ghost view."
             },
             {
-                "step_name": "Recommended Alternate Detail",
+                "step_name": "Recommended Detail Shot",
                 "description": "Highlight embellishments and design elements not captured in required shots if present."
             }
         ]
     },
     "graph": [
         {
-            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> image_requirements"
+            "linkage": "Women's Apparel-(Apparel_Category)->Maternity Bottoms-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
         }
     ],
-    "summary": "The page outlines the photo direction for maternity bottoms in women's apparel, specifying a series of required images to be captured, including various angles and focuses to ensure all aspects of the product are showcased."
+    "summary": "The page outlines photo direction guidelines for Maternity Bottoms in Women's Apparel, specifying required images and details to capture the product effectively."
 }
