@@ -1,0 +1,61 @@
+{
+    "apparel_category": "Men\u2019s Swimwear",
+    "product_type": [
+        "Swimwear (Bottoms)",
+        "Athletic Rash Guards (Tops)"
+    ],
+    "guideline_concept": "Photo Direction",
+    "guidelines": {
+        "guideline_type": "Photo Direction",
+        "image_requirements": [
+            {
+                "step_name": "Hero Image (Swimwear Bottoms)",
+                "description": "Front facing, crop approx. 2\u201d above garment (arms down)."
+            },
+            {
+                "step_name": "1st Alternate (Swimwear Bottoms)",
+                "description": "Front facing, head to toe, unrecognizable."
+            },
+            {
+                "step_name": "2nd Alternate (Swimwear Bottoms)",
+                "description": "Back facing, crop approx. 2\u201d above garment (arms down)."
+            },
+            {
+                "step_name": "3rd Alternate (Swimwear Bottoms)",
+                "description": "Ghost view."
+            },
+            {
+                "step_name": "4th Alternate (Swimwear Bottoms)",
+                "description": "Alternate detail. Highlight embellishments and design elements not captured in required shots if present."
+            },
+            {
+                "step_name": "Hero Image (Athletic Rash Guards)",
+                "description": "Front facing, cropped above lip to below fingertips."
+            },
+            {
+                "step_name": "1st Alternate (Athletic Rash Guards)",
+                "description": "Front facing, head to toe, unrecognizable."
+            },
+            {
+                "step_name": "2nd Alternate (Athletic Rash Guards)",
+                "description": "Back facing, crop to just below hairline to below fingertips."
+            },
+            {
+                "step_name": "3rd Alternate (Athletic Rash Guards)",
+                "description": "Ghost view."
+            },
+            {
+                "step_name": "4th Alternate (Athletic Rash Guards)",
+                "description": "Alternate detail. Highlight embellishments and design elements not captured in required shots if present."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> image_requirements"
+        },
+        {
+            "linkage": "Guideline_Concept -> Guideline_Type -> image_requirements"
+        }
+    ]
+}

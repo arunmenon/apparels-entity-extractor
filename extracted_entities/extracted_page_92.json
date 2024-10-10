@@ -1,0 +1,22 @@
+{
+    "apparel_category": "Children's Apparel",
+    "product_type": "Children\u2019s Multipacks",
+    "guideline_concept": "Product Naming Guidelines",
+    "guidelines": {
+        "guideline_type": "Naming Guidelines",
+        "naming_formula": [
+            {
+                "step_name": "Formula",
+                "description": "Global Brand License + 'by' + Brand + Style Name + Apparel Style + Product Type + (Clothing Size Group) + Count"
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> naming_formula"
+        },
+        {
+            "linkage": "Guideline_Concept -> Guideline_Type -> naming_formula"
+        }
+    ]
+}

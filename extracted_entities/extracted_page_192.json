@@ -1,0 +1,39 @@
+{
+    "apparel_category": null,
+    "product_type": null,
+    "guideline_concept": "Rich Media Index",
+    "guidelines": {
+        "guideline_type": "Rich Media Guidelines",
+        "rich_media_types": [
+            {
+                "step_name": "360 Spin",
+                "description": "A 360 spin is a series of photos that gives the impression of the product rotating."
+            },
+            {
+                "step_name": "Videos",
+                "description": "Product videos help customers understand end use of the product and highlight features."
+            },
+            {
+                "step_name": "Marketing Content",
+                "description": "Marketing content is used to provide in-depth features about your product in a more engaging interface."
+            },
+            {
+                "step_name": "Shoppable Modules",
+                "description": "Shoppable Modules allow customers to interact with a variety of your products and up-sell other product variants."
+            },
+            {
+                "step_name": "PDF Manuals",
+                "description": "PDF Manuals should be included with any item that has assembly instructions, and you can upload guarantee and warranty documents here."
+            },
+            {
+                "step_name": "Item Hot Spots",
+                "description": "Interactive videos use hot spots and other features to enable customers to have a more immersive experience."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Guideline_Concept -> Guideline_Type -> Rich Media Types"
+        }
+    ]
+}

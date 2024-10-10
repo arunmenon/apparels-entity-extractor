@@ -1,0 +1,55 @@
+{
+    "apparel_category": "Children's Apparel",
+    "product_type": "Pajamas",
+    "guideline_concept": "Key Feature Directions",
+    "guidelines": {
+        "guideline_type": "Key Feature Direction",
+        "context_specific_label": [
+            {
+                "step_name": "Material",
+                "description": "Fabric content including linings & any trims 5% or more of makeup."
+            },
+            {
+                "step_name": "Care",
+                "description": "Machine washable, Hand wash, Dry clean, Spot clean, Wipe clean."
+            },
+            {
+                "step_name": "Country of Origin",
+                "description": "Imported, Made in USA, imported materials, etc."
+            },
+            {
+                "step_name": "Fit",
+                "description": "Fitted, oversized, relaxed, loose, etc. (when applicable)"
+            },
+            {
+                "step_name": "Neckline",
+                "description": "Crew neck, V-neck, Cowl neck, Polo collar, etc."
+            },
+            {
+                "step_name": "Closure",
+                "description": "Pullover style, Button front, Back button, keyhole, etc."
+            },
+            {
+                "step_name": "Sleeves",
+                "description": "Short, Long, Blouse, Illusion, Elbow-length, 3/4 sleeve, etc."
+            },
+            {
+                "step_name": "Pockets",
+                "description": "How many and location or use: None."
+            },
+            {
+                "step_name": "Features",
+                "description": "Trims, special hems, decorative details, Logos, etc."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> context_specific_label"
+        },
+        {
+            "linkage": "Guideline_Concept -> Guideline_Type -> context_specific_label"
+        }
+    ],
+    "summary": "The guidelines for Children's Apparel focus on the essential features that need to be included, such as material, care instructions, fit, neckline, and specific characteristics for pajamas, emphasizing compliance with safety and quality standards."
+}

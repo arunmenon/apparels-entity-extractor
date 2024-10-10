@@ -1,0 +1,28 @@
+{
+    "apparel_category": "Women\u2019s Intimates",
+    "product_type": "Lingerie/Intimate Sets",
+    "guideline_concept": "Photo Direction",
+    "guidelines": {
+        "guideline_type": "Photo Direction",
+        "image_requirements": [
+            {
+                "step_name": "Hero (Main) Image",
+                "description": "Flat; Laydown imagery that depicts number of items in pack."
+            },
+            {
+                "step_name": "1st Alternate",
+                "description": "Front facing, head to toe, unrecognizable."
+            },
+            {
+                "step_name": "2nd Alternate",
+                "description": "Back facing, cropped to just below hairline to below fingertips."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> image_requirements"
+        }
+    ],
+    "summary": "This page outlines photo direction guidelines for Women's Intimates, specifically Lingerie/Intimate Sets. It specifies the required images in a particular order, detailing the attributes and angles desired for each shot."
+}

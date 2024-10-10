@@ -1,0 +1,39 @@
+{
+    "apparel_category": "Men\u2019s Apparel",
+    "product_type": "Facemask",
+    "guideline_concept": "Photo Direction",
+    "guidelines": {
+        "guideline_type": "Photo Direction",
+        "image_requirements": [
+            {
+                "step_name": "Hero (Main) Image",
+                "description": "Front facing, cropped to product showing accessory."
+            },
+            {
+                "step_name": "1st Alt",
+                "description": "Front facing, cropped above lip to below fingertips of item."
+            },
+            {
+                "step_name": "2nd Alt",
+                "description": "Back facing, cropped to just below hairline to below fingertips."
+            },
+            {
+                "step_name": "3rd Alt",
+                "description": "Still shot of accessory item."
+            },
+            {
+                "step_name": "4th Alt",
+                "description": "Additional still shots of accessory item."
+            },
+            {
+                "step_name": "5th Alt",
+                "description": "Additional still shots of accessory item. Can detail or highlight embellishments if not captured in required shots."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> Image_Requirements"
+        }
+    ]
+}

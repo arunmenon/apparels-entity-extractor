@@ -1,0 +1,28 @@
+{
+    "apparel_category": "Shapewear",
+    "product_type": "Shapewear",
+    "guideline_concept": "Additional Attributes",
+    "guidelines": {
+        "guideline_type": "Mandatory Attributes",
+        "attribute_requirements": [
+            {
+                "step_name": "Shapewear Style",
+                "description": "Defines the style of the Shapewear."
+            },
+            {
+                "step_name": "Shapewear Type",
+                "description": "Defines the type of shapewear item."
+            },
+            {
+                "step_name": "Shapewear Control Level",
+                "description": "Describes the level of support or control provided by an undergarment."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Apparel_Category -> Product_Type -> Mandatory Attributes -> attribute_requirements"
+        }
+    ],
+    "summary": "The document outlines additional mandatory attributes for all shapewear product types, including requirements for shapewear style, type, and control level, noting that adherence to these guidelines is essential to avoid validation failures."
+}

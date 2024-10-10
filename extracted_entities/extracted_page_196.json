@@ -1,0 +1,24 @@
+{
+    "apparel_category": null,
+    "product_type": null,
+    "guideline_concept": "Content Standards",
+    "guidelines": {
+        "guideline_type": "Syndication",
+        "syndication_details": [
+            {
+                "step_name": "Data Submission",
+                "description": "Submitting existing supplier content through the CCP partner to Walmart."
+            },
+            {
+                "step_name": "Validation Checks",
+                "description": "Partners implement validation checks based on Walmart\u2019s Style Guides."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Guideline_Concept -> Guideline_Type -> syndication_details"
+        }
+    ],
+    "summary": "The page outlines the Connected Content Partners (CCPs) program at Walmart, detailing processes for syndication, content enrichment, rich media integration, and user-generated content. It emphasizes the importance of compliance with Walmart's Style Guides and provides an overview of the services offered by CCP partners."
+}

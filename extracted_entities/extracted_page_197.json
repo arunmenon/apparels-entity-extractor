@@ -1,0 +1,31 @@
+{
+    "apparel_category": null,
+    "product_type": null,
+    "guideline_concept": "Product Naming Guidelines",
+    "guidelines": {
+        "guideline_type": "Product Naming Guidelines",
+        "description": [
+            {
+                "step_name": "Benefits of CCP",
+                "description": "The CCP integrates Walmart Style Guide requirements for compliant content submission."
+            },
+            {
+                "step_name": "Responsibility for Cost",
+                "description": "Suppliers are responsible for the cost of participating in the CCP Program."
+            },
+            {
+                "step_name": "Content Updates in Item 360",
+                "description": "Teams can access items through Item 360 to maintain following content ingestion by the CCP."
+            },
+            {
+                "step_name": "Difference between Item 360 and CCP",
+                "description": "Item 360/Seller Center is used by suppliers/sellers to create and update items without CCP access."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Guideline_Concept -> Guideline_Type -> description"
+        }
+    ]
+}

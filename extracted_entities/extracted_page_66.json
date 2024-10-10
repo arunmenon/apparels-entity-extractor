@@ -1,0 +1,28 @@
+{
+    "apparel_category": "Surgical & Hospital Gowns",
+    "product_type": "Gowns",
+    "guideline_concept": "Photo Direction",
+    "guidelines": {
+        "guideline_type": "Photo Direction",
+        "image_requirements": [
+            {
+                "step_name": "Hero (Main) Image",
+                "description": "Front facing, cropped above lip to below fingertips."
+            },
+            {
+                "step_name": "1st Alternate",
+                "description": "Show Package, if relevant."
+            },
+            {
+                "step_name": "2nd Alternate",
+                "description": "Ghost View."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> image_requirements"
+        }
+    ],
+    "summary": "The page outlines photo direction guidelines for Surgical & Hospital Gowns, requiring a main hero image and alternates that include showing the package and a ghost view."
+}

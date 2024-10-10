@@ -1,0 +1,35 @@
+{
+    "apparel_category": "Men's Bottoms",
+    "guideline_concept": "Photo Direction",
+    "guidelines": {
+        "guideline_type": "Photo Direction",
+        "image_requirements": [
+            {
+                "step_name": "Hero (Main) Image",
+                "description": "Front facing composite, crop approx. 2\u201d above garment (arms down)."
+            },
+            {
+                "step_name": "1st & 2nd Alternate",
+                "description": "Front facing, head to toe unrecognizable."
+            },
+            {
+                "step_name": "3rd & 4th Alternate",
+                "description": "Back facing, crop approx. 2\u201d above garment (arms down)."
+            },
+            {
+                "step_name": "5th & 6th Alternate",
+                "description": "3/4 side angle, crop approx. 2\u201d above garment (arms down)."
+            },
+            {
+                "step_name": "Additional Alternates",
+                "description": "Zoom image of garment detail, pattern, and/or ghost views. Highlight embellishments and design elements not captured in required shots, when present."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Apparel_Category -> Guideline_Concept -> Guideline_Type -> image_requirements"
+        }
+    ],
+    "summary": "This section outlines the photo direction guidelines for men's bottoms, detailing required and recommended images for product presentations."
+}

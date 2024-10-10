@@ -1,0 +1,26 @@
+{
+    "apparel_category": "All Upper Body",
+    "product_type": "All Tops, All Jackets & Coats",
+    "guideline_concept": "Product Naming Guidelines",
+    "guidelines": {
+        "guideline_type": "Naming Guidelines",
+        "naming_formulas": [
+            {
+                "step_name": "All Tops",
+                "description": "Brand Name 'or' License Name (if applicable) + Style Name + Descriptive Feature/Clothing Top Style/Character/Sports League/Sports Team/Material + Apparel Style + Clothing Type + Count Per Pack + (Clothing Size Group)"
+            },
+            {
+                "step_name": "All Jackets & Coats",
+                "description": "Global Brand License 'by' Brand + Product Line + Sleeve Style/Sleeve Length Style/Clothing Top Style/Clothing Neck Style/Collar Type/Upper Body Strap Configuration/Clothing Back Style/Clothing Shoulder Style/Clothing Fit/Features/Activity/Pattern/Character/Theme/Occasion/Sports League/Sports Team/Fabric Material Name + Clothing Type + Count Per Pack + (Clothing Size Group)"
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> naming_formulas"
+        },
+        {
+            "linkage": "Guideline_Concept -> Guideline_Type -> naming_formulas"
+        }
+    ]
+}

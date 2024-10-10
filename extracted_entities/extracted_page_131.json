@@ -1,0 +1,70 @@
+{
+    "apparel_category": "Reusable Training Pants",
+    "product_type": "Training Pants",
+    "guideline_concept": "Attributes",
+    "guidelines": {
+        "guideline_type": "Attribute Guidelines",
+        "attribute_details": [
+            {
+                "attribute_name": "Closure Type",
+                "description": "The type of fastener used to keep an item closed and to facilitate putting on the item.",
+                "examples": [
+                    "Button",
+                    "Clasp",
+                    "Drawstring",
+                    "Flap",
+                    "Hook & Eye",
+                    "Pull-On",
+                    "Snap",
+                    "Tie",
+                    "Zipper"
+                ],
+                "list_type": "Closed",
+                "multiple_values": "Yes",
+                "requirement_level": "Recommended"
+            },
+            {
+                "attribute_name": "Minimum Weight",
+                "description": "The lower weight limit or capability of an item, often used in conjunction with 'Maximum Weight'.",
+                "examples": [
+                    "20 lbs.",
+                    "50 lbs."
+                ],
+                "list_type": "Open",
+                "multiple_values": "No",
+                "requirement_level": "Recommended"
+            },
+            {
+                "attribute_name": "Maximum Weight",
+                "description": "The upper weight limit or capability of an item, often used in conjunction with 'Minimum Weight'.",
+                "examples": [
+                    "20 lbs.",
+                    "50 lbs."
+                ],
+                "list_type": "Open",
+                "multiple_values": "No",
+                "requirement_level": "Recommended"
+            },
+            {
+                "attribute_name": "Season",
+                "description": "If designed to be used during a specific type of year, the appropriate season this item may be used.",
+                "examples": [
+                    "All-Season",
+                    "Fall",
+                    "Spring",
+                    "Summer",
+                    "Winter"
+                ],
+                "list_type": "Closed",
+                "multiple_values": "Yes",
+                "requirement_level": "Recommended"
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> attribute_details"
+        }
+    ],
+    "summary": "The page provides guidelines for attributes related to Reusable Training Pants, including the types of closures, weight specifications, and seasonal use. Each attribute contains descriptions, examples, and requirement levels."
+}

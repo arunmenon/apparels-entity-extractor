@@ -1,0 +1,36 @@
+{
+    "apparel_category": "Scrub Sets",
+    "product_type": "Scrub Sets",
+    "guideline_concept": "Photo Direction",
+    "guidelines": {
+        "guideline_type": "Photo Direction",
+        "image_requirements": [
+            {
+                "step_name": "Hero (Main) Image",
+                "description": "Front facing, head to toe, unrecognizable."
+            },
+            {
+                "step_name": "1st Alternate Image",
+                "description": "Front facing, cropped above lip to below fingertips."
+            },
+            {
+                "step_name": "2nd Alternate Image",
+                "description": "Back facing, head to toe, unrecognizable."
+            },
+            {
+                "step_name": "3rd Alternate Image",
+                "description": "Ghost View."
+            },
+            {
+                "step_name": "4th Alternate Image",
+                "description": "Alternate detail. Highlight embellishments and design elements not captured in required shots if present."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> image_requirements"
+        }
+    ],
+    "summary": "The page provides photo direction for Scrub Sets and Jackets & Robes, detailing required and recommended image types for proper presentation."
+}

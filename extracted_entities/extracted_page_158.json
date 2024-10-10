@@ -1,0 +1,68 @@
+{
+    "apparel_category": "Underwear, Nightwear & Lingerie",
+    "guideline_concept": "Product Naming Guidelines",
+    "guidelines": {
+        "guideline_type": "Additional Attributes",
+        "attribute_details": [
+            {
+                "attribute_name": "Clothing Style",
+                "key": "clothingStyle",
+                "description": "Styles and designations that apply generally to various types of clothing.",
+                "examples": [
+                    "Activewear",
+                    "Athleisure",
+                    "Casual",
+                    "Dressy",
+                    "Loungewear",
+                    "Outerwear",
+                    "Skewear",
+                    "Snow Wear",
+                    "Streetwear",
+                    "Workwear",
+                    "Sleepwear",
+                    "Leisure"
+                ],
+                "list_type": "Closed",
+                "multiple_values": "Yes",
+                "requirement_level": "Recommended"
+            },
+            {
+                "attribute_name": "Closure Type",
+                "key": "fastenerType",
+                "description": "The type of fastener used to keep an item closed and to facilitate putting on the item.",
+                "examples": [
+                    "Belt",
+                    "Buckle",
+                    "Button",
+                    "Clasp",
+                    "Clip",
+                    "Drawstring",
+                    "Flap",
+                    "Hook & Eye",
+                    "Loop",
+                    "Magnet",
+                    "Pull-On",
+                    "Snap",
+                    "Tie",
+                    "Zipper",
+                    "Snap-Fastened",
+                    "Tie-On",
+                    "Eyelet",
+                    "Hook",
+                    "Sash Tie",
+                    "String",
+                    "None",
+                    "Hook & Loop"
+                ],
+                "list_type": "Closed",
+                "multiple_values": "Yes",
+                "requirement_level": "Recommended"
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Apparel_Category -> Guideline_Concept -> Guideline_Type -> attribute_details"
+        }
+    ]
+}

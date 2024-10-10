@@ -1,0 +1,39 @@
+{
+    "apparel_category": "All Bras, Lingerie, Swimsuits & Shapewear",
+    "product_type": [
+        "Bras",
+        "Lingerie",
+        "Swimsuits",
+        "Shapewear"
+    ],
+    "guideline_concept": "Attributes for Bras, Lingerie, Swimsuits & Shapewear",
+    "guidelines": {
+        "guideline_type": "Additional Attributes",
+        "attribute_details": [
+            {
+                "step_name": "Bra Size",
+                "description": "Bra size, consisting of band and cup."
+            },
+            {
+                "step_name": "Bra Band Size",
+                "description": "Measurement in inches of the band of the bra."
+            },
+            {
+                "step_name": "Bra Cup Size",
+                "description": "Letter size to optimize bra fit."
+            },
+            {
+                "step_name": "Bra Feature",
+                "description": "Features specific to brassieres."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> attribute_details"
+        },
+        {
+            "linkage": "Guideline_Concept -> Guideline_Type -> attribute_details"
+        }
+    ]
+}

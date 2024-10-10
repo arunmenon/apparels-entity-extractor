@@ -1,0 +1,40 @@
+{
+    "apparel_category": "Women\u2019s Swimwear",
+    "product_type": "Reversible Swim Tops",
+    "guideline_concept": "Photo Direction",
+    "guidelines": {
+        "guideline_type": "Photo Direction",
+        "image_requirements": [
+            {
+                "step_name": "Hero Image",
+                "description": "Front facing, cropped just above lip to above belly button."
+            },
+            {
+                "step_name": "1st Alternate Image",
+                "description": "Front facing, head to toe, unrecognizable."
+            },
+            {
+                "step_name": "2nd Alternate Image",
+                "description": "Front facing, cropped above lip to above belly button reverse."
+            },
+            {
+                "step_name": "3rd Alternate Image",
+                "description": "Back facing, cropped to just below hairline to below fingertips."
+            },
+            {
+                "step_name": "4th Alternate Image",
+                "description": "Ghost view."
+            },
+            {
+                "step_name": "Recommended 4th Alternate",
+                "description": "Highlight embellishments and design elements captured in required shots if present."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> image_requirements"
+        }
+    ],
+    "summary": "The page provides photography guidelines for women's swimwear, specifically for reversible swim tops, detailing required images and recommended alternates."
+}

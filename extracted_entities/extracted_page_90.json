@@ -1,0 +1,43 @@
+{
+    "apparel_category": "Socks & Hosiery",
+    "guideline_concept": "Product Naming Guidelines",
+    "guidelines": {
+        "guideline_type": "Naming Guidelines",
+        "naming_formula": [
+            {
+                "step_name": "Global Brand License",
+                "description": "Include only if there is a Global Brand License."
+            },
+            {
+                "step_name": "Brand + Product Line",
+                "description": "Combine brand and product line."
+            },
+            {
+                "step_name": "Sock Type/Sock Rise/Tights Sheerness/Hosiery Style/Features/Activity/Pattern/Character/Theme/Occasion/Sports League/Sports Team/Fabric Material Name",
+                "description": "List relevant attributes that describe style and features."
+            },
+            {
+                "step_name": "Clothing Type",
+                "description": "Include clothing type in the description."
+            },
+            {
+                "step_name": "Apparel Style",
+                "description": "Combine Gender + Special Sizing if applicable."
+            },
+            {
+                "step_name": "Count Per Pack",
+                "description": "Indicate count per pack (e.g., X-Pack)."
+            },
+            {
+                "step_name": "Clothing Size Group",
+                "description": "Specify clothing size group if applicable."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Apparel_Category -> Guideline_Concept -> Naming Guidelines -> naming_formula"
+        }
+    ],
+    "summary": "This page outlines the product naming guidelines for Socks & Hosiery, specifying a detailed formula to create descriptive and informative product names, including considerations for brand licenses, types, attributes, and packaging."
+}

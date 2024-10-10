@@ -1,0 +1,38 @@
+{
+    "apparel_category": "Women\u2019s Swimwear",
+    "product_type": [
+        "One-Piece",
+        "Rash Guards",
+        "Board Shorts",
+        "Tunic",
+        "Swim Dress",
+        "Tankinis",
+        "Bikinis",
+        "Two-Piece Sets",
+        "Cover-Ups",
+        "Hybrids",
+        "Skirt"
+    ],
+    "guideline_concept": "Additional Attributes",
+    "guidelines": {
+        "guideline_type": "Naming Guidelines",
+        "attribute_requirements": [
+            {
+                "step_name": "Swimsuit Style",
+                "description": "Describe styles common to swimwear, specifically for the bottom half under the Underpant/Swim Bottom Style attribute."
+            },
+            {
+                "step_name": "Closure Type",
+                "description": "Specify the type of fastener used to keep the item closed and to facilitate putting on the item."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> attribute_requirements"
+        },
+        {
+            "linkage": "Guideline_Concept -> Guideline_Type -> attribute_requirements"
+        }
+    ]
+}

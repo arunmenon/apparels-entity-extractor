@@ -1,0 +1,56 @@
+{
+    "apparel_category": "Men\u2019s Swimwear",
+    "product_type": "Swimwear",
+    "guideline_concept": "Key Feature Directions",
+    "guidelines": {
+        "guideline_type": "Key Feature Directions",
+        "feature_requirements": [
+            {
+                "step_name": "Material",
+                "description": "Fabric content including linings & any trims 5% or more or makeup."
+            },
+            {
+                "step_name": "Care",
+                "description": "Machine washable, Hand wash, Dry clean, Spot clean, Wipe clean."
+            },
+            {
+                "step_name": "Country of Origin",
+                "description": "Imported, Made in USA, Made in USA of imported materials, Made in USA and Imported."
+            },
+            {
+                "step_name": "Size",
+                "description": "Model is 0.0\" and is wearing a size X."
+            },
+            {
+                "step_name": "Fit",
+                "description": "Name of fit and how it fits, where it sits."
+            },
+            {
+                "step_name": "Rise & Inseam",
+                "description": "Low rise, 00\" inseam; 00\" leg opening."
+            },
+            {
+                "step_name": "Closure",
+                "description": "Elastic drawstring waist, elastic waist with interior drawstring closure."
+            },
+            {
+                "step_name": "Pockets",
+                "description": "Type, How many and location or indicate: None."
+            },
+            {
+                "step_name": "Features",
+                "description": "Stretch waist, mesh brief lining."
+            },
+            {
+                "step_name": "Note",
+                "description": "Neon color may be brighter than appears in photo (when applicable)."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> feature_requirements"
+        }
+    ],
+    "summary": "The page outlines key feature directions for men's swimwear, detailing material, care, country of origin, sizing, fit, rise and inseam, closure, pocket specifications, features, and notes regarding color appearance."
+}

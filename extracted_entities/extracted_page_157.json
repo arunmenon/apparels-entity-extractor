@@ -1,0 +1,32 @@
+{
+    "apparel_category": "Women's Swimwear",
+    "product_type": "Swimsuit Cover-Ups",
+    "guideline_concept": "Attributes",
+    "guidelines": {
+        "guideline_type": "Grouping Standards",
+        "additional_attributes": [
+            {
+                "step_name": "Condition",
+                "description": "Use this to describe the state of an item."
+            },
+            {
+                "step_name": "Original Product ID",
+                "description": "For refurbished items, this is the original/new equivalent product identifier ID which is different from the restored product identifier ID."
+            },
+            {
+                "step_name": "Original Product ID Type",
+                "description": "To be used for refurbished items: This refers to the original/new equivalent product identifier."
+            },
+            {
+                "step_name": "Original/New Equivalent Product Identifier",
+                "description": "Specify one Original/New Equivalent Product ID and its ID Type. Required if Condition = Restored."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> additional_attributes"
+        }
+    ],
+    "summary": "The page outlines mandatory attributes for Swimsuit Cover-Ups, including 'Condition', 'Original Product ID', 'Original Product ID Type', and 'Original/New Equivalent Product Identifier', emphasizing the necessity of compliance to avoid validation failures."
+}

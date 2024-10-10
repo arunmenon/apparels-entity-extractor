@@ -1,0 +1,30 @@
+{
+    "apparel_category": "Children\u2019s Apparel",
+    "guideline_concept": "Photo Direction",
+    "guidelines": {
+        "guideline_type": "Photo Direction",
+        "image_requirements": [
+            {
+                "step_name": "Hero (Main) Image",
+                "description": "Front facing, straight on, laydown of the garment."
+            },
+            {
+                "step_name": "1st Alternate",
+                "description": "Back facing, straight on, laydown of the garment."
+            },
+            {
+                "step_name": "2nd Alternate",
+                "description": "Detail highlighting embellishments and design elements not captured in required shots if present."
+            },
+            {
+                "step_name": "Additional Views",
+                "description": "Showing details of pieces in set."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Apparel_Category -> Guideline_Concept -> Guideline_Type -> image_requirements"
+        }
+    ]
+}

@@ -1,0 +1,42 @@
+{
+    "apparel_category": "Site Description Guidelines",
+    "guideline_concept": "Copy Standards",
+    "guidelines": {
+        "guideline_type": "Writing Guidelines",
+        "writing_guidelines": [
+            {
+                "step_name": "Short Description Requirement",
+                "description": "Information entered should be in HTML code, sentence case, paragraph form with no bullet points."
+            },
+            {
+                "step_name": "No Promotional Text",
+                "description": "No promotional text like free shipping or discounts, no special characters or hyperlinks to other retailers."
+            },
+            {
+                "step_name": "SEO Focus",
+                "description": "For SEO purposes, repeat the product name within the body of the description."
+            },
+            {
+                "step_name": "Unique and Useful Content",
+                "description": "Ensure your description is unique, not copied from other sites, and useful for customers."
+            },
+            {
+                "step_name": "Engagement with Customers",
+                "description": "Write in a way that helps customers make an informed decision and captures important keywords."
+            },
+            {
+                "step_name": "Keywords Usage",
+                "description": "Use related keywords organically within the sentences."
+            },
+            {
+                "step_name": "Conversational Tone",
+                "description": "Be clear and conversational while writing."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Guideline_Concept -> Guideline_Type -> Writing Guidelines"
+        }
+    ]
+}

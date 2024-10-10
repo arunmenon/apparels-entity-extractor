@@ -1,0 +1,58 @@
+{
+    "apparel_category": "General Apparel",
+    "product_type": "Product Title",
+    "guideline_concept": "Product Naming Guidelines",
+    "guidelines": {
+        "guideline_type": "Naming Guidelines",
+        "naming_requirements": [
+            {
+                "step_name": "Maximum Length",
+                "description": "Product names should be no longer than 90 characters."
+            },
+            {
+                "step_name": "Lead with Key Attributes",
+                "description": "Start with the most defining parts of your product title."
+            },
+            {
+                "step_name": "Unique Naming",
+                "description": "Create a unique product name that is not used verbatim on other websites."
+            },
+            {
+                "step_name": "Include Color When Relevant",
+                "description": "If color is a notable feature, include it in the product name."
+            },
+            {
+                "step_name": "Variant Grouping",
+                "description": "Use available variant attributes only in Key Features & Description, not in the product name."
+            },
+            {
+                "step_name": "Capitalization Rules",
+                "description": "Capitalize the first letter of each word, excluding articles and conjunctions, unless legally required."
+            },
+            {
+                "step_name": "Subject Keyword Inclusion",
+                "description": "The title should include subject keywords that describe the product."
+            },
+            {
+                "step_name": "Avoid Special Characters",
+                "description": "Do not use characters like '~', '!', '$', or '&' unless representing the brand."
+            },
+            {
+                "step_name": "Avoid Promotional Phrases",
+                "description": "Do not include promotional phrases such as 'best selling' or 'free shipping'."
+            },
+            {
+                "step_name": "Avoid 'Or' Language",
+                "description": "Do not use 'or' in the title when it implies multiple product types."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> naming_requirements"
+        },
+        {
+            "linkage": "Guideline_Concept -> Guideline_Type -> naming_requirements"
+        }
+    ]
+}

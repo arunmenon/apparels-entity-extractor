@@ -1,0 +1,22 @@
+{
+    "apparel_category": "Traditional Cholis",
+    "product_type": "",
+    "guideline_concept": "Additional Attributes",
+    "guidelines": {
+        "guideline_type": "Naming Guidelines",
+        "attribute_requirements": [
+            {
+                "step_name": "Closure Type",
+                "description": "The type of fastener used to keep an item closed and to facilitate putting on the item."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Apparel_Category -> Guideline_Type -> attribute_requirements"
+        },
+        {
+            "linkage": "Guideline_Concept -> Guideline_Type -> attribute_requirements"
+        }
+    ]
+}

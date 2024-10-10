@@ -1,0 +1,20 @@
+{
+    "apparel_category": "Teddies & Bodystockings",
+    "product_type": null,
+    "guideline_concept": "Additional Attributes",
+    "guidelines": {
+        "guideline_type": "Naming Guidelines",
+        "attribute_requirements": [
+            {
+                "step_name": "Sheerness",
+                "description": "Sheerness/opacities specific to tights and hosiery."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Apparel_Category -> Guideline_Concept -> Naming Guidelines -> attribute_requirements"
+        }
+    ],
+    "summary": "This section provides mandatory attributes for Teddies and Bodystockings regarding sheerness, highlighting the specific opacities required for tights and hosiery to ensure compliance with the style guide."
+}

@@ -1,0 +1,30 @@
+{
+    "apparel_category": "Men\u2019s Upper Body",
+    "product_type": "T-Shirts",
+    "guideline_concept": "Product Packaging Guidelines",
+    "guidelines": {
+        "guideline_type": "Photo Direction",
+        "image_requirements": [
+            {
+                "step_name": "Required Packaging Images",
+                "description": "Product packaging images will be required for all product sold in stores in 'packaging'."
+            },
+            {
+                "step_name": "Usage of Images",
+                "description": "These images will be used by the Store Ops teams to help locate product in stores for customers who purchase online and choose to 'Pick Up In Store'."
+            },
+            {
+                "step_name": "Image Designation",
+                "description": "Packaging product shots will continue to be designated as the 1st alternate shot online \u2013 the primary shot being out of packaging and/or on model."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> Image_Requirements"
+        },
+        {
+            "linkage": "Guideline_Concept -> Guideline_Type -> Image_Requirements"
+        }
+    ]
+}

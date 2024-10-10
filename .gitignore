@@ -7,7 +7,6 @@ __pycache__/
 *.so
 .DS* 
 output_images/
-extracted_entities/
 *.pdf
 # Distribution / packaging
 .Python

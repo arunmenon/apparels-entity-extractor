@@ -1,0 +1,31 @@
+{
+    "apparel_category": null,
+    "product_type": null,
+    "guideline_concept": "Copy Standards",
+    "guidelines": {
+        "guideline_type": "Copy Standards",
+        "writing_guidelines": [
+            {
+                "step_name": "Using the Right Voice",
+                "description": "Deliver a friendly, straightforward & authentic tone that embodies Walmart's ideals."
+            },
+            {
+                "step_name": "You Should",
+                "description": "Use an active voice, speak to benefits, and say more with fewer words."
+            },
+            {
+                "step_name": "You Should Avoid",
+                "description": "Avoid hyperbolic statements, guarantees, and all-caps usage."
+            },
+            {
+                "step_name": "Base-Variant Copy",
+                "description": "Do not include color and size information in base-variant copy."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Guideline_Concept -> Guideline_Type -> writing_guidelines"
+        }
+    ]
+}

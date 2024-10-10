@@ -1,0 +1,51 @@
+{
+    "apparel_category": "General Apparel",
+    "guideline_concept": "Styling Guidelines",
+    "guidelines": {
+        "guideline_type": "Photo Direction",
+        "image_requirements": [
+            {
+                "step_name": "Iron or Steam",
+                "description": "DO iron or steam the clothing before photographing it."
+            },
+            {
+                "step_name": "Natural Resting Position",
+                "description": "DON'T stretch the garment on the model or mannequin. Garment should rest naturally."
+            },
+            {
+                "step_name": "Avoid Obstructions",
+                "description": "DON'T have any items or hair obstructing the garment."
+            },
+            {
+                "step_name": "Scrunchy Look",
+                "description": "DO keep the garment a little bit scrunchy, as it normally would hang on a body."
+            },
+            {
+                "step_name": "Proper Fit on Mannequin",
+                "description": "On mannequin, the garment should NOT be too loose, droopy on sides, and no puckering."
+            },
+            {
+                "step_name": "Tucking Strategy",
+                "description": "DON'T tuck in the shirt or top; the system can adjust that."
+            },
+            {
+                "step_name": "Sleeve Management",
+                "description": "If you have long sleeves, style them how you want, rolled up if appropriate."
+            },
+            {
+                "step_name": "Capturing Bottoms",
+                "description": "DON'T have the top obstructing the bottoms; roll the top up evenly."
+            },
+            {
+                "step_name": "Minimal Styling",
+                "description": "DO follow the rule to do the least amount of styling possible."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Guideline_Concept -> Guideline_Type -> image_requirements"
+        }
+    ],
+    "summary": "This page outlines styling guidelines for photographing apparel, emphasizing the importance of natural presentation, avoiding obstructions, and minimal styling for optimal visual representation."
+}

@@ -1,0 +1,23 @@
+{
+    "apparel_category": "Bras, Lingerie & Shapewear",
+    "product_type": "Bras",
+    "guideline_concept": "Additional Attributes",
+    "guidelines": {
+        "guideline_type": "Attributes",
+        "attribute_requirements": [
+            {
+                "step_name": "Body Descriptor",
+                "description": "General descriptors related to body shapes, body sizes, etc."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> attribute_requirements"
+        },
+        {
+            "linkage": "Guideline_Concept -> Guideline_Type -> attribute_requirements"
+        }
+    ],
+    "summary": "The page outlines additional mandatory attributes for bras, lingerie, and shapewear, specifically focusing on body descriptors that relate to body shapes and sizes. These attributes are essential to avoid validation issues during the publishing process."
+}

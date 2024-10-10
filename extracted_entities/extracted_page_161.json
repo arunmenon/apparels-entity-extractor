@@ -1,0 +1,35 @@
+{
+    "apparel_category": "Base Layers",
+    "product_type": "Base Layer Product Type",
+    "guideline_concept": "Attributes",
+    "guidelines": {
+        "guideline_type": "Attribute Requirements",
+        "attribute_requirements": [
+            {
+                "attribute": "Waist Style",
+                "key": "waistStyle",
+                "description": "Waist styles/defining features.",
+                "examples_value_list": [
+                    "Banded Waist",
+                    "Elastic Waist",
+                    "Seamless Waistband",
+                    "Maternity Waist",
+                    "Comfort Waist",
+                    "Hidden Extension"
+                ],
+                "list_type": "Closed",
+                "multiple_values": "Yes",
+                "requirement_level": "Recommended"
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> attribute_requirements"
+        },
+        {
+            "linkage": "Guideline_Concept -> guideline_type -> attribute_requirements"
+        }
+    ],
+    "summary": "This page outlines additional mandatory attributes for Base Layer product types, highlighting the 'Waist Style' attribute and its defining features, examples, and requirements for compliance."
+}

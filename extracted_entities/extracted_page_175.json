@@ -1,0 +1,22 @@
+{
+    "apparel_category": "All Scrubs & Medical Gowns",
+    "guideline_concept": "Attributes",
+    "guidelines": {
+        "guideline_type": "Additional Attributes",
+        "attribute_requirements": [
+            {
+                "step_name": "Is Disposable",
+                "description": "Indicates the item is intended for single use."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Apparel_Category -> Guideline_Type -> attribute_requirements"
+        },
+        {
+            "linkage": "Guideline_Concept -> Guideline_Type -> attribute_requirements"
+        }
+    ],
+    "summary": "The page outlines the mandatory attributes for 'All Scrubs & Medical Gowns', emphasizing that failure to comply may lead to validation issues and delays in publishing."
+}

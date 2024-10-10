@@ -1,0 +1,29 @@
+{
+    "apparel_category": "All Sets & Suits",
+    "product_type": [
+        "Clothing Sets",
+        "All Suits - Tuxedos, Two-piece suits, Three-piece suits"
+    ],
+    "guideline_concept": "Product Naming Guidelines",
+    "guidelines": {
+        "guideline_type": "Naming Guidelines",
+        "naming_formulas": [
+            {
+                "step_name": "Clothing Sets",
+                "description": "Global Brand License ' + 'by' + Brand + Product Line + Jacket Style/Jacket Breasting Style/Jacket Length/Clothing Neck Style/Upper Body Strap Configuration/Clothing Back Style/Clothing Shoulder Style/Clothing Top Style/Sleeve Style/Sleeve Length Style/Pant Style/Pant Length/Shorts Style/Clothing Length Style/Skirt Style/Clothing Fit/Features/Activity/Pattern/Character/Theme/Occasion/Sports League/Sports Team/Fabric Material Name, Clothing Type + Count Per Pack + (Clothing Size Group)"
+            },
+            {
+                "step_name": "All Suits",
+                "description": "Global Brand License ' + 'by' + Brand + Product Line + Jacket Style/Jacket Breasting Style/Jacket Length/Collar Type/Sleeve Style/Sleeve Length Style/Pant Leg Cut/Clothing Fit/Features/Activity/Pattern/Character/Theme/Occasion/Sports League/Sports Team/Fabric Material Name, Clothing Type + Count Per Pack + (Clothing Size Group)"
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> naming_formulas"
+        },
+        {
+            "linkage": "Guideline_Concept -> Guideline_Type -> naming_formulas"
+        }
+    ]
+}

@@ -1,0 +1,20 @@
+{
+    "apparel_category": "All Tops Apparel",
+    "product_type": "Clothing Top Style",
+    "guideline_concept": "Attributes",
+    "guidelines": {
+        "guideline_type": "Copy Standards",
+        "example_attributes": [
+            {
+                "step_name": "Clothing Top Style",
+                "description": "Style terms descriptive of clothing tops."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> example_attributes"
+        }
+    ],
+    "summary": "The page outlines mandatory attributes for all top apparel items, specifying the concept of 'Clothing Top Style' and providing a list of examples and terms used to describe different styles."
+}

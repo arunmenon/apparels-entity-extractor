@@ -1,0 +1,40 @@
+{
+    "apparel_category": null,
+    "product_type": null,
+    "guideline_concept": "Image Styling",
+    "guidelines": {
+        "guideline_type": "Photo Direction",
+        "image_requirements": [
+            {
+                "step_name": "Setting",
+                "description": "Show the products in a bright and fresh environment to convey high-quality, clean products."
+            },
+            {
+                "step_name": "Silo Angles & Views",
+                "description": "Photograph each unique side of the product package. The 'Front View' should highlight the predominant brand labeling."
+            },
+            {
+                "step_name": "Silo Lighting",
+                "description": "Ensure products are evenly lit and colors correctly represent the item, avoiding flare or spill."
+            },
+            {
+                "step_name": "Silo Post Production",
+                "description": "Items should be clipped from the background, cleaning any dirt, dust, or stickers."
+            },
+            {
+                "step_name": "Props",
+                "description": "Be selective with props, avoiding distractions from the product."
+            },
+            {
+                "step_name": "Model Usage",
+                "description": "Diversity is encouraged; use natural expressions and engage models with the product."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Guideline_Concept -> Guideline_Type -> Image Requirements"
+        }
+    ],
+    "summary": "The page outlines guidelines for image styling, emphasizing high-quality settings, specific angles and views, effective lighting, post-production editing, prop selection, and model usage to showcase products authentically."
+}

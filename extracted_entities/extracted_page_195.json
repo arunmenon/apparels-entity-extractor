@@ -1,0 +1,20 @@
+{
+    "apparel_category": null,
+    "product_type": null,
+    "guideline_concept": "User Generated Content",
+    "guidelines": {
+        "guideline_type": "Social Media Integration",
+        "context_specific_label": [
+            {
+                "step_name": "Engagement with Customers",
+                "description": "Content created by customers like Instagram posts, and Facebook interactions provide potential customers insight into products."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Guideline_Concept -> Guideline_Type -> context_specific_label"
+        }
+    ],
+    "summary": "The page discusses the importance of user-generated content (UGC) in boosting product visibility, sales, and customer engagement. It highlights the significance of reviews and social media interactions for gaining customer trust and improving the shopping experience."
+}

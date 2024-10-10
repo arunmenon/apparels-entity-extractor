@@ -1,0 +1,73 @@
+{
+    "apparel_category": "Women's Upper Body",
+    "product_type": [
+        "All Tops",
+        "All Jackets & Coats (Outerwear)"
+    ],
+    "guideline_concept": "Key Feature Directions",
+    "guidelines": {
+        "guideline_type": "Key Feature Directions",
+        "key_feature_directions": [
+            {
+                "step_name": "Material",
+                "description": "Fabric content including linings & any trims 5% or more or makeup."
+            },
+            {
+                "step_name": "Care",
+                "description": "Machine washable, Hand wash, Dry clean, Spot clean, Wipe clean, etc."
+            },
+            {
+                "step_name": "Country of Origin",
+                "description": "Imported, Made in USA, Made in USA of imported materials, Made in USA and imported, etc."
+            },
+            {
+                "step_name": "Size",
+                "description": "Model is 0.0\" and is wearing a size X."
+            },
+            {
+                "step_name": "Fit",
+                "description": "Fitted, oversized, relaxed, loose, etc."
+            },
+            {
+                "step_name": "Neckline",
+                "description": "Crew neck, V-neck, U-neck, Cowl neck, etc."
+            },
+            {
+                "step_name": "Closure",
+                "description": "Pullover style, Button front, Back button with keyhole, etc."
+            },
+            {
+                "step_name": "Sleeves",
+                "description": "Short, long, blouse, illusion, elbow-length, 3/4 sleeves, etc."
+            },
+            {
+                "step_name": "Pockets",
+                "description": "How many and location or use: None."
+            },
+            {
+                "step_name": "Features",
+                "description": "Trims, special hems, decorative details, unlined or lined, etc."
+            },
+            {
+                "step_name": "Weight",
+                "description": "Lightweight, Mid-weight, Heavyweight, Fine gauge, traditional jersey stitch, etc."
+            },
+            {
+                "step_name": "Length",
+                "description": "00\" long."
+            },
+            {
+                "step_name": "Collar",
+                "description": "Point, double, crossover, etc.; attached hood (if applicable)."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> Key Feature Directions"
+        },
+        {
+            "linkage": "Guideline_Concept -> Guideline_Type -> Key Feature Directions"
+        }
+    ]
+}

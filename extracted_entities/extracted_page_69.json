@@ -1,0 +1,39 @@
+{
+    "apparel_category": "Children's Apparel",
+    "product_type": [
+        "2-Piece Set",
+        "3-Piece Set",
+        "4-Piece Set",
+        "5-Piece Set"
+    ],
+    "guideline_concept": "Photo Direction",
+    "guidelines": {
+        "guideline_type": "Photo Direction",
+        "image_requirements": [
+            {
+                "step_name": "2-Piece Set",
+                "description": "1. Hero (Main) Image: Front facing, straight on, laydown of all pieces in set. 2. 1st Alternate: Cropped in detail shot #1. 3. 2nd Alternate: Cropped in detail shot #2."
+            },
+            {
+                "step_name": "3-Piece Set",
+                "description": "Required images are mentioned but not detailed."
+            },
+            {
+                "step_name": "4-Piece Set",
+                "description": "Required images are mentioned but not detailed."
+            },
+            {
+                "step_name": "5-Piece Set",
+                "description": "1. Hero (Main) Image: Front facing, straight on, laydown of all pieces in set. 2. 1st Alternate: Cropped in detail shot #1. 3. 2nd Alternate: Cropped in detail shot #2. 4. 3rd Alternate: Cropped in detail shot #3."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> image_requirements"
+        },
+        {
+            "linkage": "Guideline_Concept -> Guideline_Type -> image_requirements"
+        }
+    ]
+}

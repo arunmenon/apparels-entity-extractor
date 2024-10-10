@@ -1,0 +1,34 @@
+{
+    "apparel_category": "All Pants",
+    "product_type": "Pants",
+    "guideline_concept": "Attribute Guidelines",
+    "guidelines": {
+        "guideline_type": "Naming Guidelines",
+        "attribute_requirements": [
+            {
+                "step_name": "Pant Style",
+                "description": "Style terms specific to pants."
+            },
+            {
+                "step_name": "Pant Leg Cut",
+                "description": "Common style terms describing how the garment leg has been cut to make a specific silhouette/shape."
+            },
+            {
+                "step_name": "Pant Leg Length",
+                "description": "Terms that describe the length of pants."
+            },
+            {
+                "step_name": "Clothing Leg Bottom Opening Style",
+                "description": "The style of the bottom opening nearest to the foot on jeans, pants, etc."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> attribute_requirements"
+        },
+        {
+            "linkage": "Guideline_Concept -> Guideline_Type -> attribute_requirements"
+        }
+    ]
+}

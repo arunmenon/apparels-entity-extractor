@@ -1,0 +1,23 @@
+{
+    "apparel_category": "Men\u2019s Lower Body",
+    "product_type": "Pants & Shorts",
+    "guideline_concept": "Attributes",
+    "guidelines": {
+        "guideline_type": "Additional Attributes",
+        "attribute_requirements": [
+            {
+                "step_name": "Inseam",
+                "description": "For pants, the distance from the bottom of the leg to the seam in the crotch, measured in inches."
+            },
+            {
+                "step_name": "Waist Rise",
+                "description": "The height at which the waistline rests on the body."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> attribute_requirements"
+        }
+    ]
+}

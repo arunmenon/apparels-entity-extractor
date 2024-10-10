@@ -1,0 +1,35 @@
+{
+    "apparel_category": "Sleepwear Sets",
+    "guideline_concept": "Photo Direction",
+    "guidelines": {
+        "guideline_type": "Photo Direction",
+        "image_requirements": [
+            {
+                "step_name": "Hero (Main) Image",
+                "description": "Front facing, head to toe, unrecognizable."
+            },
+            {
+                "step_name": "1st Alternate",
+                "description": "Front facing, head to toe, unrecognizable."
+            },
+            {
+                "step_name": "2nd Alternate",
+                "description": "Back facing, head to toe, unrecognizable."
+            },
+            {
+                "step_name": "3rd Alternate",
+                "description": "Ghost view of garment."
+            },
+            {
+                "step_name": "4th Alternate",
+                "description": "Highlight embellishments and design elements not captured in required shots if present."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Apparel_Category -> Guideline_Concept -> Guideline_Type -> image_requirements"
+        }
+    ],
+    "summary": "The page provides photography direction for 'Sleepwear Sets' and 'Multi Piece Sets', outlining required and recommended image types for capturing apparel."
+}

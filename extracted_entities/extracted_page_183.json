@@ -1,0 +1,22 @@
+{
+    "apparel_category": "All Athletic Apparel",
+    "product_type": null,
+    "guideline_concept": "Attributes",
+    "guidelines": {
+        "guideline_type": "Grouping Standards",
+        "attribute_requirements": [
+            {
+                "step_name": "Activity",
+                "description": "The general type of activity the product is associated with."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Apparel_Category -> Guideline_Type -> attribute_requirements"
+        },
+        {
+            "linkage": "Guideline_Concept -> Guideline_Type -> attribute_requirements"
+        }
+    ]
+}

@@ -1,0 +1,39 @@
+{
+    "apparel_category": "Men & Womens Bundled Apparel",
+    "product_type": "Graphic Tees",
+    "guideline_concept": "Photo Direction",
+    "guidelines": {
+        "guideline_type": "Photo Direction",
+        "image_requirements": [
+            {
+                "step_name": "Hero (Main) Image",
+                "description": "On-figure imagery that depicts number of items in pack."
+            },
+            {
+                "step_name": "1st Alt",
+                "description": "Laydown imagery that depicts number of items in pack."
+            },
+            {
+                "step_name": "2nd Alt",
+                "description": "Front facing, crop to garment of additional item in pack."
+            },
+            {
+                "step_name": "3rd Alt",
+                "description": "Front facing, crop to garment of additional item in pack."
+            },
+            {
+                "step_name": "4th Alt",
+                "description": "Detail shot of item in pack."
+            },
+            {
+                "step_name": "5th Alt",
+                "description": "Detail shot of item in pack."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> Image_Requirements"
+        }
+    ]
+}

@@ -1,0 +1,47 @@
+{
+    "apparel_category": "Apparel",
+    "guideline_concept": "Model Positioning",
+    "guidelines": {
+        "guideline_type": "Photo Direction",
+        "image_requirements": [
+            {
+                "step_name": "Model Position",
+                "description": "Model's feet planted firmly on the ground at hip width, body facing straight and forward to the camera."
+            },
+            {
+                "step_name": "Arm Position",
+                "description": "Arms should be raised evenly at sides with a 25\u00b0 degree angle from the body\u2019s hips."
+            },
+            {
+                "step_name": "Avoiding Obstructions",
+                "description": "Camera should capture the entire garment with NO product, hands, or hair in the way."
+            },
+            {
+                "step_name": "Front Capture",
+                "description": "Position the model in front of the camera, facing forward to shoot the front of the product."
+            },
+            {
+                "step_name": "Back Capture",
+                "description": "Position the model to directly face the backdrop, ensuring hair is not on the back and no rotation in the body\u2019s frame."
+            },
+            {
+                "step_name": "Separate Outfits Capture",
+                "description": "Separate the two products and take two additional shots: one for the front and another for the back."
+            },
+            {
+                "step_name": "Gap Between Pant Legs",
+                "description": "Keep a gap between pant legs, including wide leg bottoms."
+            },
+            {
+                "step_name": "Flared Sleeves",
+                "description": "For flared or flowy sleeves, DO raise arms slightly to allow the product to lay more accordingly."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Guideline_Concept -> Guideline_Type -> Image Requirements"
+        }
+    ],
+    "summary": "This document outlines the guidelines for model positioning and capture setup for apparel photography, emphasizing correct positioning of the model, arms, and camera angles to ensure optimal representation of the product."
+}

@@ -1,0 +1,22 @@
+{
+    "apparel_category": "Dresses",
+    "product_type": "All Dress Product Type",
+    "guideline_concept": "Copy Standards",
+    "guidelines": {
+        "guideline_type": "Naming Guidelines",
+        "attribute_requirements": [
+            {
+                "step_name": "Dress Style",
+                "description": "Style terms specific to dresses. Other style terms that describe a dress's skirt may be found under the Skirt Style attribute."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> attribute_requirements"
+        },
+        {
+            "linkage": "Guideline_Concept -> Guideline_Type -> attribute_requirements"
+        }
+    ]
+}

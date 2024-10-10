@@ -1,0 +1,35 @@
+{
+    "apparel_category": "Baby Layette & Gift Sets",
+    "guideline_concept": "Attributes",
+    "guidelines": {
+        "guideline_type": "Additional Attributes",
+        "attribute_requirements": [
+            {
+                "step_name": "Diaper Size",
+                "description": "Specific size relating to diapers."
+            },
+            {
+                "step_name": "Season",
+                "description": "If designed to be used during a specific type of year, the appropriate season this item may be used."
+            },
+            {
+                "step_name": "Text",
+                "description": "This is the predominant text displayed on an item, representing the theme or headline."
+            },
+            {
+                "step_name": "Jacket Style",
+                "description": "Describes the style of the jacket, including options like Bomber and Cardigan."
+            },
+            {
+                "step_name": "Skirt Style",
+                "description": "Describes the style of the skirt, including options like A-Frame and Bubble."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Apparel_Category -> Guideline_Concept -> Additional Attributes"
+        }
+    ],
+    "summary": "This page outlines additional attributes for the Baby Layette & Gift Sets, detailing specific attributes like Diaper Size, Season, Text, Jacket Style, and Skirt Style along with their descriptions."
+}

@@ -1,0 +1,56 @@
+{
+    "apparel_category": "Shapewear",
+    "product_type": null,
+    "guideline_concept": null,
+    "guidelines": {
+        "guideline_type": "Key Feature Directions",
+        "key_feature_directions": [
+            {
+                "step_name": "Material",
+                "description": "Fabric content including linings & any trims 5% or more or makeup."
+            },
+            {
+                "step_name": "Care",
+                "description": "Machine washable, Hand wash, Dry clean, Spot clean, Wipe clean."
+            },
+            {
+                "step_name": "Country of Origin",
+                "description": "Imported, Made in USA, Made in USA of imported materials, Made in USA and Imported."
+            },
+            {
+                "step_name": "Size",
+                "description": "Model is 0.0\" and is wearing a size X."
+            },
+            {
+                "step_name": "Type of Cups",
+                "description": "Padded, memory foam, underwire, etc."
+            },
+            {
+                "step_name": "Coverage",
+                "description": "Full, moderate, full-figure fit, etc."
+            },
+            {
+                "step_name": "Support Level",
+                "description": "Lightly lined, high, flexible, control support, etc."
+            },
+            {
+                "step_name": "Closure",
+                "description": "Back or front hook and eye, pullover style, etc."
+            },
+            {
+                "step_name": "Straps or Waistband Type",
+                "description": "Adjustable, type, removable (when applicable)."
+            },
+            {
+                "step_name": "Features",
+                "description": "Stretch fabric, all day support, lace trim, twist knot front, appliques, beaded, etc."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Apparel_Category -> Guideline_Type -> Key Feature Directions"
+        }
+    ],
+    "summary": "The document outlines key feature guidelines for shapewear, detailing material specifications, care instructions, country of origin, size information, cup types, coverage options, support levels, closure styles, strap types, and additional features."
+}

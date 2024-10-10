@@ -1,0 +1,31 @@
+{
+    "apparel_category": "Men's Apparel",
+    "product_type": "Basic Shirt",
+    "guideline_concept": "Photo Direction",
+    "guidelines": {
+        "guideline_type": "Photo Direction",
+        "image_requirements": [
+            {
+                "step_name": "Hero (Main) Image",
+                "description": "Laydown imagery that depicts number of items in pack."
+            },
+            {
+                "step_name": "1st Alternate Image",
+                "description": "Front facing, cropped above the lip to below fingertips."
+            },
+            {
+                "step_name": "2nd Alternate Image",
+                "description": "Back facing, cropped to just below hairline to below fingertips."
+            },
+            {
+                "step_name": "3rd Alternate Image",
+                "description": "Back facing, cropped to just below hairline to below fingertips."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> image_requirements"
+        }
+    ]
+}

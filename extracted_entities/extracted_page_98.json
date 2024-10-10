@@ -1,0 +1,59 @@
+{
+    "apparel_category": "Women's Lower Body",
+    "product_type": [
+        "Jeans",
+        "Pants",
+        "Capri's",
+        "Shorts",
+        "Leggings",
+        "Skirts",
+        "Skorts"
+    ],
+    "guidelines": {
+        "guideline_type": "Key Feature Directions",
+        "key_feature_directions": [
+            {
+                "step_name": "Material",
+                "description": "Fabric content including linings & any trims 5% or more or makeup."
+            },
+            {
+                "step_name": "Care",
+                "description": "Machine washable, Hand wash, Dry clean, Spot clean, Wipe clean, etc. Professionally leather or suede clean."
+            },
+            {
+                "step_name": "Country of Origin",
+                "description": "Imported, Made in USA, Made in USA of imported materials."
+            },
+            {
+                "step_name": "Size",
+                "description": "Model is 0.0\" and is wearing a size X."
+            },
+            {
+                "step_name": "Fit",
+                "description": "Slim, skinny, relaxed, slim through the hips, etc."
+            },
+            {
+                "step_name": "Rise and Inseam",
+                "description": "High rise, low rise, etc.; 00\" inseam."
+            },
+            {
+                "step_name": "Closure",
+                "description": "Pull-on style, button fly with zip front, snaps, etc."
+            },
+            {
+                "step_name": "Pockets",
+                "description": "How many and location or use: None."
+            },
+            {
+                "step_name": "Features",
+                "description": "Trims, special hems, decorative details, rips, cuffs, etc."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> Key Feature Directions"
+        }
+    ],
+    "summary": "The page outlines key feature directions for women's lower body apparel, including guidelines on material, care, country of origin, size, fit, rise, inseam, closure, pockets, and features, applicable to jeans, pants, capris, shorts, leggings, skirts, and skorts."
+}

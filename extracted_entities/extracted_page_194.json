@@ -1,0 +1,31 @@
+{
+    "apparel_category": "",
+    "product_type": "",
+    "guideline_concept": "File Specifications",
+    "guidelines": {
+        "guideline_type": "Photo Direction",
+        "image_requirements": [
+            {
+                "step_name": "File Format",
+                "description": "JPEG (.jpg), (.jpeg) or PNG (.png)"
+            },
+            {
+                "step_name": "Size",
+                "description": "A minimum of 24 image URLs is required for optimal viewing, each individually less than 1MB. If you have 12 images, please duplicate them to submit 24. If you have more than 24 images, please only select 24 to share."
+            },
+            {
+                "step_name": "Images Order",
+                "description": "Images are in order of rotation, clockwise."
+            },
+            {
+                "step_name": "Naming",
+                "description": "For Marketplace Sellers, use 'GTIN_R01_C01, GTIN_R01_C02...GTIN_R01_C24' with specific format requirements."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Guideline_Concept -> Guideline_Type -> Image_Requirements"
+        }
+    ]
+}

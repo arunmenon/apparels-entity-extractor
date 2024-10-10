@@ -1,0 +1,73 @@
+{
+    "apparel_category": "All Upper Body Garments",
+    "guideline_concept": "Attributes for Upper Body Apparel",
+    "guidelines": {
+        "guideline_type": "Attribute Standards",
+        "attributes": [
+            {
+                "attribute_name": "Sleeve Style",
+                "description": "Descriptive terms for the style of garment sleeves.",
+                "examples": [
+                    "Batwing",
+                    "Bell",
+                    "Bracelet",
+                    "Cap",
+                    "Dolman",
+                    "Flutter",
+                    "Kimono",
+                    "Raglan",
+                    "Rolled",
+                    "Tab",
+                    "Mitten-Cuff"
+                ],
+                "requirement_level": "Recommended"
+            },
+            {
+                "attribute_name": "Sleeve Length Style",
+                "description": "Descriptive terms for sleeve length.",
+                "examples": [
+                    "Sleeveless",
+                    "Short Sleeve",
+                    "Elbow-Length",
+                    "3/4 Sleeve",
+                    "Long Sleeve",
+                    "1/4 Sleeve",
+                    "Set-In Sleeve",
+                    "Cap Sleeve"
+                ],
+                "requirement_level": "Required"
+            },
+            {
+                "attribute_name": "Clothing Back Style",
+                "description": "The overall style of the back of a garment.",
+                "examples": [
+                    "Backless",
+                    "Low Back",
+                    "Open Back",
+                    "Raceback",
+                    "Smocked Back",
+                    "Keyhole Back"
+                ],
+                "requirement_level": "Recommended"
+            },
+            {
+                "attribute_name": "Clothing Shoulder Style",
+                "description": "The overall style of the shoulder area of a garment.",
+                "examples": [
+                    "Cold Shoulder",
+                    "Cutout",
+                    "Drop Shoulder",
+                    "Off the Shoulder",
+                    "One Shoulder"
+                ],
+                "requirement_level": "Recommended"
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Apparel_Category -> Guideline_Concept -> Attribute Standards -> Attributes"
+        }
+    ],
+    "summary": "The page outlines additional mandatory attributes for all upper body apparel items, specifying sleeve styles, sleeve length styles, clothing back styles, and clothing shoulder styles."
+}

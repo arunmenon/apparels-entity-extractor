@@ -1,0 +1,24 @@
+{
+    "apparel_category": "Sports Bras",
+    "product_type": null,
+    "guideline_concept": null,
+    "guidelines": {
+        "guideline_type": "Additional Attributes",
+        "attribute_requirements": [
+            {
+                "step_name": "Bra Style",
+                "description": "Brassiere styles/defining features. Enter as many as are relevant to the bra."
+            },
+            {
+                "step_name": "Bra Impact Level",
+                "description": "The general level of support varying on impact level of the activity."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Apparel_Category -> Guideline_Type -> attribute_requirements"
+        }
+    ],
+    "summary": "The document outlines mandatory attributes for Sports Bra items, emphasizing the need for specific details regarding bra styles and impact levels for effective categorization and compliance."
+}

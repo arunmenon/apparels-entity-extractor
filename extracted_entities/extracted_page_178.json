@@ -1,0 +1,22 @@
+{
+    "apparel_category": "Women's Upper Body",
+    "product_type": "Bras, Swimsuit Tops, Leotards",
+    "guideline_concept": "Product Naming Guidelines",
+    "guidelines": {
+        "guideline_type": "Attributes",
+        "mandatory_attributes": [
+            {
+                "step_name": "Upper Body Strap Configuration",
+                "description": "Strap configuration style for bras, swimsuit tops, leotards, and other clothing tops."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> mandatory_attributes"
+        },
+        {
+            "linkage": "Guideline_Concept -> Guideline_Type -> mandatory_attributes"
+        }
+    ]
+}

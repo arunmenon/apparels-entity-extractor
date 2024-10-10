@@ -1,0 +1,63 @@
+{
+    "apparel_category": null,
+    "product_type": null,
+    "guideline_concept": "Copy Standards",
+    "guidelines": {
+        "guideline_type": "Copy Standards",
+        "writing_guidelines": [
+            {
+                "step_name": "Country of Origin",
+                "description": "Must be listed in the copy. For Country of Origin Requirements, refer to the relevant guidelines."
+            },
+            {
+                "step_name": "Care Instructions",
+                "description": "Refer and comply to the Clothes Captioning: Complying with the Care Labeling Rule guidelines."
+            },
+            {
+                "step_name": "Fabric and Material Content",
+                "description": "Must comply with the Textile Fiber Products Identification Act and the Wool Product Labeling Act."
+            },
+            {
+                "step_name": "Biodegradable Claims",
+                "description": "No plastic product should make the claim of biodegradable or compostable."
+            },
+            {
+                "step_name": "Antimicrobial Claims",
+                "description": "Do not make antimicrobial, hypo-allergenic or similar claims without substantiation from vendor."
+            },
+            {
+                "step_name": "Eco-Friendly Claims",
+                "description": "Do not make eco-friendly/sustainability claims without substantiation from vendor."
+            },
+            {
+                "step_name": "Organic Textiles Claims",
+                "description": "Do not make claims that items are organic or made from organic textiles without substantiation from vendor."
+            },
+            {
+                "step_name": "Improvement Claims",
+                "description": "Do not make claims that an item will improve or better life."
+            },
+            {
+                "step_name": "Bamboo Claims",
+                "description": "Do not state that items are made of bamboo; use bamboo made from viscose or bamboo made from rayon if accurate."
+            },
+            {
+                "step_name": "Military Claims",
+                "description": "Do not use Military. State as military-inspired as these items are not licensed by the military."
+            },
+            {
+                "step_name": "Vintage Claims",
+                "description": "Do not use Vintage. State as vintage-inspired or retro."
+            },
+            {
+                "step_name": "Lithium Battery Description",
+                "description": "Lithium batteries need to be identified and called out in product description."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Guideline_Concept -> Guideline_Type -> writing_guidelines"
+        }
+    ]
+}

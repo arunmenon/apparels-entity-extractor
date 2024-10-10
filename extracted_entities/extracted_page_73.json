@@ -1,0 +1,55 @@
+{
+    "apparel_category": "Children\u2019s Apparel",
+    "product_type": [
+        "4-Packs Tops",
+        "5-Packs Tops",
+        "4-Packs Bottoms",
+        "5-Packs Bottoms"
+    ],
+    "guideline_concept": "Photo Direction",
+    "guidelines": {
+        "guideline_type": "Photo Direction",
+        "image_requirements": [
+            {
+                "step_name": "4-Packs Tops - Hero Image",
+                "description": "Front facing, straight on, laydown of all garments."
+            },
+            {
+                "step_name": "4-Packs Tops - 1st Alternate",
+                "description": "Cropped in detail shot #1."
+            },
+            {
+                "step_name": "4-Packs Tops - 2nd Alternate",
+                "description": "Cropped in detail shot #2."
+            },
+            {
+                "step_name": "5-Packs Tops - Hero Image",
+                "description": "Front facing, straight on, laydown of all garments."
+            },
+            {
+                "step_name": "5-Packs Tops - 1st Alternate",
+                "description": "Cropped in detail shot #1."
+            },
+            {
+                "step_name": "5-Packs Tops - 2nd Alternate",
+                "description": "Cropped in detail shot #2."
+            },
+            {
+                "step_name": "4-Packs Bottoms - Styling Note",
+                "description": "Pieces should be staggered, showing all pieces in pack."
+            },
+            {
+                "step_name": "5-Packs Bottoms - Styling Note",
+                "description": "Pieces should be staggered, showing all pieces in pack."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> image_requirements"
+        },
+        {
+            "linkage": "Guideline_Concept -> Guideline_Type -> image_requirements"
+        }
+    ]
+}

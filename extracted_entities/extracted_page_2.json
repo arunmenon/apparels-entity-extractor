@@ -1,0 +1,30 @@
+{
+    "apparel_category": "Women\u2019s Swim",
+    "product_type": [
+        "Rash Guards",
+        "One-Piece & Sets",
+        "Separates w/ No Matching Separates",
+        "Separates w/ Matching Separates",
+        "Reversible Separates (Not Matching)",
+        "Reversible Separates (Matching)",
+        "Cover-Ups & Parkas"
+    ],
+    "guideline_concept": "Grouping Standards",
+    "guidelines": {
+        "guideline_type": "Product Type Photo Direction",
+        "photo_direction": [
+            {
+                "step_name": "Image Requirements",
+                "description": "Specify the guidelines for product photography."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> photo_direction"
+        },
+        {
+            "linkage": "Guideline_Concept -> Guideline_Type -> photo_direction"
+        }
+    ]
+}

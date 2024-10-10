@@ -1,0 +1,22 @@
+{
+    "apparel_category": "Apparel Grouping Standards",
+    "guideline_concept": "Grouping Standards",
+    "guidelines": {
+        "guideline_type": "Grouping Standards",
+        "grouping_items": [
+            {
+                "step_name": "Grouping on ONE item page",
+                "description": "Items that are of the same fabrication, price, style and print pattern (if applicable) should be grouped together on the item page. Examples of item attributes that would constitute grouping include: Same fabric, Same print, Same neckline, Same sleeve length, Multiple Colors."
+            },
+            {
+                "step_name": "Items that should NOT be grouped on one page",
+                "description": "If the item attributes do not apply consistently to all items in the grouping, that is an indicator that the items should not be grouped together. This includes: Different fabric, Different print/pattern, Different neckline, Different sleeve length, Consider grouping Plus Size Separately."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Apparel_Category -> Guideline_Concept -> Grouping Standards"
+        }
+    ]
+}

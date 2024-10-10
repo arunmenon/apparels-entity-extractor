@@ -1,0 +1,58 @@
+{
+    "apparel_category": "Suits & Sets",
+    "product_type": "Men\u2019s Modern Fit Suit",
+    "guideline_concept": "Key Features Guidelines",
+    "guidelines": {
+        "guideline_type": "Copy Standards",
+        "writing_guidelines": [
+            {
+                "step_name": "Begin each bullet point",
+                "description": "Begin each bullet point with a capital letter."
+            },
+            {
+                "step_name": "Product name formatting",
+                "description": "Product name should be repeated as the first line, bolded, no bullet."
+            },
+            {
+                "step_name": "Sentence fragments",
+                "description": "Use sentence fragments and avoid ending punctuation."
+            },
+            {
+                "step_name": "Promotional text restriction",
+                "description": "No promotional text like free shipping or discounts."
+            },
+            {
+                "step_name": "Retailer promotion restriction",
+                "description": "No text that promotes another retailer or website."
+            },
+            {
+                "step_name": "Unique bullet descriptions",
+                "description": "Ensure bullet descriptions are unique and not repetitive."
+            },
+            {
+                "step_name": "Consistent order",
+                "description": "Maintain a consistent order in bullet points."
+            },
+            {
+                "step_name": "Reiterate key information",
+                "description": "Reiterate important information from the title and description."
+            },
+            {
+                "step_name": "Special character restriction",
+                "description": "No special characters like #, *, or !."
+            },
+            {
+                "step_name": "Attribute requirement",
+                "description": "This is a required attribute."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> writing_guidelines"
+        },
+        {
+            "linkage": "Guideline_Concept -> Guideline_Type -> writing_guidelines"
+        }
+    ]
+}

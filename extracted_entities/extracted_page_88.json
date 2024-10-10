@@ -1,0 +1,22 @@
+{
+    "apparel_category": "Swimwear & Shapewear",
+    "product_type": "Shapewear",
+    "guideline_concept": "Product Naming Guidelines",
+    "guidelines": {
+        "guideline_type": "Naming Guidelines",
+        "naming_formula": [
+            {
+                "step_name": "Global Brand License",
+                "description": "'by' + Brand + Product Line + Swimwear attributes + Clothing Type + Count Per Pack + (Clothing Size Group)"
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> naming_formula"
+        },
+        {
+            "linkage": "Guideline_Concept -> Guideline_Type -> naming_formula"
+        }
+    ]
+}

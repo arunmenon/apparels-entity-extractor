@@ -1,0 +1,29 @@
+{
+    "apparel_category": "Children's Apparel",
+    "product_type": [
+        "8-Piece Set",
+        "10-Piece Set"
+    ],
+    "guideline_concept": "Photo Direction",
+    "guidelines": {
+        "guideline_type": "Photo Direction",
+        "image_requirements": [
+            {
+                "step_name": "Hero (Main) Image",
+                "description": "Front facing, straight on, lay down of all pieces in set."
+            },
+            {
+                "step_name": "Alternates",
+                "description": "1st - 4th for 8-Piece Set; 1st - 5th for 10-Piece Set: Individual shots of each outfit in pack."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> image_requirements"
+        },
+        {
+            "linkage": "Guideline_Concept -> Guideline_Type -> image_requirements"
+        }
+    ]
+}

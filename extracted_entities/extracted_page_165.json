@@ -1,0 +1,20 @@
+{
+    "apparel_category": "Long Underwear",
+    "product_type": "Long Underwear Type",
+    "guideline_concept": "Additional Attributes",
+    "guidelines": {
+        "guideline_type": "Attributes",
+        "additional_attributes": [
+            {
+                "step_name": "Long Underwear Type",
+                "description": "Specifies the type of Long Underwear."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> additional_attributes"
+        }
+    ],
+    "summary": "This section outlines the additional mandatory attributes for Long Underwear items, specifying that compliance with this style guide is required to avoid potential validation failures in publishing."
+}

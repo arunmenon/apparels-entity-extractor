@@ -1,0 +1,59 @@
+{
+    "apparel_category": "Women\u2019s Dresses, Bodysuits, One-Pieces",
+    "product_type": "Dresses, Skirts & Skorts",
+    "guideline_concept": "Key Feature Directions",
+    "guidelines": {
+        "guideline_type": "Key Feature Directions",
+        "key_feature_steps": [
+            {
+                "step_name": "Material",
+                "description": "Fabric content including linings & any trims 5% or more or makeup."
+            },
+            {
+                "step_name": "Care",
+                "description": "Machine washable, Hand wash, Dry clean, Spot clean, Wipe clean, etc. Professionally leather or suede clean."
+            },
+            {
+                "step_name": "Country of Origin",
+                "description": "Imported, Made in USA, Made in USA of imported materials, Made in USA and imported, etc."
+            },
+            {
+                "step_name": "Size",
+                "description": "Model is 0.0\" and is wearing a size X."
+            },
+            {
+                "step_name": "Fit",
+                "description": "Fitted, oversized, relaxed, loose, etc.; weight (if applicable)."
+            },
+            {
+                "step_name": "Length",
+                "description": "Silhouette: mini, midi, maxi, etc.; 00' long from center back neck for size X."
+            },
+            {
+                "step_name": "Closure",
+                "description": "Pullover style, Button front placket, Back button with keyhole, etc."
+            },
+            {
+                "step_name": "Sleeves",
+                "description": "Short, long, blouse, illusion, elbow-length, 3/4 sleeves, etc."
+            },
+            {
+                "step_name": "Pockets",
+                "description": "How many and location or use: None."
+            },
+            {
+                "step_name": "Features",
+                "description": "Trims, special hems, decorative details, unlined or lined, etc."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> Key Feature Directions"
+        },
+        {
+            "linkage": "Guideline_Concept -> Guideline_Type -> Key Feature Steps"
+        }
+    ],
+    "summary": "The page outlines key feature directions for women's dresses, bodysuits, and one-pieces, detailing essential attributes such as material, care, country of origin, size, fit, length, closure, sleeves, pockets, and features."
+}

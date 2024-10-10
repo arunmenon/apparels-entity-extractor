@@ -1,0 +1,25 @@
+{
+    "apparel_category": "Apparel",
+    "guideline_concept": "Content Standards",
+    "guidelines": {
+        "guideline_type": "General Guidelines",
+        "writing_guidelines": [
+            {
+                "step_name": "Tone",
+                "description": "Maintain a friendly and approachable tone."
+            },
+            {
+                "step_name": "Voice",
+                "description": "Use clear, concise language."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Apparel_Category -> Guideline_Type -> Writing_Guidelines"
+        },
+        {
+            "linkage": "Guideline_Concept -> Guideline_Type -> Writing_Guidelines"
+        }
+    ]
+}

@@ -1,0 +1,34 @@
+{
+    "apparel_category": "Apparel Attributes",
+    "product_type": "Clothing Type",
+    "guideline_concept": "Copy Standards",
+    "guidelines": {
+        "guideline_type": "Grouping Standards",
+        "clothing_type": [
+            {
+                "step_name": "Defines the type of clothing",
+                "description": "A classification of clothing styles such as Accessories, Outerwear, Bottoms, etc."
+            }
+        ],
+        "age_group": [
+            {
+                "step_name": "General grouping of ages",
+                "description": "Demographic labels for different age categories ranging from Infant to Senior."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> clothing_type"
+        },
+        {
+            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> age_group"
+        },
+        {
+            "linkage": "Guideline_Concept -> Guideline_Type -> clothing_type"
+        },
+        {
+            "linkage": "Guideline_Concept -> Guideline_Type -> age_group"
+        }
+    ]
+}

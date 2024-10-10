@@ -1,0 +1,24 @@
+{
+    "apparel_category": "Women\u2019s Intimates",
+    "product_type": "Bra Multipacks",
+    "guideline_concept": "Photo Direction",
+    "guidelines": {
+        "guideline_type": "Photo Direction",
+        "image_requirements": [
+            {
+                "step_name": "Bra Multipacks with Packaging",
+                "description": "Required in order below (4 images): 1. Hero (Main) Image: Laydown imagery of items in pack. 2. 1st Alternate: Items in packaging. 3. 2nd Alternate: Front facing, cropped above lip to above belly button (of one color). 4. 3rd Alternate: Back facing, cropped in to garment."
+            },
+            {
+                "step_name": "Bra Multipacks without Packaging",
+                "description": "Required in order below (3 images): 1. Hero (Main) Image: Laydown imagery that depicts number of items in pack. 2. 1st Alternate: Front facing, cropped above lip to above belly button (of one color). 3. 2nd Alternate: Back facing, cropped in to garment."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> image_requirements"
+        }
+    ],
+    "summary": "This page outlines the photo direction guidelines for photographing Women's Intimates, specifically Bra Multipacks, detailing the required images with and without packaging."
+}

@@ -1,0 +1,27 @@
+{
+    "apparel_category": "All Upper Body Garments",
+    "guideline_concept": "Attributes",
+    "guidelines": {
+        "guideline_type": "Product Naming Guidelines",
+        "attribute_details": [
+            {
+                "step_name": "Clothing Style",
+                "description": "Styles and designations that apply generally to various types of clothing."
+            },
+            {
+                "step_name": "Clothing Fit",
+                "description": "Terms that describe the way a garment will fit when worn."
+            },
+            {
+                "step_name": "Closure Type",
+                "description": "The type of fastener used to keep an item closed and to facilitate putting on the item."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Apparel_Category -> Guideline_Concept -> Guideline_Type -> attribute_details"
+        }
+    ],
+    "summary": "The page outlines mandatory attributes for all upper body garment product types, detailing requirements for Clothing Style, Clothing Fit, and Closure Type."
+}

@@ -1,0 +1,24 @@
+{
+    "apparel_category": null,
+    "product_type": null,
+    "guideline_concept": "Apparel Attributes",
+    "guidelines": {
+        "guideline_type": "Attributes",
+        "attributes": [
+            {
+                "step_name": "Clothing Size Group",
+                "description": "The common sizing groups used by the retail clothing industry."
+            },
+            {
+                "step_name": "Clothing Size",
+                "description": "Clothing size as it appears on the garment label."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Guideline_Concept -> Guideline_Type -> Attributes"
+        }
+    ],
+    "summary": "This page outlines the common sizing groups and the clothing sizes for various apparel items as required in the Walmart fashion apparel attributes guidelines."
+}

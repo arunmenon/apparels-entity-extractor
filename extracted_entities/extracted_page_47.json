@@ -1,0 +1,34 @@
+{
+    "apparel_category": "Men\u2019s Apparel",
+    "guidelines": {
+        "guideline_type": "Photo Direction",
+        "image_requirements": [
+            {
+                "step_name": "Hero Image",
+                "description": "Front facing, cropped above lip to below fingertips."
+            },
+            {
+                "step_name": "1st Alternate",
+                "description": "Front facing, crop to detail feature."
+            },
+            {
+                "step_name": "2nd Alternate",
+                "description": "Back facing, cropped to just below hairline to below finger tips."
+            },
+            {
+                "step_name": "3rd Alternate",
+                "description": "Ghost view."
+            },
+            {
+                "step_name": "4th Alternate (Recommended)",
+                "description": "Highlight embellishments and design elements not captured in required shots if present."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Apparel_Category -> Guideline_Type -> Image_Requirements"
+        }
+    ],
+    "summary": "The page outlines photo direction guidelines for 'Men's Apparel', focusing on 'Snowsuits & Overalls' and 'Suits'. It specifies the required and recommended types of images to capture for each apparel category."
+}

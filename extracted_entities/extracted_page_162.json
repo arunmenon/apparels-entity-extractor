@@ -1,0 +1,26 @@
+{
+    "apparel_category": "Bras",
+    "product_type": "Bra",
+    "guideline_concept": "Additional Attributes",
+    "guidelines": {
+        "guideline_type": "Naming Guidelines",
+        "attribute_requirements": [
+            {
+                "step_name": "Bra Style",
+                "description": "Brasiere styles/defining features. Enter as many as are relevant to the bra. Do not enter strap styles here."
+            },
+            {
+                "step_name": "Bra Impact Level",
+                "description": "The general level of support varying on impact level of the activity which the bra is designed to accommodate."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> attribute_requirements"
+        },
+        {
+            "linkage": "Guideline_Concept -> Guideline_Type -> attribute_requirements"
+        }
+    ]
+}

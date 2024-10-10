@@ -1,0 +1,22 @@
+{
+    "apparel_category": "Uniforms/Scrubs & Traditional Garments",
+    "product_type": "Traditional Garments",
+    "guideline_concept": "Product Naming Guidelines",
+    "guidelines": {
+        "guideline_type": "Naming Guidelines",
+        "naming_formula": [
+            {
+                "step_name": "Global Brand License",
+                "description": "Add 'by' + Brand + Product Line + Dress Style/Jacket Style/Jacket Breasting Style/Jacket Length/Clothing Neck Style/Collar Type/Clothing Top Style/Sleeve Style/Sleeve Length Style/Pant Style/Pant Leg Cut/Pant Length/Shorts Style/Clothing Bottoms Panel Style/Clothing Length Style/Skirt Style/Clothing Weight/Fill Material/Clothing Fit/Features/Activity/Pattern/Character/Theme/Ocasion/Sports League/Sports Team/Fabric Material Name + Clothing Type + Count Per Pack + (Clothing Size Group)"
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> naming_formula"
+        },
+        {
+            "linkage": "Guideline_Concept -> Guideline_Type -> naming_formula"
+        }
+    ]
+}

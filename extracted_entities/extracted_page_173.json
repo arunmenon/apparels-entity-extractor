@@ -1,0 +1,27 @@
+{
+    "apparel_category": "Uniforms",
+    "product_type": "Shapewear",
+    "guideline_concept": "Product Naming Guidelines",
+    "guidelines": {
+        "guideline_type": "Naming Guidelines",
+        "mandatory_attributes": [
+            {
+                "step_name": "Shapewear Style",
+                "description": "Defines the style of the shapewear. Examples include Waist Shaper, Arm Shaper, Hip & Butt Shaper, Tummy Shaper, Body Shaper, Thigh Shaper, Open Bust Shaper, Merry Widow, Half Slip."
+            },
+            {
+                "step_name": "Shapewear Type",
+                "description": "Defines the type of shapewear item. Examples include Shapewear, Girdle, Corset, Half Slip, Waist Cincher, Singlet, Bustier, Saree, Long Leg."
+            },
+            {
+                "step_name": "Shapewear Control Level",
+                "description": "Describes the level of support or control provided by an undergarment. Levels include Extra Firm, Firm, Light, Medium."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> mandatory_attributes"
+        }
+    ]
+}

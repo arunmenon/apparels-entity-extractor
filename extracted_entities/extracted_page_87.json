@@ -1,0 +1,34 @@
+{
+    "apparel_category": "All Lower Body",
+    "product_type": [
+        "Pants",
+        "Shorts",
+        "Skirts"
+    ],
+    "guideline_concept": "Product Naming Guidelines",
+    "guidelines": {
+        "guideline_type": "Naming Guidelines",
+        "naming_formula": [
+            {
+                "step_name": "Pants",
+                "description": "Global Brand License + 'by' + Brand + Product Line + Pant Style/Pant Leg Cut/Pant Rise/Jean Wash/Clothing Weight/Fill Material/Clothing Bottoms Panel Style/Clothing Fit/Features/Activity/Pattern/Character/Theme/Ocassion/Sports League/Sports Team/Fabric Material Name + Clothing Type + Count Per Pack + (Clothing Size Group)"
+            },
+            {
+                "step_name": "Shorts",
+                "description": "Global Brand License + 'by' + Brand + Product Line + Shorts Style/Pant Rise/Clothing Fit/Features/Activity/Pattern/Character/Theme/Ocassion/Sports League/Sports Team/Fabric Material Name + Clothing Type + Count Per Pack + (Clothing Size Group)"
+            },
+            {
+                "step_name": "Skirts",
+                "description": "Global Brand License + 'by' + Brand + Product Line + Skirt Style/Clothing Length Style/Clothing Fit/Features/Activity/Pattern/Character/Theme/Ocassion/Sports League/Sports Team/Fabric Material Name + Clothing Type + Count Per Pack + (Clothing Size Group)"
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> naming_formula"
+        },
+        {
+            "linkage": "Guideline_Concept -> Guideline_Type -> naming_formula"
+        }
+    ]
+}

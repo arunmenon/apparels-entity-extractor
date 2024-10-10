@@ -1,0 +1,28 @@
+{
+    "apparel_category": "Apparel Accessories",
+    "product_type": "Socks",
+    "guideline_concept": "Photo Direction",
+    "guidelines": {
+        "guideline_type": "Photo Direction",
+        "image_requirements": [
+            {
+                "step_name": "6-9 Pack",
+                "description": "Required in order below (2 images): 1. Hero (Main) Image: Pair laid out. 2. 1st Alternate: Item in Packaging."
+            },
+            {
+                "step_name": "10+ Pack",
+                "description": "Required in order below (2 images): 1. Hero (Main) Image: Pair laid out. 2. 1st Alternate: Item in Packaging."
+            },
+            {
+                "step_name": "No Show Packs",
+                "description": "Required in order below (2 images): 1. Hero (Main) Image: Pair laid out. 2. 1st Alternate: Item in Packaging."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> image_requirements"
+        }
+    ],
+    "summary": "The page outlines the photo direction requirements for socks as part of apparel accessories, detailing the image needs for different sock pack types including 6-9 Pack, 10+ Pack, and No Show Packs."
+}

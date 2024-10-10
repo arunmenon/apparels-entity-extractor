@@ -1,0 +1,31 @@
+{
+    "apparel_category": "All Baby Garments & Accessories",
+    "guideline_concept": "Attributes",
+    "guidelines": {
+        "guideline_type": "Copy Standards",
+        "additional_attributes": [
+            {
+                "step_name": "Clothing Style",
+                "description": "Styles and designations that apply generally to various types of clothing."
+            },
+            {
+                "step_name": "Baby Clothing Size",
+                "description": "Common sizes for infant and toddler clothing."
+            },
+            {
+                "step_name": "Minimum Recommended Age",
+                "description": "Minimum Ages for the product."
+            },
+            {
+                "step_name": "Maximum Recommended Age",
+                "description": "Maximum Ages for the product."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Apparel_Category -> Guideline_Concept -> Guideline_Type -> additional_attributes"
+        }
+    ],
+    "summary": "The page outlines additional attributes necessary for the classification of all baby garments and accessories. It details categories such as Clothing Style, Baby Clothing Size, Minimum Recommended Age, and Maximum Recommended Age, providing essential guidelines for compliance."
+}

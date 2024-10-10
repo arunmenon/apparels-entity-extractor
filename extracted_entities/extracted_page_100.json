@@ -1,0 +1,55 @@
+{
+    "apparel_category": "Men\u2019s Suits",
+    "product_type": "Jacket",
+    "guideline_concept": "Key Feature Directions",
+    "guidelines": {
+        "guideline_type": "Photo Direction",
+        "image_requirements": [
+            {
+                "step_name": "Material",
+                "description": "Fabric content including linings & any trims 5% or more or makeup."
+            },
+            {
+                "step_name": "Care",
+                "description": "Machine washable, Hand wash, Dry clean, Spot clean, Wipe clean, etc."
+            },
+            {
+                "step_name": "Country of Origin",
+                "description": "Imported, Made in USA, Made in USA of imported materials, etc."
+            },
+            {
+                "step_name": "Size",
+                "description": "Jacket sizing is indicated by a number and a letter. The number refers to chest size; the letter refers to the length of the Jacket based upon height: S=57\" & under, R=58\"-511\", L=6' & up."
+            },
+            {
+                "step_name": "Lapel Type",
+                "description": "Notch, Peak, Shawl, etc."
+            },
+            {
+                "step_name": "Closure",
+                "description": "X-button closure, X-button cuffs."
+            },
+            {
+                "step_name": "Sleeves",
+                "description": "Long with x buttons at cuffs."
+            },
+            {
+                "step_name": "Pockets",
+                "description": "How many and location or indicate: None."
+            },
+            {
+                "step_name": "Features",
+                "description": "Single back vent, pattern of lining, fully or half lined, etc."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> image_requirements"
+        },
+        {
+            "linkage": "guideline_concept -> guideline_type -> image_requirements"
+        }
+    ],
+    "summary": "The page outlines key feature directions for Men's Suits and Sportcoats & Blazers, detailing required attributes such as material, care instructions, country of origin, size, and specific features for jackets and trousers."
+}

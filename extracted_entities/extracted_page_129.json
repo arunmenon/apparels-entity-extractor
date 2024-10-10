@@ -1,0 +1,38 @@
+{
+    "apparel_category": "Baby Sleepsacks",
+    "product_type": "Sleepsack",
+    "guideline_concept": "Product Naming Guidelines",
+    "guidelines": {
+        "guideline_type": "Naming Guidelines",
+        "attributes": [
+            {
+                "step_name": "Baby Sleepsack Type",
+                "description": "A sleep sack is like a mini sleeping bag for your baby and toddler. Examples include Swaddle Sleepsack, Weighted Sleep Sack, Sleepsack, Baby Sleep Suit, etc."
+            },
+            {
+                "step_name": "Sleeve Length",
+                "description": "The distance from the shoulder to the bottom hem of the sleeve, measured in inches."
+            },
+            {
+                "step_name": "Clothing Weight",
+                "description": "Describes the density or weight of fabric material. Examples: Heavyweight, Lightweight, Mid-Weight."
+            },
+            {
+                "step_name": "Closure Type",
+                "description": "The type of fastener used to keep an item closed and to facilitate putting on the item."
+            },
+            {
+                "step_name": "Season",
+                "description": "If designed for a specific time of year, the appropriate season this item may be used."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> attributes"
+        },
+        {
+            "linkage": "Guideline_Concept -> Guideline_Type -> attributes"
+        }
+    ]
+}

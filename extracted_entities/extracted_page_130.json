@@ -1,0 +1,32 @@
+{
+    "apparel_category": "Baby Garments",
+    "product_type": "Reusable Training Pants",
+    "guideline_concept": "Attributes for Apparel",
+    "guidelines": {
+        "guideline_type": "Naming Guidelines",
+        "attribute_details": [
+            {
+                "step_name": "Toilet Training Pants Type",
+                "description": "Reusable Training Pants are toddler underwear with extra padding or waterproof protection, used during the transition period from diapers to undies."
+            },
+            {
+                "step_name": "Diaper Size",
+                "description": "Specific size relating to diapers."
+            },
+            {
+                "step_name": "Waist Style",
+                "description": "Waist styles/defining features."
+            },
+            {
+                "step_name": "Clothing Weight",
+                "description": "Commonly used in retail clothing, these terms describe the density or weight of fabric material."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> attribute_details"
+        }
+    ],
+    "summary": "The page outlines additional attributes for Reusable Training Pants in Baby Garments. It emphasizes the need for compliance with the style guide to avoid validation failures and delays in publishing."
+}

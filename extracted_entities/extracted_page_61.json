@@ -1,0 +1,31 @@
+{
+    "apparel_category": "Women\u2019s Swimwear",
+    "product_type": "Rash Guards",
+    "guideline_concept": "Photo Direction",
+    "guidelines": {
+        "guideline_type": "Photo Direction",
+        "image_requirements": [
+            {
+                "step_name": "Hero (Main) Image",
+                "description": "Front facing, cropped above lip to below fingertips."
+            },
+            {
+                "step_name": "1st Alternate",
+                "description": "Back facing, cropped above lip to below fingertips."
+            },
+            {
+                "step_name": "2nd Alternate",
+                "description": "Ghost view."
+            },
+            {
+                "step_name": "3rd Alternates",
+                "description": "Alternate detail. Highlight embellishments and design elements not captured in required shots if present."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Apparel_Category -> Product_Type -> Guideline_Type -> image_requirements"
+        }
+    ]
+}

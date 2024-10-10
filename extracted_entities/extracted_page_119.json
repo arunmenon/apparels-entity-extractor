@@ -1,0 +1,35 @@
+{
+    "apparel_category": null,
+    "product_type": null,
+    "guideline_concept": "Apparel Attributes",
+    "guidelines": {
+        "guideline_type": "Grouping Standards",
+        "attribute_definitions": [
+            {
+                "step_name": "Pattern",
+                "description": "Decorative design or visual ornamentation, often with a thematic, recurring motif."
+            },
+            {
+                "step_name": "Theme",
+                "description": "A dominant idea, meaning, or setting applied to an item."
+            },
+            {
+                "step_name": "Occasion",
+                "description": "The particular target time, event, or holiday for the product."
+            },
+            {
+                "step_name": "Character",
+                "description": "A person or entity portrayed in print or visual media."
+            },
+            {
+                "step_name": "Character Group",
+                "description": "Character group name or fictional team name as they appear in a media product."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Guideline_Concept -> Guideline_Type -> attribute_definitions"
+        }
+    ]
+}
