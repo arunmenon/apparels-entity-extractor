@@ -10,26 +10,33 @@ def escape_special_characters(value):
     :return: The escaped string.
     """
     if isinstance(value, str):
-        # Escape single quotes inside the string by replacing them with escaped single quotes
+        # Escape single quotes by replacing them with escaped single quotes
         return value.replace("'", "\\'")
     return value
 
 def sanitize_query(query):
     """
-    Escapes single quotes inside the values of the query string.
+    Escapes single quotes inside the values of the {name: '...'} pattern in the query string.
     
     :param query: The query string to sanitize.
     :return: The sanitized query.
     """
-    # Split the query by single quotes to isolate the parts inside quotes
-    parts = query.split("'")
-    
-    # Only escape the parts that are inside the quotes (odd indices)
-    for i in range(1, len(parts), 2):
-        parts[i] = escape_special_characters(parts[i])
-    
-    # Rejoin the parts together to form the sanitized query
-    return "'".join(parts)
+    # Regular expression pattern to find {name: '...'} and capture content inside the single quotes
+    pattern = r"\{name: '(.*?)'\}"
+
+    # Define a function to escape the content inside the single quotes
+    def escape_match(match):
+        # Capture the part inside single quotes
+        content = match.group(1)
+        # Escape the content
+        escaped_content = escape_special_characters(content)
+        # Rebuild the {name: '...'} part with escaped content
+        return f"{{name: '{escaped_content}'}}"
+
+    # Apply the regex substitution to escape content inside {name: '...'}
+    sanitized_query = re.sub(pattern, escape_match, query)
+
+    return sanitized_query
 
 def load_queries_from_json(directory, query_type):
     """
