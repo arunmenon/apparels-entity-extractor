@@ -1,7 +1,7 @@
 {
-    "apparel_category": "All Apparel Attributes",
+    "apparel_category": null,
     "product_type": null,
-    "guideline_concept": null,
+    "guideline_concept": "Attributes",
     "guidelines": {
         "guideline_type": "Attribute Guidelines",
         "attribute_requirements": [
@@ -25,7 +25,24 @@
     },
     "graph": [
         {
-            "linkage": "All Apparel Attributes-(Apparel_Category)->Attribute Guidelines-(Guideline_Type)->attribute_requirements"
+            "linkage": "Attributes-(Guideline_Concept)->Attribute Guidelines-(Attribute_Requirement)->Sports League",
+            "linkage_cypher": "CREATE (n1:Guideline_Concept {name: 'Attributes'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Attribute Guidelines'})-[:HAS_REQUIREMENT]->(n3:Attribute_Requirement {name: 'Sports League'})",
+            "linkage_gsql": "CREATE (n1:Guideline_Concept {name: 'Attributes'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Attribute Guidelines'})-[:HAS_REQUIREMENT]->(n3:Attribute_Requirement {name: 'Sports League'})"
+        },
+        {
+            "linkage": "Attributes-(Guideline_Concept)->Attribute Guidelines-(Attribute_Requirement)->Sports Team",
+            "linkage_cypher": "CREATE (n1:Guideline_Concept {name: 'Attributes'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Attribute Guidelines'})-[:HAS_REQUIREMENT]->(n3:Attribute_Requirement {name: 'Sports Team'})",
+            "linkage_gsql": "CREATE (n1:Guideline_Concept {name: 'Attributes'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Attribute Guidelines'})-[:HAS_REQUIREMENT]->(n3:Attribute_Requirement {name: 'Sports Team'})"
+        },
+        {
+            "linkage": "Attributes-(Guideline_Concept)->Attribute Guidelines-(Attribute_Requirement)->Season Code",
+            "linkage_cypher": "CREATE (n1:Guideline_Concept {name: 'Attributes'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Attribute Guidelines'})-[:HAS_REQUIREMENT]->(n3:Attribute_Requirement {name: 'Season Code'})",
+            "linkage_gsql": "CREATE (n1:Guideline_Concept {name: 'Attributes'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Attribute Guidelines'})-[:HAS_REQUIREMENT]->(n3:Attribute_Requirement {name: 'Season Code'})"
+        },
+        {
+            "linkage": "Attributes-(Guideline_Concept)->Attribute Guidelines-(Attribute_Requirement)->Season Year",
+            "linkage_cypher": "CREATE (n1:Guideline_Concept {name: 'Attributes'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Attribute Guidelines'})-[:HAS_REQUIREMENT]->(n3:Attribute_Requirement {name: 'Season Year'})",
+            "linkage_gsql": "CREATE (n1:Guideline_Concept {name: 'Attributes'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Attribute Guidelines'})-[:HAS_REQUIREMENT]->(n3:Attribute_Requirement {name: 'Season Year'})"
         }
     ]
 }

@@ -4,30 +4,45 @@
     "guideline_concept": "Grouping Standards",
     "guidelines": {
         "guideline_type": "Grouping Standards",
-        "grouping_guidelines": [
+        "context_specific_label": [
             {
-                "step_name": "Correct Examples",
-                "description": "Detailed examples demonstrating appropriate grouping standards."
+                "step_name": "Apparel Grouping Standards",
+                "description": "Standards for grouping apparel items."
             },
             {
-                "step_name": "Incorrect Examples",
-                "description": "Examples showing common mistakes in grouping standards."
+                "step_name": "Fashion Grouping Standards - Correct Examples",
+                "description": "Examples that correctly illustrate grouping standards."
             },
             {
-                "step_name": "Grouping Examples",
-                "description": "Further illustrative examples of various grouping practices."
+                "step_name": "Fashion Grouping Standards - Incorrect Examples",
+                "description": "Examples that illustrate incorrect grouping standards."
+            },
+            {
+                "step_name": "Fashion Grouping Standards - Grouping Examples",
+                "description": "A set of examples demonstrating various groupings."
             }
         ]
     },
     "graph": [
         {
-            "linkage": "Grouping Standards-(Guideline_Concept)->Grouping Standards-(Guideline_Type)->Correct Examples"
+            "linkage": "Grouping Standards-(Guideline_Concept)->Grouping Standards-(Guideline_Type)->Apparel Grouping Standards",
+            "linkage_cypher": "CREATE (n1:Guideline_Concept {name: 'Grouping Standards'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Grouping Standards'})-[:HAS_REQUIREMENT]->(n3:context_specific_label {name: 'Apparel Grouping Standards'})",
+            "linkage_gsql": "CREATE (n1:Guideline_Concept {name: 'Grouping Standards'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Grouping Standards'})-[:HAS_REQUIREMENT]->(n3:context_specific_label {name: 'Apparel Grouping Standards'})"
         },
         {
-            "linkage": "Grouping Standards-(Guideline_Concept)->Grouping Standards-(Guideline_Type)->Incorrect Examples"
+            "linkage": "Grouping Standards-(Guideline_Concept)->Grouping Standards-(Guideline_Type)->Fashion Grouping Standards - Correct Examples",
+            "linkage_cypher": "CREATE (n1:Guideline_Concept {name: 'Grouping Standards'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Grouping Standards'})-[:HAS_REQUIREMENT]->(n3:context_specific_label {name: 'Fashion Grouping Standards - Correct Examples'})",
+            "linkage_gsql": "CREATE (n1:Guideline_Concept {name: 'Grouping Standards'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Grouping Standards'})-[:HAS_REQUIREMENT]->(n3:context_specific_label {name: 'Fashion Grouping Standards - Correct Examples'})"
         },
         {
-            "linkage": "Grouping Standards-(Guideline_Concept)->Grouping Standards-(Guideline_Type)->Grouping Examples"
+            "linkage": "Grouping Standards-(Guideline_Concept)->Grouping Standards-(Guideline_Type)->Fashion Grouping Standards - Incorrect Examples",
+            "linkage_cypher": "CREATE (n1:Guideline_Concept {name: 'Grouping Standards'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Grouping Standards'})-[:HAS_REQUIREMENT]->(n3:context_specific_label {name: 'Fashion Grouping Standards - Incorrect Examples'})",
+            "linkage_gsql": "CREATE (n1:Guideline_Concept {name: 'Grouping Standards'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Grouping Standards'})-[:HAS_REQUIREMENT]->(n3:context_specific_label {name: 'Fashion Grouping Standards - Incorrect Examples'})"
+        },
+        {
+            "linkage": "Grouping Standards-(Guideline_Concept)->Grouping Standards-(Guideline_Type)->Fashion Grouping Standards - Grouping Examples",
+            "linkage_cypher": "CREATE (n1:Guideline_Concept {name: 'Grouping Standards'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Grouping Standards'})-[:HAS_REQUIREMENT]->(n3:context_specific_label {name: 'Fashion Grouping Standards - Grouping Examples'})",
+            "linkage_gsql": "CREATE (n1:Guideline_Concept {name: 'Grouping Standards'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Grouping Standards'})-[:HAS_REQUIREMENT]->(n3:context_specific_label {name: 'Fashion Grouping Standards - Grouping Examples'})"
         }
     ]
 }

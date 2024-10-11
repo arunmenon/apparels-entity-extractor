@@ -11,13 +11,15 @@
             },
             {
                 "step_name": "2nd Additional Alternate",
-                "description": "Flat shot or On-Figure. Imagery depicts product."
+                "description": "Flat shot imagery depicts product, or optional, On-Figure."
             }
         ]
     },
     "graph": [
         {
-            "linkage": "Hosiery & Tights-(Apparel_Category)->Compression Sleeves-(Product_Type)->Photo Direction-(image_requirements)"
+            "linkage": "Hosiery & Tights-(Apparel_Category)->Compression Sleeves-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements",
+            "linkage_cypher": "CREATE (n1:Apparel_Category {name: 'Hosiery & Tights'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Compression Sleeves'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n4:image_requirements {name: 'image_requirements'})",
+            "linkage_gsql": "CREATE (n1:Apparel_Category {name: 'Hosiery & Tights'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Compression Sleeves'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n4:image_requirements {name: 'image_requirements'})"
         }
     ]
 }

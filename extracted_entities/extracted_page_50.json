@@ -1,7 +1,7 @@
 {
-    "apparel_category": "Men\u2019s Lower Body",
-    "product_type": "Bottoms",
-    "guideline_concept": "Photo Direction",
+    "apparel_category": "Men's Bottoms",
+    "product_type": "",
+    "guideline_concept": "",
     "guidelines": {
         "guideline_type": "Photo Direction",
         "image_requirements": [
@@ -29,8 +29,9 @@
     },
     "graph": [
         {
-            "linkage": "Men\u2019s Lower Body-(Apparel_Category)->Bottoms-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
+            "linkage": "Men's Bottoms-(Apparel_Category)-><empty>-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements",
+            "linkage_cypher": "CREATE (n1:Apparel_Category {name: 'Men's Bottoms'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: ''})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n4:image_requirements {name: 'image_requirements'})",
+            "linkage_gsql": "CREATE (n1:Apparel_Category {name: 'Men's Bottoms'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: ''})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n4:image_requirements {name: 'image_requirements'})"
         }
-    ],
-    "summary": "The page outlines the photo direction guidelines for Men's Lower Body apparel, specifically focusing on the required and recommended image types for bottoms. It details the specific steps for capturing various angles and zooms for the garments."
+    ]
 }

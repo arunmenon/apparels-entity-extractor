@@ -1,40 +1,41 @@
 {
-    "apparel_category": "Men & Womens Bundled Apparel",
+    "apparel_category": "Men's and Women's Apparel",
     "product_type": "Graphic Tees",
     "guideline_concept": "Photo Direction",
     "guidelines": {
         "guideline_type": "Photo Direction",
         "image_requirements": [
             {
-                "step_name": "Hero (Main) Image",
+                "step_name": "Hero Image",
                 "description": "On-figure imagery that depicts number of items in pack."
             },
             {
-                "step_name": "1st Alt",
-                "description": "LayoOut imagery that depicts number of items in pack."
+                "step_name": "1st Alternate Image",
+                "description": "Laydown imagery that depicts number of items in pack."
             },
             {
-                "step_name": "2nd Alt",
+                "step_name": "2nd Alternate Image",
                 "description": "Front facing, crop to garment of additional item in pack."
             },
             {
-                "step_name": "3rd Alt",
+                "step_name": "3rd Alternate Image",
                 "description": "Front facing, crop to garment of additional item in pack."
             },
             {
-                "step_name": "4th Alt",
+                "step_name": "4th Alternate Image",
                 "description": "Detail shot of item in pack."
             },
             {
-                "step_name": "5th Alt",
+                "step_name": "5th Alternate Image",
                 "description": "Detail shot of item in pack."
             }
         ]
     },
     "graph": [
         {
-            "linkage": "Men & Womens Bundled Apparel-(Apparel_Category)->Graphic Tees-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
+            "linkage": "Men's and Women's Apparel-(Apparel_Category)->Graphic Tees-(Product_Type)->Photo Direction-(Guideline_Type)->Image Requirements",
+            "linkage_cypher": "CREATE (n1:Apparel_Category {name: 'Men's and Women's Apparel'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Graphic Tees'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n4:Image_Requirements {name: 'Requirements for Photo Direction'})",
+            "linkage_gsql": "CREATE (n1:Apparel_Category {name: 'Men's and Women's Apparel'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Graphic Tees'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n4:Image_Requirements {name: 'Requirements for Photo Direction'})"
         }
-    ],
-    "summary": "The page outlines photo direction for bundled graphic tees in the Men & Womens apparel category, specifying required images for product presentation."
+    ]
 }

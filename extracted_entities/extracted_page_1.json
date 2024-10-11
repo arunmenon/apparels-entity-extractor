@@ -1,19 +1,24 @@
 {
     "apparel_category": "Apparel",
-    "guideline_concept": "Grouping Standards",
+    "guideline_concept": "Copy Standards",
     "guidelines": {
-        "guideline_type": "Grouping Standards",
-        "context_specific_label": [
+        "guideline_type": "Copy Standards",
+        "writing_guidelines": [
             {
-                "step_name": "Walmart Fashion Content Standards",
-                "description": "Standards for creating apparel-related content for Walmart."
+                "step_name": "Voice",
+                "description": "Use a friendly, conversational tone."
+            },
+            {
+                "step_name": "Tone",
+                "description": "Maintain a positive and inclusive tone."
             }
         ]
     },
     "graph": [
         {
-            "linkage": "Apparel-(Apparel_Category)->Apparel-(Guideline_Concept)->Grouping Standards-(Guideline_Type)->Walmart Fashion Content Standards-(Context_Specific_Label)"
+            "linkage": "Apparel-(Apparel_Category)->Copy Standards-(Guideline_Concept)->Writing Guidelines",
+            "linkage_cypher": "CREATE (n1:Apparel_Category {name: 'Apparel'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Concept {name: 'Copy Standards'})-[:HAS_REQUIREMENT]->(n3:Writing_Guidelines {name: 'Writing Guidelines'})",
+            "linkage_gsql": "CREATE (n1:Apparel_Category {name: 'Apparel'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Concept {name: 'Copy Standards'})-[:HAS_REQUIREMENT]->(n3:Writing_Guidelines {name: 'Writing Guidelines'})"
         }
-    ],
-    "summary": "This page outlines the Walmart Fashion Content Standards specifically focused on apparel, establishing guidelines for content related to apparel categories."
+    ]
 }

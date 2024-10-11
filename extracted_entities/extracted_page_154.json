@@ -1,9 +1,9 @@
 {
     "apparel_category": "Women\u2019s Swimwear",
     "product_type": "Swimwear",
-    "guideline_concept": "Additional Attributes",
+    "guideline_concept": "Attributes",
     "guidelines": {
-        "guideline_type": "Naming Guidelines",
+        "guideline_type": "Attribute Guidelines",
         "attribute_requirements": [
             {
                 "step_name": "Swimsuit Style",
@@ -17,8 +17,14 @@
     },
     "graph": [
         {
-            "linkage": "Women\u2019s Swimwear-(Apparel_Category)->Swimwear-(Product_Type)->Naming Guidelines-(Guideline_Type)->attribute_requirements"
+            "linkage": "Women\u2019s Swimwear-(Apparel_Category)->Swimwear-(Product_Type)->Attribute Guidelines-(Guideline_Type)->attribute_requirements",
+            "linkage_cypher": "CREATE (n1:Apparel_Category {name: 'Women\u2019s Swimwear'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Swimwear'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Attribute Guidelines'})-[:HAS_REQUIREMENT]->(n4:attribute_requirements {name: 'Attributes'})",
+            "linkage_gsql": "CREATE (n1:Apparel_Category {name: 'Women\u2019s Swimwear'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Swimwear'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Attribute Guidelines'})-[:HAS_REQUIREMENT]->(n4:attribute_requirements {name: 'Attributes'})"
+        },
+        {
+            "linkage": "Attributes-(Guideline_Concept)->Attribute Guidelines-(Guideline_Type)->attribute_requirements",
+            "linkage_cypher": "CREATE (n1:Guideline_Concept {name: 'Attributes'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Attribute Guidelines'})-[:HAS_REQUIREMENT]->(n3:attribute_requirements {name: 'Attributes'})",
+            "linkage_gsql": "CREATE (n1:Guideline_Concept {name: 'Attributes'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Attribute Guidelines'})-[:HAS_REQUIREMENT]->(n3:attribute_requirements {name: 'Attributes'})"
         }
-    ],
-    "summary": "The document outlines mandatory attributes for women's swimwear product types, emphasizing the essential requirements for 'Swimsuit Style' and 'Closure Type' to ensure compliance with the style guide."
+    ]
 }

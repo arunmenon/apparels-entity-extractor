@@ -1,9 +1,6 @@
 {
     "apparel_category": "Women\u2019s Swimwear",
-    "product_type": [
-        "One-Piece",
-        "Two-Piece"
-    ],
+    "product_type": "One-Piece, Two-Piece",
     "guideline_concept": "Photo Direction",
     "guidelines": {
         "guideline_type": "Photo Direction",
@@ -32,10 +29,14 @@
     },
     "graph": [
         {
-            "linkage": "Women\u2019s Swimwear-(Apparel_Category)->One-Piece-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
+            "linkage": "Women\u2019s Swimwear-(Apparel_Category)->One-Piece-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements",
+            "linkage_cypher": "CREATE (n1:Apparel_Category {name: 'Women\u2019s Swimwear'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'One-Piece'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n4:image_requirements {name: 'image_requirements'})",
+            "linkage_gsql": "CREATE (n1:Apparel_Category {name: 'Women\u2019s Swimwear'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'One-Piece'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n4:image_requirements {name: 'image_requirements'})"
         },
         {
-            "linkage": "Women\u2019s Swimwear-(Apparel_Category)->Two-Piece-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
+            "linkage": "Women\u2019s Swimwear-(Apparel_Category)->Two-Piece-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements",
+            "linkage_cypher": "CREATE (n1:Apparel_Category {name: 'Women\u2019s Swimwear'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Two-Piece'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n4:image_requirements {name: 'image_requirements'})",
+            "linkage_gsql": "CREATE (n1:Apparel_Category {name: 'Women\u2019s Swimwear'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Two-Piece'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n4:image_requirements {name: 'image_requirements'})"
         }
     ]
 }

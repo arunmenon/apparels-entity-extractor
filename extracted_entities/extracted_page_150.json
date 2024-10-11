@@ -3,42 +3,24 @@
     "product_type": null,
     "guideline_concept": null,
     "guidelines": {
-        "guideline_type": "Attributes",
-        "attributes": [
+        "guideline_type": "Additional Attributes",
+        "closure_type": [
             {
-                "attribute": "Closure Type",
-                "key": "fastenerType",
-                "description": "The type of fastener used to keep an item closed and to facilitate putting on the item.",
-                "examples_value_list": [
-                    "Velcro",
-                    "Snap",
-                    "Loop",
-                    "Hook & Loop",
-                    "Button",
-                    "Hook & Eye",
-                    "Snap Hook",
-                    "Tie",
-                    "Clasp",
-                    "Zipper",
-                    "Flap",
-                    "Button Fashioned",
-                    "Snap-Fastened",
-                    "Pin",
-                    "Snap-in",
-                    "Hook",
-                    "Toggle",
-                    "String"
-                ],
-                "list_type": "Closed",
-                "multiple_values": "Yes",
-                "requirement_level": "Recommended"
+                "step_name": "Closure Type",
+                "description": "The type of fastener used to keep an item closed and to facilitate putting on the item."
+            },
+            {
+                "step_name": "Examples/Value List",
+                "description": "Velcro, Snap, Loop, Hook & Loop, Button, Hook & Eye, Snap Hook, Tie, Clasp, Zipper, Flap, Button Fashioned, Snap-Fastened, Pin, Snap-in, Hook, Toggle, String."
             }
         ]
     },
     "graph": [
         {
-            "linkage": "Traditional Cholis-(Apparel_Category)->fastenerType-(Guideline_Type)->Attributes-(Attributes)"
+            "linkage": "Traditional Cholis-(Apparel_Category)->Additional Attributes-(Guideline_Type)->Closure Type",
+            "linkage_cypher": "CREATE (n1:Apparel_Category {name: 'Traditional Cholis'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Additional Attributes'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Closure Type'})",
+            "linkage_gsql": "CREATE (n1:Apparel_Category {name: 'Traditional Cholis'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Additional Attributes'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Closure Type'})"
         }
     ],
-    "summary": "This page outlines additional mandatory attributes for Traditional Cholis items, specifically detailing the required closure types and examples of fasteners."
+    "summary": "This section outlines mandatory attributes for Traditional Cholis items, particularly focusing on the type of closure used, along with examples of accepted fasteners to comply with the style guide."
 }

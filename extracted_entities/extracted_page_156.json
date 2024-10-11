@@ -1,0 +1,26 @@
+{
+    "apparel_category": "Women\u2019s Swimwear",
+    "product_type": "Swimsuit Sets",
+    "guideline_concept": "Attributes",
+    "guidelines": {
+        "guideline_type": "Naming Guidelines",
+        "additional_attributes": [
+            {
+                "step_name": "Bra Style",
+                "description": "Brassiere styles/defining features. Enter as many as are relevant to the bra. Do not enter strap styles here. To enter descriptive terms for strap styles, please use the 'Upper Body Strap Configuration' attribute."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Women\u2019s Swimwear-(Apparel_Category)->Swimsuit Sets-(Product_Type)->Naming Guidelines-(additional_attributes)",
+            "linkage_cypher": "CREATE (n1:Apparel_Category {name: 'Women\u2019s Swimwear'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Swimsuit Sets'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Naming Guidelines'})-[:HAS_REQUIREMENT]->(n4:additional_attributes {name: 'Bra Style'})",
+            "linkage_gsql": "CREATE (n1:Apparel_Category {name: 'Women\u2019s Swimwear'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Swimsuit Sets'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Naming Guidelines'})-[:HAS_REQUIREMENT]->(n4:additional_attributes {name: 'Bra Style'})"
+        },
+        {
+            "linkage": "Attributes-(Guideline_Concept)->Naming Guidelines-(Guideline_Type)->additional_attributes",
+            "linkage_cypher": "CREATE (n1:Guideline_Concept {name: 'Attributes'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Naming Guidelines'})-[:HAS_REQUIREMENT]->(n3:additional_attributes {name: 'Bra Style'})",
+            "linkage_gsql": "CREATE (n1:Guideline_Concept {name: 'Attributes'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Naming Guidelines'})-[:HAS_REQUIREMENT]->(n3:additional_attributes {name: 'Bra Style'})"
+        }
+    ]
+}

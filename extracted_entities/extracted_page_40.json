@@ -22,15 +22,16 @@
                 "description": "Ghost view of garment."
             },
             {
-                "step_name": "4th & 5th Alternate",
+                "step_name": "Recommended 4th & 5th Alternate",
                 "description": "Alternate detail. Highlight embellishments and design elements not captured in required shots if present."
             }
         ]
     },
     "graph": [
         {
-            "linkage": "Sleepwear Sets-(Apparel_Category)->Multi Piece Sets-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
+            "linkage": "Sleepwear Sets-(Apparel_Category)->Multi Piece Sets-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements-(Context_Specific_Label>",
+            "linkage_cypher": "CREATE (n1:Apparel_Category {name: 'Sleepwear Sets'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Multi Piece Sets'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n4:image_requirements {name: 'image_requirements'})",
+            "linkage_gsql": "CREATE (n1:Apparel_Category {name: 'Sleepwear Sets'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Multi Piece Sets'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n4:image_requirements {name: 'image_requirements'})"
         }
-    ],
-    "summary": "The document outlines photo direction guidelines for 'Sleepwear Sets' and 'Multi Piece Sets', detailing required and recommended image types to ensure the apparel is presented effectively."
+    ]
 }

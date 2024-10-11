@@ -1,97 +1,38 @@
 {
-    "apparel_category": "All Upper Body Garments",
-    "product_type": [
-        "All Tops",
-        "Jackets & Coats",
-        "All Traditional Garments",
-        "Baptism Gowns & Outfits",
-        "Traditional Cholis",
-        "Traditional Cheongsams",
-        "Traditional Kilts",
-        "Traditional Sporrans",
-        "All Swimwear",
-        "Bikinis & Tankini Tops",
-        "Swimsuit Sets",
-        "Swimsuit Cover-Ups",
-        "All Underwear, Nightwear & Lingerie",
-        "All Bras, Lingerie & Shapewear",
-        "All Shapewear"
-    ],
+    "apparel_category": "All Women\u2019s Swimwear",
+    "product_type": "Swimsuit Sets",
     "guideline_concept": "Copy Standards",
     "guidelines": {
         "guideline_type": "Copy Standards",
-        "copy_guidelines": [
+        "writing_guidelines": [
             {
                 "step_name": "Search Engine Optimization",
-                "description": "Guidelines to enhance visibility through search engines."
-            },
-            {
-                "step_name": "Copy Definitions for Fashion",
-                "description": "Terminology and usage specific to fashion guidelines."
+                "description": "Optimize product descriptions and attributes for SEO."
             },
             {
                 "step_name": "Product Name Guidelines",
-                "description": "Standards for naming products effectively."
+                "description": "Follow specified naming conventions for swimwear products."
             },
             {
                 "step_name": "Shelf Description Guidelines",
-                "description": "Descriptions for products displayed on shelves."
-            },
-            {
-                "step_name": "Site Description Guidelines",
-                "description": "Standards for product descriptions on online platforms."
+                "description": "Provide clear, concise descriptions for shelf presentation."
             },
             {
                 "step_name": "Key Features Guidelines",
-                "description": "Instructions for highlighting key features of apparel."
+                "description": "Highlight key features of swimwear for customers."
             }
         ]
     },
     "graph": [
         {
-            "linkage": "All Upper Body Garments-(Apparel_Category)->All Tops-(Product_Type)->Copy Standards-(Guideline_Type)->copy_guidelines"
+            "linkage": "All Women\u2019s Swimwear-(Apparel_Category)->Swimsuit Sets-(Product_Type)->Copy Standards-(Guideline_Type)->writing_guidelines-(Context_Specific_Label>",
+            "linkage_cypher": "CREATE (n1:Apparel_Category {name: 'All Women\u2019s Swimwear'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Swimsuit Sets'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Copy Standards'})-[:HAS_REQUIREMENT]->(n4:writing_guidelines {name: 'Search Engine Optimization'})",
+            "linkage_gsql": "CREATE (n1:Apparel_Category {name: 'All Women\u2019s Swimwear'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Swimsuit Sets'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Copy Standards'})-[:HAS_REQUIREMENT]->(n4:writing_guidelines {name: 'Search Engine Optimization'})"
         },
         {
-            "linkage": "All Upper Body Garments-(Apparel_Category)->Jackets & Coats-(Product_Type)->Copy Standards-(Guideline_Type)->copy_guidelines"
-        },
-        {
-            "linkage": "All Upper Body Garments-(Apparel_Category)->All Traditional Garments-(Product_Type)->Copy Standards-(Guideline_Type)->copy_guidelines"
-        },
-        {
-            "linkage": "All Upper Body Garments-(Apparel_Category)->Baptism Gowns & Outfits-(Product_Type)->Copy Standards-(Guideline_Type)->copy_guidelines"
-        },
-        {
-            "linkage": "All Upper Body Garments-(Apparel_Category)->Traditional Cholis-(Product_Type)->Copy Standards-(Guideline_Type)->copy_guidelines"
-        },
-        {
-            "linkage": "All Upper Body Garments-(Apparel_Category)->Traditional Cheongsams-(Product_Type)->Copy Standards-(Guideline_Type)->copy_guidelines"
-        },
-        {
-            "linkage": "All Upper Body Garments-(Apparel_Category)->Traditional Kilts-(Product_Type)->Copy Standards-(Guideline_Type)->copy_guidelines"
-        },
-        {
-            "linkage": "All Upper Body Garments-(Apparel_Category)->Traditional Sporrans-(Product_Type)->Copy Standards-(Guideline_Type)->copy_guidelines"
-        },
-        {
-            "linkage": "All Upper Body Garments-(Apparel_Category)->All Swimwear-(Product_Type)->Copy Standards-(Guideline_Type)->copy_guidelines"
-        },
-        {
-            "linkage": "All Upper Body Garments-(Apparel_Category)->Bikinis & Tankini Tops-(Product_Type)->Copy Standards-(Guideline_Type)->copy_guidelines"
-        },
-        {
-            "linkage": "All Upper Body Garments-(Apparel_Category)->Swimsuit Sets-(Product_Type)->Copy Standards-(Guideline_Type)->copy_guidelines"
-        },
-        {
-            "linkage": "All Upper Body Garments-(Apparel_Category)->Swimsuit Cover-Ups-(Product_Type)->Copy Standards-(Guideline_Type)->copy_guidelines"
-        },
-        {
-            "linkage": "All Upper Body Garments-(Apparel_Category)->All Underwear, Nightwear & Lingerie-(Product_Type)->Copy Standards-(Guideline_Type)->copy_guidelines"
-        },
-        {
-            "linkage": "All Upper Body Garments-(Apparel_Category)->All Bras, Lingerie & Shapewear-(Product_Type)->Copy Standards-(Guideline_Type)->copy_guidelines"
-        },
-        {
-            "linkage": "All Upper Body Garments-(Apparel_Category)->All Shapewear-(Product_Type)->Copy Standards-(Guideline_Type)->copy_guidelines"
+            "linkage": "Copy Standards-(Guideline_Concept)->writing_guidelines-(Guideline_Type)->Search Engine Optimization-(Context_Specific_Label>",
+            "linkage_cypher": "CREATE (n1:Guideline_Concept {name: 'Copy Standards'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'writing_guidelines'})-[:HAS_REQUIREMENT]->(n3:writing_guidelines {name: 'Search Engine Optimization'})",
+            "linkage_gsql": "CREATE (n1:Guideline_Concept {name: 'Copy Standards'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'writing_guidelines'})-[:HAS_REQUIREMENT]->(n3:writing_guidelines {name: 'Search Engine Optimization'})"
         }
     ]
 }

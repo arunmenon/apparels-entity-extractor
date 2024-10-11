@@ -3,18 +3,19 @@
     "product_type": null,
     "guideline_concept": "Apparel Grouping Standards",
     "guidelines": {
-        "guideline_type": "Grouping Standards",
-        "context_specific_label": [
+        "guideline_type": "Photo Direction",
+        "image_requirements": [
             {
-                "step_name": "Photo Direction",
-                "description": "Specific instructions for each unique apparel grouping."
+                "step_name": "Photo Direction Pages",
+                "description": "The following photo direction pages offer specific instructions for each unique apparel grouping."
             }
         ]
     },
     "graph": [
         {
-            "linkage": "Apparel Grouping Standards-(Guideline_Concept)->Grouping Standards-(Guideline_Type)->Photo Direction"
+            "linkage": "Apparel Grouping Standards-(Guideline_Concept)->Photo Direction-(Image_Requirements)",
+            "linkage_cypher": "CREATE (n1:Guideline_Concept {name: 'Apparel Grouping Standards'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n3:Image_Requirements {name: 'Photo Direction Pages'})",
+            "linkage_gsql": "CREATE (n1:Guideline_Concept {name: 'Apparel Grouping Standards'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n3:Image_Requirements {name: 'Photo Direction Pages'})"
         }
-    ],
-    "summary": "The document outlines apparel grouping standards and provides photo direction for unique apparel groupings."
+    ]
 }

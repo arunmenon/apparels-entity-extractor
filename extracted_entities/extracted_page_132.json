@@ -1,0 +1,86 @@
+{
+    "apparel_category": "Men\u2019s Lower Body",
+    "product_type": "Lower Body Garments",
+    "guideline_concept": "Additional Attributes",
+    "guidelines": {
+        "guideline_type": "Grouping Standards",
+        "attributes": [
+            {
+                "attribute_name": "Clothing Style",
+                "description": "Styles and designations that apply generally to various types of clothing.",
+                "examples": [
+                    "Activewear",
+                    "Athleisure",
+                    "Casual",
+                    "Dressy",
+                    "Loungewear",
+                    "Outerwear",
+                    "Skwear",
+                    "Snow Wear",
+                    "Streetwear",
+                    "Workwear",
+                    "Cover-Up",
+                    "School Uniform",
+                    "Work Uniform"
+                ]
+            },
+            {
+                "attribute_name": "Clothing Fit",
+                "description": "Terms that describe the way a garment will fit when worn.",
+                "examples": [
+                    "Active Fit",
+                    "Baggy Fit",
+                    "Curvy Fit",
+                    "Modern Fit",
+                    "Oversized",
+                    "Relaxed Fit",
+                    "Skinny",
+                    "Slim",
+                    "Tailored"
+                ]
+            },
+            {
+                "attribute_name": "Closure Type",
+                "description": "The type of fastener used to keep an item closed and to facilitate putting on the item.",
+                "examples": [
+                    "Belt",
+                    "Buckle",
+                    "Button",
+                    "Clasp",
+                    "Clip",
+                    "Drawstring",
+                    "Flap",
+                    "Hook & Eye",
+                    "Loop",
+                    "Pull-On",
+                    "Snap",
+                    "Tie",
+                    "Zipper",
+                    "Velcro",
+                    "No Closure",
+                    "Hook & Loop",
+                    "Elastic Band",
+                    "Belted",
+                    "Button Fashioned",
+                    "Pin",
+                    "Elastic",
+                    "String",
+                    "Toggle",
+                    "Cinch"
+                ]
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Men\u2019s Lower Body-(Apparel_Category)->Lower Body Garments-(Product_Type)->Grouping Standards-(Guideline_Type)->attributes",
+            "linkage_cypher": "CREATE (n1:Apparel_Category {name: 'Men\u2019s Lower Body'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Lower Body Garments'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Grouping Standards'})-[:HAS_REQUIREMENT]->(n4:attributes {name: 'attributes'})",
+            "linkage_gsql": "CREATE (n1:Apparel_Category {name: 'Men\u2019s Lower Body'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Lower Body Garments'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Grouping Standards'})-[:HAS_REQUIREMENT]->(n4:attributes {name: 'attributes'})"
+        },
+        {
+            "linkage": "Additional Attributes-(Guideline_Concept)->Grouping Standards-(Guideline_Type)->attributes",
+            "linkage_cypher": "CREATE (n1:Guideline_Concept {name: 'Additional Attributes'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Grouping Standards'})-[:HAS_REQUIREMENT]->(n3:attributes {name: 'attributes'})",
+            "linkage_gsql": "CREATE (n1:Guideline_Concept {name: 'Additional Attributes'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Grouping Standards'})-[:HAS_REQUIREMENT]->(n3:attributes {name: 'attributes'})"
+        }
+    ]
+}

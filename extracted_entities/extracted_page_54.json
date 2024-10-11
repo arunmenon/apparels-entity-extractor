@@ -1,29 +1,29 @@
 {
-    "apparel_category": "Socks",
-    "product_type": "6-9 Pack",
+    "apparel_category": "Apparel Accessories",
+    "product_type": "Socks",
     "guideline_concept": "Photo Direction",
     "guidelines": {
         "guideline_type": "Photo Direction",
         "image_requirements": [
             {
-                "step_name": "Hero (Main) Image",
-                "description": "Pair laid out."
+                "step_name": "6-9 Pack",
+                "description": "Required in order below (2 images): 1. Hero (Main) Image: Pair laid out. 2. 1st Alternate: Item in Packaging."
             },
             {
-                "step_name": "1st Alternate Image",
-                "description": "Item in Packaging."
+                "step_name": "10+ Pack",
+                "description": "Required in order below (2 images): 1. Hero (Main) Image: Pair laid out. 2. 1st Alternate: Item in Packaging."
+            },
+            {
+                "step_name": "No Show Packs",
+                "description": "Required in order below (2 images): 1. Hero (Main) Image: Pair laid out. 2. 1st Alternate: Item in Packaging."
             }
         ]
     },
     "graph": [
         {
-            "linkage": "Socks-(Apparel_Category)->6-9 Pack-(Product_Type)->Photo Direction-(image_requirements)"
-        },
-        {
-            "linkage": "Socks-(Apparel_Category)->10+ Pack-(Product_Type)->Photo Direction-(image_requirements)"
-        },
-        {
-            "linkage": "Socks-(Apparel_Category)->No Show Packs-(Product_Type)->Photo Direction-(image_requirements)"
+            "linkage": "Apparel Accessories-(Apparel_Category)->Socks-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements",
+            "linkage_cypher": "CREATE (n1:Apparel_Category {name: 'Apparel Accessories'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Socks'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n4:image_requirements {name: 'image_requirements'})",
+            "linkage_gsql": "CREATE (n1:Apparel_Category {name: 'Apparel Accessories'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Socks'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n4:image_requirements {name: 'image_requirements'})"
         }
     ]
 }

@@ -1,0 +1,75 @@
+{
+    "apparel_category": "All Athletic Apparel",
+    "guideline_concept": "Additional Attributes",
+    "guidelines": {
+        "guideline_type": "Grouping Standards",
+        "attributes": [
+            {
+                "attribute_name": "Activity",
+                "description": "The general type of activity the product is associated with.",
+                "examples": [
+                    "Aerobics",
+                    "Athletics",
+                    "Ballet",
+                    "Basketball",
+                    "Boxing",
+                    "Camping",
+                    "Cheerleading",
+                    "Climbing",
+                    "Competition",
+                    "Cross-Training",
+                    "Cycling",
+                    "Dancing",
+                    "Fishing",
+                    "Football",
+                    "Gym",
+                    "Gymnastics",
+                    "Hiking",
+                    "Hockey",
+                    "Hunting",
+                    "Ice Fishing",
+                    "Ice Hockey",
+                    "Jogging",
+                    "Kayaking",
+                    "Lacrosse",
+                    "Martial Arts",
+                    "Motorsports",
+                    "Outdoors Activity",
+                    "Playing",
+                    "Racquetball",
+                    "Rowing",
+                    "Rugby",
+                    "Running",
+                    "Sailing",
+                    "Skateboarding",
+                    "Snow",
+                    "Snow Activity",
+                    "Snow Sports",
+                    "Soccer",
+                    "Softball",
+                    "Swimming",
+                    "Table Dance",
+                    "Tennis",
+                    "Trail Running",
+                    "Travel",
+                    "Triathlon",
+                    "Volleyball",
+                    "Walking",
+                    "Water Activity",
+                    "Water Polo",
+                    "Water Sports",
+                    "Weight Lifting",
+                    "Yoga",
+                    "Zumba"
+                ]
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "All Athletic Apparel-(Apparel_Category)->Additional Attributes-(Grouping Standards)->Activity",
+            "linkage_cypher": "CREATE (n1:Apparel_Category {name: 'All Athletic Apparel'})-[:HAS_PRODUCT_TYPE]->(n2:Grouping_Standards {name: 'Additional Attributes'})-[:HAS_REQUIREMENT]->(n3:Activity {name: 'Activity'})",
+            "linkage_gsql": "CREATE (n1:Apparel_Category {name: 'All Athletic Apparel'})-[:HAS_PRODUCT_TYPE]->(n2:Grouping_Standards {name: 'Additional Attributes'})-[:HAS_REQUIREMENT]->(n3:Activity {name: 'Activity'})"
+        }
+    ]
+}

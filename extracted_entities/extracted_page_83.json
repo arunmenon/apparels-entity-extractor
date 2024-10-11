@@ -4,44 +4,55 @@
     "guideline_concept": "Product Naming Guidelines",
     "guidelines": {
         "guideline_type": "Naming Guidelines",
-        "naming_guidelines": [
+        "naming_requirements": [
             {
-                "step_name": "Optimal Length",
-                "description": "Product names should be between short and long, ideally fitting within the 'Goldilocks Zone' and under 90 characters."
+                "step_name": "Product Title Importance",
+                "description": "Product names are critical for search optimization, fitting within a maximum of 90 characters."
             },
             {
-                "step_name": "Unique Product Name",
-                "description": "Create a unique, specific product name that isn't word-for-word on other websites."
+                "step_name": "Character Count Management",
+                "description": "Lead with the most crucial aspects of your product title, keeping it suitable for mobile visibility."
             },
             {
-                "step_name": "Use of Color",
-                "description": "If relevant, include color of the item in the product name."
+                "step_name": "Unique Naming",
+                "description": "Develop a distinctive product name; avoid using identical wording found on other sites."
+            },
+            {
+                "step_name": "Color Inclusion",
+                "description": "Include color in the product name if relevant to customer searches."
+            },
+            {
+                "step_name": "Variant Grouping",
+                "description": "Variant attributes should be included in Key Features & Description, not in the product name."
             },
             {
                 "step_name": "Capitalization Rules",
-                "description": "Capitalize the first letter of each word, except for articles, conjunctions, and prepositions."
+                "description": "Capitalize the first letter of each word, except for certain articles and prepositions."
             },
             {
-                "step_name": "Descriptive Keywords",
-                "description": "The title should include keywords that describe the product, avoiding generic titles."
+                "step_name": "Subject Keywords",
+                "description": "Include subject keywords that accurately describe the product."
             },
             {
                 "step_name": "Special Characters",
-                "description": "Avoid using special characters such as '!', '?', '$', etc., unless they represent the brand legally."
+                "description": "Avoid special characters unless they are legally required in the brand name."
             },
             {
-                "step_name": "Promotional Phrases",
-                "description": "Do not include promotional phrases like 'best selling' or 'free shipping' in titles."
+                "step_name": "Prohibited Phrases",
+                "description": "Avoid promotional phrases like 'best selling' or 'free shipping' in product titles."
             },
             {
-                "step_name": "Mandatory Attribute",
-                "description": "The product name is a required attribute."
+                "step_name": "Avoid Ambiguity",
+                "description": "Refrain from using 'or' in product titles that involve multiple types."
             }
         ]
     },
     "graph": [
         {
-            "linkage": "Product Naming Guidelines-(Guideline_Concept)->Naming Guidelines-(Guideline_Type)->naming_guidelines"
+            "linkage": "Product Naming Guidelines-(Guideline_Concept)->Naming Guidelines-(Naming Guidelines)->Naming Requirements",
+            "linkage_cypher": "CREATE (n1:Guideline_Concept {name: 'Product Naming Guidelines'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Naming Guidelines'})-[:HAS_REQUIREMENT]->(n3:Naming_Requirements {name: 'Naming Requirements'})",
+            "linkage_gsql": "CREATE (n1:Guideline_Concept {name: 'Product Naming Guidelines'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Naming Guidelines'})-[:HAS_REQUIREMENT]->(n3:Naming_Requirements {name: 'Naming Requirements'})"
         }
-    ]
+    ],
+    "summary": "The document outlines guidelines for creating product names that optimize searchability. Key points include maintaining a maximum character count, ensuring unique titles, and following specific rules for capitalization and keyword inclusion."
 }

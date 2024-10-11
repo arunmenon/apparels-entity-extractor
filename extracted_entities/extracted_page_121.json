@@ -1,0 +1,30 @@
+{
+    "apparel_category": null,
+    "product_type": null,
+    "guideline_concept": "Attributes",
+    "guidelines": {
+        "guideline_type": "Attribute Guidelines",
+        "attribute_requirements": [
+            {
+                "step_name": "Count Per Pack",
+                "description": "The number of identical items inside each individual pack given by the 'Multipack Quantity' attribute."
+            },
+            {
+                "step_name": "Multipack Quantity",
+                "description": "The number of identical, individually packaged-for-sale items. If an item does not contain identical items, or if the items contained within cannot be sold individually, the value for this attribute should be '1.'"
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Attributes-(Guideline_Concept)->Attribute Guidelines-(Attribute_Requirements)->Count Per Pack",
+            "linkage_cypher": "CREATE (n1:Guideline_Concept {name: 'Attributes'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Attribute Guidelines'})-[:HAS_REQUIREMENT]->(n3:Attribute_Requirements {name: 'Count Per Pack'})",
+            "linkage_gsql": "CREATE (n1:Guideline_Concept {name: 'Attributes'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Attribute Guidelines'})-[:HAS_REQUIREMENT]->(n3:Attribute_Requirements {name: 'Count Per Pack'})"
+        },
+        {
+            "linkage": "Attributes-(Guideline_Concept)->Attribute Guidelines-(Attribute_Requirements)->Multipack Quantity",
+            "linkage_cypher": "CREATE (n1:Guideline_Concept {name: 'Attributes'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Attribute Guidelines'})-[:HAS_REQUIREMENT]->(n3:Attribute_Requirements {name: 'Multipack Quantity'})",
+            "linkage_gsql": "CREATE (n1:Guideline_Concept {name: 'Attributes'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Attribute Guidelines'})-[:HAS_REQUIREMENT]->(n3:Attribute_Requirements {name: 'Multipack Quantity'})"
+        }
+    ]
+}

@@ -1,25 +1,29 @@
 {
     "apparel_category": "All Outerwear",
-    "guideline_concept": "Additional Attributes",
+    "guideline_concept": "Attributes",
     "guidelines": {
-        "guideline_type": "Copy Standards",
-        "attributes": [
+        "guideline_type": "Attribute Standards",
+        "attribute_requirements": [
             {
                 "step_name": "Clothing Weight",
-                "description": "Commonly used in retail clothing, these terms describe the density or weight of fabric material. Examples: Lightweight, Mid-Weight, Heavyweight."
+                "description": "Commonly used in retail clothing, these terms describe the density or weight of fabric material. Examples include Lightweight, Mid-Weight, Heavyweight."
             },
             {
                 "step_name": "Fill Material",
-                "description": "The material used to stuff the item (in a cushion or plush toy, for example). Examples: Down, Down Alternative, Polyester."
+                "description": "The material used to stuff the item (in a cushion or plush toy, for example). Examples include Down, Down Alternative, Polyester."
             }
         ]
     },
     "graph": [
         {
-            "linkage": "All Outerwear-(Apparel_Category)->Clothing Weight-(Guideline_Type)->Attributes"
+            "linkage": "All Outerwear-(Apparel_Category)->Attribute Standards-(Guideline_Type)->attribute_requirements",
+            "linkage_cypher": "CREATE (n1:Apparel_Category {name: 'All Outerwear'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Attribute Standards'})-[:HAS_REQUIREMENT]->(n3:attribute_requirements {name: 'Clothing Weight'})",
+            "linkage_gsql": "CREATE (n1:Apparel_Category {name: 'All Outerwear'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Attribute Standards'})-[:HAS_REQUIREMENT]->(n3:attribute_requirements {name: 'Clothing Weight'})"
         },
         {
-            "linkage": "All Outerwear-(Apparel_Category)->Fill Material-(Guideline_Type)->Attributes"
+            "linkage": "All Outerwear-(Guideline_Concept)->Attribute Standards-(Guideline_Type)->attribute_requirements",
+            "linkage_cypher": "CREATE (n1:Guideline_Concept {name: 'Attributes'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Attribute Standards'})-[:HAS_REQUIREMENT]->(n3:attribute_requirements {name: 'Fill Material'})",
+            "linkage_gsql": "CREATE (n1:Guideline_Concept {name: 'Attributes'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Attribute Standards'})-[:HAS_REQUIREMENT]->(n3:attribute_requirements {name: 'Fill Material'})"
         }
     ]
 }

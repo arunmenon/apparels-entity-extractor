@@ -10,7 +10,7 @@
         "guideline_type": "Photo Direction",
         "image_requirements": [
             {
-                "step_name": "Hero (Main) Image",
+                "step_name": "Hero Image",
                 "description": "Front facing, cropped above lip to below fingertips."
             },
             {
@@ -19,7 +19,7 @@
             },
             {
                 "step_name": "2nd Alternate",
-                "description": "Back facing, cropped to just below hairline to below fingertips."
+                "description": "Back facing, cropped to just below hairline to below finger tips."
             },
             {
                 "step_name": "3rd Alternate",
@@ -27,19 +27,25 @@
             },
             {
                 "step_name": "4th Alternate",
-                "description": "Alternate detail. Highlight embellishments and design elements not captured in required shots if present."
+                "description": "Highlight embellishments and design elements not captured in required shots if present."
             }
         ]
     },
     "graph": [
         {
-            "linkage": "Men\u2019s Apparel-(Apparel_Category)->Snowsuits-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
+            "linkage": "Men\u2019s Apparel-(Apparel_Category)->Snowsuits-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements",
+            "linkage_cypher": "CREATE (n1:Apparel_Category {name: 'Men\u2019s Apparel'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Snowsuits'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n4:image_requirements {name: 'image_requirements'})",
+            "linkage_gsql": "CREATE (n1:Apparel_Category {name: 'Men\u2019s Apparel'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Snowsuits'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n4:image_requirements {name: 'image_requirements'})"
         },
         {
-            "linkage": "Men\u2019s Apparel-(Apparel_Category)->Overalls-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
+            "linkage": "Men\u2019s Apparel-(Apparel_Category)->Overalls-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements",
+            "linkage_cypher": "CREATE (n1:Apparel_Category {name: 'Men\u2019s Apparel'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Overalls'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n4:image_requirements {name: 'image_requirements'})",
+            "linkage_gsql": "CREATE (n1:Apparel_Category {name: 'Men\u2019s Apparel'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Overalls'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n4:image_requirements {name: 'image_requirements'})"
         },
         {
-            "linkage": "Men\u2019s Apparel-(Apparel_Category)->Suits-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
+            "linkage": "Men\u2019s Apparel-(Apparel_Category)->Suits-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements",
+            "linkage_cypher": "CREATE (n1:Apparel_Category {name: 'Men\u2019s Apparel'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Suits'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n4:image_requirements {name: 'image_requirements'})",
+            "linkage_gsql": "CREATE (n1:Apparel_Category {name: 'Men\u2019s Apparel'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Suits'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n4:image_requirements {name: 'image_requirements'})"
         }
     ]
 }

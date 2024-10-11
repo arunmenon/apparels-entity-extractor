@@ -1,0 +1,26 @@
+{
+    "apparel_category": "Overalls",
+    "product_type": null,
+    "guideline_concept": "Attributes",
+    "guidelines": {
+        "guideline_type": "Copy Standards",
+        "attribute_requirements": [
+            {
+                "step_name": "Jean Wash",
+                "description": "Description of post-process wash treatment affecting the appearance of dye and fabric texture, specific to jeans."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Overalls-(Apparel_Category)-><none>-(Product_Type)->Copy Standards-(Guideline_Type)->attribute_requirements-(Context_Specific_Label>",
+            "linkage_cypher": "CREATE (n1:Apparel_Category {name: 'Overalls'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: '<none>'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Copy Standards'})-[:HAS_REQUIREMENT]->(n4:attribute_requirements {name: 'Jean Wash'})",
+            "linkage_gsql": "CREATE (n1:Apparel_Category {name: 'Overalls'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: '<none>'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Copy Standards'})-[:HAS_REQUIREMENT]->(n4:attribute_requirements {name: 'Jean Wash'})"
+        },
+        {
+            "linkage": "Attributes-(Guideline_Concept)->Copy Standards-(Guideline_Type)->attribute_requirements-(Context_Specific_Label>",
+            "linkage_cypher": "CREATE (n1:Guideline_Concept {name: 'Attributes'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Copy Standards'})-[:HAS_REQUIREMENT]->(n3:attribute_requirements {name: 'Jean Wash'})",
+            "linkage_gsql": "CREATE (n1:Guideline_Concept {name: 'Attributes'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Copy Standards'})-[:HAS_REQUIREMENT]->(n3:attribute_requirements {name: 'Jean Wash'})"
+        }
+    ]
+}

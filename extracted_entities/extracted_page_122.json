@@ -1,0 +1,34 @@
+{
+    "apparel_category": null,
+    "product_type": null,
+    "guideline_concept": "Attributes",
+    "guidelines": {
+        "guideline_type": "Attributes",
+        "attributes": [
+            {
+                "step_name": "Total Count",
+                "description": "The total number of identical items in the package or box; a result of the multiplication of Multipack Quantity by Count Per Pack."
+            },
+            {
+                "step_name": "Number of Pieces",
+                "description": "The number of small pieces, slices, or different items within the product."
+            },
+            {
+                "step_name": "Net Content",
+                "description": "The quantity of the product contained in the package along with its unit of measure."
+            },
+            {
+                "step_name": "Measure",
+                "description": "The numeric net content portion that appears on an item."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Attributes-(Guideline_Concept)->Attributes-(Guideline_Type)->Attributes",
+            "linkage_cypher": "CREATE (n1:Guideline_Concept {name: 'Attributes'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Attributes'})-[:HAS_REQUIREMENT]->(n3:Attributes {name: 'Attributes'})",
+            "linkage_gsql": "CREATE (n1:Guideline_Concept {name: 'Attributes'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Attributes'})-[:HAS_REQUIREMENT]->(n3:Attributes {name: 'Attributes'})"
+        }
+    ],
+    "summary": "The page outlines various attributes related to apparel standards, including Total Count, Number of Pieces, Net Content, and Measure, specifying what each attribute entails and providing examples."
+}

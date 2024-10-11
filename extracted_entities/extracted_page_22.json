@@ -1,0 +1,46 @@
+{
+    "apparel_category": "Women\u2019s Apparel",
+    "product_type": "Two-Piece Tops",
+    "guideline_concept": "Photo Direction",
+    "guidelines": {
+        "guideline_type": "Photo Direction",
+        "image_requirements": [
+            {
+                "step_name": "Hero Image",
+                "description": "Front facing, cropped above lip to below fingertips."
+            },
+            {
+                "step_name": "1st Alternate",
+                "description": "Front facing, head to toe, unrecognizable."
+            },
+            {
+                "step_name": "2nd Alternate",
+                "description": "Front facing, cropped for top of underpinning."
+            },
+            {
+                "step_name": "3rd Alternate",
+                "description": "Back facing, cropped in to garment."
+            },
+            {
+                "step_name": "4th Alternate",
+                "description": "Ghost view."
+            },
+            {
+                "step_name": "5th Alternate",
+                "description": "Highlight embellishments and design elements not captured in required shots if present."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Women\u2019s Apparel-(Apparel_Category)->Two-Piece Tops-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements",
+            "linkage_cypher": "CREATE (n1:Apparel_Category {name: 'Women\u2019s Apparel'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Two-Piece Tops'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n4:image_requirements {name: 'image_requirements'})",
+            "linkage_gsql": "CREATE (n1:Apparel_Category {name: 'Women\u2019s Apparel'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Two-Piece Tops'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n4:image_requirements {name: 'image_requirements'})"
+        },
+        {
+            "linkage": "Photo Direction-(Guideline_Concept)->Photo Direction-(Guideline_Type)->image_requirements",
+            "linkage_cypher": "CREATE (n1:Guideline_Concept {name: 'Photo Direction'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n3:image_requirements {name: 'image_requirements'})",
+            "linkage_gsql": "CREATE (n1:Guideline_Concept {name: 'Photo Direction'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n3:image_requirements {name: 'image_requirements'})"
+        }
+    ]
+}

@@ -1,12 +1,12 @@
 {
-    "apparel_category": "Suits & Sets",
-    "product_type": "Three Piece Vested Suit",
-    "guideline_concept": "Copy Standards",
+    "apparel_category": "Men\u2019s Suits & Sets",
+    "product_type": "Modern Fit Suit",
+    "guideline_concept": "Key Features Guidelines",
     "guidelines": {
         "guideline_type": "Copy Standards",
         "writing_guidelines": [
             {
-                "step_name": "Bullet Point Structure",
+                "step_name": "Bullet Point Formatting",
                 "description": "Begin each bullet point with a capital letter."
             },
             {
@@ -14,42 +14,49 @@
                 "description": "Product name should be repeated as the first line, bolded, no bullet."
             },
             {
-                "step_name": "Sentence Fragments",
-                "description": "Use sentence fragments and avoid ending punctuation."
+                "step_name": "Sentence Structure",
+                "description": "Write with sentence fragments and avoid ending punctuation."
             },
             {
-                "step_name": "Promotional Text",
-                "description": "No promotional text like free shipping or discounts allowed."
+                "step_name": "Promotional Text Restrictions",
+                "description": "No promotional text like free shipping or pricing information."
             },
             {
                 "step_name": "Retailer Promotion",
-                "description": "Do not promote other retailers or redirect to another website unless related to the product."
+                "description": "No text promoting another retailer unless related to the product."
             },
             {
-                "step_name": "Information Repetition",
-                "description": "Avoid repeating information from the short description."
+                "step_name": "Unique Bullets",
+                "description": "Bullet points should not repeat information from the short description."
             },
             {
                 "step_name": "Consistent Order",
-                "description": "Maintain a consistent order for the bullet points."
+                "description": "Maintain a consistent order for bullet points."
             },
             {
                 "step_name": "Reiteration",
                 "description": "Reiterate important information from the title and description."
             },
             {
-                "step_name": "Special Characters",
-                "description": "No special characters like #, *, or ! are allowed."
+                "step_name": "No Special Characters",
+                "description": "No special characters such as #, * or !."
             },
             {
-                "step_name": "Attribute Requirements",
+                "step_name": "Attribute Requirement",
                 "description": "This is a required attribute."
             }
         ]
     },
     "graph": [
         {
-            "linkage": "Suits & Sets-(Apparel_Category)->Three Piece Vested Suit-(Product_Type)->Copy Standards-(Guideline_Type)->writing_guidelines"
+            "linkage": "Men\u2019s Suits & Sets-(Apparel_Category)->Modern Fit Suit-(Product_Type)->Copy Standards-(Guideline_Type)->writing_guidelines",
+            "linkage_cypher": "CREATE (n1:Apparel_Category {name: 'Men\u2019s Suits & Sets'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Modern Fit Suit'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Copy Standards'})-[:HAS_REQUIREMENT]->(n4:writing_guidelines {name: 'Key Features Guidelines'})",
+            "linkage_gsql": "CREATE (n1:Apparel_Category {name: 'Men\u2019s Suits & Sets'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Modern Fit Suit'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Copy Standards'})-[:HAS_REQUIREMENT]->(n4:writing_guidelines {name: 'Key Features Guidelines'})"
+        },
+        {
+            "linkage": "Key Features Guidelines-(Guideline_Concept)->Copy Standards-(Guideline_Type)->writing_guidelines",
+            "linkage_cypher": "CREATE (n1:Guideline_Concept {name: 'Key Features Guidelines'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Copy Standards'})-[:HAS_REQUIREMENT]->(n3:writing_guidelines {name: 'Key Features Guidelines'})",
+            "linkage_gsql": "CREATE (n1:Guideline_Concept {name: 'Key Features Guidelines'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Copy Standards'})-[:HAS_REQUIREMENT]->(n3:writing_guidelines {name: 'Key Features Guidelines'})"
         }
     ]
 }

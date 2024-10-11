@@ -1,27 +1,92 @@
 {
     "apparel_category": "All Upper Body Garments",
-    "guideline_concept": "Attribute Standards",
     "guidelines": {
-        "guideline_type": "Attribute Requirements",
-        "mandatory_attributes": [
+        "guideline_type": "Additional Attributes",
+        "attributes": [
             {
                 "attribute_name": "Clothing Style",
-                "description": "Styles and designations that apply generally to various types of clothing."
+                "key": "clothingStyle",
+                "description": "Styles and designations that apply generally to various types of clothing.",
+                "examples": [
+                    "Activewear",
+                    "Athleisure",
+                    "Casual",
+                    "Dressy",
+                    "Loungewear",
+                    "Outerwear",
+                    "Skwear",
+                    "Snow Wear",
+                    "Streetwear",
+                    "Workwear",
+                    "Cover-Up",
+                    "School Uniform",
+                    "Work Uniform"
+                ],
+                "list_type": "Closed",
+                "multiple_values": "Yes",
+                "requirement_level": "Required"
             },
             {
                 "attribute_name": "Clothing Fit",
-                "description": "Terms that describe the way a garment will fit when worn."
+                "key": "clothingFit",
+                "description": "Terms that describe the way a garment will fit when worn.",
+                "examples": [
+                    "Active Fit",
+                    "Baggy Fit",
+                    "Curvy Fit",
+                    "Modern Fit",
+                    "Oversized",
+                    "Relaxed Fit",
+                    "Skinny",
+                    "Slim",
+                    "Tailored"
+                ],
+                "list_type": "Closed",
+                "multiple_values": "No",
+                "requirement_level": "Required"
             },
             {
                 "attribute_name": "Closure Type",
-                "description": "The type of fastener used to keep an item closed and to facilitate putting on the item."
+                "key": "fastenerType",
+                "description": "The type of fastener used to keep an item closed and to facilitate putting on the item.",
+                "examples": [
+                    "Belt",
+                    "Buckle",
+                    "Button",
+                    "Clasp",
+                    "Clip",
+                    "Drawstring",
+                    "Flap",
+                    "Hook & Eye",
+                    "Loop",
+                    "Magnet",
+                    "Pull-On",
+                    "Snap",
+                    "Tie",
+                    "Zipper"
+                ],
+                "list_type": "Closed",
+                "multiple_values": "Yes",
+                "requirement_level": "Recommended"
             }
         ]
     },
     "graph": [
         {
-            "linkage": "All Upper Body Garments-(Apparel_Category)->Attribute Standards-(Guideline_Concept)->Attribute Requirements-(guideline_type)"
+            "linkage": "All Upper Body Garments-(Apparel_Category)->Clothing Style-(Product_Type)->Additional Attributes-(Guideline_Type)->Clothing Style",
+            "linkage_cypher": "CREATE (n1:Apparel_Category {name: 'All Upper Body Garments'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Clothing Style'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Additional Attributes'})-[:HAS_REQUIREMENT]->(n4:Clothing_Style {name: 'Clothing Style'})",
+            "linkage_gsql": "CREATE (n1:Apparel_Category {name: 'All Upper Body Garments'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Clothing Style'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Additional Attributes'})-[:HAS_REQUIREMENT]->(n4:Clothing_Style {name: 'Clothing Style'})"
+        },
+        {
+            "linkage": "All Upper Body Garments-(Apparel_Category)->Clothing Fit-(Product_Type)->Additional Attributes-(Guideline_Type)->Clothing Fit",
+            "linkage_cypher": "CREATE (n1:Apparel_Category {name: 'All Upper Body Garments'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Clothing Fit'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Additional Attributes'})-[:HAS_REQUIREMENT]->(n4:Clothing_Fit {name: 'Clothing Fit'})",
+            "linkage_gsql": "CREATE (n1:Apparel_Category {name: 'All Upper Body Garments'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Clothing Fit'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Additional Attributes'})-[:HAS_REQUIREMENT]->(n4:Clothing_Fit {name: 'Clothing Fit'})"
+        },
+        {
+            "linkage": "All Upper Body Garments-(Apparel_Category)->Closure Type-(Product_Type)->Additional Attributes-(Guideline_Type)->Closure Type",
+            "linkage_cypher": "CREATE (n1:Apparel_Category {name: 'All Upper Body Garments'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Closure Type'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Additional Attributes'})-[:HAS_REQUIREMENT]->(n4:Closure_Type {name: 'Closure Type'})",
+            "linkage_gsql": "CREATE (n1:Apparel_Category {name: 'All Upper Body Garments'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Closure Type'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Additional Attributes'})-[:HAS_REQUIREMENT]->(n4:Closure_Type {name: 'Closure Type'})"
         }
     ],
-    "summary": "The page outlines mandatory attributes for 'All Upper Body Garments' including Clothing Style, Clothing Fit, and Closure Type, emphasizing the importance of compliance to avoid validation issues."
+    "summary": "The page outlines additional mandatory attributes for 'All Upper Body Garments', detailing 'Clothing Style', 'Clothing Fit', and 'Closure Type', including their descriptions, examples, list types, and requirement levels."
 }

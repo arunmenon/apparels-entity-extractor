@@ -1,6 +1,6 @@
 {
     "apparel_category": "Men\u2019s Apparel",
-    "product_type": "Basic Shirt",
+    "product_type": "Basic Shirt Multipacks",
     "guideline_concept": "Photo Direction",
     "guidelines": {
         "guideline_type": "Photo Direction",
@@ -11,11 +11,11 @@
             },
             {
                 "step_name": "1st Alternate",
-                "description": "Front facing, cropped above the lip to below fingertips."
+                "description": "Items in packaging."
             },
             {
                 "step_name": "2nd Alternate",
-                "description": "Back facing, cropped to just below hairline to below fingertips."
+                "description": "Front facing, cropped above the lip to below fingertips."
             },
             {
                 "step_name": "3rd Alternate",
@@ -25,8 +25,9 @@
     },
     "graph": [
         {
-            "linkage": "Men\u2019s Apparel-(Apparel_Category)->Basic Shirt-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
+            "linkage": "Men\u2019s Apparel-(Apparel_Category)->Basic Shirt Multipacks-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements",
+            "linkage_cypher": "CREATE (n1:Apparel_Category {name: 'Men\u2019s Apparel'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Basic Shirt Multipacks'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n4:image_requirements {name: 'image_requirements'})",
+            "linkage_gsql": "CREATE (n1:Apparel_Category {name: 'Men\u2019s Apparel'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Basic Shirt Multipacks'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n4:image_requirements {name: 'image_requirements'})"
         }
-    ],
-    "summary": "The page provides photo direction requirements for Basic Shirt Multipacks in Men's Apparel, detailing the specific imagery needed for both packaged and non-packaged versions."
+    ]
 }

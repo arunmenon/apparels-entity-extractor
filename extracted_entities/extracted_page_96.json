@@ -1,11 +1,17 @@
 {
-    "apparel_category": "Women's Upper Body",
+    "apparel_category": "Women's - Upper Body",
     "product_type": [
-        "All Tops",
-        "All Jackets & Coats"
+        "T-Shirts",
+        "Sweaters",
+        "Sweatshirts",
+        "Button Downs",
+        "Dress Shirts",
+        "Jackets",
+        "Coats"
     ],
+    "guideline_concept": "Key Feature Directions",
     "guidelines": {
-        "guideline_type": "Key Feature Directions",
+        "guideline_type": "Grouping Standards",
         "key_feature_directions": [
             {
                 "step_name": "Material",
@@ -21,7 +27,7 @@
             },
             {
                 "step_name": "Size",
-                "description": "Model is 0.0\" and is wearing a size X."
+                "description": "Model is 0.0\u201d and is wearing a size X."
             },
             {
                 "step_name": "Fit",
@@ -55,11 +61,14 @@
     },
     "graph": [
         {
-            "linkage": "Women's Upper Body-(Apparel_Category)->All Tops-(Product_Type)->Key Feature Directions-(Guideline_Type)->key_feature_directions"
+            "linkage": "Women's - Upper Body-(Apparel_Category)->T-Shirts-(Product_Type)->Grouping Standards-(Guideline_Type)->key_feature_directions",
+            "linkage_cypher": "CREATE (n1:Apparel_Category {name: 'Women's - Upper Body'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'T-Shirts'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Grouping Standards'})-[:HAS_REQUIREMENT]->(n4:key_feature_directions {name: 'key_feature_directions'})",
+            "linkage_gsql": "CREATE (n1:Apparel_Category {name: 'Women's - Upper Body'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'T-Shirts'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Grouping Standards'})-[:HAS_REQUIREMENT]->(n4:key_feature_directions {name: 'key_feature_directions'})"
         },
         {
-            "linkage": "Women's Upper Body-(Apparel_Category)->All Jackets & Coats-(Product_Type)->Key Feature Directions-(Guideline_Type)->key_feature_directions"
+            "linkage": "Key Feature Directions-(Guideline_Concept)->Grouping Standards-(Guideline_Type)->key_feature_directions",
+            "linkage_cypher": "CREATE (n1:Guideline_Concept {name: 'Key Feature Directions'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Grouping Standards'})-[:HAS_REQUIREMENT]->(n3:key_feature_directions {name: 'key_feature_directions'})",
+            "linkage_gsql": "CREATE (n1:Guideline_Concept {name: 'Key Feature Directions'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Grouping Standards'})-[:HAS_REQUIREMENT]->(n3:key_feature_directions {name: 'key_feature_directions'})"
         }
-    ],
-    "summary": "The page provides key feature directions for women's apparel, specifically for upper body categories including all tops and jackets & coats. It outlines various guidelines such as material, care instructions, country of origin, size, fit, neckline, closure types, sleeve styles, pocket details, and special features."
+    ]
 }

@@ -1,32 +1,48 @@
 {
     "apparel_category": null,
     "product_type": null,
-    "guideline_concept": "Copy Standards",
+    "guideline_concept": "CCP Program Overview",
     "guidelines": {
-        "guideline_type": "Content Flow",
-        "context_specific_label": [
+        "guideline_type": "Content Guidelines",
+        "content_requirements": [
             {
                 "step_name": "Syndication",
-                "description": "Submitting existing supplier content through the CCP partner to Walmart, ensuring compliance with Walmart\u2019s Style Guides."
+                "description": "Submitting existing supplier content through the CCP partner to Walmart, ensuring compliance with Walmart's Style Guides."
             },
             {
                 "step_name": "Enrichment",
-                "description": "Creating optimized and structured titles and detailed descriptive copy to enhance product visibility and discoverability."
+                "description": "Creating optimized and structured titles and feature bullets for products, with engaging descriptions."
             },
             {
                 "step_name": "Rich Media",
-                "description": "Incorporating immersive experiences such as videos, interactive charts, and user manuals to enhance product engagement."
+                "description": "Including immersive product experiences such as videos, 360 spins, and interactive features."
             },
             {
                 "step_name": "User Generated Content",
-                "description": "Leveraging customer-created content like reviews and unboxing videos to gain insights and enhance product appeal."
+                "description": "Content created by customers, including ratings, reviews, and social media interactions."
             }
         ]
     },
     "graph": [
         {
-            "linkage": "Copy Standards-(Guideline_Concept)->Content Flow-(Guideline_Type)->Syndication, Enrichment, Rich Media, User Generated Content-(Context_Specific_Label)"
+            "linkage": "CCP Program Overview-(Guideline_Concept)->Content Guidelines-(Content_Guidelines)->Syndication",
+            "linkage_cypher": "CREATE (n1:Guideline_Concept {name: 'CCP Program Overview'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Content Guidelines'})-[:HAS_REQUIREMENT]->(n3:Requirements {name: 'Syndication'})",
+            "linkage_gsql": "CREATE (n1:Guideline_Concept {name: 'CCP Program Overview'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Content Guidelines'})-[:HAS_REQUIREMENT]->(n3:Requirements {name: 'Syndication'})"
+        },
+        {
+            "linkage": "CCP Program Overview-(Guideline_Concept)->Content Guidelines-(Content_Guidelines)->Enrichment",
+            "linkage_cypher": "CREATE (n1:Guideline_Concept {name: 'CCP Program Overview'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Content Guidelines'})-[:HAS_REQUIREMENT]->(n3:Requirements {name: 'Enrichment'})",
+            "linkage_gsql": "CREATE (n1:Guideline_Concept {name: 'CCP Program Overview'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Content Guidelines'})-[:HAS_REQUIREMENT]->(n3:Requirements {name: 'Enrichment'})"
+        },
+        {
+            "linkage": "CCP Program Overview-(Guideline_Concept)->Content Guidelines-(Content_Guidelines)->Rich Media",
+            "linkage_cypher": "CREATE (n1:Guideline_Concept {name: 'CCP Program Overview'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Content Guidelines'})-[:HAS_REQUIREMENT]->(n3:Requirements {name: 'Rich Media'})",
+            "linkage_gsql": "CREATE (n1:Guideline_Concept {name: 'CCP Program Overview'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Content Guidelines'})-[:HAS_REQUIREMENT]->(n3:Requirements {name: 'Rich Media'})"
+        },
+        {
+            "linkage": "CCP Program Overview-(Guideline_Concept)->Content Guidelines-(Content_Guidelines)->User Generated Content",
+            "linkage_cypher": "CREATE (n1:Guideline_Concept {name: 'CCP Program Overview'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Content Guidelines'})-[:HAS_REQUIREMENT]->(n3:Requirements {name: 'User Generated Content'})",
+            "linkage_gsql": "CREATE (n1:Guideline_Concept {name: 'CCP Program Overview'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Content Guidelines'})-[:HAS_REQUIREMENT]->(n3:Requirements {name: 'User Generated Content'})"
         }
-    ],
-    "summary": "The document outlines the Connected Content Partners (CCPs) program, focusing on content submission processes, enrichment techniques for product visibility, the use of rich media for engagement, and the importance of user-generated content in enhancing customer insights."
+    ]
 }

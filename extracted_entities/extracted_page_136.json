@@ -1,0 +1,22 @@
+{
+    "apparel_category": "Jeans",
+    "product_type": "Apparel Product Types",
+    "guideline_concept": "Attributes",
+    "guidelines": {
+        "guideline_type": "Naming Guidelines",
+        "attributes": [
+            {
+                "step_name": "Jean Wash",
+                "description": "Description of post-process wash treatment affecting the appearance of dye and fabric texture, specific to jeans."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Jeans-(Apparel_Category)->Apparel Product Types-(Product_Type)->Naming Guidelines-(Guideline_Type)->Attributes",
+            "linkage_cypher": "CREATE (n1:Apparel_Category {name: 'Jeans'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Apparel Product Types'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Naming Guidelines'})-[:HAS_REQUIREMENT]->(n4:Attributes {name: 'Jean Wash'})",
+            "linkage_gsql": "CREATE (n1:Apparel_Category {name: 'Jeans'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Apparel Product Types'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Naming Guidelines'})-[:HAS_REQUIREMENT]->(n4:Attributes {name: 'Jean Wash'})"
+        }
+    ],
+    "summary": "The page provides additional mandatory attributes for jeans under the Apparel Product Types category, specifically focusing on the 'Jean Wash' attribute. This attribute is required for validation and describes the treatment that affects the appearance of dye and fabric texture in jeans, offering specific examples of different wash types."
+}

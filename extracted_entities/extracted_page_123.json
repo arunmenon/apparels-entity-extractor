@@ -3,11 +3,11 @@
     "product_type": null,
     "guideline_concept": "Attributes",
     "guidelines": {
-        "guideline_type": "Copy Standards",
-        "writing_guidelines": [
+        "guideline_type": "Attribute Guidelines",
+        "attribute_requirements": [
             {
                 "step_name": "Unit",
-                "description": "The unit of measure as defined on the product labeling."
+                "description": "The unit of measure as defined on the product labeling, e.g., a gallon of milk has 128 Fluid Ounces: Measure = 128 and Units = Fluid Ounces."
             },
             {
                 "step_name": "Net Content Statement",
@@ -17,8 +17,14 @@
     },
     "graph": [
         {
-            "linkage": "Attributes-(Guideline_Concept)->Copy Standards-(Guideline_Type)->writing_guidelines"
+            "linkage": "Attributes-(Guideline_Concept)->Attribute Guidelines-(attribute_requirements)->Unit",
+            "linkage_cypher": "CREATE (n1:Guideline_Concept {name: 'Attributes'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Attribute Guidelines'})-[:HAS_REQUIREMENT]->(n3:attribute_requirements {name: 'Unit'})",
+            "linkage_gsql": "CREATE (n1:Guideline_Concept {name: 'Attributes'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Attribute Guidelines'})-[:HAS_REQUIREMENT]->(n3:attribute_requirements {name: 'Unit'})"
+        },
+        {
+            "linkage": "Attributes-(Guideline_Concept)->Attribute Guidelines-(attribute_requirements)->Net Content Statement",
+            "linkage_cypher": "CREATE (n1:Guideline_Concept {name: 'Attributes'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Attribute Guidelines'})-[:HAS_REQUIREMENT]->(n3:attribute_requirements {name: 'Net Content Statement'})",
+            "linkage_gsql": "CREATE (n1:Guideline_Concept {name: 'Attributes'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Attribute Guidelines'})-[:HAS_REQUIREMENT]->(n3:attribute_requirements {name: 'Net Content Statement'})"
         }
-    ],
-    "summary": "The page provides guidelines on the attributes related to apparel measurements and net content statements, emphasizing the required structure for product labeling."
+    ]
 }

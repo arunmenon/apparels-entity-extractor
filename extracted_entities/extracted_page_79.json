@@ -1,32 +1,33 @@
 {
     "apparel_category": null,
     "product_type": null,
-    "guideline_concept": "Copy Standards",
+    "guideline_concept": "Search Engine Optimization",
     "guidelines": {
         "guideline_type": "Copy Standards",
         "writing_guidelines": [
             {
-                "step_name": "Provide Unique Content",
+                "step_name": "Provide Relevant Content",
                 "description": "Provide unique, relevant content that is truly useful to the user."
             },
             {
                 "step_name": "Avoid Filler Content",
-                "description": "Do not add filler, fluffy or spammy content."
+                "description": "Do not add filler, fluffy, or spammy content."
             },
             {
                 "step_name": "Repeat Product Name",
                 "description": "Repeat the product name once in the product short description."
             },
             {
-                "step_name": "Original Content Required",
+                "step_name": "Originality Requirement",
                 "description": "Do not provide the same copy to multiple online retailers; it needs to be unique and original to Walmart."
             }
         ]
     },
     "graph": [
         {
-            "linkage": "Copy Standards-(Guideline_Concept)->Copy Standards-(Guideline_Type)->writing_guidelines"
+            "linkage": "Search Engine Optimization-(Guideline_Concept)->Copy Standards-(Guideline_Type)->Writing Guidelines",
+            "linkage_cypher": "CREATE (n1:Guideline_Concept {name: 'Search Engine Optimization'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Copy Standards'})-[:HAS_REQUIREMENT]->(n3:Writing_Guidelines {name: 'Writing Guidelines'})",
+            "linkage_gsql": "CREATE (n1:Guideline_Concept {name: 'Search Engine Optimization'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Copy Standards'})-[:HAS_REQUIREMENT]->(n3:Writing_Guidelines {name: 'Writing Guidelines'})"
         }
-    ],
-    "summary": "The page outlines Search Engine Optimization (SEO) strategies for product descriptions, emphasizing the importance of unique content and best practices for enhancing visibility on search engines. Guidelines include providing relevant content, avoiding filler, and ensuring originality for Walmart."
+    ]
 }

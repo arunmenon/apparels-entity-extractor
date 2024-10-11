@@ -6,7 +6,7 @@
         "guideline_type": "Photo Direction",
         "image_requirements": [
             {
-                "step_name": "Hero Image",
+                "step_name": "Hero (Main) Image",
                 "description": "Front facing, cropped above lip to below fingertips."
             },
             {
@@ -29,7 +29,14 @@
     },
     "graph": [
         {
-            "linkage": "Women\u2019s Intimates-(Apparel_Category)->Shapewear-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
+            "linkage": "Women\u2019s Intimates-(Apparel_Category)->Shapewear-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements",
+            "linkage_cypher": "CREATE (n1:Apparel_Category {name: 'Women\u2019s Intimates'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Shapewear'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n4:image_requirements {name: 'image_requirements'})",
+            "linkage_gsql": "CREATE (n1:Apparel_Category {name: 'Women\u2019s Intimates'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Shapewear'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n4:image_requirements {name: 'image_requirements'})"
+        },
+        {
+            "linkage": "Photo Direction-(Guideline_Concept)->Photo Direction-(Guideline_Type)->image_requirements",
+            "linkage_cypher": "CREATE (n1:Guideline_Concept {name: 'Photo Direction'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n3:image_requirements {name: 'image_requirements'})",
+            "linkage_gsql": "CREATE (n1:Guideline_Concept {name: 'Photo Direction'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n3:image_requirements {name: 'image_requirements'})"
         }
     ]
 }

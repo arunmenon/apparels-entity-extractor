@@ -1,5 +1,5 @@
 {
-    "apparel_category": "Men\u2019s Apparel",
+    "apparel_category": "Men's Apparel",
     "product_type": "Accessories",
     "guideline_concept": "Photo Direction",
     "guidelines": {
@@ -33,8 +33,10 @@
     },
     "graph": [
         {
-            "linkage": "Men\u2019s Apparel-(Apparel_Category)->Accessories-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
+            "linkage": "Men's Apparel-(Apparel_Category)->Accessories-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements",
+            "linkage_cypher": "CREATE (n1:Apparel_Category {name: 'Men's Apparel'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Accessories'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n4:image_requirements {name: 'image_requirements'})",
+            "linkage_gsql": "CREATE (n1:Apparel_Category {name: 'Men's Apparel'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Accessories'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n4:image_requirements {name: 'image_requirements'})"
         }
     ],
-    "summary": "The page outlines the required photo direction for men's apparel and accessories, detailing specific steps for capturing images of products and accessories in a specified order."
+    "summary": "The page provides photo direction for men's apparel with accessories. It outlines required image types in a structured order, including hero images and multiple alternate shots for showcasing the products effectively."
 }

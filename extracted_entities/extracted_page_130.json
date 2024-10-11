@@ -1,0 +1,33 @@
+{
+    "apparel_category": "Baby Garments",
+    "product_type": "Training Pants",
+    "guideline_concept": "Additional Attributes",
+    "guidelines": {
+        "guideline_type": "Copy Standards",
+        "attribute_requirements": [
+            {
+                "step_name": "Toilet Training Pants Type",
+                "description": "Reusable Training Pants are toddler underwear with extra padding or waterproof protection, used during the transition period from diapers to undies."
+            },
+            {
+                "step_name": "Diaper Size",
+                "description": "Specific size relating to diapers."
+            },
+            {
+                "step_name": "Waist Style",
+                "description": "Waist styles/defining features."
+            },
+            {
+                "step_name": "Clothing Weight",
+                "description": "Density or weight of fabric material commonly used in retail clothing."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Baby Garments-(Apparel_Category)->Training Pants-(Product_Type)->Copy Standards-(Guideline_Type)->attribute_requirements",
+            "linkage_cypher": "CREATE (n1:Apparel_Category {name: 'Baby Garments'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Training Pants'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Copy Standards'})-[:HAS_REQUIREMENT]->(n4:attribute_requirements {name: 'attribute_requirements'})",
+            "linkage_gsql": "CREATE (n1:Apparel_Category {name: 'Baby Garments'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Training Pants'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Copy Standards'})-[:HAS_REQUIREMENT]->(n4:attribute_requirements {name: 'attribute_requirements'})"
+        }
+    ]
+}

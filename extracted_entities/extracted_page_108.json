@@ -1,0 +1,33 @@
+{
+    "apparel_category": "Socks & Hosiery",
+    "product_type": null,
+    "guideline_concept": null,
+    "guidelines": {
+        "guideline_type": "Key Feature Directions",
+        "key_feature_directions": [
+            {
+                "step_name": "Material",
+                "description": "Fabric content including linings & any trims 5% or more of makeup."
+            },
+            {
+                "step_name": "Care",
+                "description": "Spot clean, Machine wash cold, etc."
+            },
+            {
+                "step_name": "Size Ranges",
+                "description": "Include height and weight, if available."
+            },
+            {
+                "step_name": "Fits",
+                "description": "Sizes X-XX."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Socks & Hosiery-(Apparel_Category)->null-(Product_Type)->Key Feature Directions-(Guideline_Type)->key_feature_directions",
+            "linkage_cypher": "CREATE (n1:Apparel_Category {name: 'Socks & Hosiery'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: null})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Key Feature Directions'})-[:HAS_REQUIREMENT]->(n4:key_feature_directions {name: 'Key Feature Directions'})",
+            "linkage_gsql": "CREATE (n1:Apparel_Category {name: 'Socks & Hosiery'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: null})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Key Feature Directions'})-[:HAS_REQUIREMENT]->(n4:key_feature_directions {name: 'Key Feature Directions'})"
+        }
+    ]
+}

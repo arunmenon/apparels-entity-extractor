@@ -28,10 +28,14 @@
     },
     "graph": [
         {
-            "linkage": "Women\u2019s Intimates-(Apparel_Category)->Lingerie (Bras)-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
+            "linkage": "Women\u2019s Intimates-(Apparel_Category)->Lingerie (Bras)-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements",
+            "linkage_cypher": "CREATE (n1:Apparel_Category {name: 'Women\u2019s Intimates'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Lingerie (Bras)'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n4:image_requirements {name: 'image_requirements'})",
+            "linkage_gsql": "CREATE (n1:Apparel_Category {name: 'Women\u2019s Intimates'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Lingerie (Bras)'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n4:image_requirements {name: 'image_requirements'})"
         },
         {
-            "linkage": "Women\u2019s Intimates-(Apparel_Category)->Lingerie (Panties)-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
+            "linkage": "Women\u2019s Intimates-(Apparel_Category)->Lingerie (Panties)-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements",
+            "linkage_cypher": "CREATE (n1:Apparel_Category {name: 'Women\u2019s Intimates'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Lingerie (Panties)'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n4:image_requirements {name: 'image_requirements'})",
+            "linkage_gsql": "CREATE (n1:Apparel_Category {name: 'Women\u2019s Intimates'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Lingerie (Panties)'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n4:image_requirements {name: 'image_requirements'})"
         }
     ]
 }

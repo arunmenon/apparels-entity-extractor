@@ -1,0 +1,38 @@
+{
+    "apparel_category": "Women's Dresses",
+    "product_type": "Midi Dress",
+    "guideline_concept": "Copy Standards",
+    "guidelines": {
+        "guideline_type": "Copy Standards",
+        "writing_guidelines": [
+            {
+                "step_name": "Product Name/Product Title",
+                "description": "Product titles must be 90 character limit and include key descriptive words."
+            },
+            {
+                "step_name": "Shelf Description/Search Description/Product Highlights",
+                "description": "Provide a description in 3-5 bullet points highlighting key features."
+            },
+            {
+                "step_name": "Site Description/Short Description",
+                "description": "Include a 2-3 sentence overview bringing out brand personality and key selling points."
+            },
+            {
+                "step_name": "Key Features/Long Description",
+                "description": "Bullet points should detail important specifications such as fabric content, care instructions, and styles."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Women's Dresses-(Apparel_Category)->Midi Dress-(Product_Type)->Copy Standards-(Guideline_Type)->writing_guidelines",
+            "linkage_cypher": "CREATE (n1:Apparel_Category {name: 'Women's Dresses'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Midi Dress'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Copy Standards'})-[:HAS_REQUIREMENT]->(n4:writing_guidelines {name: 'writing guidelines'})",
+            "linkage_gsql": "CREATE (n1:Apparel_Category {name: 'Women's Dresses'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Midi Dress'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Copy Standards'})-[:HAS_REQUIREMENT]->(n4:writing_guidelines {name: 'writing guidelines'})"
+        },
+        {
+            "linkage": "Copy Standards-(Guideline_Concept)->Copy Standards-(Guideline_Type)->writing_guidelines",
+            "linkage_cypher": "CREATE (n1:Guideline_Concept {name: 'Copy Standards'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Copy Standards'})-[:HAS_REQUIREMENT]->(n3:writing_guidelines {name: 'writing guidelines'})",
+            "linkage_gsql": "CREATE (n1:Guideline_Concept {name: 'Copy Standards'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Copy Standards'})-[:HAS_REQUIREMENT]->(n3:writing_guidelines {name: 'writing guidelines'})"
+        }
+    ]
+}

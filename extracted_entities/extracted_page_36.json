@@ -1,30 +1,57 @@
 {
-    "apparel_category": "Women's Intimates",
-    "product_type": "Lingerie/Intimate Sets",
-    "guideline_concept": null,
+    "apparel_category": "Women\u2019s Intimates",
+    "product_type": [
+        "Lingerie/Intimate Sets",
+        "Body Shapewear"
+    ],
+    "guideline_concept": "Photo Direction",
     "guidelines": {
         "guideline_type": "Photo Direction",
         "image_requirements": [
             {
-                "step_name": "Hero (Main) Image",
-                "description": "Flat; Laydown imagery that depicts number of items in pack."
+                "step_name": "Lingerie/Intimate Sets - Main Image",
+                "description": "Hero Image: Flat; Laydown imagery that depicts number of items in pack."
             },
             {
-                "step_name": "1st Alternate",
+                "step_name": "Lingerie/Intimate Sets - 1st Alternate",
                 "description": "Front facing, head to toe, unrecognizable."
             },
             {
-                "step_name": "2nd Alternate",
+                "step_name": "Lingerie/Intimate Sets - 2nd Alternate",
                 "description": "Back facing, cropped to just below hairline to below fingertips."
+            },
+            {
+                "step_name": "Body Shapewear - Main Image",
+                "description": "Hero Image: Front facing, cropped above lip to below fingertips."
+            },
+            {
+                "step_name": "Body Shapewear - 1st Alternate",
+                "description": "Front facing, head to toe, unrecognizable."
+            },
+            {
+                "step_name": "Body Shapewear - 2nd Alternate",
+                "description": "Back facing, cropped to just below hairline to below fingertips."
+            },
+            {
+                "step_name": "Body Shapewear - 3rd Alternate",
+                "description": "Ghost view."
+            },
+            {
+                "step_name": "Body Shapewear - 4th Alternate",
+                "description": "Alternate detail. Highlight embellishments and design elements not captured in required shots if present."
             }
         ]
     },
     "graph": [
         {
-            "linkage": "Women's Intimates-(Apparel_Category)->Lingerie/Intimate Sets-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
+            "linkage": "Women\u2019s Intimates-(Apparel_Category)->Lingerie/Intimate Sets-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements",
+            "linkage_cypher": "CREATE (n1:Apparel_Category {name: 'Women\u2019s Intimates'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Lingerie/Intimate Sets'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n4:image_requirements {name: 'image_requirements'})",
+            "linkage_gsql": "CREATE (n1:Apparel_Category {name: 'Women\u2019s Intimates'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Lingerie/Intimate Sets'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n4:image_requirements {name: 'image_requirements'})"
         },
         {
-            "linkage": "Women's Intimates-(Apparel_Category)->Body Shapewear-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
+            "linkage": "Women\u2019s Intimates-(Apparel_Category)->Body Shapewear-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements",
+            "linkage_cypher": "CREATE (n1:Apparel_Category {name: 'Women\u2019s Intimates'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Body Shapewear'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n4:image_requirements {name: 'image_requirements'})",
+            "linkage_gsql": "CREATE (n1:Apparel_Category {name: 'Women\u2019s Intimates'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Body Shapewear'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n4:image_requirements {name: 'image_requirements'})"
         }
     ]
 }

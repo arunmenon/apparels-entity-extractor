@@ -1,15 +1,12 @@
 {
-    "apparel_category": "Loungewear",
-    "product_type": [
-        "Loungewear Tops",
-        "Loungewear Bottoms"
-    ],
+    "apparel_category": "Loungewear Tops",
+    "product_type": "Loungewear Tops",
     "guideline_concept": "Photo Direction",
     "guidelines": {
         "guideline_type": "Photo Direction",
         "image_requirements": [
             {
-                "step_name": "Hero (Main) Image",
+                "step_name": "Hero Image",
                 "description": "Front facing, cropped above lip to below fingertips."
             },
             {
@@ -28,10 +25,14 @@
     },
     "graph": [
         {
-            "linkage": "Loungewear-(Apparel_Category)->Loungewear Tops-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
+            "linkage": "Loungewear-(Apparel_Category)->Loungewear Tops-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements",
+            "linkage_cypher": "CREATE (n1:Apparel_Category {name: 'Loungewear'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Loungewear Tops'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n4:image_requirements {name: 'image_requirements'})",
+            "linkage_gsql": "CREATE (n1:Apparel_Category {name: 'Loungewear'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Loungewear Tops'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n4:image_requirements {name: 'image_requirements'})"
         },
         {
-            "linkage": "Loungewear-(Apparel_Category)->Loungewear Bottoms-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
+            "linkage": "Loungewear-(Apparel_Category)->Loungewear Bottoms-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements",
+            "linkage_cypher": "CREATE (n1:Apparel_Category {name: 'Loungewear'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Loungewear Bottoms'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n4:image_requirements {name: 'image_requirements'})",
+            "linkage_gsql": "CREATE (n1:Apparel_Category {name: 'Loungewear'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Loungewear Bottoms'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n4:image_requirements {name: 'image_requirements'})"
         }
     ]
 }

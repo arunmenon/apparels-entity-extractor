@@ -1,9 +1,9 @@
 {
     "apparel_category": "All Pants",
-    "product_type": "Pants",
-    "guideline_concept": "Attributes",
+    "product_type": null,
+    "guideline_concept": "Additional Attributes",
     "guidelines": {
-        "guideline_type": "Additional Attributes",
+        "guideline_type": "Attribute Guidelines",
         "attributes": [
             {
                 "step_name": "Pant Style",
@@ -25,8 +25,14 @@
     },
     "graph": [
         {
-            "linkage": "All Pants-(Apparel_Category)->Pants-(Product_Type)->Additional Attributes-(Guideline_Type)->Attributes"
+            "linkage": "All Pants-(Apparel_Category)->Attribute Guidelines-(Guideline_Type)->Attributes",
+            "linkage_cypher": "CREATE (n1:Apparel_Category {name: 'All Pants'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Attribute Guidelines'})-[:HAS_REQUIREMENT]->(n3:Attributes {name: 'Attributes'})",
+            "linkage_gsql": "CREATE (n1:Apparel_Category {name: 'All Pants'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Attribute Guidelines'})-[:HAS_REQUIREMENT]->(n3:Attributes {name: 'Attributes'})"
+        },
+        {
+            "linkage": "Additional Attributes-(Guideline_Concept)->Attribute Guidelines-(Guideline_Type)->Attributes",
+            "linkage_cypher": "CREATE (n1:Guideline_Concept {name: 'Additional Attributes'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Attribute Guidelines'})-[:HAS_REQUIREMENT]->(n3:Attributes {name: 'Attributes'})",
+            "linkage_gsql": "CREATE (n1:Guideline_Concept {name: 'Additional Attributes'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Attribute Guidelines'})-[:HAS_REQUIREMENT]->(n3:Attributes {name: 'Attributes'})"
         }
-    ],
-    "summary": "This page outlines mandatory attributes for pant product types. It specifies terms for pant styles, leg cuts, lengths, and bottom opening styles, highlighting the importance of using the specified terms to avoid validation issues."
+    ]
 }

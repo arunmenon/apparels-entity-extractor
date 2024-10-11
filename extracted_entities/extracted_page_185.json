@@ -1,60 +1,29 @@
 {
-    "apparel_category": "Apparel Grouping Standards",
+    "apparel_category": "Apparel",
+    "product_type": null,
     "guideline_concept": "Grouping Standards",
     "guidelines": {
         "guideline_type": "Grouping Standards",
-        "grouping_on_one_item_page": [
+        "grouping_requirements": [
             {
-                "step_name": "Same Fabric",
-                "description": "Items made from the same fabric should be grouped together."
+                "step_name": "Grouping on One Item Page",
+                "description": "Items that are of the same fabrication, price, style, and print pattern (if applicable) should be grouped together on the item page."
             },
             {
-                "step_name": "Same Print",
-                "description": "Items with the same print should be grouped together."
+                "step_name": "Items Attributes for Grouping",
+                "description": "Examples of item attributes that would constitute grouping include: Same fabric, Same print, Same neckline, Same sleeve length, Multiple Colors."
             },
             {
-                "step_name": "Same Neckline",
-                "description": "Items with the same neckline should be grouped together."
-            },
-            {
-                "step_name": "Same Sleeve Length",
-                "description": "Items with the same sleeve length should be grouped together."
-            },
-            {
-                "step_name": "Multiple Colors",
-                "description": "Items available in multiple colors should be grouped together."
-            }
-        ],
-        "items_not_grouped": [
-            {
-                "step_name": "Different Fabric",
-                "description": "Items made from different fabrics should not be grouped together."
-            },
-            {
-                "step_name": "Different Print/Pattern",
-                "description": "Items with different prints or patterns should not be grouped together."
-            },
-            {
-                "step_name": "Different Neckline",
-                "description": "Items with different necklines should not be grouped together."
-            },
-            {
-                "step_name": "Different Sleeve Length",
-                "description": "Items with different sleeve lengths should not be grouped together."
-            },
-            {
-                "step_name": "Consider Grouping Plus Size Separately",
-                "description": "Items in plus sizes should be considered for separate grouping."
+                "step_name": "Items Not to Be Grouped",
+                "description": "Items that attributes do not apply consistently should not be grouped together."
             }
         ]
     },
     "graph": [
         {
-            "linkage": "Apparel Grouping Standards-(Apparel_Category)->Grouping Standards-(Guideline_Concept)->Grouping Standards-(Guideline_Type)->grouping_on_one_item_page"
-        },
-        {
-            "linkage": "Apparel Grouping Standards-(Apparel_Category)->Grouping Standards-(Guideline_Concept)->Grouping Standards-(Guideline_Type)->items_not_grouped"
+            "linkage": "Apparel-(Guideline_Concept)->Grouping Standards-(Guideline_Type)->Grouping",
+            "linkage_cypher": "CREATE (n1:Guideline_Concept {name: 'Apparel'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Grouping Standards'})-[:HAS_REQUIREMENT]->(n3:Grouping {name: 'Grouping'})",
+            "linkage_gsql": "CREATE (n1:Guideline_Concept {name: 'Apparel'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Grouping Standards'})-[:HAS_REQUIREMENT]->(n3:Grouping {name: 'Grouping'})"
         }
-    ],
-    "summary": "The Apparel Grouping Standards outline the criteria for grouping items based on shared characteristics like fabric, print, neckline, sleeve length, and color. It also specifies attributes that should not be used for grouping, such as differing fabric or print patterns, and advises that plus sizes be grouped separately."
+    ]
 }

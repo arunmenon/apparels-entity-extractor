@@ -1,0 +1,29 @@
+{
+    "apparel_category": null,
+    "product_type": null,
+    "guideline_concept": "Rich Media Guidelines",
+    "guidelines": {
+        "guideline_type": "Copy Standards",
+        "writing_guidelines": [
+            {
+                "step_name": "Sales Boost",
+                "description": "Rich Media is a proven sales booster as it enriches the customer\u2019s transaction."
+            },
+            {
+                "step_name": "Authenticity",
+                "description": "Contributes to a more authentic human experience, as if they were shopping in a brick and mortar."
+            },
+            {
+                "step_name": "Engagement",
+                "description": "Several rich media modules that can help create an engaging shopping experience while improving brand trust."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Rich Media Guidelines-(Guideline_Concept)->Copy Standards-(Guideline_Type)->Writing Guidelines",
+            "linkage_cypher": "CREATE (n1:Guideline_Concept {name: 'Rich Media Guidelines'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Copy Standards'})-[:HAS_REQUIREMENT]->(n3:Writing_Guidelines {name: 'Writing Guidelines'})",
+            "linkage_gsql": "CREATE (n1:Guideline_Concept {name: 'Rich Media Guidelines'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Copy Standards'})-[:HAS_REQUIREMENT]->(n3:Writing_Guidelines {name: 'Writing Guidelines'})"
+        }
+    ]
+}

@@ -1,5 +1,5 @@
 {
-    "apparel_category": "Women's Apparel",
+    "apparel_category": "Women\u2019s Apparel",
     "product_type": [
         "Tops",
         "Bottoms"
@@ -13,42 +13,33 @@
                 "description": "Front facing, cropped above lip to below fingertips."
             },
             {
-                "step_name": "1st Alternate for Tops",
+                "step_name": "1st Alternate",
                 "description": "Front facing, head to toe, unrecognizable."
             },
             {
-                "step_name": "2nd Alternate for Tops",
+                "step_name": "2nd Alternate",
                 "description": "Back facing, cropped to just below hairline to below fingertips."
             },
             {
-                "step_name": "3rd Alternate for Tops",
-                "description": "Ghost view."
-            },
-            {
-                "step_name": "1st Alternate for Bottoms",
-                "description": "Front facing, crop approx. 2\u201d above garment (arms down)."
-            },
-            {
-                "step_name": "2nd Alternate for Bottoms",
-                "description": "Back facing, crop approx. 2\u201d above garment (arms down)."
-            },
-            {
-                "step_name": "3rd Alternate for Bottoms",
+                "step_name": "3rd Alternate",
                 "description": "Ghost view."
             },
             {
                 "step_name": "4th Alternate",
-                "description": "Highlight embellishments and design elements not captured in required shots if present."
+                "description": "Alternate detail. Highlight embellishments and design elements not captured in required shots if present."
             }
         ]
     },
     "graph": [
         {
-            "linkage": "Women's Apparel-(Apparel_Category)->Tops-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
+            "linkage": "Women\u2019s Apparel-(Apparel_Category)->Tops-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements",
+            "linkage_cypher": "CREATE (n1:Apparel_Category {name: 'Women\u2019s Apparel'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Tops'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n4:image_requirements {name: 'image_requirements'})",
+            "linkage_gsql": "CREATE (n1:Apparel_Category {name: 'Women\u2019s Apparel'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Tops'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n4:image_requirements {name: 'image_requirements'})"
         },
         {
-            "linkage": "Women's Apparel-(Apparel_Category)->Bottoms-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
+            "linkage": "Women\u2019s Apparel-(Apparel_Category)->Bottoms-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements",
+            "linkage_cypher": "CREATE (n1:Apparel_Category {name: 'Women\u2019s Apparel'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Bottoms'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n4:image_requirements {name: 'image_requirements'})",
+            "linkage_gsql": "CREATE (n1:Apparel_Category {name: 'Women\u2019s Apparel'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Bottoms'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n4:image_requirements {name: 'image_requirements'})"
         }
-    ],
-    "summary": "The page provides photo direction guidelines for Women's Apparel, detailing requirements and recommendations for capturing images of tops and bottoms. It specifies steps for hero images, alternates, and highlights the need to showcase design details."
+    ]
 }

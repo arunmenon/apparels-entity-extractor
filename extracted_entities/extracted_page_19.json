@@ -1,0 +1,43 @@
+{
+    "apparel_category": "Women's Apparel",
+    "product_type": [
+        "Bodysuits",
+        "Catsuits",
+        "Unitards",
+        "Leotards",
+        "Thong Bodysuits"
+    ],
+    "guideline_concept": "Photo Direction",
+    "guidelines": {
+        "guideline_type": "Photo Direction",
+        "image_requirements": [
+            {
+                "step_name": "Hero (Main) Image",
+                "description": "Front facing, cropped above lip to below fingertips."
+            },
+            {
+                "step_name": "1st Alternate",
+                "description": "Front facing, head to toe, unrecognizable."
+            },
+            {
+                "step_name": "2nd Alternate",
+                "description": "Back facing, head to toe, unrecognizable."
+            },
+            {
+                "step_name": "3rd Alternate",
+                "description": "Ghost view."
+            },
+            {
+                "step_name": "4th Alternate",
+                "description": "Highlight embellishments and design elements not captured in required shots if present."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Women's Apparel-(Apparel_Category)->Bodysuits-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements-(Context_Specific_Label)",
+            "linkage_cypher": "CREATE (n1:Apparel_Category {name: 'Women's Apparel'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Bodysuits'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n4:image_requirements {name: 'image_requirements'})",
+            "linkage_gsql": "CREATE (n1:Apparel_Category {name: 'Women's Apparel'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Bodysuits'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n4:image_requirements {name: 'image_requirements'})"
+        }
+    ]
+}

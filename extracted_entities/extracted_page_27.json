@@ -1,8 +1,8 @@
 {
     "apparel_category": "Women\u2019s Apparel",
     "product_type": [
-        "Apparel with Accessories (Hats/Facemask)",
-        "Apparel with Accessories (Socks)"
+        "Facemask",
+        "Socks"
     ],
     "guideline_concept": "Photo Direction",
     "guidelines": {
@@ -32,10 +32,14 @@
     },
     "graph": [
         {
-            "linkage": "Women\u2019s Apparel-(Apparel_Category)->Apparel with Accessories (Hats/Facemask)-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
+            "linkage": "Women\u2019s Apparel-(Apparel_Category)->Facemask-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements-(Context_Specific_Label)",
+            "linkage_cypher": "CREATE (n1:Apparel_Category {name: 'Women\u2019s Apparel'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Facemask'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n4:image_requirements {name: 'image_requirements'})",
+            "linkage_gsql": "CREATE (n1:Apparel_Category {name: 'Women\u2019s Apparel'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Facemask'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n4:image_requirements {name: 'image_requirements'})"
         },
         {
-            "linkage": "Women\u2019s Apparel-(Apparel_Category)->Apparel with Accessories (Socks)-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
+            "linkage": "Women\u2019s Apparel-(Apparel_Category)->Socks-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements-(Context_Specific_Label)",
+            "linkage_cypher": "CREATE (n1:Apparel_Category {name: 'Women\u2019s Apparel'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Socks'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n4:image_requirements {name: 'image_requirements'})",
+            "linkage_gsql": "CREATE (n1:Apparel_Category {name: 'Women\u2019s Apparel'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Socks'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n4:image_requirements {name: 'image_requirements'})"
         }
     ]
 }

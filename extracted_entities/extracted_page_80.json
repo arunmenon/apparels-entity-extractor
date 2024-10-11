@@ -7,29 +7,39 @@
         "writing_guidelines": [
             {
                 "step_name": "Using the Right Voice",
-                "description": "Deliver a friendly, straightforward, and authentic tone that embodies Walmart's ideals."
+                "description": "Walmart strives to deliver a friendly, straightforward & authentic tone."
             },
             {
-                "step_name": "Attributes of Walmart Voice",
-                "description": "Use attributes like Charming, Positive, Caring, Genuine, etc. for effective communication."
+                "step_name": "Tone Attributes",
+                "description": "Use attributes like Charming, Optimistic, Fun to communicate effectively."
             },
             {
-                "step_name": "Use an Active Voice",
-                "description": "Promote active language rather than passive to highlight product benefits clearly."
+                "step_name": "Active Voice",
+                "description": "Use an active voice for product descriptions."
             },
             {
-                "step_name": "Speak to Benefits",
-                "description": "Focus on the benefits of products in descriptions to enhance understanding."
+                "step_name": "Benefit-Oriented Statements",
+                "description": "Speak to the benefits of the product rather than just stating facts."
             },
             {
-                "step_name": "Say More with Fewer Words",
-                "description": "Use concise language for clear communication, avoiding unnecessary length."
+                "step_name": "Conciseness",
+                "description": "Use fewer words to convey the same message more effectively."
+            },
+            {
+                "step_name": "Avoid Hyperbolic Statements",
+                "description": "Steer clear of exaggerated claims."
+            },
+            {
+                "step_name": "Base-Variant Copy",
+                "description": "Short Descriptions, Key Features should not include color and size information."
             }
         ]
     },
     "graph": [
         {
-            "linkage": "Copy Standards-(Guideline_Concept)->Copy Standards-(Guideline_Type)->writing_guidelines"
+            "linkage": "Copy Standards-(Guideline_Concept)->Copy Standards-(Guideline_Type)->Writing Guidelines",
+            "linkage_cypher": "CREATE (n1:Guideline_Concept {name: 'Copy Standards'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Copy Standards'})-[:HAS_REQUIREMENT]->(n3:Writing_Guidelines {name: 'Writing Guidelines'})",
+            "linkage_gsql": "CREATE (n1:Guideline_Concept {name: 'Copy Standards'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Copy Standards'})-[:HAS_REQUIREMENT]->(n3:Writing_Guidelines {name: 'Writing Guidelines'})"
         }
     ]
 }

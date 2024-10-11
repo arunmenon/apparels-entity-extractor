@@ -1,37 +1,30 @@
 {
     "apparel_category": "Women's Intimates",
-    "product_type": [
-        "Shapewear",
-        "Multipacks Bottoms",
-        "Lingerie",
-        "Lingerie Sets & Bodysuits"
-    ],
+    "product_type": "Shapewear",
     "guideline_concept": "Product Type Photo Direction",
     "guidelines": {
-        "guideline_type": "Product Type Photo Direction",
-        "photo_requirements": [
+        "guideline_type": "Photo Direction",
+        "image_requirements": [
             {
                 "step_name": "Hero Image",
-                "description": "Main image showcasing the product for visual capture."
+                "description": "Main product image showcasing the item."
             },
             {
                 "step_name": "Alternate Image",
-                "description": "Additional images highlighting details and variations."
+                "description": "Additional views of the product."
             }
         ]
     },
     "graph": [
         {
-            "linkage": "Women's Intimates-(Apparel_Category)->Shapewear-(Product_Type)->Product Type Photo Direction-(Guideline_Type)->photo_requirements"
+            "linkage": "Women's Intimates-(Apparel_Category)->Shapewear-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements-(Context_Specific_Label)",
+            "linkage_cypher": "CREATE (n1:Apparel_Category {name: 'Women's Intimates'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Shapewear'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n4:image_requirements {name: 'image_requirements'})",
+            "linkage_gsql": "CREATE (n1:Apparel_Category {name: 'Women's Intimates'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Shapewear'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n4:image_requirements {name: 'image_requirements'})"
         },
         {
-            "linkage": "Women's Intimates-(Apparel_Category)->Multipacks Bottoms-(Product_Type)->Product Type Photo Direction-(Guideline_Type)->photo_requirements"
-        },
-        {
-            "linkage": "Women's Intimates-(Apparel_Category)->Lingerie-(Product_Type)->Product Type Photo Direction-(Guideline_Type)->photo_requirements"
-        },
-        {
-            "linkage": "Women's Intimates-(Apparel_Category)->Lingerie Sets & Bodysuits-(Product_Type)->Product Type Photo Direction-(Guideline_Type)->photo_requirements"
+            "linkage": "Product Type-(Guideline_Concept)->Photo Direction-(Guideline_Type)->image_requirements-(Context_Specific_Label)",
+            "linkage_cypher": "CREATE (n1:Product_Type {name: 'Shapewear'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n3:image_requirements {name: 'image_requirements'})",
+            "linkage_gsql": "CREATE (n1:Product_Type {name: 'Shapewear'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n3:image_requirements {name: 'image_requirements'})"
         }
     ]
 }

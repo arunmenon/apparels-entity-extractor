@@ -1,45 +1,54 @@
 {
-    "apparel_category": "Children\u2019s Apparel",
-    "product_type": [
-        "2-Piece Set",
-        "3-Piece Set",
-        "4-Piece Set",
-        "5-Piece Set"
-    ],
+    "apparel_category": "Children's Apparel",
+    "product_type": "Sets",
     "guideline_concept": "Photo Direction",
     "guidelines": {
         "guideline_type": "Photo Direction",
         "image_requirements": [
             {
-                "step_name": "Hero Image",
+                "step_name": "2-Piece Set - Hero Image",
                 "description": "Front facing, straight on, laydown of all pieces in set."
             },
             {
-                "step_name": "1st Alternate",
-                "description": "Cropped in detail shot."
+                "step_name": "2-Piece Set - 1st Alternate",
+                "description": "Cropped in detail shot #1."
             },
             {
-                "step_name": "2nd Alternate",
-                "description": "Cropped in detail shot."
+                "step_name": "2-Piece Set - 2nd Alternate",
+                "description": "Cropped in detail shot #2."
             },
             {
-                "step_name": "3rd Alternate",
-                "description": "Cropped in detail shot."
+                "step_name": "5-Piece Set - Hero Image",
+                "description": "Front facing, straight on, laydown of all pieces in set."
+            },
+            {
+                "step_name": "5-Piece Set - 1st Alternate",
+                "description": "Cropped in detail shot #1."
+            },
+            {
+                "step_name": "5-Piece Set - 2nd Alternate",
+                "description": "Cropped in detail shot #2."
+            },
+            {
+                "step_name": "5-Piece Set - 3rd Alternate",
+                "description": "Cropped in detail shot #3."
+            },
+            {
+                "step_name": "Styling Note",
+                "description": "Style tops over pants. Pants should not be covering any part of the shirts."
             }
         ]
     },
     "graph": [
         {
-            "linkage": "Children\u2019s Apparel-(Apparel_Category)->2-Piece Set-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
+            "linkage": "Children's Apparel-(Apparel_Category)->Sets-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements",
+            "linkage_cypher": "CREATE (n1:Apparel_Category {name: 'Children's Apparel'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Sets'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n4:image_requirements {name: 'image_requirements'})",
+            "linkage_gsql": "CREATE (n1:Apparel_Category {name: 'Children's Apparel'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Sets'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n4:image_requirements {name: 'image_requirements'})"
         },
         {
-            "linkage": "Children\u2019s Apparel-(Apparel_Category)->3-Piece Set-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
-        },
-        {
-            "linkage": "Children\u2019s Apparel-(Apparel_Category)->4-Piece Set-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
-        },
-        {
-            "linkage": "Children\u2019s Apparel-(Apparel_Category)->5-Piece Set-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
+            "linkage": "Photo Direction-(Guideline_Concept)->Photo Direction-(Guideline_Type)->image_requirements",
+            "linkage_cypher": "CREATE (n1:Guideline_Concept {name: 'Photo Direction'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n3:image_requirements {name: 'image_requirements'})",
+            "linkage_gsql": "CREATE (n1:Guideline_Concept {name: 'Photo Direction'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n3:image_requirements {name: 'image_requirements'})"
         }
     ]
 }

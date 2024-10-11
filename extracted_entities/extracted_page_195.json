@@ -3,24 +3,37 @@
     "product_type": null,
     "guideline_concept": "User Generated Content",
     "guidelines": {
-        "guideline_type": "Social Media Integration",
-        "context_specific_label": [
+        "guideline_type": "Copy Standards",
+        "writing_guidelines": [
             {
-                "step_name": "Content Creation",
-                "description": "Content created by customers like Instagram posts and Facebook interactions gives potential customers insight into what other customers think about your products."
+                "step_name": "UGC Strategy Importance",
+                "description": "A user-generated content (UGC) strategy done right will increase the discoverability of products, boost sales, and create a valuable dialogue with customers."
             },
             {
-                "step_name": "Engagement",
-                "description": "This includes influencer generated content like unboxing videos and product reviews."
+                "step_name": "Required Reviews",
+                "description": "Walmart recommends a minimum of 20 reviews/item."
+            },
+            {
+                "step_name": "Social Media Integration",
+                "description": "Content created by customers on social media provides insight into customer opinions about products."
             }
         ]
     },
     "graph": [
         {
-            "linkage": "User Generated Content-(Guideline_Concept)->Social Media Integration-(Guideline_Type)->Content Creation"
+            "linkage": "User Generated Content-(Guideline_Concept)->Copy Standards-(Guideline_Type)->Writing Guidelines",
+            "linkage_cypher": "CREATE (n1:Guideline_Concept {name: 'User Generated Content'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Copy Standards'})-[:HAS_REQUIREMENT]->(n3:Writing_Guidelines {name: 'UGC Strategy Importance'})",
+            "linkage_gsql": "CREATE (n1:Guideline_Concept {name: 'User Generated Content'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Copy Standards'})-[:HAS_REQUIREMENT]->(n3:Writing_Guidelines {name: 'UGC Strategy Importance'})"
         },
         {
-            "linkage": "User Generated Content-(Guideline_Concept)->Social Media Integration-(Guideline_Type)->Engagement"
+            "linkage": "User Generated Content-(Guideline_Concept)->Copy Standards-(Guideline_Type)->Writing Guidelines",
+            "linkage_cypher": "CREATE (n1:Guideline_Concept {name: 'User Generated Content'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Copy Standards'})-[:HAS_REQUIREMENT]->(n3:Writing_Guidelines {name: 'Required Reviews'})",
+            "linkage_gsql": "CREATE (n1:Guideline_Concept {name: 'User Generated Content'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Copy Standards'})-[:HAS_REQUIREMENT]->(n3:Writing_Guidelines {name: 'Required Reviews'})"
+        },
+        {
+            "linkage": "User Generated Content-(Guideline_Concept)->Copy Standards-(Guideline_Type)->Writing Guidelines",
+            "linkage_cypher": "CREATE (n1:Guideline_Concept {name: 'User Generated Content'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Copy Standards'})-[:HAS_REQUIREMENT]->(n3:Writing_Guidelines {name: 'Social Media Integration'})",
+            "linkage_gsql": "CREATE (n1:Guideline_Concept {name: 'User Generated Content'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Copy Standards'})-[:HAS_REQUIREMENT]->(n3:Writing_Guidelines {name: 'Social Media Integration'})"
         }
     ]
 }

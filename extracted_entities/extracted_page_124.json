@@ -10,22 +10,28 @@
             },
             {
                 "step_name": "Baby Clothing Size",
-                "description": "Common sizes for infant and toddler clothing, sometimes expressed as age or weight."
+                "description": "Common sizes for infant and toddler clothing. Baby clothing sizes are sometimes expressed as age or weight."
             },
             {
                 "step_name": "Minimum Recommended Age",
-                "description": "Minimum ages for the product, expressed in months or years."
+                "description": "Minimum ages for the product. Both Min. and Max. attributes will be the same Unit of Measure: Months or Years."
             },
             {
                 "step_name": "Maximum Recommended Age",
-                "description": "Maximum ages for the product, also expressed in months or years."
+                "description": "Maximum ages for the product. Note: Both Min. and Max. attributes will be the same Unit of Measure: Months or Years."
             }
         ]
     },
     "graph": [
         {
-            "linkage": "Baby Garments & Accessories-(Apparel_Category)->Additional Attributes-(Guideline_Concept)->Copy Standards-(Guideline_Type)"
+            "linkage": "Baby Garments & Accessories-(Apparel_Category)->Copy Standards-(Guideline_Concept)->Writing Guidelines",
+            "linkage_cypher": "CREATE (n1:Apparel_Category {name: 'Baby Garments & Accessories'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Copy Standards'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Writing Guidelines'})",
+            "linkage_gsql": "CREATE (n1:Apparel_Category {name: 'Baby Garments & Accessories'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Copy Standards'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Writing Guidelines'})"
+        },
+        {
+            "linkage": "Additional Attributes-(Guideline_Concept)->Copy Standards-(Guideline_Type)->Writing Guidelines",
+            "linkage_cypher": "CREATE (n1:Guideline_Concept {name: 'Additional Attributes'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Copy Standards'})-[:HAS_REQUIREMENT]->(n3:Writing_Guidelines {name: 'Writing Guidelines'})",
+            "linkage_gsql": "CREATE (n1:Guideline_Concept {name: 'Additional Attributes'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Copy Standards'})-[:HAS_REQUIREMENT]->(n3:Writing_Guidelines {name: 'Writing Guidelines'})"
         }
-    ],
-    "summary": "This document outlines the additional attributes required for baby garments and accessories, including clothing style, size, and age recommendations. Compliance with these guidelines is essential to avoid validation issues during publishing."
+    ]
 }

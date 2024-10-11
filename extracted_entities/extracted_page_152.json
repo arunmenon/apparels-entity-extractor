@@ -1,0 +1,26 @@
+{
+    "apparel_category": "Traditional Kilts",
+    "product_type": "N/A",
+    "guideline_concept": "Attributes Guidelines",
+    "guidelines": {
+        "guideline_type": "Copy Standards",
+        "attribute_requirements": [
+            {
+                "step_name": "Closure Type",
+                "description": "The type of fastener used to keep an item closed and to facilitate putting on the item."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Traditional Kilts-(Apparel_Category)->N/A-(Product_Type)->Copy Standards-(Guideline_Type)->attribute_requirements-(Context_Specific_Label>",
+            "linkage_cypher": "CREATE (n1:Apparel_Category {name: 'Traditional Kilts'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'N/A'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Copy Standards'})-[:HAS_REQUIREMENT]->(n4:attribute_requirements {name: 'attribute_requirements'})",
+            "linkage_gsql": "CREATE (n1:Apparel_Category {name: 'Traditional Kilts'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'N/A'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Copy Standards'})-[:HAS_REQUIREMENT]->(n4:attribute_requirements {name: 'attribute_requirements'})"
+        },
+        {
+            "linkage": "Attributes Guidelines-(Guideline_Concept)->Copy Standards-(Guideline_Type)->attribute_requirements-(Context_Specific_Label>",
+            "linkage_cypher": "CREATE (n1:Guideline_Concept {name: 'Attributes Guidelines'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Copy Standards'})-[:HAS_REQUIREMENT]->(n3:attribute_requirements {name: 'attribute_requirements'})",
+            "linkage_gsql": "CREATE (n1:Guideline_Concept {name: 'Attributes Guidelines'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Copy Standards'})-[:HAS_REQUIREMENT]->(n3:attribute_requirements {name: 'attribute_requirements'})"
+        }
+    ]
+}

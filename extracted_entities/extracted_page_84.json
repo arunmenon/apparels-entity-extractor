@@ -1,20 +1,33 @@
 {
     "apparel_category": "All Full Body",
-    "product_type": "Dresses",
+    "product_type": [
+        "Dresses",
+        "One-Piece Full Body Garments - Including Bodysuits"
+    ],
     "guideline_concept": "Product Name Guidelines",
     "guidelines": {
         "guideline_type": "Naming Guidelines",
-        "naming_formula": [
+        "naming_requirements": [
             {
-                "step_name": "FORMULA",
-                "description": "Global Brand License + 'by' + Brand + Product Line + Dress Style/Upper Body Strap Configuration/Clothing Back Style/Clothing Neck Style/Clothing Shoulder Style/Sleeve Length Style/Clothing Length Style/Clothing Fit/Features/Activity/Pattern/Character/Theme/Occasion/Sports League/Sports Team/Fabric Material Name + Clothing Type + Count Per Pack + (Clothing Size Group)"
+                "step_name": "Formula for Dresses",
+                "description": "Global Brand License + 'by' + Brand + Product Line + Dress Style/Upper Body Strap Configuration/Clothing Back Style/Clothing Neck Style/Clothing Shoulder Style/Sleeve Length Style/Clothing Length Style/Clothing Fit/Features/Activity/Pattern/Character/Theme/Ocassion/Sports League/Sports Team/Fabric Material Name + Clothing Type + Count Per Pack + (Clothing Size Group)"
+            },
+            {
+                "step_name": "Formula for One-Piece Full Body Garments",
+                "description": "Global Brand License + 'by' + Brand + Product Line + Upper Body Strap Configuration/Clothing Back Style/Clothing Neck Style/Clothing Shoulder Style/Clothing Top Style/Sleeve Style/Sleeve Length Style/Pant Style/Pant Leg Cut/Pant Length/Jean Wash/Clothing Bottoms Panel Style/Clothing Fit/Features/Activity/Pattern/Character/Theme/Ocassion/Sports League/Sports Team/Fabric Material Name + Clothing Type + Count Per Pack + (Clothing Size Group)"
             }
         ]
     },
     "graph": [
         {
-            "linkage": "All Full Body-(Apparel_Category)->Dresses-(Product_Type)->Naming Guidelines-(Guideline_Type)->naming_formula"
+            "linkage": "All Full Body-(Apparel_Category)->Dresses-(Product_Type)->Naming Guidelines-(Guideline_Type)->naming_requirements",
+            "linkage_cypher": "CREATE (n1:Apparel_Category {name: 'All Full Body'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Dresses'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Naming Guidelines'})-[:HAS_REQUIREMENT]->(n4:naming_requirements {name: 'Formula for Dresses'})",
+            "linkage_gsql": "CREATE (n1:Apparel_Category {name: 'All Full Body'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Dresses'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Naming Guidelines'})-[:HAS_REQUIREMENT]->(n4:naming_requirements {name: 'Formula for Dresses'})"
+        },
+        {
+            "linkage": "All Full Body-(Apparel_Category)->One-Piece Full Body Garments - Including Bodysuits-(Product_Type)->Naming Guidelines-(Guideline_Type)->naming_requirements",
+            "linkage_cypher": "CREATE (n1:Apparel_Category {name: 'All Full Body'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'One-Piece Full Body Garments - Including Bodysuits'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Naming Guidelines'})-[:HAS_REQUIREMENT]->(n4:naming_requirements {name: 'Formula for One-Piece Full Body Garments'})",
+            "linkage_gsql": "CREATE (n1:Apparel_Category {name: 'All Full Body'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'One-Piece Full Body Garments - Including Bodysuits'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Naming Guidelines'})-[:HAS_REQUIREMENT]->(n4:naming_requirements {name: 'Formula for One-Piece Full Body Garments'})"
         }
-    ],
-    "summary": "The page provides naming guidelines for full body apparel, particularly focusing on dresses and one-piece garments including bodysuits. It outlines a formula for constructing product names, along with examples for clarity."
+    ]
 }

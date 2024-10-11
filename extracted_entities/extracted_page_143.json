@@ -1,10 +1,10 @@
 {
-    "apparel_category": "Full Body Garments & Upper Body Garments",
-    "product_type": "Clothing",
-    "guideline_concept": "Attributes",
+    "apparel_category": "All Full Body Garments & Upper Body Garments",
+    "product_type": "Upper Body Garment",
+    "guideline_concept": "Additional Attributes",
     "guidelines": {
-        "guideline_type": "Attribute Standards",
-        "attribute_details": [
+        "guideline_type": "Copy Standards",
+        "attribute_requirements": [
             {
                 "step_name": "Clothing Neck Style",
                 "description": "A garment's neckline or neck style."
@@ -13,8 +13,14 @@
     },
     "graph": [
         {
-            "linkage": "Full Body Garments & Upper Body Garments-(Apparel_Category)->Clothing-(Product_Type)->Attribute Standards-(Guideline_Type)->attribute_details"
+            "linkage": "All Full Body Garments & Upper Body Garments-(Apparel_Category)->Upper Body Garment-(Product_Type)->Copy Standards-(Guideline_Type)->attribute_requirements",
+            "linkage_cypher": "CREATE (n1:Apparel_Category {name: 'All Full Body Garments & Upper Body Garments'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Upper Body Garment'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Copy Standards'})-[:HAS_REQUIREMENT]->(n4:attribute_requirements {name: 'Clothing Neck Style'})",
+            "linkage_gsql": "CREATE (n1:Apparel_Category {name: 'All Full Body Garments & Upper Body Garments'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Upper Body Garment'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Copy Standards'})-[:HAS_REQUIREMENT]->(n4:attribute_requirements {name: 'Clothing Neck Style'})"
+        },
+        {
+            "linkage": "Additional Attributes-(Guideline_Concept)->Copy Standards-(Guideline_Type)->attribute_requirements",
+            "linkage_cypher": "CREATE (n1:Guideline_Concept {name: 'Additional Attributes'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Copy Standards'})-[:HAS_REQUIREMENT]->(n3:attribute_requirements {name: 'Clothing Neck Style'})",
+            "linkage_gsql": "CREATE (n1:Guideline_Concept {name: 'Additional Attributes'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Copy Standards'})-[:HAS_REQUIREMENT]->(n3:attribute_requirements {name: 'Clothing Neck Style'})"
         }
-    ],
-    "summary": "The document specifies mandatory attributes for all Upper Body and Full Body Garment Apparel Product Types, emphasizing the importance of complying with the style guide to avoid validation issues."
+    ]
 }

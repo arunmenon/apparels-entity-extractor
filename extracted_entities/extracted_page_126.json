@@ -1,0 +1,46 @@
+{
+    "apparel_category": "Baby Bodysuits & One-Pieces",
+    "product_type": "Baby Bodysuit",
+    "guideline_concept": "Attributes",
+    "guidelines": {
+        "guideline_type": "Attributes",
+        "attribute_requirements": [
+            {
+                "attribute_name": "Baby Bodysuit & One-Piece Type",
+                "description": "An infant bodysuit or onesie (one-piece) is a garment designed to be worn by infants & babies much like a T-shirt; they are distinguished from T-shirts by an extension below the waist, with snaps that allow it to be closed over the crotch."
+            },
+            {
+                "attribute_name": "Sleeve Length",
+                "description": "The distance from the shoulder to the bottom hem of the sleeve, measured in inches."
+            },
+            {
+                "attribute_name": "Clothing Weight",
+                "description": "Commonly used in retail clothing, these terms describe the density or weight of fabric material."
+            },
+            {
+                "attribute_name": "Closure Type",
+                "description": "The type of fastener used to keep an item closed and to facilitate putting on the item."
+            },
+            {
+                "attribute_name": "Season",
+                "description": "If designed to be used during a specific time of year, the appropriate season this item may be used."
+            },
+            {
+                "attribute_name": "Text",
+                "description": "This is the predicate text displayed on an item. Not intended to be inclusive of every single word present on the product, but only the predominant text representing the theme or headline."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Baby Bodysuits & One-Pieces-(Apparel_Category)->Baby Bodysuit-(Product_Type)->Attributes-(Guideline_Type)->attribute_requirements",
+            "linkage_cypher": "CREATE (n1:Apparel_Category {name: 'Baby Bodysuits & One-Pieces'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Baby Bodysuit'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Attributes'})-[:HAS_REQUIREMENT]->(n4:attribute_requirements {name: 'attribute_requirements'})",
+            "linkage_gsql": "CREATE (n1:Apparel_Category {name: 'Baby Bodysuits & One-Pieces'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Baby Bodysuit'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Attributes'})-[:HAS_REQUIREMENT]->(n4:attribute_requirements {name: 'attribute_requirements'})"
+        },
+        {
+            "linkage": "Attributes-(Guideline_Concept)->Attributes-(Guideline_Type)->attribute_requirements",
+            "linkage_cypher": "CREATE (n1:Guideline_Concept {name: 'Attributes'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Attributes'})-[:HAS_REQUIREMENT]->(n3:attribute_requirements {name: 'attribute_requirements'})",
+            "linkage_gsql": "CREATE (n1:Guideline_Concept {name: 'Attributes'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Attributes'})-[:HAS_REQUIREMENT]->(n3:attribute_requirements {name: 'attribute_requirements'})"
+        }
+    ]
+}

@@ -1,51 +1,52 @@
 {
-    "apparel_category": "Apparel",
-    "product_type": "Short Description",
+    "apparel_category": "Site Description Guidelines",
     "guideline_concept": "Copy Standards",
     "guidelines": {
         "guideline_type": "Copy Standards",
         "writing_guidelines": [
             {
                 "step_name": "Information Format",
-                "description": "Information should be entered in HTML code, sentence case, paragraph form with no bullet points."
+                "description": "Enter in HTML code, sentence case, paragraph form, no bullet points."
+            },
+            {
+                "step_name": "Promotional Text",
+                "description": "No promotional text like free shipping or discounts, special characters or hyperlinks to other retailers."
             },
             {
                 "step_name": "SEO Importance",
-                "description": "The description is key to Search Engine Optimization (SEO) because customers search in ways that match real-life uses and concerns."
+                "description": "Repeat product name within the description for SEO purposes."
             },
             {
-                "step_name": "Promotional Text Restrictions",
-                "description": "No promotional text like free shipping or discounts, no special characters or hyperlinks to other retailers."
+                "step_name": "Unique Description",
+                "description": "Your description should be unique and not copied from other sites."
             },
             {
-                "step_name": "Unique Description Requirement",
-                "description": "For SEO purposes, repeat the product name within the body of the description and ensure it is unique and truly useful for customers."
+                "step_name": "Customer Perspective",
+                "description": "Craft the description as if you were the buyer, considering their thoughts and needs."
             },
             {
-                "step_name": "Avoiding Redundant Information",
-                "description": "Do not fill with information that would be pointless to the buyer."
+                "step_name": "Synonyms and Keywords",
+                "description": "Use synonyms or keywords that customers may use in searches."
             },
             {
                 "step_name": "Conversational Tone",
-                "description": "Write in a conversational tone to help customers make informed decisions."
+                "description": "Be clear and conversational; avoid authentic tone breaks."
             },
             {
-                "step_name": "Related Keywords Usage",
-                "description": "Use related keywords within the short description effectively."
+                "step_name": "Related Keywords",
+                "description": "Use related keywords organically within the description."
             },
             {
-                "step_name": "Descriptive Keywords",
-                "description": "Keywords should describe what the item is, how it is used, what it looks and feels like, and its uniqueness."
+                "step_name": "Required Information",
+                "description": "This guideline is a requirement for all product descriptions."
             }
         ]
     },
     "graph": [
         {
-            "linkage": "Apparel-(Apparel_Category)->Short Description-(Product_Type)->Copy Standards-(Guideline_Type)->writing_guidelines"
-        },
-        {
-            "linkage": "Copy Standards-(Guideline_Concept)->Copy Standards-(Guideline_Type)->writing_guidelines"
+            "linkage": "Site Description Guidelines-(Guideline_Concept)->Copy Standards-(Guideline_Type)->Copy Standards",
+            "linkage_cypher": "CREATE (n1:Guideline_Concept {name: 'Site Description Guidelines'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Copy Standards'})-[:HAS_REQUIREMENT]->(n3:writing_guidelines {name: 'Writing Guidelines'})",
+            "linkage_gsql": "CREATE (n1:Guideline_Concept {name: 'Site Description Guidelines'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Copy Standards'})-[:HAS_REQUIREMENT]->(n3:writing_guidelines {name: 'Writing Guidelines'})"
         }
-    ],
-    "summary": "This page outlines the site description guidelines focused on writing effective short descriptions for apparel products, emphasizing the importance of SEO, uniqueness, conversational tone, and the avoidance of promotional content."
+    ]
 }

@@ -1,24 +1,62 @@
 {
     "apparel_category": "Children's Apparel",
-    "product_type": "Children's Multipacks",
+    "product_type": [
+        "Wind Breaker",
+        "Tank Tops"
+    ],
     "guideline_concept": "Product Naming Guidelines",
     "guidelines": {
         "guideline_type": "Naming Guidelines",
-        "naming_formulas": [
+        "naming_structure": [
             {
-                "step_name": "Formula for Children's Apparel",
-                "description": "Global Brand License + 'by' + Brand + Style Name + Apparel Style + Product Type + (Clothing Size Group)"
+                "step_name": "Global Brand License",
+                "description": "Include if applicable; add 'by' if there is a Global Brand License"
             },
             {
-                "step_name": "Formula for Children's Multipacks",
-                "description": "Global Brand License + 'by' + Brand + Style Name + Apparel Style + Product Type + (Clothing Size Group) + Count"
+                "step_name": "Brand Name",
+                "description": "Specify the brand associated with the product"
+            },
+            {
+                "step_name": "Style Name",
+                "description": "Categorize the specific style of the apparel"
+            },
+            {
+                "step_name": "Apparel Style",
+                "description": "Detail the type of apparel"
+            },
+            {
+                "step_name": "Product Type",
+                "description": "Indicate the exact product type offered"
+            },
+            {
+                "step_name": "Clothing Size Group",
+                "description": "Specify the size group for the clothing"
+            },
+            {
+                "step_name": "Count",
+                "description": "For multipacks, include the total number of items"
+            },
+            {
+                "step_name": "Pack Count",
+                "description": "For multipacks, specify the number of items per pack"
             }
         ]
     },
     "graph": [
         {
-            "linkage": "Children's Apparel-(Apparel_Category)->Children's Multipacks-(Product_Type)->Naming Guidelines-(Guideline_Type)->naming_formulas"
+            "linkage": "Children's Apparel-(Apparel_Category)->Wind Breaker-(Product_Type)->Naming Guidelines-(Guideline_Type)->naming_structure",
+            "linkage_cypher": "CREATE (n1:Apparel_Category {name: 'Children's Apparel'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Wind Breaker'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Naming Guidelines'})-[:HAS_REQUIREMENT]->(n4:naming_structure {name: 'Global Brand License'})",
+            "linkage_gsql": "CREATE (n1:Apparel_Category {name: 'Children's Apparel'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Wind Breaker'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Naming Guidelines'})-[:HAS_REQUIREMENT]->(n4:naming_structure {name: 'Global Brand License'})"
+        },
+        {
+            "linkage": "Children's Apparel-(Apparel_Category)->Tank Tops-(Product_Type)->Naming Guidelines-(Guideline_Type)->naming_structure",
+            "linkage_cypher": "CREATE (n1:Apparel_Category {name: 'Children's Apparel'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Tank Tops'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Naming Guidelines'})-[:HAS_REQUIREMENT]->(n4:naming_structure {name: 'Global Brand License'})",
+            "linkage_gsql": "CREATE (n1:Apparel_Category {name: 'Children's Apparel'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Tank Tops'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Naming Guidelines'})-[:HAS_REQUIREMENT]->(n4:naming_structure {name: 'Global Brand License'})"
+        },
+        {
+            "linkage": "Product Naming Guidelines-(Guideline_Concept)->Naming Guidelines-(Guideline_Type)->naming_structure",
+            "linkage_cypher": "CREATE (n1:Guideline_Concept {name: 'Product Naming Guidelines'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Naming Guidelines'})-[:HAS_REQUIREMENT]->(n3:naming_structure {name: 'Global Brand License'})",
+            "linkage_gsql": "CREATE (n1:Guideline_Concept {name: 'Product Naming Guidelines'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Naming Guidelines'})-[:HAS_REQUIREMENT]->(n3:naming_structure {name: 'Global Brand License'})"
         }
-    ],
-    "summary": "The document outlines the product naming guidelines for children's apparel, specifically focusing on the naming structure for both standard children's apparel and multipacks."
+    ]
 }

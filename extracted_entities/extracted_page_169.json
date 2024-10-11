@@ -1,24 +1,31 @@
 {
-    "apparel_category": "Men\u2019s Lower Body",
-    "product_type": "Athletic Compression Socks",
-    "guideline_concept": "Product Naming Guidelines",
+    "apparel_category": "Athletic Compression Socks",
+    "product_type": "Socks",
+    "guideline_concept": "Additional Attributes",
     "guidelines": {
-        "guideline_type": "Additional Attributes",
-        "attributes": [
+        "guideline_type": "Attribute Requirements",
+        "attribute_requirements": [
             {
                 "step_name": "Sock Type",
-                "description": "Specifies the type of Socks for the product."
+                "description": "Specifies the type of Socks for the product. Example: Compression Socks."
             },
             {
                 "step_name": "Sock Rise",
-                "description": "Descriptive terms for sock height."
+                "description": "Descriptive terms for sock height. Examples: Ankle, Crew, Mid-Calf, Over the Knee, Quarter, Knee-High, Low-Cut, No-Show, Thigh-High."
             }
         ]
     },
     "graph": [
         {
-            "linkage": "Men\u2019s Lower Body-(Apparel_Category)->Athletic Compression Socks-(Product_Type)->Additional Attributes-(Guideline_Type)->attributes"
+            "linkage": "Athletic Compression Socks-(Apparel_Category)->Socks-(Product_Type)->Attribute Requirements-(Guideline_Type)->attribute_requirements",
+            "linkage_cypher": "CREATE (n1:Apparel_Category {name: 'Athletic Compression Socks'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Socks'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Attribute Requirements'})-[:HAS_REQUIREMENT]->(n4:attribute_requirements {name: 'Sock Type'})",
+            "linkage_gsql": "CREATE (n1:Apparel_Category {name: 'Athletic Compression Socks'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Socks'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Attribute Requirements'})-[:HAS_REQUIREMENT]->(n4:attribute_requirements {name: 'Sock Type'})"
+        },
+        {
+            "linkage": "Athletic Compression Socks-(Apparel_Category)->Socks-(Product_Type)->Attribute Requirements-(Guideline_Type)->attribute_requirements",
+            "linkage_cypher": "CREATE (n1:Apparel_Category {name: 'Athletic Compression Socks'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Socks'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Attribute Requirements'})-[:HAS_REQUIREMENT]->(n4:attribute_requirements {name: 'Sock Rise'})",
+            "linkage_gsql": "CREATE (n1:Apparel_Category {name: 'Athletic Compression Socks'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Socks'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Attribute Requirements'})-[:HAS_REQUIREMENT]->(n4:attribute_requirements {name: 'Sock Rise'})"
         }
     ],
-    "summary": "This page provides additional mandatory attributes for Athletic Compression Socks, including guidelines on specifying the type of socks and the descriptive terms for sock height, which are essential for compliance."
+    "summary": "This section outlines additional mandatory attributes for Athletic Compression Socks, focusing on Sock Type and Sock Rise with examples provided for each."
 }

@@ -1,0 +1,26 @@
+{
+    "apparel_category": "Underwear, Shapewear, Lingerie & Swimwear",
+    "product_type": "Swim Bottoms",
+    "guideline_concept": "Additional Attributes",
+    "guidelines": {
+        "guideline_type": "Copy Standards",
+        "attribute_requirements": [
+            {
+                "step_name": "Underpant/Swim Bottom Style",
+                "description": "Descriptive styles common to underwear bottoms and lower body elements of swimwear and leotards."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Underwear, Shapewear, Lingerie & Swimwear-(Apparel_Category)->Swim Bottoms-(Product_Type)->Copy Standards-(Guideline_Type)->attribute_requirements",
+            "linkage_cypher": "CREATE (n1:Apparel_Category {name: 'Underwear, Shapewear, Lingerie & Swimwear'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Swim Bottoms'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Copy Standards'})-[:HAS_REQUIREMENT]->(n4:attribute_requirements {name: 'Underpant/Swim Bottom Style'})",
+            "linkage_gsql": "CREATE (n1:Apparel_Category {name: 'Underwear, Shapewear, Lingerie & Swimwear'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Swim Bottoms'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Copy Standards'})-[:HAS_REQUIREMENT]->(n4:attribute_requirements {name: 'Underpant/Swim Bottom Style'})"
+        },
+        {
+            "linkage": "Additional Attributes-(Guideline_Concept)->Copy Standards-(Guideline_Type)->attribute_requirements",
+            "linkage_cypher": "CREATE (n1:Guideline_Concept {name: 'Additional Attributes'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Copy Standards'})-[:HAS_REQUIREMENT]->(n3:attribute_requirements {name: 'Underpant/Swim Bottom Style'})",
+            "linkage_gsql": "CREATE (n1:Guideline_Concept {name: 'Additional Attributes'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Copy Standards'})-[:HAS_REQUIREMENT]->(n3:attribute_requirements {name: 'Underpant/Swim Bottom Style'})"
+        }
+    ]
+}

@@ -1,16 +1,12 @@
 {
     "apparel_category": "Women's Intimates",
-    "product_type": [
-        "Camisoles",
-        "Lingerie Tops",
-        "Lingerie Skirt Bottoms"
-    ],
+    "product_type": "Camisoles/Lingerie Tops",
     "guideline_concept": "Photo Direction",
     "guidelines": {
         "guideline_type": "Photo Direction",
         "image_requirements": [
             {
-                "step_name": "Hero Image",
+                "step_name": "Hero (Main) Image",
                 "description": "Front facing, cropped above lip to below fingertips."
             },
             {
@@ -26,17 +22,21 @@
                 "description": "Ghost view."
             },
             {
-                "step_name": "4th Alternate",
+                "step_name": "Recommended 4th Alternate",
                 "description": "Alternate detail. Highlight embellishments and design elements not captured in required shots if present."
             }
         ]
     },
     "graph": [
         {
-            "linkage": "Women's Intimates-(Apparel_Category)->Camisoles-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
+            "linkage": "Women's Intimates-(Apparel_Category)->Camisoles/Lingerie Tops-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements",
+            "linkage_cypher": "CREATE (n1:Apparel_Category {name: 'Women's Intimates'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Camisoles/Lingerie Tops'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n4:image_requirements {name: 'image_requirements'})",
+            "linkage_gsql": "CREATE (n1:Apparel_Category {name: 'Women's Intimates'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Camisoles/Lingerie Tops'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n4:image_requirements {name: 'image_requirements'})"
         },
         {
-            "linkage": "Women's Intimates-(Apparel_Category)->Lingerie Skirt Bottoms-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
+            "linkage": "Women's Intimates-(Apparel_Category)->Lingerie Skirt Bottoms-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements",
+            "linkage_cypher": "CREATE (n1:Apparel_Category {name: 'Women's Intimates'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Lingerie Skirt Bottoms'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n4:image_requirements {name: 'image_requirements'})",
+            "linkage_gsql": "CREATE (n1:Apparel_Category {name: 'Women's Intimates'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Lingerie Skirt Bottoms'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n4:image_requirements {name: 'image_requirements'})"
         }
     ]
 }

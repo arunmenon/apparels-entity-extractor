@@ -1,17 +1,12 @@
 {
-    "apparel_category": "Women\u2019s Apparel",
-    "product_type": [
-        "Robes",
-        "Slips",
-        "Nightgowns",
-        "Sleepshirts"
-    ],
+    "apparel_category": "Robes",
+    "product_type": "Robe",
     "guideline_concept": "Photo Direction",
     "guidelines": {
         "guideline_type": "Photo Direction",
         "image_requirements": [
             {
-                "step_name": "Hero (Main) Image",
+                "step_name": "Hero Image",
                 "description": "Front facing, head to toe, unrecognizable."
             },
             {
@@ -30,16 +25,9 @@
     },
     "graph": [
         {
-            "linkage": "Women\u2019s Apparel-(Apparel_Category)->Robes-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
-        },
-        {
-            "linkage": "Women\u2019s Apparel-(Apparel_Category)->Slips-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
-        },
-        {
-            "linkage": "Women\u2019s Apparel-(Apparel_Category)->Nightgowns-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
-        },
-        {
-            "linkage": "Women\u2019s Apparel-(Apparel_Category)->Sleepshirts-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
+            "linkage": "Robes-(Apparel_Category)->Robe-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements-(Context_Specific_Label)",
+            "linkage_cypher": "CREATE (n1:Apparel_Category {name: 'Robes'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Robe'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n4:image_requirements {name: 'image_requirements'})",
+            "linkage_gsql": "CREATE (n1:Apparel_Category {name: 'Robes'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Robe'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n4:image_requirements {name: 'image_requirements'})"
         }
     ]
 }

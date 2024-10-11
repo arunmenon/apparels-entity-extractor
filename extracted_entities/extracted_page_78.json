@@ -6,26 +6,28 @@
         "guideline_type": "Copy Standards",
         "writing_guidelines": [
             {
-                "step_name": "SEO and SEM Integration",
-                "description": "Create copy that attracts customers and enhances conversion through effective SEO and SEM strategies."
+                "step_name": "Attract Customers",
+                "description": "Great copy can attract more customers through SEO and SEM."
+            },
+            {
+                "step_name": "Prevent Returns",
+                "description": "Helps customers convert and prevent returns."
             },
             {
                 "step_name": "Legal Obligations",
-                "description": "Include all legally required content in your copy."
+                "description": "Include legally mandated requirements in your copy."
             },
             {
-                "step_name": "Cohesive Formatting",
-                "description": "Ensure formatting consistency for a better customer experience."
-            },
-            {
-                "step_name": "Compliance Consequences",
-                "description": "Non-compliance with copy standards may result in delays or rejection of new items and potential removal of existing items."
+                "step_name": "Formatting Requirements",
+                "description": "Ensure cohesive customer experience on the site."
             }
         ]
     },
     "graph": [
         {
-            "linkage": "Copy Standards-(Guideline_Concept)->Copy Standards-(Guideline_Type)->writing_guidelines"
+            "linkage": "Copy Standards-(Guideline_Concept)->Copy Standards-(Guideline_Type)->Writing Guidelines",
+            "linkage_cypher": "CREATE (n1:Guideline_Concept {name: 'Copy Standards'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Copy Standards'})-[:HAS_REQUIREMENT]->(n3:Writing_Guidelines {name: 'Writing Guidelines'})",
+            "linkage_gsql": "CREATE (n1:Guideline_Concept {name: 'Copy Standards'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Copy Standards'})-[:HAS_REQUIREMENT]->(n3:Writing_Guidelines {name: 'Writing Guidelines'})"
         }
     ]
 }

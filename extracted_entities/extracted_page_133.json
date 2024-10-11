@@ -1,0 +1,24 @@
+{
+    "apparel_category": "All Pants & Shorts",
+    "guideline_concept": "Additional Attributes",
+    "guidelines": {
+        "guideline_type": "Naming Guidelines",
+        "attribute_requirements": [
+            {
+                "step_name": "Inseam",
+                "description": "For pants, the distance from the bottom of the leg to the seam in the crotch, measured in inches. Examples: 2, 6, 13, 25, 36."
+            },
+            {
+                "step_name": "Waist Rise",
+                "description": "The height at which the waistline rests on the body. Examples: High, Low, Mid, Ultra-Low."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "All Pants & Shorts-(Apparel_Category)->Naming Guidelines-(Guideline_Type)->attribute_requirements",
+            "linkage_cypher": "CREATE (n1:Apparel_Category {name: 'All Pants & Shorts'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Naming Guidelines'})-[:HAS_REQUIREMENT]->(n3:attribute_requirements {name: 'attribute_requirements'})",
+            "linkage_gsql": "CREATE (n1:Apparel_Category {name: 'All Pants & Shorts'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Naming Guidelines'})-[:HAS_REQUIREMENT]->(n3:attribute_requirements {name: 'attribute_requirements'})"
+        }
+    ]
+}

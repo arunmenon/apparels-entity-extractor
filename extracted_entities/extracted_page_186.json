@@ -1,0 +1,26 @@
+{
+    "apparel_category": "Womens Dresses",
+    "product_type": "Flutter Tiered Dress",
+    "guideline_concept": "Grouping Standards",
+    "guidelines": {
+        "guideline_type": "Grouping Standards",
+        "grouping_examples": [
+            {
+                "step_name": "Correct Grouping Example",
+                "description": "This dress is the same fabric, same silhouette and comes in multiple solid colorways."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Womens Dresses-(Apparel_Category)->Flutter Tiered Dress-(Product_Type)->Grouping Standards-(Guideline_Type)->grouping_examples",
+            "linkage_cypher": "CREATE (n1:Apparel_Category {name: 'Womens Dresses'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Flutter Tiered Dress'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Grouping Standards'})-[:HAS_REQUIREMENT]->(n4:grouping_examples {name: 'Correct Grouping Example'})",
+            "linkage_gsql": "CREATE (n1:Apparel_Category {name: 'Womens Dresses'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Flutter Tiered Dress'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Grouping Standards'})-[:HAS_REQUIREMENT]->(n4:grouping_examples {name: 'Correct Grouping Example'})"
+        },
+        {
+            "linkage": "Grouping Standards-(Guideline_Concept)->Grouping Standards-(Guideline_Type)->grouping_examples",
+            "linkage_cypher": "CREATE (n1:Guideline_Concept {name: 'Grouping Standards'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Grouping Standards'})-[:HAS_REQUIREMENT]->(n3:grouping_examples {name: 'Correct Grouping Example'})",
+            "linkage_gsql": "CREATE (n1:Guideline_Concept {name: 'Grouping Standards'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Grouping Standards'})-[:HAS_REQUIREMENT]->(n3:grouping_examples {name: 'Correct Grouping Example'})"
+        }
+    ]
+}

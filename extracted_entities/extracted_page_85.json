@@ -1,29 +1,30 @@
 {
     "apparel_category": "All Upper Body",
-    "product_type": [
-        "All Tops",
-        "All Jackets & Coats"
-    ],
-    "guideline_concept": "Product Naming Guidelines",
+    "product_type": "Tops",
+    "guideline_concept": "Product Name Guidelines",
     "guidelines": {
         "guideline_type": "Naming Guidelines",
         "naming_formula": [
             {
-                "step_name": "All Tops",
+                "step_name": "Formula for All Tops",
                 "description": "Brand Name 'or' License Name (if applicable) + Style Name + Descriptive Feature/Clothing Top Style/Character/Sports League/Sports Team/Material + Apparel Style + Clothing Type + Count Per Pack + (Clothing Size Group)"
             },
             {
-                "step_name": "All Jackets & Coats",
-                "description": "Global Brand License 'by' Brand + Product Line + Sleeve Style/Sleeve Length Style/Clothing Top Style/Clothing Neck Style/Collar Type/Upper Body Strap Configuration/Clothing Back Style/Clothing Shoulder Style/Clothing Fit/Features/Activity/Pattern/Character/Theme/Ocassion/Sports League/Sports Team/Fabric Material Name + Clothing Type + Count Per Pack + (Clothing Size Group)"
+                "step_name": "Formula for All Jackets & Coats",
+                "description": "Global Brand License 'by' + Brand + Product Line + Sleeve Style/Sleeve Length Style/Clothing Top Style/Clothing Neck Style/Collar Type/Upper Body Strap Configuration/Clothing Back Style/Clothing Shoulder Style/Clothing Fit/Features/Activity/Pattern/Character/Theme/Occasion/Sports League/Sports Team/Fabric Material Name + Clothing Type + Count Per Pack + (Clothing Size Group)"
             }
         ]
     },
     "graph": [
         {
-            "linkage": "All Upper Body-(Apparel_Category)->All Tops-(Product_Type)->Naming Guidelines-(Guideline_Type)->naming_formula"
+            "linkage": "All Upper Body-(Apparel_Category)->Tops-(Product_Type)->Naming Guidelines-(Guideline_Type)->naming_formula",
+            "linkage_cypher": "CREATE (n1:Apparel_Category {name: 'All Upper Body'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Tops'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Naming Guidelines'})-[:HAS_REQUIREMENT]->(n4:naming_formula {name: 'Formula for All Tops'})",
+            "linkage_gsql": "CREATE (n1:Apparel_Category {name: 'All Upper Body'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Tops'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Naming Guidelines'})-[:HAS_REQUIREMENT]->(n4:naming_formula {name: 'Formula for All Tops'})"
         },
         {
-            "linkage": "All Upper Body-(Apparel_Category)->All Jackets & Coats-(Product_Type)->Naming Guidelines-(Guideline_Type)->naming_formula"
+            "linkage": "Product Name Guidelines-(Guideline_Concept)->Naming Guidelines-(Guideline_Type)->naming_formula",
+            "linkage_cypher": "CREATE (n1:Guideline_Concept {name: 'Product Name Guidelines'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Naming Guidelines'})-[:HAS_REQUIREMENT]->(n3:naming_formula {name: 'Formula for All Tops'})",
+            "linkage_gsql": "CREATE (n1:Guideline_Concept {name: 'Product Name Guidelines'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Naming Guidelines'})-[:HAS_REQUIREMENT]->(n3:naming_formula {name: 'Formula for All Tops'})"
         }
     ]
 }

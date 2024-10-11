@@ -1,24 +1,29 @@
 {
-    "apparel_category": "Men's Tops",
-    "product_type": "Grouped Mens Tops",
+    "apparel_category": "Men\u2019s Tops",
     "guideline_concept": "Grouping Standards",
     "guidelines": {
         "guideline_type": "Grouping Standards",
         "grouping_examples": [
             {
-                "step_name": "Ungrouped Items",
-                "description": "Items with drastically different patterns should be ungrouped."
+                "step_name": "Grouped Mens Tops",
+                "description": "Shirts with similar attributes but different patterns should be ungrouped."
             },
             {
                 "step_name": "Grouped Family PJs",
-                "description": "Family PJs should be grouped by size for single family members to communicate the collection aspect."
+                "description": "Family PJs should be grouped by size for individual family members, and have collection pages to highlight the family aspect."
             }
         ]
     },
     "graph": [
         {
-            "linkage": "Men's Tops-(Apparel_Category)->Grouped Mens Tops-(Product_Type)->Grouping Standards-(Guideline_Type)->grouping_examples"
+            "linkage": "Men\u2019s Tops-(Apparel_Category)->Grouping Standards-(Guideline_Concept)->Grouping Examples-(Context_Specific_Label>",
+            "linkage_cypher": "CREATE (n1:Apparel_Category {name: 'Men\u2019s Tops'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Grouped Mens Tops'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Grouping Standards'})-[:HAS_REQUIREMENT]->(n4:grouping_examples {name: 'Grouped Family PJs'})",
+            "linkage_gsql": "CREATE (n1:Apparel_Category {name: 'Men\u2019s Tops'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Grouped Mens Tops'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Grouping Standards'})-[:HAS_REQUIREMENT]->(n4:grouping_examples {name: 'Grouped Family PJs'})"
+        },
+        {
+            "linkage": "Grouping Standards-(Guideline_Concept)->Grouping Examples-(Guideline_Type)->Grouping Examples-(Context_Specific_Label>",
+            "linkage_cypher": "CREATE (n1:Guideline_Concept {name: 'Grouping Standards'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Grouping Examples'})-[:HAS_REQUIREMENT]->(n3:grouping_examples {name: 'Examples of grouping for family PJs and mens tops'})",
+            "linkage_gsql": "CREATE (n1:Guideline_Concept {name: 'Grouping Standards'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Grouping Examples'})-[:HAS_REQUIREMENT]->(n3:grouping_examples {name: 'Examples of grouping for family PJs and mens tops'})"
         }
-    ],
-    "summary": "The guidelines provide examples for grouping men's tops and family pajamas, emphasizing ungrouping items with different patterns and the necessity of grouping family PJs by size."
+    ]
 }

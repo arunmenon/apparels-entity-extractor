@@ -1,7 +1,7 @@
 {
-    "apparel_category": "Women\u2019s Dresses, Bodysuits, One-Pieces",
+    "apparel_category": "Women's Dresses, Bodysuits, One-Pieces",
     "product_type": "Dresses, Skirts & Skorts",
-    "guideline_concept": "Key Feature Directions",
+    "guideline_concept": "Key Feature Guidelines",
     "guidelines": {
         "guideline_type": "Photo Direction",
         "image_requirements": [
@@ -49,8 +49,14 @@
     },
     "graph": [
         {
-            "linkage": "Women\u2019s Dresses, Bodysuits, One-Pieces-(Apparel_Category)->Dresses, Skirts & Skorts-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
+            "linkage": "Women's Dresses, Bodysuits, One-Pieces-(Apparel_Category)->Dresses, Skirts & Skorts-(Product_Type)->Photo Direction-(Guideline_Type)->Image Requirements",
+            "linkage_cypher": "CREATE (n1:Apparel_Category {name: 'Women's Dresses, Bodysuits, One-Pieces'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Dresses, Skirts & Skorts'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n4:Image_Requirements {name: 'Key Feature Directions'})",
+            "linkage_gsql": "CREATE (n1:Apparel_Category {name: 'Women's Dresses, Bodysuits, One-Pieces'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Dresses, Skirts & Skorts'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n4:Image_Requirements {name: 'Key Feature Directions'})"
+        },
+        {
+            "linkage": "Key Feature Guidelines-(Guideline_Concept)->Photo Direction-(Guideline_Type)->Image Requirements",
+            "linkage_cypher": "CREATE (n1:Guideline_Concept {name: 'Key Feature Guidelines'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n3:Image_Requirements {name: 'Key Feature Directions'})",
+            "linkage_gsql": "CREATE (n1:Guideline_Concept {name: 'Key Feature Guidelines'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n3:Image_Requirements {name: 'Key Feature Directions'})"
         }
-    ],
-    "summary": "The page outlines the key feature guidelines for Women's Dresses, Bodysuits, and One-Pieces, focusing on essential specifications regarding material, care, origin, size, fit, length, closure, sleeves, pockets, and features."
+    ]
 }

@@ -1,20 +1,25 @@
 {
     "apparel_category": "Dresses",
     "product_type": "All Dress Product Type",
-    "guideline_concept": "Attributes",
+    "guideline_concept": "Copy Standards",
     "guidelines": {
         "guideline_type": "Naming Guidelines",
-        "attribute_requirements": [
+        "dress_style": [
             {
-                "step_name": "Dress Style",
-                "description": "Style terms specific to dresses. Further details can be found under the Skirt Style attribute, with shared terms for skirts and dresses."
+                "step_name": "Style Terms",
+                "description": "Style terms specific to dresses. Other style terms that describe a dress's skirt may be found under the Skirt Style attribute."
+            },
+            {
+                "step_name": "Specific Examples",
+                "description": "Examples include: Embellished, Peplum, Faux-Wrap, Shift, Polo, Shirt Dress, Sheath, A-line, Bodicon, Mermaid, Maxi, Cocktail, Boho, Little Black Dress, Twofer, Slip Dress, Mini, Poodle, Sun Dress, Surplice, T-shirt, Ball Gown, Skater, Wrap, Jacket Dress, Fit & Flare, Tutus, Evening Gown, Sweater."
             }
         ]
     },
     "graph": [
         {
-            "linkage": "Dresses-(Apparel_Category)->All Dress Product Type-(Product_Type)->Naming Guidelines-(Guideline_Type)->attribute_requirements"
+            "linkage": "Dresses-(Apparel_Category)->All Dress Product Type-(Product_Type)->Naming Guidelines-(Guideline_Type)->dress_style",
+            "linkage_cypher": "CREATE (n1:Apparel_Category {name: 'Dresses'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'All Dress Product Type'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Naming Guidelines'})-[:HAS_REQUIREMENT]->(n4:dress_style {name: 'Style Terms and Specific Examples'})",
+            "linkage_gsql": "CREATE (n1:Apparel_Category {name: 'Dresses'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'All Dress Product Type'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Naming Guidelines'})-[:HAS_REQUIREMENT]->(n4:dress_style {name: 'Style Terms and Specific Examples'})"
         }
-    ],
-    "summary": "This page outlines the additional mandatory attributes required for all dress product types. It specifies key attributes like 'Dress Style' and includes examples of acceptable values."
+    ]
 }

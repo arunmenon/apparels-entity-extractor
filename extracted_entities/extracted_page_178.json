@@ -1,9 +1,9 @@
 {
     "apparel_category": "Women\u2019s Upper Body",
-    "product_type": "Swimsuit Tops",
-    "guideline_concept": "Additional Attributes",
+    "product_type": "Items with Shoulder Straps",
+    "guideline_concept": "Attributes",
     "guidelines": {
-        "guideline_type": "Naming Guidelines",
+        "guideline_type": "Additional Attributes",
         "attribute_requirements": [
             {
                 "step_name": "Upper Body Strap Configuration",
@@ -13,8 +13,14 @@
     },
     "graph": [
         {
-            "linkage": "Women\u2019s Upper Body-(Apparel_Category)->Swimsuit Tops-(Product_Type)->Naming Guidelines-(attribute_requirements)"
+            "linkage": "Women\u2019s Upper Body-(Apparel_Category)->Items with Shoulder Straps-(Product_Type)->Additional Attributes-(Guideline_Type)->attribute_requirements",
+            "linkage_cypher": "CREATE (n1:Apparel_Category {name: 'Women\u2019s Upper Body'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Items with Shoulder Straps'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Additional Attributes'})-[:HAS_REQUIREMENT]->(n4:attribute_requirements {name: 'Upper Body Strap Configuration'})",
+            "linkage_gsql": "CREATE (n1:Apparel_Category {name: 'Women\u2019s Upper Body'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Items with Shoulder Straps'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Additional Attributes'})-[:HAS_REQUIREMENT]->(n4:attribute_requirements {name: 'Upper Body Strap Configuration'})"
+        },
+        {
+            "linkage": "Attributes-(Guideline_Concept)->Additional Attributes-(Guideline_Type)->attribute_requirements",
+            "linkage_cypher": "CREATE (n1:Guideline_Concept {name: 'Attributes'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Additional Attributes'})-[:HAS_REQUIREMENT]->(n3:attribute_requirements {name: 'Upper Body Strap Configuration'})",
+            "linkage_gsql": "CREATE (n1:Guideline_Concept {name: 'Attributes'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Additional Attributes'})-[:HAS_REQUIREMENT]->(n3:attribute_requirements {name: 'Upper Body Strap Configuration'})"
         }
-    ],
-    "summary": "The page provides mandatory attributes for items with shoulder straps, emphasizing that compliance is required to avoid validation failure in publishing."
+    ]
 }

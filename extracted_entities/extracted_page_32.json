@@ -9,45 +9,33 @@
         "guideline_type": "Photo Direction",
         "image_requirements": [
             {
-                "step_name": "Hero (Main) Image for Bras",
+                "step_name": "Hero (Main) Image",
                 "description": "Front facing, cropped above lip to above belly button."
             },
             {
-                "step_name": "1st Alternate for Bras",
+                "step_name": "1st Alternate",
                 "description": "Back facing, cropped in to garment."
             },
             {
-                "step_name": "2nd Alternate for Bras",
+                "step_name": "2nd Alternate",
                 "description": "Ghost view."
             },
             {
-                "step_name": "3rd Alternate for Bras (Recommended)",
-                "description": "Alternate detail. Highlight embellishments and design elements not captured in required shots if present."
-            },
-            {
-                "step_name": "Hero (Main) Image for Panties",
-                "description": "Front facing, crop above belly button to above knee (arms up)."
-            },
-            {
-                "step_name": "1st Alternate for Panties",
-                "description": "Back facing, cropped in to garment (arms up)."
-            },
-            {
-                "step_name": "2nd Alternate for Panties",
-                "description": "Ghost view."
-            },
-            {
-                "step_name": "3rd Alternate for Panties (Recommended)",
+                "step_name": "3rd Alternate",
                 "description": "Alternate detail. Highlight embellishments and design elements not captured in required shots if present."
             }
         ]
     },
     "graph": [
         {
-            "linkage": "Women\u2019s Intimates-(Apparel_Category)->Lingerie (Bras)-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
+            "linkage": "Women\u2019s Intimates-(Apparel_Category)->Lingerie (Bras)-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements",
+            "linkage_cypher": "CREATE (n1:Apparel_Category {name: 'Women\u2019s Intimates'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Lingerie (Bras)'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n4:image_requirements {name: 'image_requirements'})",
+            "linkage_gsql": "CREATE (n1:Apparel_Category {name: 'Women\u2019s Intimates'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Lingerie (Bras)'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n4:image_requirements {name: 'image_requirements'})"
         },
         {
-            "linkage": "Women\u2019s Intimates-(Apparel_Category)->Lingerie (Panties)-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
+            "linkage": "Women\u2019s Intimates-(Apparel_Category)->Lingerie (Panties)-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements",
+            "linkage_cypher": "CREATE (n1:Apparel_Category {name: 'Women\u2019s Intimates'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Lingerie (Panties)'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n4:image_requirements {name: 'image_requirements'})",
+            "linkage_gsql": "CREATE (n1:Apparel_Category {name: 'Women\u2019s Intimates'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Lingerie (Panties)'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n4:image_requirements {name: 'image_requirements'})"
         }
     ]
 }

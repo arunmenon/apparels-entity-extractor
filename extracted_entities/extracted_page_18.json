@@ -1,13 +1,33 @@
 {
     "apparel_category": "Women\u2019s Apparel",
-    "product_type": [
-        "Dresses",
-        "Rompers",
-        "Jumpsuits",
-        "Overalls"
-    ],
-    "guideline_concept": null,
+    "product_type": "Dresses",
+    "guideline_concept": "Photo Direction",
     "guidelines": {
+        "guideline_type": "Photo Direction",
+        "image_requirements": [
+            {
+                "step_name": "Hero (Main) Image",
+                "description": "Front facing, head to toe, unrecognizable."
+            },
+            {
+                "step_name": "1st Alternate",
+                "description": "Front facing, head to toe, unrecognizable."
+            },
+            {
+                "step_name": "2nd Alternate",
+                "description": "Back facing, head to toe, unrecognizable."
+            },
+            {
+                "step_name": "3rd Alternate",
+                "description": "Ghost view."
+            },
+            {
+                "step_name": "4th Alternate",
+                "description": "Alternate detail. Highlight embellishments and design elements not captured in required shots if present."
+            }
+        ]
+    },
+    "guidelines_jumpsuits": {
         "guideline_type": "Photo Direction",
         "image_requirements": [
             {
@@ -34,16 +54,14 @@
     },
     "graph": [
         {
-            "linkage": "Women\u2019s Apparel-(Apparel_Category)->Dresses-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
+            "linkage": "Women\u2019s Apparel-(Apparel_Category)->Dresses-(Product_Type)->Photo Direction-(Guideline_Type)->Image Requirements",
+            "linkage_cypher": "CREATE (n1:Apparel_Category {name: 'Women\u2019s Apparel'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Dresses'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n4:Image_Requirements {name: 'Image Requirements'})",
+            "linkage_gsql": "CREATE (n1:Apparel_Category {name: 'Women\u2019s Apparel'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Dresses'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n4:Image_Requirements {name: 'Image Requirements'})"
         },
         {
-            "linkage": "Women\u2019s Apparel-(Apparel_Category)->Rompers-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
-        },
-        {
-            "linkage": "Women\u2019s Apparel-(Apparel_Category)->Jumpsuits-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
-        },
-        {
-            "linkage": "Women\u2019s Apparel-(Apparel_Category)->Overalls-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
+            "linkage": "Women\u2019s Apparel-(Apparel_Category)->Rompers, Jumpsuits, and Overalls-(Product_Type)->Photo Direction-(Guideline_Type)->Image Requirements",
+            "linkage_cypher": "CREATE (n1:Apparel_Category {name: 'Women\u2019s Apparel'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Rompers, Jumpsuits, and Overalls'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n4:Image_Requirements {name: 'Image Requirements'})",
+            "linkage_gsql": "CREATE (n1:Apparel_Category {name: 'Women\u2019s Apparel'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Rompers, Jumpsuits, and Overalls'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n4:Image_Requirements {name: 'Image Requirements'})"
         }
     ]
 }

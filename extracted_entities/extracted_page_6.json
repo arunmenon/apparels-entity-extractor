@@ -1,0 +1,39 @@
+{
+    "apparel_category": null,
+    "product_type": null,
+    "guideline_concept": "Image Guidelines",
+    "guidelines": {
+        "guideline_type": "Photo Direction",
+        "image_requirements": [
+            {
+                "step_name": "High-quality imagery",
+                "description": "Increases conversion and decreases the likelihood of negative reviews or returns."
+            },
+            {
+                "step_name": "Optimal image count",
+                "description": "Improves SEO rankings and drives customers to your product pages."
+            },
+            {
+                "step_name": "Compliance with specifications",
+                "description": "Images that do not meet specifications may appear distorted and may not be published to the site."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Image Guidelines-(Guideline_Concept)->Photo Direction-(Image_Requirements)->High-quality imagery",
+            "linkage_cypher": "CREATE (n1:Guideline_Concept {name: 'Image Guidelines'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n3:Image_Requirements {name: 'High-quality imagery'})",
+            "linkage_gsql": "CREATE (n1:Guideline_Concept {name: 'Image Guidelines'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n3:Image_Requirements {name: 'High-quality imagery'})"
+        },
+        {
+            "linkage": "Image Guidelines-(Guideline_Concept)->Photo Direction-(Image_Requirements)->Optimal image count",
+            "linkage_cypher": "CREATE (n1:Guideline_Concept {name: 'Image Guidelines'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n3:Image_Requirements {name: 'Optimal image count'})",
+            "linkage_gsql": "CREATE (n1:Guideline_Concept {name: 'Image Guidelines'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n3:Image_Requirements {name: 'Optimal image count'})"
+        },
+        {
+            "linkage": "Image Guidelines-(Guideline_Concept)->Photo Direction-(Image_Requirements)->Compliance with specifications",
+            "linkage_cypher": "CREATE (n1:Guideline_Concept {name: 'Image Guidelines'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n3:Image_Requirements {name: 'Compliance with specifications'})",
+            "linkage_gsql": "CREATE (n1:Guideline_Concept {name: 'Image Guidelines'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n3:Image_Requirements {name: 'Compliance with specifications'})"
+        }
+    ]
+}

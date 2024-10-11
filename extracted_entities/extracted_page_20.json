@@ -6,7 +6,7 @@
         "guideline_type": "Photo Direction",
         "image_requirements": [
             {
-                "step_name": "Hero Image",
+                "step_name": "Hero (Main) Image",
                 "description": "Front facing, head to toe, unrecognizable."
             },
             {
@@ -19,22 +19,19 @@
             },
             {
                 "step_name": "3rd Alternate",
-                "description": "Front view, cropped in garment."
+                "description": "Front view, cropped in to garment."
             },
             {
                 "step_name": "4th Alternate",
                 "description": "Ghost view."
-            },
-            {
-                "step_name": "Recommended Detail",
-                "description": "Highlight embellishments and design elements not captured in required shots if present."
             }
         ]
     },
     "graph": [
         {
-            "linkage": "Women\u2019s Apparel-(Apparel_Category)->Outfit Sets-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
+            "linkage": "Women\u2019s Apparel-(Apparel_Category)->Outfit Sets-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements",
+            "linkage_cypher": "CREATE (n1:Apparel_Category {name: 'Women\u2019s Apparel'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Outfit Sets'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n4:image_requirements {name: 'image_requirements'})",
+            "linkage_gsql": "CREATE (n1:Apparel_Category {name: 'Women\u2019s Apparel'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Outfit Sets'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n4:image_requirements {name: 'image_requirements'})"
         }
-    ],
-    "summary": "The guidelines detail the photo direction for 'Outfit Sets' in Women's Apparel, specifying required images, including view angles and additional recommended details."
+    ]
 }

@@ -1,0 +1,21 @@
+{
+    "apparel_category": "Traditional Sporrans",
+    "guideline_concept": "Additional Attributes",
+    "guidelines": {
+        "guideline_type": "Attribute Requirements",
+        "attribute_requirements": [
+            {
+                "step_name": "Closure Type",
+                "description": "The type of fastener used to keep an item closed and to facilitate putting on the item."
+            }
+        ]
+    },
+    "graph": [
+        {
+            "linkage": "Traditional Sporrans-(Apparel_Category)->Additional Attributes-(Guideline_Concept)->Attribute Requirements-(Context_Specific_Label)",
+            "linkage_cypher": "CREATE (n1:Apparel_Category {name: 'Traditional Sporrans'})-[:HAS_PRODUCT_TYPE]->(n2:Guideline_Concept {name: 'Additional Attributes'})-[:FOLLOWS_GUIDELINE]->(n3:Attribute_Requirements {name: 'Attribute Requirements'})",
+            "linkage_gsql": "CREATE (n1:Apparel_Category {name: 'Traditional Sporrans'})-[:HAS_PRODUCT_TYPE]->(n2:Guideline_Concept {name: 'Additional Attributes'})-[:FOLLOWS_GUIDELINE]->(n3:Attribute_Requirements {name: 'Attribute Requirements'})"
+        }
+    ],
+    "summary": "The page outlines mandatory attributes for Traditional Sporrans, emphasizing the Closure Type as a required attribute that details the type of fastener used."
+}

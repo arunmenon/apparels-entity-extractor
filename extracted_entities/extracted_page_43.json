@@ -1,13 +1,13 @@
 {
     "apparel_category": "Men\u2019s Intimates",
-    "product_type": "Underwear",
+    "product_type": "Underwear Multipacks",
     "guideline_concept": "Photo Direction",
     "guidelines": {
         "guideline_type": "Photo Direction",
         "image_requirements": [
             {
                 "step_name": "Hero (Main) Image",
-                "description": "Lay down imagery that depicts the number of items in the pack."
+                "description": "Lay down imagery that depicts number of items in pack."
             },
             {
                 "step_name": "1st Alternate",
@@ -25,8 +25,14 @@
     },
     "graph": [
         {
-            "linkage": "Men\u2019s Intimates-(Apparel_Category)->Underwear-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements"
+            "linkage": "Men\u2019s Intimates-(Apparel_Category)->Underwear Multipacks-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements",
+            "linkage_cypher": "CREATE (n1:Apparel_Category {name: 'Men\u2019s Intimates'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Underwear Multipacks'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n4:image_requirements {name: 'image_requirements'})",
+            "linkage_gsql": "CREATE (n1:Apparel_Category {name: 'Men\u2019s Intimates'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Underwear Multipacks'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n4:image_requirements {name: 'image_requirements'})"
+        },
+        {
+            "linkage": "Photo Direction-(Guideline_Concept)->Photo Direction-(Guideline_Type)->image_requirements",
+            "linkage_cypher": "CREATE (n1:Guideline_Concept {name: 'Photo Direction'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n3:image_requirements {name: 'image_requirements'})",
+            "linkage_gsql": "CREATE (n1:Guideline_Concept {name: 'Photo Direction'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n3:image_requirements {name: 'image_requirements'})"
         }
-    ],
-    "summary": "The document provides photo direction guidelines for photographing men's intimates, specifically for underwear multipacks, detailing the required images to showcase the product effectively."
+    ]
 }

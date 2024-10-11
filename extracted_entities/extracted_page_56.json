@@ -1,55 +1,53 @@
 {
     "apparel_category": "Women\u2019s Swimwear",
-    "product_type": "Swimwear Separates (Tops)",
+    "product_type": [
+        "Swimwear Separates (Tops)",
+        "Swimwear Separates (Bottoms)"
+    ],
     "guideline_concept": "Photo Direction",
     "guidelines": {
         "guideline_type": "Photo Direction",
         "image_requirements": [
             {
-                "step_name": "Hero (Main) Image",
+                "step_name": "Hero Image (Tops)",
                 "description": "Front facing, cropped above lip to above belly button."
             },
             {
-                "step_name": "1st Alternate",
+                "step_name": "1st Alternate (Tops)",
                 "description": "Back facing, cropped above lip to above belly button reverse."
             },
             {
-                "step_name": "2nd Alternate",
+                "step_name": "2nd Alternate (Tops)",
                 "description": "Ghost view."
             },
             {
-                "step_name": "3rd Alternate",
-                "description": "Highlight embellishments and design elements not captured in required shots if present."
-            }
-        ]
-    },
-    "guidelines_2": {
-        "guideline_type": "Photo Direction",
-        "image_requirements": [
-            {
-                "step_name": "Hero (Main) Image",
+                "step_name": "Hero Image (Bottoms)",
                 "description": "Front facing, cropped above belly button to above the knees."
             },
             {
-                "step_name": "1st Alternate",
+                "step_name": "1st Alternate (Bottoms)",
                 "description": "Back facing, cropped above belly button to above the knees."
             },
             {
-                "step_name": "2nd Alternate",
+                "step_name": "2nd Alternate (Bottoms)",
                 "description": "Ghost view."
             },
             {
-                "step_name": "3rd Alternate",
-                "description": "Highlight embellishments and design elements not captured in required shots if present."
+                "step_name": "3rd Alternate (Tops and Bottoms)",
+                "description": "Alternate detail. Highlight embellishments and design elements not captured in required shots if present."
             }
         ]
     },
     "graph": [
         {
-            "linkage": "Women\u2019s Swimwear-(Apparel_Category)->Swimwear Separates (Tops)-(Product_Type)->Photo Direction-(Image_Requirements)"
+            "linkage": "Women\u2019s Swimwear-(Apparel_Category)->Swimwear Separates (Tops)-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements",
+            "linkage_cypher": "CREATE (n1:Apparel_Category {name: 'Women\u2019s Swimwear'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Swimwear Separates (Tops)'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n4:image_requirements {name: 'image_requirements'})",
+            "linkage_gsql": "CREATE (n1:Apparel_Category {name: 'Women\u2019s Swimwear'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Swimwear Separates (Tops)'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n4:image_requirements {name: 'image_requirements'})"
         },
         {
-            "linkage": "Women\u2019s Swimwear-(Apparel_Category)->Swimwear Separates (Bottoms)-(Product_Type)->Photo Direction-(Image_Requirements)"
+            "linkage": "Women\u2019s Swimwear-(Apparel_Category)->Swimwear Separates (Bottoms)-(Product_Type)->Photo Direction-(Guideline_Type)->image_requirements",
+            "linkage_cypher": "CREATE (n1:Apparel_Category {name: 'Women\u2019s Swimwear'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Swimwear Separates (Bottoms)'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n4:image_requirements {name: 'image_requirements'})",
+            "linkage_gsql": "CREATE (n1:Apparel_Category {name: 'Women\u2019s Swimwear'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Swimwear Separates (Bottoms)'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Photo Direction'})-[:HAS_REQUIREMENT]->(n4:image_requirements {name: 'image_requirements'})"
         }
     ]
 }
