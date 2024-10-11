@@ -1,13 +1,18 @@
 import unittest
-import json
 import os
-import query_loader  # Assuming query_loader contains your escape_special_characters and sanitize_query functions
+import json
+import sys
+
+# Add the helpers directory to the system path
+sys.path.append(os.path.join(os.path.dirname(__file__), '..', '..', '..', 'helpers'))
+
+from helpers import query_loader  # Import query_loader from helpers
 
 class TestQueryLoader(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        # Load test cases from config file
+        # Load test cases from the test_cases.json file inside the current directory
         config_file = os.path.join(os.path.dirname(__file__), 'test_cases.json')
         with open(config_file, 'r') as f:
             cls.test_cases = json.load(f)
