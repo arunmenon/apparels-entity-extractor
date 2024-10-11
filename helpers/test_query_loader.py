@@ -1,26 +1,28 @@
 import unittest
-import query_loader
+import json
+import os
+import query_loader  # Assuming query_loader contains your escape_special_characters and sanitize_query functions
 
 class TestQueryLoader(unittest.TestCase):
 
-    def test_escape_special_characters(self):
-        # Test simple escaping of single quotes
-        test_cases = [
-            ("Women's Apparel", "Women\\'s Apparel"),  # Single quote escaping
-            ("Men's Wear", "Men\\'s Wear")             # Another example of escaping
-        ]
+    @classmethod
+    def setUpClass(cls):
+        # Load test cases from config file
+        config_file = os.path.join(os.path.dirname(__file__), 'test_cases.json')
+        with open(config_file, 'r') as f:
+            cls.test_cases = json.load(f)
 
-        for test_input, expected_output in test_cases:
-            result = query_loader.escape_special_characters(test_input)
-            self.assertEqual(result, expected_output)
+    def test_escape_special_characters(self):
+        # Loop through each test case from config for escape_special_characters
+        for case in self.test_cases['escape_special_characters']:
+            result = query_loader.escape_special_characters(case['input'])
+            self.assertEqual(result, case['expected'], f"Failed for input: {case['input']}")
 
     def test_sanitize_query(self):
-        # Test query sanitization with single quotes inside the query
-        test_query = "CREATE (n1:Apparel_Category {name: 'Women's Apparel'})"
-        expected_sanitized_query = "CREATE (n1:Apparel_Category {name: 'Women\\'s Apparel'})"
-
-        sanitized_query = query_loader.sanitize_query(test_query)
-        self.assertEqual(sanitized_query, expected_sanitized_query)
+        # Loop through each test case from config for sanitize_query
+        for case in self.test_cases['sanitize_query']:
+            result = query_loader.sanitize_query(case['input'])
+            self.assertEqual(result, case['expected'], f"Failed for input: {case['input']}")
 
 if __name__ == '__main__':
     unittest.main()

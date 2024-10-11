@@ -1,0 +1,51 @@
+{
+    "escape_special_characters": [
+      {
+        "input": "Women's Apparel",
+        "expected": "Women\\'s Apparel"
+      },
+      {
+        "input": "Men's Wear",
+        "expected": "Men\\'s Wear"
+      },
+      {
+        "input": "O'Neil's Brand",
+        "expected": "O\\'Neil\\'s Brand"
+      },
+      {
+        "input": "",
+        "expected": ""
+      },
+      {
+        "input": "No single quote here",
+        "expected": "No single quote here"
+      },
+      {
+        "input": "Special characters: !@#$%^&*()",
+        "expected": "Special characters: !@#$%^&*()"
+      }
+    ],
+    "sanitize_query": [
+      {
+        "input": "CREATE (n1:Apparel_Category {name: 'Women's Apparel'})",
+        "expected": "CREATE (n1:Apparel_Category {name: 'Women\\'s Apparel'})"
+      },
+      {
+        "input": "CREATE (n1:Apparel_Category {name: 'O'Neil'})",
+        "expected": "CREATE (n1:Apparel_Category {name: 'O\\'Neil'})"
+      },
+      {
+        "input": "CREATE (n1:Apparel_Category {name: 'Photo Direction'})",
+        "expected": "CREATE (n1:Apparel_Category {name: 'Photo Direction'})"
+      },
+      {
+        "input": "CREATE (n1:Apparel_Category {name: 'Test with \"double quotes\" inside'})",
+        "expected": "CREATE (n1:Apparel_Category {name: 'Test with \"double quotes\" inside'})"
+      },
+      {
+        "input": "CREATE (n1:Apparel_Category {name: 'Multiple 'single' quotes inside'})",
+        "expected": "CREATE (n1:Apparel_Category {name: 'Multiple \\'single\\' quotes inside'})"
+      }
+    ]
+  }
+  
