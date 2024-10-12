@@ -1,6 +1,7 @@
 import os
 import requests
 import json
+import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from utils import encode_image
 
@@ -19,60 +20,79 @@ EXTRACTED_ENTITIES_DIR = "extracted_entities"  # Directory to save JSON files
 # Ensure the extracted entities directory exists
 os.makedirs(EXTRACTED_ENTITIES_DIR, exist_ok=True)
 
+# Retry configuration
+MAX_RETRIES = 5
+INITIAL_BACKOFF = 2  # seconds
+
 def gpt4_vision_entity_extraction(image_path):
-    """Send an image to GPT-4 Vision model for entity extraction."""
-    try:
-        base64_image = encode_image(image_path)
+    """Send an image to GPT-4 Vision model for entity extraction with retry and backoff logic."""
+    retries = 0
+    backoff = INITIAL_BACKOFF
 
-        headers = {
-            "Content-Type": "application/json",
-            "Authorization": f"Bearer {API_KEY}"
-        }
+    while retries < MAX_RETRIES:
+        try:
+            base64_image = encode_image(image_path)
 
-        payload = {
-            "model": MODEL,
-            "messages": [
-                {
-                    "role": "user",
-                    "content": [
-                        {"type": "text", "text": PROMPT},
-                        {
-                            "type": "image_url",
-                            "image_url": {
-                                "url": f"data:image/jpeg;base64,{base64_image}"
+            headers = {
+                "Content-Type": "application/json",
+                "Authorization": f"Bearer {API_KEY}"
+            }
+
+            payload = {
+                "model": MODEL,
+                "messages": [
+                    {
+                        "role": "user",
+                        "content": [
+                            {"type": "text", "text": PROMPT},
+                            {
+                                "type": "image_url",
+                                "image_url": {
+                                    "url": f"data:image/jpeg;base64,{base64_image}"
+                                }
                             }
-                        }
-                    ]
-                }
-            ],
-            "max_tokens": 2048
-        }
+                        ]
+                    }
+                ],
+                "max_tokens": 2048
+            }
 
-        response = requests.post("https://api.openai.com/v1/chat/completions", headers=headers, json=payload)
+            response = requests.post("https://api.openai.com/v1/chat/completions", headers=headers, json=payload)
 
-        # Check if we got a valid response from GPT-4
-        if response.status_code != 200:
-            print(f"API returned an error: {response.status_code} for image {image_path}")
+            # Check for 429 (Too Many Requests) and retry with backoff
+            if response.status_code == 429:
+                print(f"Rate limit reached for image {image_path}. Retrying in {backoff} seconds...")
+                time.sleep(backoff)  # Backoff before retrying
+                retries += 1
+                backoff *= 2  # Exponential backoff
+                continue  # Retry the request
+
+            # If other error status codes
+            if response.status_code != 200:
+                print(f"API returned an error: {response.status_code} for image {image_path}")
+                return None
+
+            result = response.json()
+
+            if 'choices' in result and result['choices']:
+                structured_response = result['choices'][0]['message']['content'].strip()
+                print(f"Structured Response: {structured_response}")  # Log the response for analysis
+
+                # Remove backticks and the "json" label if they are present
+                if structured_response.startswith("```json"):
+                    structured_response = structured_response.strip("```json").strip("```").strip()
+
+                return structured_response
+            else:
+                print(f"No valid response for {image_path}")
+                return None
+
+        except Exception as e:
+            print(f"Error processing image {image_path}: {e}")
             return None
 
-        result = response.json()
-
-        if 'choices' in result and result['choices']:
-            structured_response = result['choices'][0]['message']['content'].strip()
-            print(f"Structured Response: {structured_response}")  # Log the response for analysis
-
-            # Remove backticks and the "json" label if they are present
-            if structured_response.startswith("```json"):
-                structured_response = structured_response.strip("```json").strip("```").strip()
-
-            return structured_response
-        else:
-            print(f"No valid response for {image_path}")
-            return None
-
-    except Exception as e:
-        print(f"Error processing image {image_path}: {e}")
-        return None
+    print(f"Max retries reached for image {image_path}. Skipping.")
+    return None
 
 def process_images_with_gpt4():
     """Send all images in the directory to GPT-4 for entity extraction using multithreading."""
