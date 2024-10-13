@@ -9,10 +9,13 @@ from utils import encode_image
 with open("config.json", "r") as config_file:
     config = json.load(config_file)
 
+# Load the prompt from entity_extraction_prompt.txt
+with open("entity_extraction_prompt.txt", "r") as prompt_file:
+    PROMPT = prompt_file.read()
+
 # Set your API key and model from the config
 API_KEY = os.getenv('OPENAI_API_KEY', 'your_openai_api_key')
 MODEL = config['api_model']
-PROMPT = config['gpt4_prompt']
 GPT4_THREADS = config['gpt4_threads']  # Fetch the GPT-4 thread count
 IMAGES_DIR = "output_images"
 EXTRACTED_ENTITIES_DIR = "extracted_entities"  # Directory to save JSON files
@@ -23,6 +26,7 @@ os.makedirs(EXTRACTED_ENTITIES_DIR, exist_ok=True)
 # Retry configuration
 MAX_RETRIES = 5
 INITIAL_BACKOFF = 2  # seconds
+
 
 def gpt4_vision_entity_extraction(image_path):
     """Send an image to GPT-4 Vision model for entity extraction with retry and backoff logic."""
