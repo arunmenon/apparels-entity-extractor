@@ -36,20 +36,20 @@ Structure the response as follows:
   "graph": [
     {
       "linkage": "<Actual_Label_Value>-(Apparel_Category)-><Actual_Label_Value>-(Product_Type)-><Actual_Label_Value>-(Guideline_Type)-><Actual_Label_Value>-(Context_Specific_Label)-><Actual_Label_Value>-(Step_Name)",
-      "linkage_cypher": "CREATE (n1:Apparel_Category {name: '<Actual_Label_Value>'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: '<Actual_Label_Value>'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: '<Actual_Label_Value>'})-[:HAS_<Context_Specific_Label>]->(n4:<Context_Specific_Label> {name: '<Actual_Label_Value>'})-[:HAS_STEP]->(n5:Step {name: '<Actual_Label_Value>', description: '<description_of_the_step>'})",
-      "linkage_gsql": "CREATE (n1:Apparel_Category {name: '<Actual_Label_Value>'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: '<Actual_Label_Value>'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: '<Actual_Label_Value>'})-[:HAS_<Context_Specific_Label>]->(n4:<Context_Specific_Label> {name: '<Actual_Label_Value>'})-[:HAS_STEP]->(n5:Step {name: '<Actual_Label_Value>', description: '<description_of_the_step>'})"
+      "linkage_cypher": "CREATE (n1:Apparel_Category {name: '<Actual_Label_Value>'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: '<Actual_Label_Value>'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: '<Actual_Label_Value>'})-[:HAS_<Context_Specific_Label>]->(n4:<Context_Specific_Label> {name: '<Actual_Label_Value>'}) WITH n1, n2, n3, n4 UNWIND <context_specific_label_steps> AS step CREATE (n4)-[:HAS_STEP]->(n5:Step {name: step.step_name, description: step.description})",
+      "linkage_gsql": "CREATE (n1:Apparel_Category {name: '<Actual_Label_Value>'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: '<Actual_Label_Value>'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: '<Actual_Label_Value>'})-[:HAS_<Context_Specific_Label>]->(n4:<Context_Specific_Label> {name: '<Actual_Label_Value>'}) CREATE (n4)-[:HAS_STEP]->(n5:Step {name: '<Actual_Label_Value>', description: '<description_of_the_step>'})"
     },
     {
       "linkage": "<Actual_Label_Value>-(Guideline_Concept)-><Actual_Label_Value>-(Guideline_Type)-><Actual_Label_Value>-(Context_Specific_Label)-><Actual_Label_Value>-(Step_Name)",
-      "linkage_cypher": "CREATE (n1:Guideline_Concept {name: '<Actual_Label_Value>'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: '<Actual_Label_Value>'})-[:HAS_<Context_Specific_Label>]->(n3:<Context_Specific_Label> {name: '<Actual_Label_Value>'})-[:HAS_STEP]->(n4:Step {name: '<Actual_Label_Value>', description: '<description_of_the_step>'})",
-      "linkage_gsql": "CREATE (n1:Guideline_Concept {name: '<Actual_Label_Value>'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: '<Actual_Label_Value>'})-[:HAS_<Context_Specific_Label>]->(n3:<Context_Specific_Label> {name: '<Actual_Label_Value>'})-[:HAS_STEP]->(n4:Step {name: '<Actual_Label_Value>', description: '<description_of_the_step>'})"
+      "linkage_cypher": "CREATE (n1:Guideline_Concept {name: '<Actual_Label_Value>'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: '<Actual_Label_Value>'})-[:HAS_<Context_Specific_Label>]->(n3:<Context_Specific_Label> {name: '<Actual_Label_Value>'}) WITH n1, n2, n3 UNWIND <context_specific_label_steps> AS step CREATE (n3)-[:HAS_STEP]->(n4:Step {name: step.step_name, description: step.description})",
+      "linkage_gsql": "CREATE (n1:Guideline_Concept {name: '<Actual_Label_Value>'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: '<Actual_Label_Value>'})-[:HAS_<Context_Specific_Label>]->(n3:<Context_Specific_Label> {name: '<Actual_Label_Value>'}) CREATE (n3)-[:HAS_STEP]->(n4:Step {name: '<Actual_Label_Value>', description: '<description_of_the_step>'})"
     }
   ]
 }
 
 - **Graph**: Represent the logical flow of concepts based on the **Guideline_Type**, extending the linkage to include individual steps or attributes (leaf nodes). Use the format **Actual_Label-(Node_Type)** to ensure both the actual values and node types are represented. For the linkage between **Apparel_Category** and **Product_Type**, use the relationship **HAS_PRODUCT_TYPE**. Similarly, extend the linkage from **Context_Specific_Label** to each **step_name** using the relationship **HAS_STEP**.
 
-- **Cypher and GSQL Queries**: For each linkage, generate **Cypher** and **GSQL** create queries using the format **Actual_Label-(Node_Type)**. Ensure each node and relationship is accurately captured in the query, including the extended linkage to the individual steps or attributes.
+- **Cypher and GSQL Queries**: For each linkage, generate **Cypher** create queries using the format **Actual_Label-(Node_Type)** with the UNWIND clause for steps, and **GSQL** create queries using the same format without the UNWIND clause. Ensure each node and relationship is accurately captured in the query, including the extended linkage to the individual steps or attributes.
 
 - **Summary**: Provide a concise summary of the content on the page. Avoid hallucinations and focus only on summarizing what's explicitly stated.
 
