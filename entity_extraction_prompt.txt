@@ -14,6 +14,8 @@ Based on the **`guideline_type`**, adapt the structure for relevant information.
 
 - For **Product Name Guidelines**: Use the label `formula` for the naming convention, and `example` to capture the specific naming examples.
 
+- For **Attribute Guidelines**: Use the label `attribute_requirements` to capture specific attributes of the apparel, such as `sleeve style`, `closure type`, etc.
+
 - For other guideline types, select an appropriate label to represent the key details.
 
 Structure the response as follows:
@@ -34,13 +36,13 @@ Structure the response as follows:
   "graph": [
     {
       "linkage": "<Actual_Label_Value>-(Apparel_Category)-><Actual_Label_Value>-(Product_Type)-><Actual_Label_Value>-(Guideline_Type)-><Actual_Label_Value>-(Context_Specific_Label)-><Actual_Label_Value>-(Step_Name)",
-      "linkage_cypher": "CREATE (n1:Apparel_Category {name: '<Actual_Label_Value>'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: '<Actual_Label_Value>'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: '<Actual_Label_Value>'})-[:HAS_<Context_Specific_Label>]->(n4:<Context_Specific_Label> {name: '<Actual_Label_Value>'})-[:HAS_STEP]->(n5:Step {name: '<Actual_Label_Value>'})",
-      "linkage_gsql": "CREATE (n1:Apparel_Category {name: '<Actual_Label_Value>'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: '<Actual_Label_Value>'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: '<Actual_Label_Value>'})-[:HAS_<Context_Specific_Label>]->(n4:<Context_Specific_Label> {name: '<Actual_Label_Value>'})-[:HAS_STEP]->(n5:Step {name: '<Actual_Label_Value>'})"
+      "linkage_cypher": "CREATE (n1:Apparel_Category {name: '<Actual_Label_Value>'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: '<Actual_Label_Value>'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: '<Actual_Label_Value>'})-[:HAS_<Context_Specific_Label>]->(n4:<Context_Specific_Label> {name: '<Actual_Label_Value>'})-[:HAS_STEP]->(n5:Step {name: '<Actual_Label_Value>', description: '<description_of_the_step>'})",
+      "linkage_gsql": "CREATE (n1:Apparel_Category {name: '<Actual_Label_Value>'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: '<Actual_Label_Value>'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: '<Actual_Label_Value>'})-[:HAS_<Context_Specific_Label>]->(n4:<Context_Specific_Label> {name: '<Actual_Label_Value>'})-[:HAS_STEP]->(n5:Step {name: '<Actual_Label_Value>', description: '<description_of_the_step>'})"
     },
     {
       "linkage": "<Actual_Label_Value>-(Guideline_Concept)-><Actual_Label_Value>-(Guideline_Type)-><Actual_Label_Value>-(Context_Specific_Label)-><Actual_Label_Value>-(Step_Name)",
-      "linkage_cypher": "CREATE (n1:Guideline_Concept {name: '<Actual_Label_Value>'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: '<Actual_Label_Value>'})-[:HAS_<Context_Specific_Label>]->(n3:<Context_Specific_Label> {name: '<Actual_Label_Value>'})-[:HAS_STEP]->(n4:Step {name: '<Actual_Label_Value>'})",
-      "linkage_gsql": "CREATE (n1:Guideline_Concept {name: '<Actual_Label_Value>'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: '<Actual_Label_Value>'})-[:HAS_<Context_Specific_Label>]->(n3:<Context_Specific_Label> {name: '<Actual_Label_Value>'})-[:HAS_STEP]->(n4:Step {name: '<Actual_Label_Value>'})"
+      "linkage_cypher": "CREATE (n1:Guideline_Concept {name: '<Actual_Label_Value>'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: '<Actual_Label_Value>'})-[:HAS_<Context_Specific_Label>]->(n3:<Context_Specific_Label> {name: '<Actual_Label_Value>'})-[:HAS_STEP]->(n4:Step {name: '<Actual_Label_Value>', description: '<description_of_the_step>'})",
+      "linkage_gsql": "CREATE (n1:Guideline_Concept {name: '<Actual_Label_Value>'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: '<Actual_Label_Value>'})-[:HAS_<Context_Specific_Label>]->(n3:<Context_Specific_Label> {name: '<Actual_Label_Value>'})-[:HAS_STEP]->(n4:Step {name: '<Actual_Label_Value>', description: '<description_of_the_step>'})"
     }
   ]
 }
