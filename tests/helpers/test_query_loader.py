@@ -26,6 +26,7 @@ class TestQueryLoader(unittest.TestCase):
     def test_sanitize_query(self):
         # Loop through each test case from config for sanitize_query
         for case in self.test_cases['sanitize_query']:
+            self.maxDiff = None
             result = query_loader.sanitize_query(case['input'])
             self.assertEqual(result, case['expected'], f"Failed for input: {case['input']}")
 

@@ -1,56 +1,111 @@
-Extract entities from this page image in a structured hierarchy based on the apparel style guide for Walmart fashion. Ensure the structure includes either:
+### **Extract entities from this page image in a structured hierarchy based on the apparel style guide for Walmart fashion. Ensure the structure includes either:**
 
-- **Apparel_Category**: (for apparel-related guidelines) Specify the category of apparel (e.g., 'Women’s Swimwear', 'Men’s Lower Body'). Omit if not applicable.
+1. **Apparel_Category**: (for apparel-related guidelines) Specify the category of apparel (e.g., 'Women’s Swimwear', 'Men’s Lower Body'). Omit if not applicable.
 
-- **Product_Type**: (for apparel-related guidelines) Specify the product type (e.g., 'Rash Guards', 'Leggings', 'Shapewear'). If multiple product types are mentioned, split them into separate entries. Omit if not applicable.
+2. **Product_Type**: (for apparel-related guidelines) Specify the product type (e.g., 'Rash Guards', 'Leggings', 'Shapewear'). If multiple product types are mentioned, split them into separate entries. Omit if not applicable.
 
-- **Guideline_Concept**: (for non-apparel-related guidelines) Use this field to capture top-level concepts such as 'Copy Standards', 'Grouping Standards', 'Product Naming Guidelines'. Use this when the page does not refer to specific apparel categories or product types.
+3. **Guideline_Concept**: (for non-apparel-related guidelines) Use this field to capture top-level concepts such as 'Copy Standards', 'Grouping Standards', 'Product Naming Guidelines'. Use this when the page does not refer to specific apparel categories or product types.
 
-Based on the **`guideline_type`**, adapt the structure for relevant information. For example:
+### **Guideline Structure Based on `guideline_type`**:
+Adapt the structure based on the **`guideline_type`** to ensure appropriate labeling. For example:
 
-- For **Photo Direction**: Use the label `image_requirements` to capture the steps required to complete the photo direction (e.g., 'Hero Image', 'Alternate Image', etc.).
+- **Photo Direction**: Use the label `image_requirements` to capture the steps required (e.g., 'Hero Image', 'Alternate Image', etc.).
+- **Copy Standards**: Use the label `writing_guidelines` to capture tone, voice, and copy-related rules.
+- **Product Name Guidelines**: Use the label `formula` for the naming convention and `example` to capture naming examples.
+- **Attribute Guidelines**: Use `attribute_requirements` to capture specific attributes like `sleeve style`, `closure type`, etc.
+- For other guideline types, use an appropriate label to represent key details.
 
-- For **Copy Standards**: Use the label `writing_guidelines` to capture the tone, voice, and specific copy-related rules.
+### **Structure the Response**:
+Ensure the response is structured in a consistent JSON format, focusing primarily on the **Cypher query** as follows:
 
-- For **Product Name Guidelines**: Use the label `formula` for the naming convention, and `example` to capture the specific naming examples.
-
-- For **Attribute Guidelines**: Use the label `attribute_requirements` to capture specific attributes of the apparel, such as `sleeve style`, `closure type`, etc.
-
-- For other guideline types, select an appropriate label to represent the key details.
-
-Structure the response as follows:
-
+```json
 {
-  "apparel_category": "<name_of_apparel_category>",  (if applicable),
-  "product_type": "<name_of_product_type>",  (if applicable),
-  "guideline_concept": "<Copy Standards, Grouping Standards, Product Naming Guidelines, etc.>",  (if applicable),
-  "guidelines": {
-    "guideline_type": "<Photo Direction, Product Name Guidelines, Grouping Standards, etc.",
-    "<context_specific_label>": [
-      {
-        "step_name": "<name_of_step_or_attribute>",
-        "description": "<description_or_formula_of_the_step_or_example>"
-      }
-    ]
-  },
-  "graph": [
-    {
-      "linkage": "<Actual_Label_Value>-(Apparel_Category)-><Actual_Label_Value>-(Product_Type)-><Actual_Label_Value>-(Guideline_Type)-><Actual_Label_Value>-(Context_Specific_Label)-><Actual_Label_Value>-(Step_Name)",
-      "linkage_cypher": "CREATE (n1:Apparel_Category {name: '<Actual_Label_Value>'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: '<Actual_Label_Value>'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: '<Actual_Label_Value>'})-[:HAS_<Context_Specific_Label>]->(n4:<Context_Specific_Label> {name: '<Actual_Label_Value>'}) WITH n1, n2, n3, n4 UNWIND <context_specific_label_steps> AS step CREATE (n4)-[:HAS_STEP]->(n5:Step {name: step.step_name, description: step.description})",
-      "linkage_gsql": "CREATE (n1:Apparel_Category {name: '<Actual_Label_Value>'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: '<Actual_Label_Value>'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: '<Actual_Label_Value>'})-[:HAS_<Context_Specific_Label>]->(n4:<Context_Specific_Label> {name: '<Actual_Label_Value>'}) CREATE (n4)-[:HAS_STEP]->(n5:Step {name: '<Actual_Label_Value>', description: '<description_of_the_step>'})"
-    },
-    {
-      "linkage": "<Actual_Label_Value>-(Guideline_Concept)-><Actual_Label_Value>-(Guideline_Type)-><Actual_Label_Value>-(Context_Specific_Label)-><Actual_Label_Value>-(Step_Name)",
-      "linkage_cypher": "CREATE (n1:Guideline_Concept {name: '<Actual_Label_Value>'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: '<Actual_Label_Value>'})-[:HAS_<Context_Specific_Label>]->(n3:<Context_Specific_Label> {name: '<Actual_Label_Value>'}) WITH n1, n2, n3 UNWIND <context_specific_label_steps> AS step CREATE (n3)-[:HAS_STEP]->(n4:Step {name: step.step_name, description: step.description})",
-      "linkage_gsql": "CREATE (n1:Guideline_Concept {name: '<Actual_Label_Value>'})-[:FOLLOWS_GUIDELINE]->(n2:Guideline_Type {name: '<Actual_Label_Value>'})-[:HAS_<Context_Specific_Label>]->(n3:<Context_Specific_Label> {name: '<Actual_Label_Value>'}) CREATE (n3)-[:HAS_STEP]->(n4:Step {name: '<Actual_Label_Value>', description: '<description_of_the_step>'})"
-    }
-  ]
+  "cypher_query": "MERGE (n1:Apparel_Category {name: '<Actual_Label_Value>'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: '<Actual_Label_Value>'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: '<Actual_Label_Value>'})-[:HAS_<Context_Specific_Label>]->(n4:<Context_Specific_Label> {name: '<Actual_Label_Value>'}) WITH n1, n2, n3, n4 UNWIND <context_specific_label_steps> AS step MERGE (n4)-[:HAS_STEP]->(n5:Step {name: step.step_name, description: step.description})"
 }
+```
 
-- **Graph**: Represent the logical flow of concepts based on the **Guideline_Type**, extending the linkage to include individual steps or attributes (leaf nodes). Use the format **Actual_Label-(Node_Type)** to ensure both the actual values and node types are represented. For the linkage between **Apparel_Category** and **Product_Type**, use the relationship **HAS_PRODUCT_TYPE**. Similarly, extend the linkage from **Context_Specific_Label** to each **step_name** using the relationship **HAS_STEP**.
+### **Critical Rules for Cypher Query Construction**:
 
-- **Cypher and GSQL Queries**: For each linkage, generate **Cypher** create queries using the format **Actual_Label-(Node_Type)** with the UNWIND clause for steps, and **GSQL** create queries using the same format without the UNWIND clause. Ensure each node and relationship is accurately captured in the query, including the extended linkage to the individual steps or attributes.
+1. **Hierarchy Handling**:
+   - **Apparel_Category** nodes are at the top level.
+   - **Product_Type** nodes are children of **Apparel_Category**.
+   - **Guideline_Type** nodes are children of **Product_Type** (or **Guideline_Concept** if non-apparel related).
+   - **Steps** (or attributes) are children of **Guideline_Type**.
 
-- **Summary**: Provide a concise summary of the content on the page. Avoid hallucinations and focus only on summarizing what's explicitly stated.
+2. **Upsert Operations (MERGE)**:
+   - **Always use `MERGE`** for **Apparel_Category** and **Product_Type** to avoid creating duplicate nodes.
+   - Example for upsert operation:
+   
+   ```cypher
+   MERGE (n1:Apparel_Category {name: 'Men’s Swimwear'})
+   MERGE (n2:Product_Type {name: 'Rash Guards'})
+   MERGE (n1)-[:HAS_PRODUCT_TYPE]->(n2)
+   ```
 
-Return the response in valid JSON format, ensuring that all fields follow this structure. Ensure accuracy and focus on the specific content of the page image.
+3. **Use of UNWIND**:
+   - **Group Queries Using UNWIND**: When creating multiple steps under the same **Guideline_Type**, always use **UNWIND** to avoid generating separate **CREATE** queries for each step. Example format:
+
+   ```cypher
+   UNWIND [
+     {step_name: 'Step 1', description: 'Description 1'},
+     {step_name: 'Step 2', description: 'Description 2'}
+   ] AS step
+   MERGE (n4)-[:HAS_STEP]->(n5:Step {name: step.step_name, description: step.description})
+   ```
+
+4. **Multiple Product Types**:
+   - If multiple **Product_Type** entries exist for the same **Apparel_Category**, create separate **Product_Type** nodes and attach them to the same **Apparel_Category**.
+   - Each **Product_Type** should have its own **Guideline_Type**, linked to **Apparel_Category** via the `HAS_PRODUCT_TYPE` relationship.
+
+   Example:
+
+   ```cypher
+   MERGE (n1:Apparel_Category {name: 'Men’s Swimwear'})
+   MERGE (n2:Product_Type {name: 'Rash Guards'})
+   MERGE (n3:Product_Type {name: 'Board Shorts'})
+   MERGE (n1)-[:HAS_PRODUCT_TYPE]->(n2)
+   MERGE (n1)-[:HAS_PRODUCT_TYPE]->(n3)
+   ```
+
+5. **Guideline_Type and Steps**:
+   - Ensure **Guideline_Type** nodes are properly connected to their respective **Product_Type** or **Guideline_Concept**. Use `[:FOLLOWS_GUIDELINE]` to connect.
+   - Always use **UNWIND** for batch creation of steps under each guideline, as mentioned.
+
+6. **Avoid Separate CREATE Queries for Each Step**:
+   - **Do Not Generate Separate CREATE Queries**: Instead of creating multiple queries for each step, group the steps into a single **UNWIND** query for efficiency and conciseness.
+   
+7. **WITH Clause Between MERGE and UNWIND**:
+   - **Always use `WITH` between `MERGE` and `UNWIND`**: This is required to pass variables between the `MERGE` operations and the `UNWIND` operation to ensure that the correct context is carried forward.
+   
+   Example:
+
+   ```cypher
+   MERGE (n1:Apparel_Category {name: 'Men’s Apparel'})
+   MERGE (n2:Product_Type {name: 'Suits'})
+   MERGE (n1)-[:HAS_PRODUCT_TYPE]->(n2)
+   MERGE (n3:Guideline_Type {name: 'Photo Direction'})
+   MERGE (n2)-[:FOLLOWS_GUIDELINE]->(n3)
+   WITH n3
+   UNWIND [
+     {step_name: 'Hero Image', description: 'Front facing, head to toe, unrecognizable.'},
+     {step_name: '1st Alternate', description: 'Front facing, head to toe, unrecognizable.'}
+   ] AS step
+   MERGE (n3)-[:HAS_STEP]->(n4:Step {name: step.step_name, description: step.description})
+   ```
+
+8. **Relationship Type Rules**:
+   - **HAS_PRODUCT_TYPE**: Between **Apparel_Category** and **Product_Type**.
+   - **FOLLOWS_GUIDELINE**: Between **Product_Type** (or **Apparel_Category**) and **Guideline_Type**.
+   - **HAS_<Context_Specific_Label>**: Between **Guideline_Type** and specific context (e.g., **HAS_image_requirements** or **HAS_attribute_requirements**).
+   - **HAS_STEP**: Between **Guideline_Type** and each **Step**.
+
+### **Special Character Handling**:
+- **Sanitizing Cypher Queries**: To prevent syntax errors, sanitize the Cypher queries by properly escaping special characters like single quotes (`'`) and backslashes (`\`).
+  - Escape single quotes within strings by replacing `'` with `\'` to avoid conflicts.
+  - Ensure that all special characters within **description** fields are escaped without removing the text.
+  - **Use UNWIND** when handling multiple steps to ensure consistency in escaping across all steps.
+
+### **General Guidelines for Cypher Queries**:
+- Focus on constructing **well-formed** and **efficient** Cypher queries.
+- Avoid generating queries too quickly—ensure the Cypher is well-thought-out to prevent issues like broken relationships, missed nodes, or improperly escaped characters.
+- Validate query logic for proper node-to-node relationships, especially when adding multiple **Product_Type** or **Guideline_Type** nodes.

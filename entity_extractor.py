@@ -2,6 +2,7 @@ import os
 import requests
 import json
 import time
+import sys
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from utils import encode_image
 
@@ -19,6 +20,9 @@ MODEL = config['api_model']
 GPT4_THREADS = config['gpt4_threads']  # Fetch the GPT-4 thread count
 IMAGES_DIR = "output_images"
 EXTRACTED_ENTITIES_DIR = "extracted_entities"  # Directory to save JSON files
+
+# Optional: Get NUM_FILES from environment variable or command-line argument
+NUM_FILES = int(os.getenv('NUM_FILES', sys.argv[1]) if len(sys.argv) > 1 else -1)
 
 # Ensure the extracted entities directory exists
 os.makedirs(EXTRACTED_ENTITIES_DIR, exist_ok=True)
@@ -58,7 +62,8 @@ def gpt4_vision_entity_extraction(image_path):
                         ]
                     }
                 ],
-                "max_tokens": 2048
+                "max_tokens": 2048,
+                "temperature": 0
             }
 
             response = requests.post("https://api.openai.com/v1/chat/completions", headers=headers, json=payload)
@@ -80,11 +85,18 @@ def gpt4_vision_entity_extraction(image_path):
 
             if 'choices' in result and result['choices']:
                 structured_response = result['choices'][0]['message']['content'].strip()
-                print(f"Structured Response: {structured_response}")  # Log the response for analysis
+
+                # Debugging: Log the raw response before any processing
+                print(f"Raw structured response: {structured_response}")
 
                 # Remove backticks and the "json" label if they are present
                 if structured_response.startswith("```json"):
                     structured_response = structured_response.strip("```json").strip("```").strip()
+
+                
+                # Ensure valid JSON structure, add braces if necessary
+                if not structured_response.startswith('{') and not structured_response.endswith('}'):
+                    structured_response = '{' + structured_response + '}'
 
                 return structured_response
             else:
@@ -102,6 +114,10 @@ def process_images_with_gpt4():
     """Send all images in the directory to GPT-4 for entity extraction using multithreading."""
     images = [os.path.join(IMAGES_DIR, img) for img in os.listdir(IMAGES_DIR) if img.endswith(".png")]
 
+    # If NUM_FILES is passed, limit the number of files to process
+    if NUM_FILES > 0:
+        images = images[:NUM_FILES]
+
     with ThreadPoolExecutor(max_workers=GPT4_THREADS) as executor:
         futures = {executor.submit(gpt4_vision_entity_extraction, img_path): img_path for img_path in images}
 
@@ -114,16 +130,16 @@ def process_images_with_gpt4():
                 print(f"Raw response for image {image_path}: {response}")
 
                 if response:
-                    # Extract image name (or page number) to name the JSON file
-                    img_name = os.path.splitext(os.path.basename(image_path))[0]
-                    output_file = os.path.join(EXTRACTED_ENTITIES_DIR, f"extracted_{img_name}.json")
-                    
                     # Ensure that the response is valid JSON before saving
                     try:
                         json_response = json.loads(response)
-                    except json.JSONDecodeError:
-                        print(f"Error: Invalid JSON for image {image_path}. Skipping this image.")
+                    except json.JSONDecodeError as e:
+                        print(f"Error: Invalid JSON for image {image_path}. Error: {e}. Skipping this image.")
                         continue
+                    
+                    # Extract image name (or page number) to name the JSON file
+                    img_name = os.path.splitext(os.path.basename(image_path))[0]
+                    output_file = os.path.join(EXTRACTED_ENTITIES_DIR, f"extracted_{img_name}.json")
                     
                     # Save the structured response in a separate JSON file for each image
                     with open(output_file, "w") as f:

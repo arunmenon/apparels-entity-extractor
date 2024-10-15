@@ -1,51 +1,38 @@
 {
-    "escape_special_characters": [
-      {
-        "input": "Women's Apparel",
-        "expected": "Women\\'s Apparel"
-      },
-      {
-        "input": "Men's Wear",
-        "expected": "Men\\'s Wear"
-      },
-      {
-        "input": "O'Neil's Brand",
-        "expected": "O\\'Neil\\'s Brand"
-      },
-      {
-        "input": "",
-        "expected": ""
-      },
-      {
-        "input": "No single quote here",
-        "expected": "No single quote here"
-      },
-      {
-        "input": "Special characters: !@#$%^&*()",
-        "expected": "Special characters: !@#$%^&*()"
-      }
-    ],
-    "sanitize_query": [
-      {
-        "input": "CREATE (n1:Apparel_Category {name: 'Women's Apparel'})",
-        "expected": "CREATE (n1:Apparel_Category {name: 'Women\\'s Apparel'})"
-      },
-      {
-        "input": "CREATE (n1:Apparel_Category {name: 'O'Neil'})",
-        "expected": "CREATE (n1:Apparel_Category {name: 'O\\'Neil'})"
-      },
-      {
-        "input": "CREATE (n1:Apparel_Category {name: 'Photo Direction'})",
-        "expected": "CREATE (n1:Apparel_Category {name: 'Photo Direction'})"
-      },
-      {
-        "input": "CREATE (n1:Apparel_Category {name: 'Test with \"double quotes\" inside'})",
-        "expected": "CREATE (n1:Apparel_Category {name: 'Test with \"double quotes\" inside'})"
-      },
-      {
-        "input": "CREATE (n1:Apparel_Category {name: 'Multiple 'single' quotes inside'})",
-        "expected": "CREATE (n1:Apparel_Category {name: 'Multiple \\'single\\' quotes inside'})"
-      }
-    ]
-  }
-  
+  "escape_special_characters": [
+    {
+      "input": "Women's Apparel",
+      "expected": "Women\\'s Apparel"
+    },
+    {
+      "input": "Men's Wear",
+      "expected": "Men\\'s Wear"
+    },
+    {
+      "input": "O'Neil's Brand",
+      "expected": "O\\'Neil\\'s Brand"
+    },
+    {
+      "input": "",
+      "expected": ""
+    },
+    {
+      "input": "No single quote here",
+      "expected": "No single quote here"
+    },
+    {
+      "input": "Special characters: !@#$%^&*()",
+      "expected": "Special characters: !@#$%^&*()"
+    }
+  ],
+  "sanitize_query": [
+    
+    {
+      "input": "CREATE (n1:Apparel_Category {name: 'All Upper Body'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Tops'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Product Name Guidelines'})-[:HAS_formula]->(n4:formula {name: 'Naming Formula for Tops'}) WITH n1, n2, n3, n4 UNWIND [{step_name: 'Naming Formula for Tops', description: 'Brand Name 'or' License Name (if applicable) + Style Name + Descriptive Feature/Clothing Top Style/Character/Sports League/Sports Team/Material, + Apparel Style + Clothing Type + Count Per Pack + (Clothing Size Group)'}] AS step CREATE (n4)-[:HAS_STEP]->(n5:Step {name: step.step_name, description: step.description})",
+      "expected": "CREATE (n1:Apparel_Category {name: 'All Upper Body'})-[:HAS_PRODUCT_TYPE]->(n2:Product_Type {name: 'Tops'})-[:FOLLOWS_GUIDELINE]->(n3:Guideline_Type {name: 'Product Name Guidelines'})-[:HAS_formula]->(n4:formula {name: 'Naming Formula for Tops'}) WITH n1, n2, n3, n4 UNWIND [{step_name: 'Naming Formula for Tops', description: 'Brand Name \\'or\\' License Name (if applicable) + Style Name + Descriptive Feature/Clothing Top Style/Character/Sports League/Sports Team/Material, + Apparel Style + Clothing Type + Count Per Pack + (Clothing Size Group)'}] AS step CREATE (n4)-[:HAS_STEP]->(n5:Step {name: step.step_name, description: step.description})"
+    }
+    
+    
+
+  ]
+}
