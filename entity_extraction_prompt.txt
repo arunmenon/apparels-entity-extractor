@@ -33,17 +33,26 @@ Ensure the response is structured in a consistent JSON format, focusing primaril
    - **Steps** (or attributes) are children of **Guideline_Type**.
 
 2. **Upsert Operations (MERGE)**:
-   - **Always use `MERGE`** for **Apparel_Category** and **Product_Type** to avoid creating duplicate nodes.
-   - Example for upsert operation:
+   - **Always use `MERGE`** for **Apparel_Category** and **Product_Type** to avoid creating duplicate nodes. This ensures that nodes are only created if they do not already exist.
+   - Ensure that the relationships between nodes are created in the correct order.
    
+   Example for upsert operation:
+
    ```cypher
    MERGE (n1:Apparel_Category {name: 'Men’s Swimwear'})
    MERGE (n2:Product_Type {name: 'Rash Guards'})
    MERGE (n1)-[:HAS_PRODUCT_TYPE]->(n2)
    ```
 
-3. **Use of UNWIND**:
-   - **Group Queries Using UNWIND**: When creating multiple steps under the same **Guideline_Type**, always use **UNWIND** to avoid generating separate **CREATE** queries for each step. Example format:
+3. **Avoid Duplication of Relationships**:
+   - When using `MERGE`, avoid duplicating relationships. If the same relationship already exists, `MERGE` will not create a new one.
+
+   ```cypher
+   MERGE (n1)-[:HAS_PRODUCT_TYPE]->(n2)
+   ```
+
+4. **Use of UNWIND for Batch Processing**:
+   - **Group Queries Using UNWIND**: When creating multiple steps or attributes under the same **Guideline_Type**, always use **UNWIND** to avoid generating separate **CREATE** or **MERGE** queries for each step. Example format:
 
    ```cypher
    UNWIND [
@@ -53,10 +62,11 @@ Ensure the response is structured in a consistent JSON format, focusing primaril
    MERGE (n4)-[:HAS_STEP]->(n5:Step {name: step.step_name, description: step.description})
    ```
 
-4. **Multiple Product Types**:
-   - If multiple **Product_Type** entries exist for the same **Apparel_Category**, create separate **Product_Type** nodes and attach them to the same **Apparel_Category**.
-   - Each **Product_Type** should have its own **Guideline_Type**, linked to **Apparel_Category** via the `HAS_PRODUCT_TYPE` relationship.
+   **Key Consideration**: Always use `WITH` to pass variables between the `MERGE` and `UNWIND` operations to ensure that subsequent operations have access to the appropriate variables.
 
+5. **Multiple Product Types**:
+   - If multiple **Product_Type** entries exist for the same **Apparel_Category**, ensure that each **Product_Type** has its own **Guideline_Type**. Link each **Product_Type** to the **Apparel_Category** with the appropriate `HAS_PRODUCT_TYPE` relationship.
+   
    Example:
 
    ```cypher
@@ -67,15 +77,22 @@ Ensure the response is structured in a consistent JSON format, focusing primaril
    MERGE (n1)-[:HAS_PRODUCT_TYPE]->(n3)
    ```
 
-5. **Guideline_Type and Steps**:
-   - Ensure **Guideline_Type** nodes are properly connected to their respective **Product_Type** or **Guideline_Concept**. Use `[:FOLLOWS_GUIDELINE]` to connect.
-   - Always use **UNWIND** for batch creation of steps under each guideline, as mentioned.
+6. **Guideline_Type and Steps**:
+   - Ensure **Guideline_Type** nodes are properly connected to their respective **Product_Type** or **Guideline_Concept**. Use `[:FOLLOWS_GUIDELINE]` to connect **Product_Type** to **Guideline_Type**.
+   - Always use **UNWIND** for batch creation of steps under each guideline, as mentioned. For example:
 
-6. **Avoid Separate CREATE Queries for Each Step**:
-   - **Do Not Generate Separate CREATE Queries**: Instead of creating multiple queries for each step, group the steps into a single **UNWIND** query for efficiency and conciseness.
-   
+   ```cypher
+   MERGE (n3:Guideline_Type {name: 'Photo Direction'})
+   WITH n3
+   UNWIND [
+     {step_name: 'Hero Image', description: 'Front facing, cropped above lip to below fingertips.'},
+     {step_name: '1st Alternate', description: 'Back facing, cropped to just below hairline.'}
+   ] AS step
+   MERGE (n3)-[:HAS_STEP]->(n4:Step {name: step.step_name, description: step.description})
+   ```
+
 7. **WITH Clause Between MERGE and UNWIND**:
-   - **Always use `WITH` between `MERGE` and `UNWIND`**: This is required to pass variables between the `MERGE` operations and the `UNWIND` operation to ensure that the correct context is carried forward.
+   - **Always use `WITH` between `MERGE` and `UNWIND`**: The `WITH` clause is required to pass variables between the `MERGE` operations and the `UNWIND` operation. This ensures that the subsequent `UNWIND` operation can reference nodes created in the `MERGE` step.
    
    Example:
 
@@ -88,12 +105,15 @@ Ensure the response is structured in a consistent JSON format, focusing primaril
    WITH n3
    UNWIND [
      {step_name: 'Hero Image', description: 'Front facing, head to toe, unrecognizable.'},
-     {step_name: '1st Alternate', description: 'Front facing, head to toe, unrecognizable.'}
+     {step_name: '1st Alternate', description: 'Back facing, cropped to just below hairline.'}
    ] AS step
    MERGE (n3)-[:HAS_STEP]->(n4:Step {name: step.step_name, description: step.description})
    ```
 
-8. **Relationship Type Rules**:
+8. **Avoid Separate Queries for Each Step**:
+   - **Avoid creating separate queries for each step**. Use **UNWIND** to batch process steps in a single query for performance and consistency.
+
+9. **Relationship Type Rules**:
    - **HAS_PRODUCT_TYPE**: Between **Apparel_Category** and **Product_Type**.
    - **FOLLOWS_GUIDELINE**: Between **Product_Type** (or **Apparel_Category**) and **Guideline_Type**.
    - **HAS_<Context_Specific_Label>**: Between **Guideline_Type** and specific context (e.g., **HAS_image_requirements** or **HAS_attribute_requirements**).
