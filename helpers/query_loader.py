@@ -15,7 +15,7 @@ def escape_special_characters(value):
     return value
 
 def sanitize_query(query):
-    return sanitize_query_desc(sanitize_query_name(query))
+    pass
 
 def sanitize_query_name(query):
     """
@@ -87,8 +87,8 @@ def load_queries_from_json(directory, query_type):
                 if query_type == 'cypher' and 'cypher_query' in data:
                     query = data['cypher_query']
                     # Sanitize the query by escaping special characters
-                    sanitized_query = sanitize_query(query)
-                    queries.append(sanitized_query)
+                    #sanitized_query = sanitize_query(query)
+                    queries.append(query)
                 elif query_type == 'gsql' and 'gsql_query' in data:
                     query = data['gsql_query']
                     # Sanitize the query by escaping special characters
