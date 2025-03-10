@@ -11,6 +11,7 @@ The solution extracts key information hierarchically, ensuring that the content 
 - **Attribute Extraction**: Captures specific attributes (e.g., caliber, material, purpose) that define prohibited or allowed items
 - **Knowledge Graph Integration**: Loads extracted data into a graph database with a schema optimized for compliance queries
 - **Multi-Threaded Processing**: Supports multi-threaded image conversion and LLM processing to handle multiple pages in parallel
+- **Imperium Rules Integration**: Processes rule expressions from the Imperium Rules DB into structured graph objects
 
 ## Knowledge Graph Schema
 - **Offensive_Content_Category**: Top-level categorization (e.g., "Firearms & Accessories")
@@ -46,6 +47,9 @@ The system uses a configurable `config.json` file to define key parameters. Belo
 - **compliance_graph_loader.py**: Loads extracted entities into a graph database
 - **graph_db/**: Contains database interface and implementation classes
 - **extracted_entities/**: Stores the extracted JSON files for each processed page
+- **rule_expression_parser.py**: Parses Imperium rule expressions into structured JSON
+- **rule_graph_loader.py**: Loads parsed rule expressions into the graph database
+- **process_imperium_rules.py**: Main script for processing Imperium rules
 
 ## How to Run
 1. Install required dependencies:
@@ -67,6 +71,21 @@ The system uses a configurable `config.json` file to define key parameters. Belo
 5. Load entities into graph database:
    ```bash
    python compliance_graph_loader.py
+   ```
+
+6. Process Imperium rules from Excel file:
+   ```bash
+   # Test with a small sample
+   python process_imperium_rules.py --parse --num-rules 5
+   
+   # Load parsed rules into graph
+   python process_imperium_rules.py --load
+   
+   # Run the complete workflow
+   python process_imperium_rules.py --all --num-rules 100
+   
+   # Process all rules (may take a long time)
+   python process_imperium_rules.py --all --num-rules 0
    ```
 
 ## Example Output

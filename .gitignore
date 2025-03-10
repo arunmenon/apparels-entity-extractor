@@ -13,6 +13,11 @@ output_images/
 compliance_context*.json
 extracted_entities_*/
 extracted_entities/*.json
+extracted_entities/
+
+# Imperium rules data
+*.xlsx
+parsed_rules/
 # Distribution / packaging
 .Python
 build/
