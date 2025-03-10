@@ -8,7 +8,7 @@ import json
 with open("config.json", "r") as config_file:
     config = json.load(config_file)
 
-PDF_PATH = "StyleGuide.pdf"
+PDF_PATH = "/Users/arunmenon/Downloads/notes.pdf"
 OUTPUT_DIR = "output_images"
 IMAGE_THREADS = config['image_threads']  # Fetch the image thread count
 

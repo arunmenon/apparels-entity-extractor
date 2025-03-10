@@ -8,6 +8,11 @@ __pycache__/
 .DS* 
 output_images/
 *.pdf
+
+# Extracted entities and context files
+compliance_context*.json
+extracted_entities_*/
+extracted_entities/*.json
 # Distribution / packaging
 .Python
 build/

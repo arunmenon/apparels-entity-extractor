@@ -51,19 +51,66 @@ class EntityContextManager:
         # Extract key information
         cypher_query = extraction_result.get('cypher_query', '')
         
-        # Update context with any entities found in this extraction
+        # Handle category normalization - without hardcoding any specific category
         if 'offensive_content_category' in extraction_result:
             category = extraction_result['offensive_content_category'].get('name')
             if category:
-                self.entity_context['offensive_content_category'][category] = {
-                    'last_seen': time.time(),
-                    'page': page_num
-                }
-                print(f"Page {page_num}: Discovered category '{category}'")
+                # Check if this is the first category we've seen
+                if not self.entity_context['offensive_content_category']:
+                    # This is the first category - use it as the primary category
+                    self.entity_context['offensive_content_category'][category] = {
+                        'last_seen': time.time(),
+                        'page': page_num,
+                        'is_primary': True
+                    }
+                    print(f"Page {page_num}: Set primary category '{category}'")
+                else:
+                    # We already have at least one category
+                    # Check if this is a variant of an existing category
+                    primary_category = None
+                    for existing_cat, info in self.entity_context['offensive_content_category'].items():
+                        if info.get('is_primary'):
+                            primary_category = existing_cat
+                            break
+                    
+                    if primary_category and category != primary_category:
+                        # Similar category detected - normalize to primary
+                        print(f"Page {page_num}: Normalizing category '{category}' to primary '{primary_category}'")
+                        extraction_result['offensive_content_category']['name'] = primary_category
+                        category = primary_category
+                        
+                        # Add this as an alias for the primary category
+                        if 'aliases' not in self.entity_context['offensive_content_category'][primary_category]:
+                            self.entity_context['offensive_content_category'][primary_category]['aliases'] = []
+                        
+                        if category not in self.entity_context['offensive_content_category'][primary_category]['aliases']:
+                            self.entity_context['offensive_content_category'][primary_category]['aliases'].append(category)
+                    
+                    # Update timestamp for this category
+                    self.entity_context['offensive_content_category'][category] = {
+                        'last_seen': time.time(),
+                        'page': page_num,
+                        'is_primary': category == primary_category
+                    }
+                    print(f"Page {page_num}: Updated category '{category}'")
         
         if 'sub_category' in extraction_result:
             subcategory = extraction_result['sub_category'].get('name')
             parent = extraction_result.get('offensive_content_category', {}).get('name')
+            
+            # If parent category is missing, set to primary category
+            if not parent:
+                primary_category = None
+                for cat, info in self.entity_context['offensive_content_category'].items():
+                    if info.get('is_primary'):
+                        primary_category = cat
+                        break
+                
+                if primary_category:
+                    parent = primary_category
+                    extraction_result['offensive_content_category'] = {'name': parent}
+                    print(f"Page {page_num}: Setting primary category '{parent}' for orphaned subcategory '{subcategory}'")
+            
             if subcategory:
                 self.entity_context['sub_category'][subcategory] = {
                     'parent_category': parent,

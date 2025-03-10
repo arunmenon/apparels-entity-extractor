@@ -1,5 +1,5 @@
 {
-  "api_model": "gpt-4o-mini",
+  "api_model": "gpt-4o",
   "image_threads": 6,
   "gpt4_threads": 3
 }
