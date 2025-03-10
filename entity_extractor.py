@@ -5,6 +5,7 @@ import time
 import sys
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from utils import encode_image
+from entity_context_manager import EntityContextManager
 
 # Load the configuration from config.json
 with open("config.json", "r") as config_file:
@@ -20,6 +21,7 @@ MODEL = config['api_model']
 GPT4_THREADS = config['gpt4_threads']  # Fetch the GPT-4 thread count
 IMAGES_DIR = "output_images"
 EXTRACTED_ENTITIES_DIR = "extracted_entities"  # Directory to save JSON files
+CONTEXT_FILE = "compliance_context.json"  # File to store the context between pages
 
 # Optional: Get NUM_FILES from environment variable or command-line argument
 NUM_FILES = int(os.getenv('NUM_FILES', sys.argv[1]) if len(sys.argv) > 1 else -1)
@@ -31,9 +33,12 @@ os.makedirs(EXTRACTED_ENTITIES_DIR, exist_ok=True)
 MAX_RETRIES = 5
 INITIAL_BACKOFF = 2  # seconds
 
+# Initialize the entity context manager for tracking relationships across pages
+context_manager = EntityContextManager(CONTEXT_FILE)
 
-def gpt4_vision_entity_extraction(image_path):
-    """Send an image to GPT-4 Vision model for entity extraction with retry and backoff logic."""
+
+def gpt4_vision_compliance_extraction(image_path):
+    """Send an image to GPT-4 Vision model for compliance entity extraction with retry and backoff logic."""
     retries = 0
     backoff = INITIAL_BACKOFF
 
@@ -62,7 +67,7 @@ def gpt4_vision_entity_extraction(image_path):
                         ]
                     }
                 ],
-                "max_tokens": 2048,
+                "max_tokens": 3072,  # Increased token limit for complex compliance rules
                 "temperature": 0
             }
 
@@ -110,16 +115,19 @@ def gpt4_vision_entity_extraction(image_path):
     print(f"Max retries reached for image {image_path}. Skipping.")
     return None
 
-def process_images_with_gpt4():
-    """Send all images in the directory to GPT-4 for entity extraction using multithreading."""
+def process_compliance_images_with_gpt4():
+    """Send all compliance document images in the directory to GPT-4 for entity extraction using multithreading."""
+    # Get a sorted list of images to ensure we process them in order by page number
     images = [os.path.join(IMAGES_DIR, img) for img in os.listdir(IMAGES_DIR) if img.endswith(".png")]
+    images.sort(key=lambda x: int(os.path.splitext(os.path.basename(x))[0].split("_")[-1]
+                               if "_" in os.path.basename(x) else 0))
 
     # If NUM_FILES is passed, limit the number of files to process
     if NUM_FILES > 0:
         images = images[:NUM_FILES]
 
     with ThreadPoolExecutor(max_workers=GPT4_THREADS) as executor:
-        futures = {executor.submit(gpt4_vision_entity_extraction, img_path): img_path for img_path in images}
+        futures = {executor.submit(gpt4_vision_compliance_extraction, img_path): img_path for img_path in images}
 
         for future in as_completed(futures):
             image_path = futures[future]
@@ -133,22 +141,30 @@ def process_images_with_gpt4():
                     # Ensure that the response is valid JSON before saving
                     try:
                         json_response = json.loads(response)
+                        
+                        # Extract page number from filename
+                        img_name = os.path.splitext(os.path.basename(image_path))[0]
+                        page_num = int(img_name.split("_")[-1]) if "_" in img_name else 0
+                        
+                        # Process this page with context tracking
+                        enriched_response = context_manager.process_page_extraction(page_num, json_response)
+                        
+                        # Save the enriched response to JSON
+                        output_file = os.path.join(EXTRACTED_ENTITIES_DIR, f"extracted_{img_name}.json")
+                        with open(output_file, "w") as f:
+                            json.dump(enriched_response, f, indent=4)
+                        
+                        print(f"Saved context-enriched compliance entities for {image_path} to {output_file}.")
                     except json.JSONDecodeError as e:
                         print(f"Error: Invalid JSON for image {image_path}. Error: {e}. Skipping this image.")
                         continue
-                    
-                    # Extract image name (or page number) to name the JSON file
-                    img_name = os.path.splitext(os.path.basename(image_path))[0]
-                    output_file = os.path.join(EXTRACTED_ENTITIES_DIR, f"extracted_{img_name}.json")
-                    
-                    # Save the structured response in a separate JSON file for each image
-                    with open(output_file, "w") as f:
-                        json.dump(json_response, f, indent=4)
-                    print(f"Saved entities for {image_path} to {output_file}.")
             except Exception as e:
                 print(f"Error processing result for image {image_path}: {e}")
 
+    # After processing all pages, generate Cypher for any orphaned rules
+    context_manager.generate_cypher_for_orphaned_rules()
+
 if __name__ == "__main__":
-    print("Starting GPT-4 Vision extraction...")
-    process_images_with_gpt4()
-    print("GPT-4 Vision extraction complete.")
+    print("Starting GPT-4 Vision compliance extraction with context tracking...")
+    process_compliance_images_with_gpt4()
+    print("GPT-4 Vision compliance extraction complete with context tracking.")

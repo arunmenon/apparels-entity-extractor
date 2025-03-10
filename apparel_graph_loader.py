@@ -31,7 +31,7 @@ def process_queries_in_batches(graph_db_strategy, query_type):
     graph_db_strategy.close()
 
 if __name__ == "__main__":
-    print("Starting graph query execution in batches...")
+    print("Starting compliance graph query execution in batches...")
 
     # Load the appropriate graph database strategy using the factory
     graph_db_strategy = GraphDatabaseFactory.create_graph_database_strategy()
@@ -42,4 +42,4 @@ if __name__ == "__main__":
     # Process the queries
     process_queries_in_batches(graph_db_strategy, query_type)
 
-    print("All queries executed successfully.")
+    print("All compliance queries executed successfully.")
