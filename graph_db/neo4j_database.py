@@ -20,6 +20,26 @@ class Neo4jDatabase(GraphDatabaseStrategy):
         # Skip database creation for Neo4j Community Edition
         print("Skipping database creation. Make sure you're using the default 'neo4j' database in the Community Edition.")
 
+    def execute_query(self, query):
+        """Execute a single query."""
+        print(f"Executing query (first 100 chars): {query[:100]}...")
+        success = False
+        
+        with self.driver.session(database=self.database) as session:
+            try:
+                result = session.run(query)
+                success = True
+                print("Query executed successfully")
+            except Exception as e:
+                print(f"Error executing query: {str(e)}")
+                # Log the failed query to a separate file for review
+                timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+                failed_query_log = f"failed_query_{timestamp}.log"
+                with open(failed_query_log, "a") as log_file:
+                    log_file.write(f"Failed query:\n{query}\nError: {str(e)}\n\n")
+        
+        return success
+    
     def execute_batch(self, queries):
         print(f"Executing batch with {len(queries)} queries...")
         attempted_queries = []

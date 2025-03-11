@@ -15,6 +15,11 @@ class TigerGraphDatabase(GraphDatabaseStrategy):
         # Implement logic to ensure database exists (if applicable)
         pass
 
+    def execute_query(self, query):
+        # Implement single query execution for TigerGraph (GSQL)
+        print(f"TigerGraph would execute: {query[:100]}...")
+        return True
+        
     def execute_batch(self, queries):
         # Implement batch execution for TigerGraph queries (GSQL)
         pass

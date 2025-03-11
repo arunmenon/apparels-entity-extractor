@@ -144,16 +144,16 @@ def generate_cypher_for_expression_node(node, parent_ref=None, node_id=1):
         field_ref = f"f{next_id}"
         next_id += 1
         cypher += f"""
-        MERGE (field:Field {{name: "{field}"}})
-        CREATE ({current_ref})-[:HAS_FIELD]->(field)
+        MERGE (field_{field_ref}:Field {{name: "{field}"}})
+        CREATE ({current_ref})-[:HAS_FIELD]->(field_{field_ref})
         """
         
         # Create operator node if not exists and link to comparison
         op_ref = f"op{next_id}"
         next_id += 1
         cypher += f"""
-        MERGE (op:Operator {{type: "{operator}"}})
-        CREATE ({current_ref})-[:HAS_OPERATOR]->(op)
+        MERGE (op_{op_ref}:Operator {{type: "{operator}"}})
+        CREATE ({current_ref})-[:HAS_OPERATOR]->(op_{op_ref})
         """
         
         # Create value nodes and link to comparison

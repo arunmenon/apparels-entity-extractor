@@ -9,14 +9,17 @@ class MockDatabase:
         self.connected = False
     
     def connect(self):
+        print("MOCK: Connecting to database...")
         self.connected = True
         return True
     
     def close(self):
+        print("MOCK: Closing database connection...")
         self.connected = False
         return True
     
     def create_database_if_not_exists(self):
+        print("MOCK: Creating database if it doesn't exist...")
         return True
     
     def execute_query(self, query):
@@ -24,6 +27,7 @@ class MockDatabase:
         return True
     
     def execute_batch(self, queries):
+        print(f"MOCK: Executing batch of {len(queries)} queries...")
         for query in queries:
             self.execute_query(query)
         return True

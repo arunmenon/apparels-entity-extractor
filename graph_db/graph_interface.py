@@ -10,6 +10,11 @@ class GraphDatabaseStrategy(ABC):
     def create_database_if_not_exists(self):
         """Create the database if it doesn't exist."""
         pass
+    
+    @abstractmethod
+    def execute_query(self, query):
+        """Execute a single query."""
+        pass
 
     @abstractmethod
     def execute_batch(self, queries):
