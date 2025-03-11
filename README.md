@@ -73,25 +73,22 @@ The system uses a configurable `config.json` file to define key parameters. Belo
    python compliance_graph_loader.py
    ```
 
-6. Test the Imperium rule processing flow (currently disabled in main flow):
+6. Process Imperium rules from Excel file:
    ```bash
-   # Run test with mock data
-   python test_rule_flow.py
+   # Test with mock data (no database or API key required)
+   python process_imperium_rules.py --all --mock
    
-   # Note: The main Imperium rule processing flow is currently disabled
-   # To enable it, edit process_imperium_rules.py and uncomment the implementation
-   ```
-   
-   When enabled, the Imperium rule processing can be used as follows:
-   ```bash
-   # Test with a small sample
+   # Parse a small sample of real rules (requires OpenAI API key)
    python process_imperium_rules.py --parse --num-rules 5
    
-   # Load parsed rules into graph
+   # Load parsed rules into graph database
    python process_imperium_rules.py --load
    
-   # Run the complete workflow
+   # Run the complete workflow with real data
    python process_imperium_rules.py --all --num-rules 100
+   
+   # Process all rules (may take a long time)
+   python process_imperium_rules.py --all --num-rules 0
    ```
 
 ## Example Output
