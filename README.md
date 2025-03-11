@@ -11,6 +11,7 @@ This project extracts structured compliance data from product policy documents (
 - **Attribute Extraction**: Captures specific attributes (e.g., caliber, material) that define rules
 - **Knowledge Graph Integration**: Loads extracted data into a Neo4j graph database
 - **Multi-Threaded Processing**: Handles multiple pages in parallel for faster processing
+- **Hybrid TOC Processing**: Specialized detection and extraction for Table of Contents pages
 
 ## Knowledge Graph Schema
 - **Offensive_Content_Category**: Top-level categories (e.g., "Firearms & Accessories")
@@ -147,6 +148,7 @@ Use the Cypher queries in `experimental/cypher_queries.md` to explore and analyz
 
 - **entity_extractor.py**: Main script for extracting entities from images
 - **entity_extraction_prompt.txt**: Prompt for GPT-4 Vision with extraction instructions
+- **toc_extraction_prompt.txt**: Specialized prompt for Table of Contents pages
 - **pdf_to_images.py**: Converts PDF to images for processing
 - **compliance_graph_loader.py**: Loads extracted entities into Neo4j
 - **process_rules_imperium.py**: Loads Imperium rules from Excel into Neo4j
@@ -182,6 +184,35 @@ The `experimental` directory contains various tools for testing and verification
 - **JSON Parsing Errors**: Check extracted JSON files for formatting issues
 
 ## Advanced Usage
+
+### Hybrid TOC Processing Architecture
+
+The system implements a sophisticated approach to handle Table of Contents (TOC) pages in compliance documents:
+
+#### Page Type Detection
+- The `is_table_of_contents()` function sends small API requests to analyze each page
+- It identifies three distinct page types:
+  - **FULL_TOC**: Pages that primarily contain a Table of Contents
+  - **HYBRID**: Pages with both TOC elements and detailed content
+  - **REGULAR**: Standard content pages with no TOC elements
+
+#### Dual-Extraction Process
+For TOC and hybrid pages, the system employs a specialized prompt that:
+1. Extracts the main category and ALL subcategories from TOC sections
+2. Simultaneously processes any detailed content using the same extraction rules as regular pages
+3. Ensures entities are created exactly once (no duplication if a subcategory appears in TOC and detailed sections)
+
+#### Benefits of the Hybrid Approach
+- **Early Structure Construction**: Builds a comprehensive skeleton of categories/subcategories from the beginning
+- **Context Enrichment**: Provides rich context for subsequent pages that may not explicitly mention parent categories
+- **Flexible Document Handling**: Works with documents that interleave TOC elements with detailed content
+- **Enhanced Entity Relationships**: Ensures guidelines and rules connect to the correct subcategories in the hierarchy
+
+#### Implementation Details
+TOC processing is implemented through:
+- A dedicated TOC detection function in `entity_extractor.py`
+- A specialized `toc_extraction_prompt.txt` optimized for extracting both TOC structure and detailed content
+- Special handling of hybrid pages with both TOC elements and detailed content
 
 ### Batch Processing
 For large PDFs, process in batches:

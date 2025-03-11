@@ -12,9 +12,78 @@ from entity_context_manager import EntityContextManager
 with open("config.json", "r") as config_file:
     config = json.load(config_file)
 
-# Load the prompt from entity_extraction_prompt.txt
+# Load the standard prompt from entity_extraction_prompt.txt
 with open("entity_extraction_prompt.txt", "r") as prompt_file:
     PROMPT = prompt_file.read()
+
+# Load TOC prompt if it exists, otherwise create default
+TOC_PROMPT_FILE = "toc_extraction_prompt.txt"
+try:
+    with open(TOC_PROMPT_FILE, "r") as toc_file:
+        TOC_PROMPT = toc_file.read()
+except FileNotFoundError:
+    # Default TOC prompt if file doesn't exist
+    TOC_PROMPT = """You are a specialized AI assistant for extracting structured data from compliance documents with Table of Contents pages.
+
+TASK:
+This page appears to contain a Table of Contents, but may also contain detailed subcategory information. Your job is to:
+1. Extract all subcategories listed in the Table of Contents
+2. ALSO extract any detailed content about specific subcategories if present (rules, guidelines, etc.)
+
+The document follows a hierarchical structure:
+- Offensive_Content_Category (main category like "Firearms & Accessories")
+- Sub_Category (specific subcategories like "Ammunition", "Firearm Parts")
+- Guidelines (rules and policies related to subcategories)
+- Rules (specific prohibition or allowance rules, identified by rule IDs)
+
+DUAL EXTRACTION PROCESS:
+- From the TOC section: Extract the main category and ALL listed subcategories
+- From any detailed content: Extract subcategory details, guidelines, and rules using the same approach as regular pages
+
+RESPONSE FORMAT:
+Provide a Neo4j Cypher query that creates ALL identified entities:
+1. The main Offensive_Content_Category node
+2. ALL Sub_Category nodes found in both TOC and detailed sections
+3. ALL Guidelines and Rules that appear in detailed sections 
+4. All appropriate relationships
+
+Example response structure:
+```
+{
+  "cypher_query": "
+    MERGE (occ:Offensive_Content_Category {name: 'Main Category Name'})
+    
+    // Subcategories from TOC
+    MERGE (sc1:Sub_Category {name: 'Subcategory 1'})
+    MERGE (occ)-[:HAS_SUB_CATEGORY]->(sc1)
+    MERGE (sc2:Sub_Category {name: 'Subcategory 2'})
+    MERGE (occ)-[:HAS_SUB_CATEGORY]->(sc2)
+    
+    // If detailed subcategory content exists
+    MERGE (g:Guideline {description: 'Detailed guideline for Subcategory 1'})
+    MERGE (sc1)-[:HAS_GUIDELINE]->(g)
+    
+    // Rules if they exist (with both ID-based and descriptive options)
+    MERGE (ir:Imperium_Rule {rule_id: '1234', description: 'Specific rule'})
+    MERGE (g)-[:PROHIBITS]->(ir)
+    
+    MERGE (pr:Policy_Rule {description: 'Policy rule without ID'})
+    MERGE (g)-[:PROHIBITS]->(pr)
+  "
+}
+```
+
+IMPORTANT NOTES:
+1. Process the ENTIRE page - both TOC sections and any detailed content
+2. If a subcategory appears in the TOC AND has details elsewhere on the page, create it only ONCE
+3. For any subcategory with detailed content, extract guidelines and rules as you would for regular pages
+4. Use PROHIBITS/ALLOWS relationship types exactly as shown (not as variables)
+5. Always link the entities to maintain proper hierarchy"""
+    
+    # Write the default prompt to a file for future use
+    with open(TOC_PROMPT_FILE, "w") as toc_file:
+        toc_file.write(TOC_PROMPT)
+    print(f"Created default TOC prompt file: {TOC_PROMPT_FILE}")
 
 # Set your API key and model from the config
 API_KEY = os.getenv('OPENAI_API_KEY', '')
@@ -38,6 +107,82 @@ INITIAL_BACKOFF = 2  # seconds
 context_manager = EntityContextManager(CONTEXT_FILE)
 
 
+def is_table_of_contents(image_path):
+    """Detect if the image is a Table of Contents page or contains TOC sections."""
+    try:
+        base64_image = encode_image(image_path)
+
+        headers = {
+            "Content-Type": "application/json",
+            "Authorization": f"Bearer {API_KEY}"
+        }
+
+        # Enhanced prompt to detect TOC and hybrid pages
+        toc_detection_prompt = """Analyze this document page carefully. Does it appear to contain any of the following:
+1. A full Table of Contents page
+2. A partial Table of Contents section
+3. A list of categories or subcategories that resembles a TOC
+4. A mix of TOC and detailed content about specific categories
+
+Respond with ONE of these exact options:
+- "FULL_TOC" if it's primarily a Table of Contents page
+- "HYBRID" if it contains both TOC elements and detailed category content
+- "REGULAR" if it's a regular content page with no TOC elements"""
+
+        # Payload for TOC detection
+        payload = {
+            "model": MODEL,
+            "messages": [
+                {
+                    "role": "user",
+                    "content": [
+                        {"type": "text", "text": toc_detection_prompt},
+                        {
+                            "type": "image_url",
+                            "image_url": {
+                                "url": f"data:image/png;base64,{base64_image}"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "max_tokens": 50,
+            "temperature": 0
+        }
+
+        response = requests.post("https://api.openai.com/v1/chat/completions", headers=headers, json=payload)
+        response.raise_for_status()
+        
+        result = response.json()
+        if "choices" in result and result['choices']:
+            content = result["choices"][0]["message"]["content"].strip().upper()
+            print(f"Page type detection for {image_path}: {content}")
+            
+            # Both FULL_TOC and HYBRID should use the TOC prompt
+            if "FULL_TOC" in content or "HYBRID" in content:
+                return True
+                
+            # Better debug logging
+            if "HYBRID" in content:
+                print(f"Detected hybrid TOC/content page for {image_path}")
+            elif "FULL_TOC" in content:
+                print(f"Detected full TOC page for {image_path}")
+            else:
+                print(f"Detected regular content page for {image_path}")
+                
+        return False
+    
+    except Exception as e:
+        print(f"Error detecting page type in {image_path}: {str(e)}")
+        if hasattr(e, 'response') and e.response:
+            try:
+                error_detail = e.response.json()
+                print(f"API error details: {error_detail}")
+            except:
+                print(f"Response status code: {e.response.status_code}")
+                print(f"Response text: {e.response.text}")
+        return False
+
 def gpt4_vision_compliance_extraction(image_path):
     """Send an image to GPT-4 Vision model for compliance entity extraction with retry and backoff logic."""
     retries = 0
@@ -52,17 +197,30 @@ def gpt4_vision_compliance_extraction(image_path):
                 "Authorization": f"Bearer {API_KEY}"
             }
 
+            # Print model being used for debugging
+            print(f"Using model: {MODEL}")
+            
+            # Check if this is a TOC page and use appropriate prompt
+            is_toc = is_table_of_contents(image_path)
+            
+            # Select the prompt based on page type
+            current_prompt = TOC_PROMPT if is_toc else PROMPT
+            
+            if is_toc:
+                print(f"Using TOC prompt for {image_path}")
+            
+            # Updated payload structure compatible with both gpt-4o and vision models
             payload = {
                 "model": MODEL,
                 "messages": [
                     {
                         "role": "user",
                         "content": [
-                            {"type": "text", "text": PROMPT},
+                            {"type": "text", "text": current_prompt},
                             {
                                 "type": "image_url",
                                 "image_url": {
-                                    "url": f"data:image/jpeg;base64,{base64_image}"
+                                    "url": f"data:image/png;base64,{base64_image}"
                                 }
                             }
                         ]
@@ -84,7 +242,13 @@ def gpt4_vision_compliance_extraction(image_path):
 
             # If other error status codes
             if response.status_code != 200:
-                print(f"API returned an error: {response.status_code} for image {image_path}")
+                error_message = f"API returned an error: {response.status_code} for image {image_path}"
+                try:
+                    error_details = response.json()
+                    error_message += f" - Details: {error_details}"
+                except:
+                    pass
+                print(error_message)
                 return None
 
             result = response.json()
