@@ -10,6 +10,16 @@ def main():
     """
     Main entry point for processing Imperium rules
     """
+    print("NOTE: The Imperium rule processing flow is currently disabled.")
+    print("To enable it, uncomment the implementation in process_imperium_rules.py")
+    
+    # Return immediately without processing
+    return 0
+    
+    # ========================================================================
+    # RULE EXPRESSION PARSING IMPLEMENTATION - CURRENTLY DISABLED
+    # ========================================================================
+    """
     parser = argparse.ArgumentParser(description="Process Imperium rules from Excel file into graph database")
     parser.add_argument("--parse", action="store_true", help="Parse rule expressions from Excel file")
     parser.add_argument("--load", action="store_true", help="Load parsed rules into graph database")
@@ -62,6 +72,7 @@ def main():
     
     print("\nImperium rules processing completed successfully!")
     return 0
+    """
 
 if __name__ == "__main__":
     sys.exit(main())

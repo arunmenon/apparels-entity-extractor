@@ -2,15 +2,45 @@ import os
 from graph_db.neo4j_database import Neo4jDatabase
 from graph_db.tigergraph_database import TigerGraphDatabase
 
+class MockDatabase:
+    """Mock database class for testing without a real database connection"""
+    
+    def __init__(self):
+        self.connected = False
+    
+    def connect(self):
+        self.connected = True
+        return True
+    
+    def close(self):
+        self.connected = False
+        return True
+    
+    def create_database_if_not_exists(self):
+        return True
+    
+    def execute_query(self, query):
+        print(f"MOCK EXECUTION: {query[:100]}...")
+        return True
+    
+    def execute_batch(self, queries):
+        for query in queries:
+            self.execute_query(query)
+        return True
+
 class GraphDatabaseFactory:
     @staticmethod
     def create_graph_database_strategy():
         """Factory method to create a graph database strategy based on the environment configuration."""
+        # Check for mock mode
+        neo4j_uri = os.getenv("NEO4J_URI", "")
+        if neo4j_uri.lower() == "mock":
+            return MockDatabase()
+            
         graph_db_type = os.getenv("GRAPH_DB_TYPE", "neo4j").lower()
 
         if graph_db_type == "neo4j":
-            neo4j_uri = os.getenv("NEO4J_URI")
-            neo4j_username = os.getenv("NEO4J_USERNAME")
+            neo4j_username = os.getenv("NEO4J_USER")
             neo4j_password = os.getenv("NEO4J_PASSWORD")
             neo4j_database = os.getenv("NEO4J_DATABASE_NAME")
             return Neo4jDatabase(neo4j_uri, neo4j_username, neo4j_password, neo4j_database)

@@ -259,12 +259,6 @@ def load_rules_into_graph(num_rules=None):
         num_rules: Maximum number of rules to load (None for all)
     """
     try:
-        # Connect to the graph database
-        graph_db_strategy = GraphDatabaseFactory.create_graph_database_strategy()
-        
-        # Create indexes
-        create_indexes(graph_db_strategy)
-        
         # Get list of parsed rule files
         rule_files = [f for f in os.listdir(PARSED_RULES_DIR) if f.endswith('.json')]
         
@@ -274,8 +268,20 @@ def load_rules_into_graph(num_rules=None):
         
         print(f"Loading {len(rule_files)} rules into graph database...")
         
+        # Connect to the graph database (real or mock)
+        graph_db_strategy = GraphDatabaseFactory.create_graph_database_strategy()
+            
+        # Create indexes if using Neo4j
+        if graph_db_strategy.__class__.__name__ == "Neo4jDatabase":
+            create_indexes(graph_db_strategy)
+            
         # Connect to database
         graph_db_strategy.connect()
+        
+        # Check if we're using MockDatabase
+        is_mock = graph_db_strategy.__class__.__name__ == "MockDatabase"
+        if is_mock:
+            print("Running in MOCK mode - Cypher queries will be displayed but not executed")
         
         # Process rules in batches
         success_count = 0
@@ -287,13 +293,22 @@ def load_rules_into_graph(num_rules=None):
                 with open(file_path, 'r') as f:
                     rule_json = json.load(f)
                 
-                # Load rule into graph
+                # Get rule ID
                 rule_id = rule_json.get("rule_metadata", {}).get("rule_id", "unknown")
                 print(f"Processing rule {rule_id} ({i+1}/{len(rule_files)})")
                 
-                success = load_rule_into_graph(graph_db_strategy, rule_json)
-                if success:
-                    success_count += 1
+                # Generate Cypher query
+                cypher_query = generate_cypher_for_rule(rule_json)
+                
+                if is_mock:
+                    # Display the query in full for mock mode
+                    print(f"\n=== CYPHER QUERY for Rule {rule_id} ===")
+                    print(cypher_query)
+                    print("===================================\n")
+                    
+                # Execute the query using the database strategy
+                graph_db_strategy.execute_query(cypher_query)
+                success_count += 1
                 
                 # Commit every BATCH_SIZE rules
                 if (i + 1) % BATCH_SIZE == 0:
@@ -305,10 +320,13 @@ def load_rules_into_graph(num_rules=None):
         # Close connection
         graph_db_strategy.close()
         
-        print(f"Successfully loaded {success_count}/{len(rule_files)} rules into graph database")
+        print(f"Successfully processed {success_count}/{len(rule_files)} rules")
         
     except Exception as e:
         print(f"Error loading rules into graph: {e}")
+        
+    # Return the number of successfully processed rules
+    return success_count
 
 if __name__ == "__main__":
     # Check if parsed rules directory exists
