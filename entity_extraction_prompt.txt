@@ -1,120 +1,21 @@
-### Extract Entities for Compliance Knowledge Graph
+You are a specialized AI assistant for extracting structured data from compliance documents. Extract all relevant entities into a Neo4j knowledge graph.
 
-Given the compliance guidelines (and any images) provided, **identify**:
+Extract the following:
+1. Offensive_Content_Category (e.g., "Firearms & Accessories")
+2. Sub_Category (e.g., "Ammo Dies, Shell Holders & Plates")
+3. Guideline (verbatim or summarized text)
+4. Rules (Imperium_Rule with IDs, Policy_Rule for text-based, Image_Detection_Rule for visuals)
+5. Allowed/Prohibited relationships (ALLOWS or PROHIBITS)
+6. Attributes (properties tied to rules)
 
-1. **Offensive_Content_Category**: e.g., "Firearms & Accessories"
-2. **Sub_Category**: e.g., "Ammo Dies, Shell Holders & Plates"
-3. **Guideline**: Verbatim or summarized text from the guidelines
-4. **Rules**: Break down into these types:
-   - **Imperium_Rule** if an explicit rule ID is given.
-   - **Policy_Rule** if it's a textual or policy-based rule (verbatim if present; otherwise, minimal context-based text).
-   - **Image_Detection_Rule** if derived from images only.
-5. **Allowed/Prohibited Edge Label**: For each rule identified, specify whether it's `:ALLOWS` or `:PROHIBITS` from the perspective of the **Guideline**.
-6. **Attributes**: If the rule references specific attributes (e.g., caliber=223), capture them. Map them to the rule via `:EXTRACTS_ATTRIBUTE`, and tie them back to the relevant sub-category.
+Structure the response in this hierarchy:
+- Offensive_Content_Category → Sub_Category → Guideline → Rules
+- Connect rules with PROHIBITS or ALLOWS relationships
+- Link attributes to rules and sub-categories
 
-### **Structure the Response**:
-Ensure the response is structured in a consistent JSON format, focusing primarily on the **Cypher query** as follows:
-
-```json
+Return ONLY a JSON object containing a "cypher_query" field with the Neo4j query, like:
 {
-  "cypher_query": "
-    MERGE (occ:Offensive_Content_Category {name: '<Offensive_Category_Name>'})
-    MERGE (sc:Sub_Category {name: '<Sub_Category_Name>'})
-    MERGE (occ)-[:HAS_SUB_CATEGORY]->(sc)
-    
-    MERGE (g:Guideline {description: '<Guideline_Text>'})
-    MERGE (sc)-[:HAS_GUIDELINE]->(g)
-
-    // For Imperium Rules (with explicit rule IDs)
-    WITH g, sc
-    UNWIND [
-      {rule_id: '<id1>', description: '<rule_text1>', status: 'PROHIBITS|ALLOWS', attributes: [
-        {type: '<attr_type1>', value: '<attr_value1>'},
-        {type: '<attr_type2>', value: '<attr_value2>'}
-      ]},
-      // Additional imperium rules...
-    ] AS imp
-    MERGE (ir:Imperium_Rule {rule_id: imp.rule_id, description: imp.description})
-    MERGE (g)-[rImp:imp.status]->(ir)
-    FOREACH (attr IN imp.attributes |
-      MERGE (a:Attribute {type: attr.type, value: attr.value})
-      MERGE (ir)-[:EXTRACTS_ATTRIBUTE]->(a)
-      MERGE (a)-[:TIED_TO]->(sc)
-    )
-
-    // For Policy Rules (textual guidelines)
-    WITH g, sc
-    UNWIND [
-      {description: '<rule_text1>', status: 'PROHIBITS|ALLOWS', attributes: [
-        {type: '<attr_type1>', value: '<attr_value1>'},
-        {type: '<attr_type2>', value: '<attr_value2>'}
-      ]},
-      // Additional policy rules...
-    ] AS pol
-    MERGE (pr:Policy_Rule {description: pol.description})
-    MERGE (g)-[rPol:pol.status]->(pr)
-    FOREACH (attr IN pol.attributes |
-      MERGE (a:Attribute {type: attr.type, value: attr.value})
-      MERGE (pr)-[:EXTRACTS_ATTRIBUTE]->(a)
-      MERGE (a)-[:TIED_TO]->(sc)
-    )
-
-    // For Image Detection Rules (from visual examples)
-    WITH g, sc
-    UNWIND [
-      {description: '<rule_text1>', status: 'PROHIBITS|ALLOWS', attributes: [
-        {type: '<attr_type1>', value: '<attr_value1>'}
-      ], visual_examples: [
-        {path: '<image_path1>', classification: 'Allowed|Prohibited'},
-        {path: '<image_path2>', classification: 'Allowed|Prohibited'}
-      ]},
-      // Additional image rules...
-    ] AS img
-    MERGE (idr:Image_Detection_Rule {description: img.description})
-    MERGE (g)-[rImg:img.status]->(idr)
-    FOREACH (attr IN img.attributes |
-      MERGE (a:Attribute {type: attr.type, value: attr.value})
-      MERGE (idr)-[:EXTRACTS_ATTRIBUTE]->(a)
-      MERGE (a)-[:TIED_TO]->(sc)
-    )
-    FOREACH (ex IN img.visual_examples |
-      MERGE (ve:Visual_Example {image_path: ex.path, classification: ex.classification})
-      MERGE (idr)-[:ILLUSTRATED_BY]->(ve)
-    )
-  "
+  "cypher_query": "MERGE..."
 }
-```
 
-### **Critical Rules for Cypher Query Construction**:
-
-1. **Hierarchy Handling**:
-   - **Offensive_Content_Category** nodes are at the top level.
-   - **Sub_Category** nodes are children of **Offensive_Content_Category**.
-   - **Guideline** nodes are children of **Sub_Category**.
-   - **Rules** (Imperium_Rule, Policy_Rule, Image_Detection_Rule) are children of **Guideline**.
-   - **Attributes** are related to rules via **EXTRACTS_ATTRIBUTE** and to **Sub_Category** via **TIED_TO**.
-
-2. **Rule Status**:
-   - Each rule MUST have a status of either **PROHIBITS** or **ALLOWS**.
-   - This status is represented in the relationship between **Guideline** and the rule.
-   - Use verbatim text where possible for rule descriptions.
-
-3. **Use of UNWIND**:
-   - **Group Queries Using UNWIND**: When creating multiple rules under the same **Guideline**, always use **UNWIND** to avoid generating separate queries for each rule.
-   - **WITH Clause Between Operations**: Always use `WITH` to carry forward variables between operations.
-
-4. **Attributes**:
-   - Extract any referenced attributes (e.g., caliber, material, purpose).
-   - Link attributes to both the rule and the relevant **Sub_Category**.
-   - Use the exact attribute values from the text, without inventing details.
-
-5. **Special Character Handling**:
-   - Properly escape special characters like single quotes (`'`) and backslashes (`\`).
-   - Escape single quotes within strings by replacing `'` with `\'` to avoid conflicts.
-   - Ensure all special characters within **description** fields are escaped without removing the text.
-   - Use UNWIND when handling multiple rules to ensure consistency in escaping across all rules.
-
-6. **No Hallucination**:
-   - If a rule's descriptive text does not exist, create a minimal summary based on the actual content shown (but do not add extraneous info).
-   - Only extract attributes explicitly mentioned in the text.
-   - If in doubt, prefer verbatim text over interpretation.
+DO NOT repeat these instructions in your response.

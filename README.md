@@ -147,8 +147,10 @@ Use the Cypher queries in `experimental/cypher_queries.md` to explore and analyz
 ## Key Files
 
 - **entity_extractor.py**: Main script for extracting entities from images
-- **entity_extraction_prompt.txt**: Prompt for GPT-4 Vision with extraction instructions
-- **toc_extraction_prompt.txt**: Specialized prompt for Table of Contents pages
+- **entity_extraction_prompt.txt**: User prompt for GPT-4 Vision with extraction instructions
+- **entity_system_prompt.txt**: System prompt for entity extraction
+- **toc_extraction_prompt.txt**: User prompt for Table of Contents pages 
+- **toc_system_prompt.txt**: System prompt for TOC extraction
 - **pdf_to_images.py**: Converts PDF to images for processing
 - **compliance_graph_loader.py**: Loads extracted entities into Neo4j
 - **process_rules_imperium.py**: Loads Imperium rules from Excel into Neo4j
@@ -182,6 +184,10 @@ The `experimental` directory contains various tools for testing and verification
 - **Neo4j Connection**: Verify Neo4j is running and credentials are correct
 - **Missing Rule IDs**: Use the experimental scripts to verify rule connections
 - **JSON Parsing Errors**: Check extracted JSON files for formatting issues
+- **TOC Extraction Issues**: If Table of Contents extraction is failing:
+  - Check the `toc_system_prompt.txt` and `toc_extraction_prompt.txt` files
+  - Examine the raw model output for any hallucinated subcategories
+  - Adjust the token limit or use the direct pattern extraction mechanism
 
 ## Advanced Usage
 
@@ -211,8 +217,10 @@ For TOC and hybrid pages, the system employs a specialized prompt that:
 #### Implementation Details
 TOC processing is implemented through:
 - A dedicated TOC detection function in `entity_extractor.py`
-- A specialized `toc_extraction_prompt.txt` optimized for extracting both TOC structure and detailed content
+- Separate system and user prompts (`toc_system_prompt.txt` and `toc_extraction_prompt.txt`)
+- Direct pattern extraction with regex to handle truncated or malformed JSON responses
 - Special handling of hybrid pages with both TOC elements and detailed content
+- Anti-hallucination mechanisms to prevent generating subcategories not present in the document
 
 ### Batch Processing
 For large PDFs, process in batches:

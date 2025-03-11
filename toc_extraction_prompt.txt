@@ -49,3 +49,7 @@ IMPORTANT NOTES:
 4. If the page has other content, ignore it - we only care about the TOC section
 5. If there's no clear Table of Contents heading with bullet points, return an empty list of subcategories
 6. Keep the names of subcategories exactly as they appear - don't reinterpret or reword them
+7. NEVER repeat a subcategory - each subcategory should appear EXACTLY ONCE
+8. Include ALL subcategories from the TOC (do not stop at a specific number)
+9. DO NOT MAKE UP subcategories that don't appear in the actual TOC list
+10. DO NOT get stuck in repetitive patterns - each subcategory should be unique and real

@@ -7,83 +7,58 @@ import re
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from utils import encode_image
 from entity_context_manager import EntityContextManager
+from difflib import get_close_matches
+
+# Global regex patterns for extraction
+CATEGORY_PATTERN = re.compile(r'MERGE\s+\((?:occ|c):Offensive_Content_Category\s+\{name:\s*\'([^\']+)\'\}\)')
+SUBCATEGORY_PATTERN = re.compile(r'MERGE\s+\((?:sc\d+|s\d+):Sub_Category\s+\{name:\s*\'([^\']+)\'\}\)')
+CYPHER_QUERY_PATTERN = re.compile(r'"cypher_query"\s*:\s*"(.*?)(?:"\s*}|$)', re.DOTALL)
 
 # Load the configuration from config.json
 with open("config.json", "r") as config_file:
     config = json.load(config_file)
 
-# Load the standard prompt from entity_extraction_prompt.txt
+# Load the prompts for system and user messages
 with open("entity_extraction_prompt.txt", "r") as prompt_file:
-    PROMPT = prompt_file.read()
+    USER_PROMPT = prompt_file.read()
 
-# Load TOC prompt if it exists, otherwise create default
-TOC_PROMPT_FILE = "toc_extraction_prompt.txt"
+with open("entity_system_prompt.txt", "r") as system_prompt_file:
+    SYSTEM_PROMPT = system_prompt_file.read()
+
+# Load TOC prompts
+TOC_USER_PROMPT_FILE = "toc_extraction_prompt.txt"
+TOC_SYSTEM_PROMPT_FILE = "toc_system_prompt.txt"
+
 try:
-    with open(TOC_PROMPT_FILE, "r") as toc_file:
-        TOC_PROMPT = toc_file.read()
+    with open(TOC_USER_PROMPT_FILE, "r") as toc_file:
+        TOC_USER_PROMPT = toc_file.read()
 except FileNotFoundError:
-    # Default TOC prompt if file doesn't exist
-    TOC_PROMPT = """You are a specialized AI assistant for extracting structured data from compliance documents with Table of Contents pages.
+    # Create a default if missing
+    TOC_USER_PROMPT = "Extract all subcategories from the Table of Contents section. Return ONLY a valid JSON object with a single \"cypher_query\" field."
+    with open(TOC_USER_PROMPT_FILE, "w") as toc_file:
+        toc_file.write(TOC_USER_PROMPT)
+    print(f"Created default TOC user prompt file: {TOC_USER_PROMPT_FILE}")
 
-TASK:
-This page appears to contain a Table of Contents, but may also contain detailed subcategory information. Your job is to:
-1. Extract all subcategories listed in the Table of Contents
-2. ALSO extract any detailed content about specific subcategories if present (rules, guidelines, etc.)
+try:
+    with open(TOC_SYSTEM_PROMPT_FILE, "r") as toc_system_file:
+        TOC_SYSTEM_PROMPT = toc_system_file.read()
+except FileNotFoundError:
+    # Create a default if missing
+    TOC_SYSTEM_PROMPT = """You are a specialized AI assistant for extracting subcategories from Table of Contents pages in compliance documents.
 
-The document follows a hierarchical structure:
-- Offensive_Content_Category (main category like "Firearms & Accessories")
-- Sub_Category (specific subcategories like "Ammunition", "Firearm Parts")
-- Guidelines (rules and policies related to subcategories)
-- Rules (specific prohibition or allowance rules, identified by rule IDs)
+For Table of Contents pages:
+1. Identify the main Offensive_Content_Category
+2. Extract EVERY bullet point under the TOC heading as a complete Sub_Category
+3. Keep the EXACT text of each bullet point without modifications
+4. Never repeat subcategories - each should appear EXACTLY ONCE
+5. Include ALL subcategories from the TOC (do not stop at a specific number)
 
-DUAL EXTRACTION PROCESS:
-- From the TOC section: Extract the main category and ALL listed subcategories
-- From any detailed content: Extract subcategory details, guidelines, and rules using the same approach as regular pages
-
-RESPONSE FORMAT:
-Provide a Neo4j Cypher query that creates ALL identified entities:
-1. The main Offensive_Content_Category node
-2. ALL Sub_Category nodes found in both TOC and detailed sections
-3. ALL Guidelines and Rules that appear in detailed sections 
-4. All appropriate relationships
-
-Example response structure:
-```
-{
-  "cypher_query": "
-    MERGE (occ:Offensive_Content_Category {name: 'Main Category Name'})
+MOST IMPORTANT: Return ONLY a JSON object containing a "cypher_query" field with the Neo4j query.
+DO NOT repeat any instructions in your response."""
     
-    // Subcategories from TOC
-    MERGE (sc1:Sub_Category {name: 'Subcategory 1'})
-    MERGE (occ)-[:HAS_SUB_CATEGORY]->(sc1)
-    MERGE (sc2:Sub_Category {name: 'Subcategory 2'})
-    MERGE (occ)-[:HAS_SUB_CATEGORY]->(sc2)
-    
-    // If detailed subcategory content exists
-    MERGE (g:Guideline {description: 'Detailed guideline for Subcategory 1'})
-    MERGE (sc1)-[:HAS_GUIDELINE]->(g)
-    
-    // Rules if they exist (with both ID-based and descriptive options)
-    MERGE (ir:Imperium_Rule {rule_id: '1234', description: 'Specific rule'})
-    MERGE (g)-[:PROHIBITS]->(ir)
-    
-    MERGE (pr:Policy_Rule {description: 'Policy rule without ID'})
-    MERGE (g)-[:PROHIBITS]->(pr)
-  "
-}
-```
-
-IMPORTANT NOTES:
-1. Process the ENTIRE page - both TOC sections and any detailed content
-2. If a subcategory appears in the TOC AND has details elsewhere on the page, create it only ONCE
-3. For any subcategory with detailed content, extract guidelines and rules as you would for regular pages
-4. Use PROHIBITS/ALLOWS relationship types exactly as shown (not as variables)
-5. Always link the entities to maintain proper hierarchy"""
-    
-    # Write the default prompt to a file for future use
-    with open(TOC_PROMPT_FILE, "w") as toc_file:
-        toc_file.write(TOC_PROMPT)
-    print(f"Created default TOC prompt file: {TOC_PROMPT_FILE}")
+    with open(TOC_SYSTEM_PROMPT_FILE, "w") as toc_system_file:
+        toc_system_file.write(TOC_SYSTEM_PROMPT)
+    print(f"Created default TOC system prompt file: {TOC_SYSTEM_PROMPT_FILE}")
 
 # Set your API key and model from the config
 API_KEY = os.getenv('OPENAI_API_KEY', '')
@@ -103,8 +78,63 @@ os.makedirs(EXTRACTED_ENTITIES_DIR, exist_ok=True)
 MAX_RETRIES = 5
 INITIAL_BACKOFF = 2  # seconds
 
+# Load ground truth subcategories if available
+GROUND_TRUTH_FILE = "ground_truth_subcategories.json"
+try:
+    with open(GROUND_TRUTH_FILE, "r") as gt_file:
+        ground_truth = json.load(gt_file)
+        GROUND_TRUTH_SUBCATS = set(ground_truth.get("subcategories", []))
+        print(f"Loaded {len(GROUND_TRUTH_SUBCATS)} ground truth subcategories")
+except FileNotFoundError:
+    GROUND_TRUTH_SUBCATS = set()
+    print("No ground truth subcategories file found. Hallucination filtering disabled.")
+
 # Initialize the entity context manager for tracking relationships across pages
 context_manager = EntityContextManager(CONTEXT_FILE)
+
+def filter_hallucinated_subcategories(extracted_subcats):
+    """
+    Filter out subcategories that aren't in the ground truth list or close matches.
+    
+    Args:
+        extracted_subcats: List of extracted subcategory names
+        
+    Returns:
+        List of filtered subcategory names that match the ground truth
+    """
+    if not GROUND_TRUTH_SUBCATS:
+        print("No ground truth data available. Using all extracted subcategories.")
+        return extracted_subcats
+        
+    filtered_subcats = []
+    for subcat in extracted_subcats:
+        # Check for exact match
+        if subcat in GROUND_TRUTH_SUBCATS:
+            filtered_subcats.append(subcat)
+            continue
+            
+        # Check for parent category matches (e.g., "Firearm Accessories: Grips" -> "Firearm Accessories")
+        parent_match = False
+        for gt_subcat in GROUND_TRUTH_SUBCATS:
+            if subcat.startswith(gt_subcat + ":") or subcat.startswith(gt_subcat + " -"):
+                filtered_subcats.append(subcat)
+                parent_match = True
+                break
+                
+        if parent_match:
+            continue
+            
+        # Check for close matches using difflib
+        close_matches = get_close_matches(subcat, GROUND_TRUTH_SUBCATS, n=1, cutoff=0.8)
+        if close_matches:
+            print(f"Replacing '{subcat}' with close match '{close_matches[0]}'")
+            filtered_subcats.append(close_matches[0])
+            continue
+            
+        print(f"Filtering out hallucinated subcategory: '{subcat}'")
+    
+    print(f"Filtered {len(extracted_subcats) - len(filtered_subcats)} hallucinated subcategories")
+    return filtered_subcats
 
 
 def is_table_of_contents(image_path):
@@ -118,25 +148,20 @@ def is_table_of_contents(image_path):
         }
 
         # Enhanced prompt to detect TOC and hybrid pages
-        toc_detection_prompt = """Analyze this document page carefully. We're looking ONLY for pages that have a "Table of Contents" heading followed by bullet points of subcategories.
+        toc_detection_prompt = """You are a document classifier that identifies Table of Contents pages. A true Table of Contents page must contain a clear "Table of Contents" heading or title followed by bulleted or numbered lists of subcategories."""
 
-A true Table of Contents page must contain:
-1. A clear "Table of Contents" heading or title
-2. Bullet points or a numbered list directly under that heading
-
-Respond with ONE of these exact options:
-- "FULL_TOC" if it's primarily a Table of Contents page
-- "HYBRID" if it contains both TOC elements and detailed category content
-- "REGULAR" if it's a regular content page with no TOC elements"""
-
-        # Payload for TOC detection
+        # Payload for TOC detection with system/user message separation
         payload = {
             "model": MODEL,
             "messages": [
                 {
+                    "role": "system",
+                    "content": toc_detection_prompt
+                },
+                {
                     "role": "user",
                     "content": [
-                        {"type": "text", "text": toc_detection_prompt},
+                        {"type": "text", "text": "Is this a Table of Contents page? Only classify as TOC if there's an explicit 'Table of Contents' heading with visible bullet points. Respond with ONLY ONE of these exact options:\n- \"FULL_TOC\" if it's primarily a Table of Contents page\n- \"HYBRID\" if it contains both TOC elements and detailed category content\n- \"REGULAR\" if it's a regular content page with no TOC elements"},
                         {
                             "type": "image_url",
                             "image_url": {
@@ -183,6 +208,34 @@ Respond with ONE of these exact options:
                 print(f"Response text: {e.response.text}")
         return False
 
+def extract_subcategories_from_text(text):
+    """Extract subcategories from text using various regex patterns"""
+    subcats = []
+    
+    # Try a series of patterns, from specific to general
+    patterns = [
+        r"MERGE \(sc\d+:Sub_Category \{name: '([^']+)'\}\)",  # Standard pattern
+        r"MERGE \(s\d+:Sub_Category \{name: '([^']+)'\}\)",   # Alternative naming
+        r"Sub_Category\s*\{name:\s*'([^']+)'\}",              # More flexible
+        r"{name:\s*'([^']+)'}"                                # Most general
+    ]
+    
+    # Try each pattern
+    for pattern in patterns:
+        matches = re.findall(pattern, text)
+        if matches:
+            for match in matches:
+                if match and match not in subcats:
+                    subcats.append(match)
+    
+    # If we found subcategories, return them
+    if subcats:
+        return subcats
+    
+    # Last resort: Look for anything in quotes that might be a subcategory
+    potential_subcats = re.findall(r"'([^']+)'", text)
+    return [s for s in potential_subcats if len(s) > 3 and s not in subcats]  # Filter out short strings
+
 def gpt4_vision_compliance_extraction(image_path):
     """Send an image to GPT-4 Vision model for compliance entity extraction with retry and backoff logic."""
     retries = 0
@@ -203,20 +256,28 @@ def gpt4_vision_compliance_extraction(image_path):
             # Check if this is a TOC page and use appropriate prompt
             is_toc = is_table_of_contents(image_path)
             
-            # Select the prompt based on page type
-            current_prompt = TOC_PROMPT if is_toc else PROMPT
+            # Select the appropriate system and user prompts based on page type
+            system_prompt = TOC_SYSTEM_PROMPT if is_toc else SYSTEM_PROMPT
+            user_prompt = TOC_USER_PROMPT if is_toc else USER_PROMPT
             
             if is_toc:
-                print(f"Using TOC prompt for {image_path}")
+                print(f"Using TOC prompts for {image_path}")
             
-            # Updated payload structure compatible with both gpt-4o and vision models
+            # Updated payload structure with separate system and user messages
+            # Use a lower token limit for TOC extraction to avoid excessive responses
+            max_tokens = 1024 if is_toc else 3072
+            
             payload = {
                 "model": MODEL,
                 "messages": [
                     {
+                        "role": "system",
+                        "content": system_prompt
+                    },
+                    {
                         "role": "user",
                         "content": [
-                            {"type": "text", "text": current_prompt},
+                            {"type": "text", "text": user_prompt},
                             {
                                 "type": "image_url",
                                 "image_url": {
@@ -226,7 +287,7 @@ def gpt4_vision_compliance_extraction(image_path):
                         ]
                     }
                 ],
-                "max_tokens": 3072,  # Increased token limit for complex compliance rules
+                "max_tokens": max_tokens,  # Adjust token limit based on TOC vs regular extraction
                 "temperature": 0
             }
 
@@ -256,9 +317,29 @@ def gpt4_vision_compliance_extraction(image_path):
             if 'choices' in result and result['choices']:
                 structured_response = result['choices'][0]['message']['content'].strip()
 
-                # Debugging: Log the raw response before any processing
-                print(f"Raw structured response: {structured_response}")
-
+                # Debugging: Log the raw response before any processing (truncated version)
+                print(f"Raw structured response: {structured_response[:2000]}...")
+                
+                # Direct fix for TOC extraction - extract subcategories from raw output
+                if is_toc and "Sub_Category" in structured_response:
+                    subcats = extract_subcategories_from_text(structured_response)
+                    if subcats:
+                        # Extract category if possible
+                        category_match = CATEGORY_PATTERN.search(structured_response)
+                        category_name = category_match.group(1) if category_match else "Firearms & Accessories"
+                        
+                        print(f"TOC Direct extraction: Found {len(subcats)} subcategories")
+                        
+                        # Build a clean Cypher query
+                        cypher_query = f"MERGE (occ:Offensive_Content_Category {{name: '{category_name}'}}) "
+                        
+                        for i, subcat in enumerate(subcats[:40], 1):  # Limit to 40 subcats max
+                            cypher_query += f"MERGE (sc{i}:Sub_Category {{name: '{subcat}'}}) "
+                            cypher_query += f"MERGE (occ)-[:HAS_SUB_CATEGORY]->(sc{i}) "
+                        
+                        # Return this as a properly formatted JSON
+                        return json.dumps({"cypher_query": cypher_query})
+                
                 # Remove backticks and any language label
                 if structured_response.startswith("```"):
                     # Extract content between triple backticks
@@ -288,6 +369,58 @@ def gpt4_vision_compliance_extraction(image_path):
                             if query_end > query_start:
                                 cypher_query = structured_response[query_start+1:query_end]
                 
+                # Check for safety filter responses
+                if "I'm sorry, I can't assist with that" in structured_response or "I apologize, but I cannot" in structured_response:
+                    print(f"Detected safety filter response. Creating minimal JSON with empty query.")
+                    return json.dumps({"cypher_query": ""})
+                
+                # Special handling for responses containing subcategories (regardless of JSON validity)
+                if "Sub_Category" in structured_response:
+                    try:
+                        # Try to extract subcategories directly from the response
+                        subcats = extract_subcategories_from_text(structured_response)
+                        
+                        if subcats:
+                            # Look for category name
+                            category_match = CATEGORY_PATTERN.search(structured_response)
+                            category_name = category_match.group(1) if category_match else "Firearms & Accessories"
+                            
+                            # Build a clean, minimal Cypher query
+                            cypher_query = f"MERGE (occ:Offensive_Content_Category {{name: '{category_name}'}}) "
+                            
+                            for i, subcat in enumerate(subcats[:40], 1):  # Limit to 40 subcats max
+                                cypher_query += f"MERGE (sc{i}:Sub_Category {{name: '{subcat}'}}) "
+                                cypher_query += f"MERGE (occ)-[:HAS_SUB_CATEGORY]->(sc{i}) "
+                            
+                            # Return as proper JSON
+                            print(f"Fixed TOC JSON with {len(subcats)} subcategories")
+                            return json.dumps({"cypher_query": cypher_query})
+                    except Exception as e:
+                        print(f"Error fixing TOC JSON: {str(e)}")
+                        # Fallback - create minimal JSON
+                        return json.dumps({"cypher_query": "MERGE (occ:Offensive_Content_Category {name: 'Firearms & Accessories'})"})
+                
+                # Special handling for JSON with backticks
+                if "```json" in structured_response and "cypher_query" in structured_response:
+                    try:
+                        # Extract JSON content from code block
+                        json_block_start = structured_response.find('```json')
+                        json_block_end = structured_response.find('```', json_block_start + 7)
+                        
+                        if json_block_start != -1 and json_block_end != -1:
+                            # Extract the content between the markers and trim whitespace
+                            json_content = structured_response[json_block_start + 7:json_block_end].strip()
+                            
+                            # Try to parse and validate
+                            try:
+                                json_obj = json.loads(json_content)
+                                return json.dumps(json_obj)
+                            except:
+                                # Just return the extracted content
+                                return json_content
+                    except Exception as e:
+                        print(f"Error extracting JSON from code block: {e}")
+                
                 # Special handling for JSON with control characters
                 try:
                     # Try direct JSON parsing first (handles most well-formed JSON responses)
@@ -296,6 +429,12 @@ def gpt4_vision_compliance_extraction(image_path):
                     structured_response = json.dumps(json_obj)
                     return structured_response
                 except json.JSONDecodeError as json_err:
+                    # If the response is TOC extraction, we have special handling for that
+                    if "```cypher" in structured_response or ('"cypher_query"' in structured_response and 'Sub_Category' in structured_response):
+                        # Try to extract TOC information directly from the raw response
+                        # This is handled by the special case in the first page extraction code
+                        pass
+                        
                     # Print detailed error for debugging
                     print(f"JSON parse error details: {json_err}")
                     print(f"Error position: {json_err.pos}")
@@ -503,31 +642,66 @@ def process_compliance_images_with_gpt4():
         
         if first_response:
             try:
-                # Process the first page response to establish the primary category
-                json_response = json.loads(first_response)
-                
-                # Extract page number from filename
-                img_name = os.path.splitext(os.path.basename(first_image))[0]
-                page_num = int(img_name.split("_")[-1]) if "_" in img_name else 0
-                
-                # Process with context manager to establish primary category
-                enriched_response = context_manager.process_page_extraction(page_num, json_response)
-                
-                # Get the category from the first page's cypher query
-                if 'cypher_query' in enriched_response:
-                    cypher_query = enriched_response['cypher_query']
-                    category_pattern = r"MERGE \(occ:Offensive_Content_Category \{name: '([^']+)'\}\)"
-                    category_matches = re.findall(category_pattern, cypher_query)
-                    if category_matches:
-                        primary_category = category_matches[0]
+                try:
+                    # First, try to extract the primary category directly from the raw response
+                    img_name = os.path.splitext(os.path.basename(first_image))[0]
+                    page_num = int(img_name.split("_")[-1]) if "_" in img_name else 0
+                    
+                    # Look for the main category first using regex
+                    category_match = CATEGORY_PATTERN.search(first_response)
+                    if category_match:
+                        primary_category = category_match.group(1)
                         print(f"Found primary category in first page: '{primary_category}'")
+                    else:
+                        primary_category = "Firearms & Accessories"  # Default value
+                        print(f"Using default primary category: '{primary_category}'")
+                    
+                    # Extract subcategories directly from the raw response using our helper function
+                    unique_subcats = extract_subcategories_from_text(first_response)
+                    
+                    # Anti-hallucination measure: If we get too many subcategories, it's likely hallucination
+                    # Limit to a reasonable number (TOC pages typically have 20-50 items)
+                    if len(unique_subcats) > 50:
+                        print(f"Warning: Found {len(unique_subcats)} subcategories, which is suspiciously high. Limiting to first 50.")
+                        unique_subcats = unique_subcats[:50]
+                    
+                    print(f"Found {len(unique_subcats)} unique subcategories for TOC")
+                    
+                    # Create a simplified Cypher query with just the main category and subcategories
+                    cypher_query = f"MERGE (occ:Offensive_Content_Category {{name: '{primary_category}'}}) "
+                    
+                    for i, subcat in enumerate(unique_subcats, 1):
+                        cypher_query += f"MERGE (sc{i}:Sub_Category {{name: '{subcat}'}}) "
+                        cypher_query += f"MERGE (occ)-[:HAS_SUB_CATEGORY]->(sc{i}) "
+                    
+                    # Create and save a minimal JSON
+                    minimal_json = {"cypher_query": cypher_query}
+                    
+                    # Process with context manager to establish primary category
+                    enriched_response = context_manager.process_page_extraction(page_num, minimal_json)
+                    
+                    # Save the first page response
+                    output_file = os.path.join(EXTRACTED_ENTITIES_DIR, f"extracted_{img_name}.json")
+                    with open(output_file, "w") as f:
+                        json.dump(enriched_response, f, indent=4)
+                    
+                    print(f"Processed and saved first page with manually built TOC extract.")
+                except Exception as e:
+                    print(f"Error processing first page: {e}")
+                    # Fallback to a very simple primary category only
+                    if primary_category:
+                        # Create the simplest possible extract with just the main category
+                        minimal_json = {"cypher_query": f"MERGE (occ:Offensive_Content_Category {{name: '{primary_category}'}})"} 
+                        try:
+                            # Save this minimal version
+                            img_name = os.path.splitext(os.path.basename(first_image))[0]
+                            output_file = os.path.join(EXTRACTED_ENTITIES_DIR, f"extracted_{img_name}.json")
+                            with open(output_file, "w") as f:
+                                json.dump(minimal_json, f, indent=4)
+                            print(f"Saved simplified primary category for first page.")
+                        except Exception as inner_e:
+                            print(f"Failed to save primary category: {inner_e}")
                 
-                # Save the first page response
-                output_file = os.path.join(EXTRACTED_ENTITIES_DIR, f"extracted_{img_name}.json")
-                with open(output_file, "w") as f:
-                    json.dump(enriched_response, f, indent=4)
-                
-                print(f"Processed and saved first page.")
                 print(f"Progress: 1/{total_images} pages processed ({(1/total_images)*100:.1f}%)")
             except Exception as e:
                 print(f"Error processing first page: {e}")

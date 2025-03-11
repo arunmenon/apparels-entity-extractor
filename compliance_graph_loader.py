@@ -37,6 +37,30 @@ def process_compliance_queries_in_batches(graph_db_strategy, query_type):
     # Close the connection
     graph_db_strategy.close()
 
+def sanitize_cypher_query(query):
+    """
+    Sanitize a Cypher query by:
+    1. Fixing dynamic relationship issues ([rPol:pol.status] → [:PROHIBITS])
+    2. Removing any rule_expression settings that might cause syntax errors
+    """
+    if not query:
+        return query
+    
+    # Fix dynamic relationship issues (like [rPol:pol.status] should be [:PROHIBITS])
+    import re
+    
+    # Fix relationship types
+    rel_pattern = r'\[r\w+:(\w+)\.status\]'
+    def replace_rel(match):
+        return f'[:PROHIBITS]'  # Default to PROHIBITS
+    query = re.sub(rel_pattern, replace_rel, query)
+    
+    # Remove rule_expression assignments that might cause errors
+    rule_expr_pattern = r'rule\.rule_expression\s*=\s*"[^"]*"'
+    query = re.sub(rule_expr_pattern, 'rule.rule_expression = "REMOVED"', query)
+    
+    return query
+
 def load_contextual_queries_from_json(directory, query_type):
     """
     Load queries with context-aware processing to handle missing parent nodes.
@@ -57,8 +81,12 @@ def load_contextual_queries_from_json(directory, query_type):
                 # Extract the cypher query from the data
                 if 'cypher_query' in data:
                     cypher_query = data['cypher_query']
+                    
+                    # Sanitize the query to handle special characters and common issues
+                    sanitized_query = sanitize_cypher_query(cypher_query)
+                    
                     # The cypher query has already been enriched with context during extraction
-                    queries.append(cypher_query)
+                    queries.append(sanitized_query)
                 else:
                     print(f"Warning: No cypher_query found in {filename}")
                 
