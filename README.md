@@ -80,10 +80,22 @@ This project extracts structured compliance data from product policy documents (
 Convert your compliance PDF document into images for processing:
 
 ```bash
+# Use the default settings (looks for PDF at ~/Downloads/compliance_document.pdf)
 python pdf_to_images.py
+
+# Specify a custom PDF path
+python pdf_to_images.py --pdf /path/to/your/document.pdf
+
+# Specify output directory and threads
+python pdf_to_images.py --pdf /path/to/your/document.pdf --output custom_images_dir --threads 8
 ```
 
-By default, it looks for a PDF at `/Users/username/Downloads/compliance_document.pdf`. You can specify a different path by editing the script.
+You can also set these values in your `.env` file:
+```
+PDF_PATH=/path/to/your/document.pdf
+OUTPUT_DIR=custom_images_dir
+IMAGE_THREADS=8
+```
 
 ### 2. Extract Entities
 Process the images using GPT-4 Vision to extract structured compliance entities:
@@ -102,10 +114,24 @@ This will save extracted entities as JSON files in the `extracted_entities` dire
 Load existing Imperium rules into the Neo4j database:
 
 ```bash
+# Use default settings (looks for Excel file at ~/Downloads/Rules.xlsx)
 python process_rules_imperium.py
+
+# Specify a custom Excel path
+python process_rules_imperium.py --excel /path/to/your/Rules.xlsx
+
+# Control batch size and limit the number of rules to process
+python process_rules_imperium.py --batch-size 50 --limit 1000
+
+# Dry run - just load Excel file and count rules without processing
+python process_rules_imperium.py --dry-run
 ```
 
-This script expects an Excel file with Imperium rules at `~/Downloads/Rules.xlsx`.
+You can also set these values in your `.env` file:
+```
+RULES_EXCEL_PATH=/path/to/your/Rules.xlsx
+BATCH_SIZE=50
+```
 
 ### 4. Load Extracted Entities to Graph
 Load the extracted entities into the Neo4j graph database, connecting to existing Imperium rules:

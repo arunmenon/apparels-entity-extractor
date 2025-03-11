@@ -1,5 +1,6 @@
 import os
 import json
+import argparse
 import pandas as pd
 from dotenv import load_dotenv
 from graph_db.graph_strategy_factory import GraphDatabaseFactory
@@ -7,12 +8,11 @@ from graph_db.graph_strategy_factory import GraphDatabaseFactory
 # Load environment variables
 load_dotenv()
 
-# This is a renamed version of process_rules_excel.py
-# It processes Imperium rules from an Excel file and loads them into Neo4j
+# This script processes Imperium rules from an Excel file and loads them into Neo4j
 
-# Define constants
-EXCEL_PATH = os.path.expanduser("~/Downloads/Rules.xlsx")
-BATCH_SIZE = int(os.getenv("BATCH_SIZE", 100))
+# Define constants from environment or defaults
+DEFAULT_EXCEL_PATH = os.getenv("RULES_EXCEL_PATH", os.path.expanduser("~/Downloads/Rules.xlsx"))
+DEFAULT_BATCH_SIZE = int(os.getenv("BATCH_SIZE", 100))
 
 def load_rules_from_excel(excel_path):
     """
@@ -100,14 +100,21 @@ def generate_cypher_for_rule(rule):
     
     return cypher
 
-def process_rules_in_batches(rules_df):
+def process_rules_in_batches(rules_df, batch_size=DEFAULT_BATCH_SIZE, limit=None):
     """
     Process rules in batches
     
     Args:
         rules_df: Pandas DataFrame with the rules
+        batch_size: Size of each batch to process
+        limit: Optional limit on the number of rules to process
     """
-    print(f"Processing {len(rules_df)} rules in batches of {BATCH_SIZE}...")
+    # Limit the number of rules if specified
+    if limit and limit > 0:
+        rules_df = rules_df.head(limit)
+        print(f"Limited to processing {limit} rules")
+    
+    print(f"Processing {len(rules_df)} rules in batches of {batch_size}...")
     
     # Connect to graph database
     graph_db_strategy = GraphDatabaseFactory.create_graph_database_strategy()
@@ -120,9 +127,9 @@ def process_rules_in_batches(rules_df):
     total_rules = len(rules_df)
     success_count = 0
     
-    for i in range(0, total_rules, BATCH_SIZE):
-        batch = rules_df.iloc[i:i+BATCH_SIZE]
-        print(f"Processing batch {i//BATCH_SIZE + 1}/{(total_rules-1)//BATCH_SIZE + 1} ({len(batch)} rules)...")
+    for i in range(0, total_rules, batch_size):
+        batch = rules_df.iloc[i:i+batch_size]
+        print(f"Processing batch {i//batch_size + 1}/{(total_rules-1)//batch_size + 1} ({len(batch)} rules)...")
         
         # Generate Cypher queries for batch
         queries = []
@@ -134,14 +141,15 @@ def process_rules_in_batches(rules_df):
         try:
             graph_db_strategy.execute_batch(queries)
             success_count += len(batch)
-            print(f"Successfully processed batch {i//BATCH_SIZE + 1}")
+            print(f"Successfully processed batch {i//batch_size + 1}")
         except Exception as e:
-            print(f"Error processing batch {i//BATCH_SIZE + 1}: {e}")
+            print(f"Error processing batch {i//batch_size + 1}: {e}")
     
     # Close connection
     graph_db_strategy.close()
     
     print(f"Successfully processed {success_count}/{total_rules} rules")
+    return success_count
 
 def create_indexes(graph_db_strategy):
     """
@@ -164,17 +172,52 @@ def create_indexes(graph_db_strategy):
         graph_db_strategy.execute_batch(index_queries)
         print("Created indexes for Imperium rules schema")
 
+def parse_arguments():
+    """Parse command line arguments"""
+    parser = argparse.ArgumentParser(description='Process Imperium rules from Excel and load them into Neo4j')
+    
+    parser.add_argument('--excel', '-e', dest='excel_path', type=str, default=DEFAULT_EXCEL_PATH,
+                        help=f'Path to the Excel file with rules (default: {DEFAULT_EXCEL_PATH})')
+    
+    parser.add_argument('--batch-size', '-b', dest='batch_size', type=int, default=DEFAULT_BATCH_SIZE,
+                        help=f'Batch size for processing rules (default: {DEFAULT_BATCH_SIZE})')
+    
+    parser.add_argument('--limit', '-l', dest='limit', type=int, default=0,
+                        help='Limit the number of rules to process (default: process all rules)')
+    
+    parser.add_argument('--dry-run', '-d', dest='dry_run', action='store_true',
+                        help='Dry run - only load Excel file and display rule count without processing')
+    
+    return parser.parse_args()
+
 def main():
     """
     Main function to process rules from Excel and load into graph database
     """
+    # Parse arguments
+    args = parse_arguments()
+    
+    print(f"Starting Imperium rules processing...")
+    print(f"Excel file: {args.excel_path}")
+    print(f"Batch size: {args.batch_size}")
+    
+    if args.limit > 0:
+        print(f"Limited to {args.limit} rules")
+    
+    if args.dry_run:
+        print("Dry run mode - will only load Excel and count rules")
+    
     # Load rules from Excel
-    rules_df = load_rules_from_excel(EXCEL_PATH)
+    rules_df = load_rules_from_excel(args.excel_path)
+    
+    if args.dry_run:
+        print(f"Dry run completed. Found {len(rules_df)} rules in the Excel file.")
+        return
     
     # Process rules in batches
-    process_rules_in_batches(rules_df)
+    success_count = process_rules_in_batches(rules_df, args.batch_size, args.limit)
     
-    print("\nRules processing completed successfully!")
+    print(f"\nRules processing completed successfully! Loaded {success_count} rules.")
 
 if __name__ == "__main__":
     main()
