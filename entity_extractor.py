@@ -7,7 +7,6 @@ import re
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from utils import encode_image
 from entity_context_manager import EntityContextManager
-from difflib import get_close_matches
 
 # Global regex patterns for extraction
 CATEGORY_PATTERN = re.compile(r'MERGE\s+\((?:occ|c):Offensive_Content_Category\s+\{name:\s*\'([^\']+)\'\}\)')
@@ -78,110 +77,8 @@ os.makedirs(EXTRACTED_ENTITIES_DIR, exist_ok=True)
 MAX_RETRIES = 5
 INITIAL_BACKOFF = 2  # seconds
 
-# Load ground truth subcategories if available
-GROUND_TRUTH_FILE = "ground_truth_subcategories.json"
-try:
-    with open(GROUND_TRUTH_FILE, "r") as gt_file:
-        ground_truth = json.load(gt_file)
-        GROUND_TRUTH_SUBCATS = set(ground_truth.get("subcategories", []))
-        print(f"Loaded {len(GROUND_TRUTH_SUBCATS)} ground truth subcategories")
-except FileNotFoundError:
-    GROUND_TRUTH_SUBCATS = set()
-    print("No ground truth subcategories file found. Hallucination filtering disabled.")
-
 # Initialize the entity context manager for tracking relationships across pages
 context_manager = EntityContextManager(CONTEXT_FILE)
-
-def filter_hallucinated_subcategories(extracted_subcats):
-    """
-    Filter out subcategories that aren't in the ground truth list or close matches.
-    If ground truth is available, attempt to normalize formatting to find better matches.
-    
-    Args:
-        extracted_subcats: List of extracted subcategory names
-        
-    Returns:
-        List of filtered subcategory names that match the ground truth
-    """
-    if not GROUND_TRUTH_SUBCATS:
-        print("No ground truth data available. Using all extracted subcategories.")
-        return extracted_subcats
-        
-    # Normalize ground truth - convert both ':' and '-' variations to a common format
-    normalized_gt = set()
-    for gt in GROUND_TRUTH_SUBCATS:
-        normalized_gt.add(gt)
-        normalized_gt.add(gt.replace(' - ', ': '))  # Add colon variant
-        normalized_gt.add(gt.replace(': ', ' - '))  # Add hyphen variant
-        
-        # Also add parent category variants
-        parts = gt.split(' - ')
-        if len(parts) > 1:
-            normalized_gt.add(parts[0])  # Add parent category
-        parts = gt.split(': ')
-        if len(parts) > 1:
-            normalized_gt.add(parts[0])  # Add parent category
-    
-    filtered_subcats = []
-    skipped_subcats = []
-    
-    for subcat in extracted_subcats:
-        # Check for exact match in normalized ground truth
-        if subcat in normalized_gt:
-            filtered_subcats.append(subcat)
-            continue
-            
-        # Check for parent category matches (subcategory is more specific than ground truth)
-        parent_match = False
-        for gt_subcat in GROUND_TRUTH_SUBCATS:
-            # Check if this is a more specific version of a ground truth category
-            parent_forms = [
-                gt_subcat + ":",        # "Firearms:"
-                gt_subcat + " -",       # "Firearms -"
-                gt_subcat.split(' - ')[0] + ":",  # For "Firearms - Parts" -> "Firearms:"
-                gt_subcat.split(': ')[0] + ":"    # For "Firearms: Parts" -> "Firearms:"
-            ]
-            
-            if any(subcat.startswith(parent) for parent in parent_forms):
-                filtered_subcats.append(subcat)
-                parent_match = True
-                break
-                
-        if parent_match:
-            continue
-            
-        # Check for close matches using normalized ground truth
-        normalized_subcat = subcat.lower()
-        close_matches = get_close_matches(normalized_subcat, 
-                                         [s.lower() for s in normalized_gt], 
-                                         n=1, cutoff=0.85)
-        if close_matches:
-            # Find the original ground truth version to maintain exact formatting
-            for gt in GROUND_TRUTH_SUBCATS:
-                if gt.lower() == close_matches[0] or gt.lower().replace(' - ', ': ') == close_matches[0]:
-                    print(f"Replacing '{subcat}' with ground truth match '{gt}'")
-                    filtered_subcats.append(gt)
-                    break
-            else:
-                # Fall back to extracted version if no direct ground truth match
-                filtered_subcats.append(subcat)
-            continue
-        
-        skipped_subcats.append(subcat)
-    
-    if skipped_subcats:
-        print(f"Filtering out {len(skipped_subcats)} possible hallucinated subcategories:")
-        for i, subcat in enumerate(skipped_subcats, 1):
-            print(f"  {i}. {subcat}")
-    
-    # If we've filtered too much, use all extracted subcategories
-    if len(filtered_subcats) < 5 and len(extracted_subcats) > 10:
-        print(f"Warning: Only {len(filtered_subcats)} subcategories matched ground truth out of {len(extracted_subcats)}.")
-        print("Using all extracted subcategories instead.")
-        return extracted_subcats
-        
-    print(f"Kept {len(filtered_subcats)} of {len(extracted_subcats)} extracted subcategories")
-    return filtered_subcats
 
 
 def is_table_of_contents(image_path):
@@ -307,15 +204,18 @@ def gpt4_vision_compliance_extraction(image_path):
             system_prompt = TOC_SYSTEM_PROMPT if is_toc else SYSTEM_PROMPT
             user_prompt = TOC_USER_PROMPT if is_toc else USER_PROMPT
             
+            # For TOC pages, use the more powerful o1 model if available
+            current_model = "o1" if is_toc and "o1" in MODEL else MODEL
+            
             if is_toc:
-                print(f"Using TOC prompts for {image_path}")
+                print(f"Using TOC prompts with model {current_model} for {image_path}")
             
             # Updated payload structure with separate system and user messages
             # Use a lower token limit for TOC extraction to avoid excessive responses
             max_tokens = 1024 if is_toc else 3072
             
             payload = {
-                "model": MODEL,
+                "model": current_model,
                 "messages": [
                     {
                         "role": "system",
