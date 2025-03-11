@@ -17,12 +17,12 @@ with open("entity_extraction_prompt.txt", "r") as prompt_file:
     PROMPT = prompt_file.read()
 
 # Set your API key and model from the config
-API_KEY = os.getenv('OPENAI_API_KEY', 'your_openai_api_key')
+API_KEY = os.getenv('OPENAI_API_KEY', '')
 MODEL = config['api_model']
 GPT4_THREADS = config['gpt4_threads']  # Fetch the GPT-4 thread count
 IMAGES_DIR = "output_images"
-EXTRACTED_ENTITIES_DIR = "extracted_entities_improved"  # Directory to save JSON files
-CONTEXT_FILE = "compliance_context_improved.json"  # File to store the context between pages
+EXTRACTED_ENTITIES_DIR = "extracted_entities"  # Directory to save JSON files
+CONTEXT_FILE = "compliance_context.json"  # File to store the context between pages
 
 # Optional: Get NUM_FILES from environment variable or command-line argument
 NUM_FILES = int(os.getenv('NUM_FILES', sys.argv[1]) if len(sys.argv) > 1 else -1)
