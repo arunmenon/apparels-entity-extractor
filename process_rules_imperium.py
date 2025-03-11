@@ -7,6 +7,9 @@ from graph_db.graph_strategy_factory import GraphDatabaseFactory
 # Load environment variables
 load_dotenv()
 
+# This is a renamed version of process_rules_excel.py
+# It processes Imperium rules from an Excel file and loads them into Neo4j
+
 # Define constants
 EXCEL_PATH = os.path.expanduser("~/Downloads/Rules.xlsx")
 BATCH_SIZE = int(os.getenv("BATCH_SIZE", 100))

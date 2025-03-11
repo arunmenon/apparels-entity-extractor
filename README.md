@@ -102,7 +102,7 @@ This will save extracted entities as JSON files in the `extracted_entities` dire
 Load existing Imperium rules into the Neo4j database:
 
 ```bash
-python process_rules_excel.py
+python process_rules_imperium.py
 ```
 
 This script expects an Excel file with Imperium rules at `~/Downloads/Rules.xlsx`.
@@ -123,8 +123,10 @@ Use the Cypher queries in `experimental/cypher_queries.md` to explore and analyz
 - **entity_extraction_prompt.txt**: Prompt for GPT-4 Vision with extraction instructions
 - **pdf_to_images.py**: Converts PDF to images for processing
 - **compliance_graph_loader.py**: Loads extracted entities into Neo4j
-- **process_rules_excel.py**: Loads Imperium rules from Excel into Neo4j
+- **process_rules_imperium.py**: Loads Imperium rules from Excel into Neo4j
 - **entity_context_manager.py**: Manages entity context across multiple pages
+- **clear_graph.py**: Utility to reset the Neo4j database
+- **query_graph.py**: Script to run queries against the graph database
 - **graph_db/**: Database interface implementations
 
 ## Configuration
