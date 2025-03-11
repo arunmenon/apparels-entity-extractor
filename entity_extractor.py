@@ -295,14 +295,88 @@ def gpt4_vision_compliance_extraction(image_path):
                     # If successful, convert back to string with proper formatting
                     structured_response = json.dumps(json_obj)
                     return structured_response
-                except json.JSONDecodeError:
+                except json.JSONDecodeError as json_err:
+                    # Print detailed error for debugging
+                    print(f"JSON parse error details: {json_err}")
+                    print(f"Error position: {json_err.pos}")
+                    if json_err.pos is not None and json_err.pos < len(structured_response):
+                        error_context = structured_response[max(0, json_err.pos - 10):min(len(structured_response), json_err.pos + 10)]
+                        error_char = repr(structured_response[json_err.pos]) if json_err.pos < len(structured_response) else "N/A"
+                        print(f"Error context: ...{error_context}...")
+                        print(f"Character at error position: {error_char}")
+                        
+                        # Handle the specific error we're seeing
+                        if "Invalid control character" in str(json_err) and json_err.pos < len(structured_response):
+                            # Try explicit string cleaning
+                            # First, try to fix the specific problem (newline after opening quote)
+                            if '"cypher_query": "' in structured_response:
+                                print("Fixing newline after opening quote...")
+                                # Replace the newline after the opening quote with an empty string
+                                fixed_response = structured_response.replace('"cypher_query": "\n', '"cypher_query": "')
+                                try:
+                                    json_obj = json.loads(fixed_response)
+                                    return json.dumps(json_obj)
+                                except:
+                                    # If that didn't work, try a more aggressive replacement
+                                    fixed_response = structured_response.replace('\n', ' ').replace('\r', ' ')
+                                    # Clean up double spaces
+                                    while '  ' in fixed_response:
+                                        fixed_response = fixed_response.replace('  ', ' ')
+                                    structured_response = fixed_response
+                                    try:
+                                        json_obj = json.loads(structured_response)
+                                        return json.dumps(json_obj)
+                                    except:
+                                        pass
+                    
                     # If direct parsing fails, try more aggressive cleaning
                     pass
                 
                 # Extract just the cypher query from code block and create a clean JSON
                 if "cypher_query" in structured_response:
                     try:
-                        # For JSON code block format
+                        # Handle the specific format we're seeing in errors: ```json\n{ "cypher_query": "\n...
+                        if '```json' in structured_response and 'cypher_query' in structured_response:
+                            print("Using pattern matching fallback for JSON code block...")
+                            # Extract the raw content from the code block
+                            try:
+                                # First, find the JSON content between ```json and ```
+                                json_block_start = structured_response.find('```json')
+                                json_block_end = structured_response.find('```', json_block_start + 7)
+                                if json_block_start != -1 and json_block_end != -1:
+                                    # Extract the content between the markers and trim whitespace
+                                    json_content = structured_response[json_block_start + 7:json_block_end].strip()
+                                    
+                                    # Extract the Cypher query if possible
+                                    if '"cypher_query"' in json_content:
+                                        # Simplest approach: use regex to extract the content between quotes
+                                        import re
+                                        query_match = re.search(r'"cypher_query":\s*"(.*?)"(?=\s*}[\s\n]*$)', json_content, re.DOTALL)
+                                        if query_match:
+                                            query_text = query_match.group(1)
+                                            # Properly escape the query text
+                                            query_text = query_text.replace('\\', '\\\\').replace('"', '\\"').replace('\n', ' ')
+                                            # Create a fresh, clean JSON object
+                                            clean_json = f'{{"cypher_query": "{query_text}"}}'
+                                            try:
+                                                json.loads(clean_json)  # Validate it's proper JSON
+                                                return clean_json
+                                            except json.JSONDecodeError as je:
+                                                print(f"Warning: Clean JSON still invalid: {je}")
+                                    
+                                    # Second approach: try to remove just the newlines and control characters
+                                    # Keep the structure but convert newlines and control chars
+                                    clean_content = re.sub(r'[\x00-\x09\x0B\x0C\x0E-\x1F\x7F-\x9F]', '', json_content)
+                                    clean_content = re.sub(r'\n\s*', ' ', clean_content)
+                                    try:
+                                        json_obj = json.loads(clean_content)
+                                        return json.dumps(json_obj)
+                                    except json.JSONDecodeError:
+                                        pass
+                            except Exception as e:
+                                print(f"Error in JSON extraction: {e}")
+                        
+                        # For other formats, use the original approach
                         start_idx = structured_response.find("cypher_query")
                         if start_idx != -1:
                             # Find the start of the query value
@@ -360,6 +434,20 @@ def gpt4_vision_compliance_extraction(image_path):
                     # If successful, convert back to string with proper formatting
                     return json.dumps(json_obj)
                 except json.JSONDecodeError as e:
+                    # Final fallback for responses with cypher_query
+                    if "cypher_query" in structured_response and not structured_response.strip().startswith("{"):
+                        # If we reach here, we have a non-JSON response with a cypher_query
+                        # Extract anything that looks like a valid Cypher query pattern
+                        import re
+                        # Look for a pattern like: MERGE (occ:Offensive_Content_Category {name: 'something'})
+                        pattern = r'MERGE\s*\(\w+:[\w_]+\s*\{[^}]+\}\)'
+                        matches = re.findall(pattern, structured_response)
+                        if matches:
+                            # We found some valid Cypher MERGE statements, let's construct a minimal JSON
+                            query_content = " ".join(matches)
+                            minimal_json = f'{{"cypher_query": "{query_content}"}}'
+                            return minimal_json
+                    
                     print(f"Warning: JSON cleaning failed, returning raw string. Error: {e}")
                     # Return the cleaned but possibly invalid JSON
                     return structured_response
