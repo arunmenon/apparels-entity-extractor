@@ -95,6 +95,7 @@ context_manager = EntityContextManager(CONTEXT_FILE)
 def filter_hallucinated_subcategories(extracted_subcats):
     """
     Filter out subcategories that aren't in the ground truth list or close matches.
+    If ground truth is available, attempt to normalize formatting to find better matches.
     
     Args:
         extracted_subcats: List of extracted subcategory names
@@ -106,17 +107,42 @@ def filter_hallucinated_subcategories(extracted_subcats):
         print("No ground truth data available. Using all extracted subcategories.")
         return extracted_subcats
         
+    # Normalize ground truth - convert both ':' and '-' variations to a common format
+    normalized_gt = set()
+    for gt in GROUND_TRUTH_SUBCATS:
+        normalized_gt.add(gt)
+        normalized_gt.add(gt.replace(' - ', ': '))  # Add colon variant
+        normalized_gt.add(gt.replace(': ', ' - '))  # Add hyphen variant
+        
+        # Also add parent category variants
+        parts = gt.split(' - ')
+        if len(parts) > 1:
+            normalized_gt.add(parts[0])  # Add parent category
+        parts = gt.split(': ')
+        if len(parts) > 1:
+            normalized_gt.add(parts[0])  # Add parent category
+    
     filtered_subcats = []
+    skipped_subcats = []
+    
     for subcat in extracted_subcats:
-        # Check for exact match
-        if subcat in GROUND_TRUTH_SUBCATS:
+        # Check for exact match in normalized ground truth
+        if subcat in normalized_gt:
             filtered_subcats.append(subcat)
             continue
             
-        # Check for parent category matches (e.g., "Firearm Accessories: Grips" -> "Firearm Accessories")
+        # Check for parent category matches (subcategory is more specific than ground truth)
         parent_match = False
         for gt_subcat in GROUND_TRUTH_SUBCATS:
-            if subcat.startswith(gt_subcat + ":") or subcat.startswith(gt_subcat + " -"):
+            # Check if this is a more specific version of a ground truth category
+            parent_forms = [
+                gt_subcat + ":",        # "Firearms:"
+                gt_subcat + " -",       # "Firearms -"
+                gt_subcat.split(' - ')[0] + ":",  # For "Firearms - Parts" -> "Firearms:"
+                gt_subcat.split(': ')[0] + ":"    # For "Firearms: Parts" -> "Firearms:"
+            ]
+            
+            if any(subcat.startswith(parent) for parent in parent_forms):
                 filtered_subcats.append(subcat)
                 parent_match = True
                 break
@@ -124,16 +150,37 @@ def filter_hallucinated_subcategories(extracted_subcats):
         if parent_match:
             continue
             
-        # Check for close matches using difflib
-        close_matches = get_close_matches(subcat, GROUND_TRUTH_SUBCATS, n=1, cutoff=0.8)
+        # Check for close matches using normalized ground truth
+        normalized_subcat = subcat.lower()
+        close_matches = get_close_matches(normalized_subcat, 
+                                         [s.lower() for s in normalized_gt], 
+                                         n=1, cutoff=0.85)
         if close_matches:
-            print(f"Replacing '{subcat}' with close match '{close_matches[0]}'")
-            filtered_subcats.append(close_matches[0])
+            # Find the original ground truth version to maintain exact formatting
+            for gt in GROUND_TRUTH_SUBCATS:
+                if gt.lower() == close_matches[0] or gt.lower().replace(' - ', ': ') == close_matches[0]:
+                    print(f"Replacing '{subcat}' with ground truth match '{gt}'")
+                    filtered_subcats.append(gt)
+                    break
+            else:
+                # Fall back to extracted version if no direct ground truth match
+                filtered_subcats.append(subcat)
             continue
-            
-        print(f"Filtering out hallucinated subcategory: '{subcat}'")
+        
+        skipped_subcats.append(subcat)
     
-    print(f"Filtered {len(extracted_subcats) - len(filtered_subcats)} hallucinated subcategories")
+    if skipped_subcats:
+        print(f"Filtering out {len(skipped_subcats)} possible hallucinated subcategories:")
+        for i, subcat in enumerate(skipped_subcats, 1):
+            print(f"  {i}. {subcat}")
+    
+    # If we've filtered too much, use all extracted subcategories
+    if len(filtered_subcats) < 5 and len(extracted_subcats) > 10:
+        print(f"Warning: Only {len(filtered_subcats)} subcategories matched ground truth out of {len(extracted_subcats)}.")
+        print("Using all extracted subcategories instead.")
+        return extracted_subcats
+        
+    print(f"Kept {len(filtered_subcats)} of {len(extracted_subcats)} extracted subcategories")
     return filtered_subcats
 
 
