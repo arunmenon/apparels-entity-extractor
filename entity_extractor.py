@@ -118,11 +118,11 @@ def is_table_of_contents(image_path):
         }
 
         # Enhanced prompt to detect TOC and hybrid pages
-        toc_detection_prompt = """Analyze this document page carefully. Does it appear to contain any of the following:
-1. A full Table of Contents page
-2. A partial Table of Contents section
-3. A list of categories or subcategories that resembles a TOC
-4. A mix of TOC and detailed content about specific categories
+        toc_detection_prompt = """Analyze this document page carefully. We're looking ONLY for pages that have a "Table of Contents" heading followed by bullet points of subcategories.
+
+A true Table of Contents page must contain:
+1. A clear "Table of Contents" heading or title
+2. Bullet points or a numbered list directly under that heading
 
 Respond with ONE of these exact options:
 - "FULL_TOC" if it's primarily a Table of Contents page
@@ -259,18 +259,110 @@ def gpt4_vision_compliance_extraction(image_path):
                 # Debugging: Log the raw response before any processing
                 print(f"Raw structured response: {structured_response}")
 
-                # Remove backticks and the "json" label if they are present
-                if structured_response.startswith("```json"):
-                    structured_response = structured_response.strip("```json").strip("```").strip()
+                # Remove backticks and any language label
+                if structured_response.startswith("```"):
+                    # Extract content between triple backticks
+                    start_idx = structured_response.find("\n", structured_response.find("```"))
+                    if start_idx != -1:
+                        end_idx = structured_response.rfind("```")
+                        if end_idx != -1:
+                            structured_response = structured_response[start_idx:end_idx].strip()
+                        else:
+                            structured_response = structured_response[start_idx:].strip()
+                    else:
+                        structured_response = structured_response.replace("```", "").strip()
                 
-                # Replace control characters that can cause JSON parsing errors
-                structured_response = structured_response.replace('\n', ' ').replace('\r', ' ').replace('\t', ' ')
+                # Handle cypher format specifically
+                if structured_response.startswith("cypher"):
+                    structured_response = structured_response[6:].strip()
+                
+                # Preserve newlines for readability in Cypher queries
+                cypher_query = None
+                if '"cypher_query":' in structured_response:
+                    # Extract just the cypher query to preserve its formatting
+                    start_idx = structured_response.find('"cypher_query":')
+                    if start_idx != -1:
+                        query_start = structured_response.find('"', start_idx + 15)
+                        if query_start != -1:
+                            query_end = structured_response.rfind('"')
+                            if query_end > query_start:
+                                cypher_query = structured_response[query_start+1:query_end]
+                
+                # Special handling for JSON with control characters
+                try:
+                    # Try direct JSON parsing first (handles most well-formed JSON responses)
+                    json_obj = json.loads(structured_response)
+                    # If successful, convert back to string with proper formatting
+                    structured_response = json.dumps(json_obj)
+                    return structured_response
+                except json.JSONDecodeError:
+                    # If direct parsing fails, try more aggressive cleaning
+                    pass
+                
+                # Extract just the cypher query from code block and create a clean JSON
+                if "cypher_query" in structured_response:
+                    try:
+                        # For JSON code block format
+                        start_idx = structured_response.find("cypher_query")
+                        if start_idx != -1:
+                            # Find the start of the query value
+                            quote_idx = structured_response.find('"', start_idx + 13)
+                            if quote_idx != -1:
+                                # Find the next quote that's followed by a closing brace or comma
+                                end_idx = 0
+                                for i in range(quote_idx + 1, len(structured_response)):
+                                    if structured_response[i] == '"' and i+1 < len(structured_response):
+                                        if structured_response[i+1] in [',', '}']:
+                                            end_idx = i
+                                            break
+                                
+                                if end_idx > 0:
+                                    # Extract the raw cypher query
+                                    cypher_query = structured_response[quote_idx+1:end_idx]
+                                    # Create a clean JSON with just this query
+                                    clean_json = f'{{"cypher_query": "{cypher_query.replace("\n", "\\n").replace("\"", "\\\"")}"}}'
+                                    try:
+                                        # Validate it's proper JSON
+                                        json.loads(clean_json)
+                                        return clean_json
+                                    except:
+                                        pass
+                    except Exception as e:
+                        print(f"Error extracting cypher query: {e}")
+                
+                # Remove all control characters except spaces
+                import re
+                structured_response = re.sub(r'[\x00-\x09\x0B\x0C\x0E-\x1F\x7F-\x9F]', '', structured_response)
+                
+                # Replace newlines with spaces except in the cypher query
+                if not cypher_query:
+                    structured_response = structured_response.replace('\n', ' ').replace('\r', ' ').replace('\t', ' ')
                 
                 # Ensure valid JSON structure, add braces if necessary
                 if not structured_response.startswith('{') and not structured_response.endswith('}'):
                     structured_response = '{' + structured_response + '}'
-
-                return structured_response
+                
+                # Put back the formatted cypher query if we extracted it
+                if cypher_query:
+                    try:
+                        # Find cypher_query field
+                        if '"cypher_query":' in structured_response:
+                            # Create a clean JSON with just the cypher query
+                            clean_json = f'{{"cypher_query": "{cypher_query}"}}'
+                            return clean_json
+                    except Exception as e:
+                        print(f"Error reconstructing JSON with cypher query: {e}")
+                
+                # Final attempt to clean and validate
+                try:
+                    # Validate JSON structure
+                    json_obj = json.loads(structured_response)
+                    # If successful, convert back to string with proper formatting
+                    return json.dumps(json_obj)
+                except json.JSONDecodeError as e:
+                    print(f"Warning: JSON cleaning failed, returning raw string. Error: {e}")
+                    # Return the cleaned but possibly invalid JSON
+                    return structured_response
             else:
                 print(f"No valid response for {image_path}")
                 return None
