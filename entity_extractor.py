@@ -94,7 +94,7 @@ def is_table_of_contents(image_path):
         # Enhanced prompt to detect TOC and hybrid pages
         toc_detection_prompt = """You are a document classifier that identifies Table of Contents pages. A true Table of Contents page must contain a clear "Table of Contents" heading or title followed by bulleted or numbered lists of subcategories."""
 
-        # Payload for TOC detection with system/user message separation
+        # Standard payload for TOC detection
         payload = {
             "model": MODEL,
             "messages": [
@@ -127,15 +127,13 @@ def is_table_of_contents(image_path):
             content = result["choices"][0]["message"]["content"].strip().upper()
             print(f"Page type detection for {image_path}: {content}")
             
-            # Both FULL_TOC and HYBRID should use the TOC prompt
-            if "FULL_TOC" in content or "HYBRID" in content:
-                return True
-                
-            # Better debug logging
+            # Better debug logging and return values
             if "HYBRID" in content:
                 print(f"Detected hybrid TOC/content page for {image_path}")
+                return True
             elif "FULL_TOC" in content:
                 print(f"Detected full TOC page for {image_path}")
+                return True
             else:
                 print(f"Detected regular content page for {image_path}")
                 
@@ -204,18 +202,16 @@ def gpt4_vision_compliance_extraction(image_path):
             system_prompt = TOC_SYSTEM_PROMPT if is_toc else SYSTEM_PROMPT
             user_prompt = TOC_USER_PROMPT if is_toc else USER_PROMPT
             
-            # For TOC pages, use the more powerful o1 model if available
-            current_model = "o1" if is_toc and "o1" in MODEL else MODEL
-            
             if is_toc:
-                print(f"Using TOC prompts with model {current_model} for {image_path}")
+                print(f"Using TOC prompts for {image_path}")
             
             # Updated payload structure with separate system and user messages
             # Use a lower token limit for TOC extraction to avoid excessive responses
             max_tokens = 1024 if is_toc else 3072
             
+            # Standard payload for GPT-4 models
             payload = {
-                "model": current_model,
+                "model": MODEL,
                 "messages": [
                     {
                         "role": "system",
@@ -234,7 +230,7 @@ def gpt4_vision_compliance_extraction(image_path):
                         ]
                     }
                 ],
-                "max_tokens": max_tokens,  # Adjust token limit based on TOC vs regular extraction
+                "max_tokens": max_tokens,
                 "temperature": 0
             }
 
@@ -264,7 +260,7 @@ def gpt4_vision_compliance_extraction(image_path):
             if 'choices' in result and result['choices']:
                 structured_response = result['choices'][0]['message']['content'].strip()
 
-                # Debugging: Log the raw response before any processing (truncated version)
+                # Debugging: Log the raw response
                 print(f"Raw structured response: {structured_response[:2000]}...")
                 
                 # Direct fix for TOC extraction - extract subcategories from raw output
