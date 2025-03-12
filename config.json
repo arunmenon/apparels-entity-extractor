@@ -1,5 +1,27 @@
 {
   "api_model": "gpt-4o",
   "image_threads": 6,
-  "gpt4_threads": 3
+  "gpt4_threads": 3,
+  "agent_pipeline": ["classifier", "extractor", "context", "cypher"],
+  "first_page_serial": true,
+  "toc_page_index": 0,
+  "generate_incremental_cypher": true,
+  "validate_extraction": true,
+  "context_file": "compliance_context.json",
+  
+  "use_docling": false,
+  "docling_options": {
+    "enable_ocr": true,
+    "preserve_structure": true,
+    "enforce_json": true,
+    "use_spacy_ner": false
+  },
+  
+  "entity_extractor": {
+    "type": "standard",
+    "model": "gpt-4o"
+  },
+  
+  "enable_statistics": true,
+  "enable_validation": true
 }
