@@ -1,12 +1,56 @@
-Extract ONLY subcategories that you can ACTUALLY SEE in this document image.
-DO NOT make up or hallucinate categories.
+Look at this Walmart eCommerce compliance document image and extract ONLY the text of bullet points visible in the "Table of Contents" section in the main content area.
 
-IMPORTANT: Maintain consistent formatting for all subcategories.
-Use hyphens (-) as separators between category types (e.g., "Firearm Accessories - Grips").
-Follow the exact format shown in the image.
+PAGE STRUCTURE CONTEXT:
+- This is page 1 of the "Guide to Prohibited Items" for "Firearms & Accessories"
+- The main content area contains a "Table of Contents" section with bullet points
+- The left sidebar has navigation links (IGNORE these)
+- Focus ONLY on extracting the blue bullet point items in the main content area
 
-Return ONLY a valid JSON with a "cypher_query" field.
+IMPORTANT REQUIREMENTS:
+- Extract EXACTLY what you see in each bullet point - preserve exact spelling and formatting
+- Include ONLY bullet point items from the Table of Contents section
+- Extract each bullet item as a separate, independent entry
+- Make no assumptions about content that isn't clearly visible
+- Return a valid JSON with the offensive_content_category and sub_categories
 
+CRITICAL ANTI-HALLUCINATION INSTRUCTIONS:
+- Each bullet point is at the SAME HIERARCHICAL LEVEL - there is NO nesting
+- Items like "Firearm Accessories" and "Firearm Accessories: Flashlights" are COMPLETELY SEPARATE entries
+- The colon character in items like "Category: Subtype" is just part of the text, NOT a hierarchy indicator
+- DO NOT create recursive patterns or nested categories
+- DO NOT extend the list beyond what's visible in the bullet points
+
+EXAMPLES OF CORRECT EXTRACTION:
+
+If you see these bullet points in the image:
+• Ammo Reloading - Dies, Shells Holders & Plates
+• Ammunition
+• Firearm Accessories
+• Firearm Accessories: Flashlights
+• Tactical Gear: Thigh Rigs
+
+Your output should be EXACTLY:
 {
-  "cypher_query": "MERGE..."
+  "offensive_content_category": "Firearms & Accessories",
+  "sub_categories": [
+    "Ammo Reloading - Dies, Shells Holders & Plates",
+    "Ammunition",
+    "Firearm Accessories",
+    "Firearm Accessories: Flashlights",
+    "Tactical Gear: Thigh Rigs"
+  ]
+}
+
+DO NOT generate invalid patterns like these (they would be WRONG):
+"Firearm Accessories: Weapon Parts: Weapon Parts"
+"Firearm Accessories: Weapon Parts: Weapon Parts: Barrels"
+
+Format your response as a JSON object with this structure:
+{
+  "offensive_content_category": "Firearms & Accessories",
+  "sub_categories": [
+    "First bullet point text exactly as shown",
+    "Second bullet point text exactly as shown",
+    "..."
+  ]
 }
