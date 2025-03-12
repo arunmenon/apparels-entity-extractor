@@ -6,19 +6,36 @@ __pycache__/
 # C extensions
 *.so
 .DS* 
+
+# Output files and directories
 output_images/
 *.pdf
+incremental_cypher/
+final_cypher.json
+compliance_context*.json
+workflow_statistics.json
 
 # Extracted entities and context files
-compliance_context*.json
-extracted_entities_*/
-extracted_entities/*.json
 extracted_entities/
+extracted_entities_*/
 output_json/
+
+# Virtual environments
+venv/
+docling_venv/
+docling_venv_py310/
+env/
+.venv/
 
 # Imperium rules data
 *.xlsx
 parsed_rules/
+failed_queries/
+
+# Logs
+logs/
+*.log
+
 # Distribution / packaging
 .Python
 build/

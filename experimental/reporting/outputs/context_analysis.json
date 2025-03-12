@@ -1,0 +1,1266 @@
+{
+  "nodes": {
+    "Firearms & Accessories": {
+      "type": "category",
+      "page": "page_2"
+    },
+    "Ammo Reloading - Dies, Shells Holders & Plates": {
+      "type": "subcategory",
+      "page": "page_1_toc"
+    },
+    "Ammunition": {
+      "type": "subcategory",
+      "page": "page_3"
+    },
+    "Ammunition: .223 and 5.56": {
+      "type": "subcategory",
+      "page": "page_1_toc"
+    },
+    "Ammunition: Production": {
+      "type": "subcategory",
+      "page": "page_1_toc"
+    },
+    "Armorer's Wrenches": {
+      "type": "subcategory",
+      "page": "page_1_toc"
+    },
+    "Assault Rifles": {
+      "type": "subcategory",
+      "page": "page_1_toc"
+    },
+    "Can Guns": {
+      "type": "subcategory",
+      "page": "page_1_toc"
+    },
+    "Concealed Carrying Weapon Holsters, Belly Bands, & Similar Items": {
+      "type": "subcategory",
+      "page": "page_1_toc"
+    },
+    "Firearm: Handguns/Pistols": {
+      "type": "subcategory",
+      "page": "page_1_toc"
+    },
+    "Firearm Magazines and Clips": {
+      "type": "subcategory",
+      "page": "page_1_toc"
+    },
+    "Firearm Accessories": {
+      "type": "subcategory",
+      "page": "page_1_toc"
+    },
+    "Firearm Accessories: Flashlights": {
+      "type": "subcategory",
+      "page": "page_1_toc"
+    },
+    "Firearm Accessories: Handgun Sights": {
+      "type": "subcategory",
+      "page": "page_1_toc"
+    },
+    "Firearm Accessories: M-LOK & KeyMod": {
+      "type": "subcategory",
+      "page": "page_1_toc"
+    },
+    "Firearm Accessories: Magazine UPCs": {
+      "type": "subcategory",
+      "page": "page_1_toc"
+    },
+    "Firearm Accessories: Optics, Scopes, and Sights": {
+      "type": "subcategory",
+      "page": "page_1_toc"
+    },
+    "Firearm Accessories: Sight Adapter Plates": {
+      "type": "subcategory",
+      "page": "page_1_toc"
+    },
+    "Firearm Components": {
+      "type": "subcategory",
+      "page": "page_1_toc"
+    },
+    "Firearm Accessories: Tannerite Targets": {
+      "type": "subcategory",
+      "page": "page_1_toc"
+    },
+    "Firearm Item ID, UPC, GTIN": {
+      "type": "subcategory",
+      "page": "page_1_toc"
+    },
+    "Firearm Pistol Grips": {
+      "type": "subcategory",
+      "page": "page_1_toc"
+    },
+    "Flechette Darts": {
+      "type": "subcategory",
+      "page": "page_1_toc"
+    },
+    "Fuel Tabs": {
+      "type": "subcategory",
+      "page": "page_1_toc"
+    },
+    "Gun Tape / Solvent Filter / Solvent Trap": {
+      "type": "subcategory",
+      "page": "page_1_toc"
+    },
+    "Grenades": {
+      "type": "subcategory",
+      "page": "page_1_toc"
+    },
+    "Gun Powder": {
+      "type": "subcategory",
+      "page": "page_1_toc"
+    },
+    "Holstered Security Chemical of Interest (COI)": {
+      "type": "subcategory",
+      "page": "page_1_toc"
+    },
+    "Human Targets": {
+      "type": "subcategory",
+      "page": "page_1_toc"
+    },
+    "ITAR Regulated": {
+      "type": "subcategory",
+      "page": "page_1_toc"
+    },
+    "Modern Sporting Rifle (MSR)": {
+      "type": "subcategory",
+      "page": "page_1_toc"
+    },
+    "Muzzle Devices & Silencers/Suppressors": {
+      "type": "subcategory",
+      "page": "page_1_toc"
+    },
+    "NFA Devices": {
+      "type": "subcategory",
+      "page": "page_1_toc"
+    },
+    "Pinfire Guns": {
+      "type": "subcategory",
+      "page": "page_1_toc"
+    },
+    "Powdered Metals": {
+      "type": "subcategory",
+      "page": "page_1_toc"
+    },
+    "Snap-on/Push Levers": {
+      "type": "subcategory",
+      "page": "page_1_toc"
+    },
+    "Shoulder Harnesses": {
+      "type": "subcategory",
+      "page": "page_1_toc"
+    },
+    "Snap Caps, Training 'Dummy' Ammunition, Laser Boresights, Headspace Gauges": {
+      "type": "subcategory",
+      "page": "page_1_toc"
+    },
+    "Sports Scoring Items (Catch-All Rule)": {
+      "type": "subcategory",
+      "page": "page_1_toc"
+    },
+    "Tactical - Duty Holsters": {
+      "type": "subcategory",
+      "page": "page_1_toc"
+    },
+    "Tactical Gear: Range Bags": {
+      "type": "subcategory",
+      "page": "page_1_toc"
+    },
+    "Tactical Gear: Thigh Rigs": {
+      "type": "subcategory",
+      "page": "page_1_toc"
+    },
+    "Tactical Slings": {
+      "type": "subcategory",
+      "page": "page_1_toc"
+    },
+    "Toothpick Crossbow": {
+      "type": "subcategory",
+      "page": "page_1_toc"
+    },
+    "Vinyl Wraps for Firearms": {
+      "type": "subcategory",
+      "page": "page_1_toc"
+    },
+    "Weapons Conversion Blueprints/Instructions/Manuals": {
+      "type": "subcategory",
+      "page": "page_1_toc"
+    },
+    "Ammo Reloading: Dies, Shell Holders & Plates": {
+      "type": "subcategory",
+      "page": "page_1_details"
+    },
+    "rule: imperium_rule - 1600 - Ammo Reloading: Dies - ... (PROHIBITS)": {
+      "type": "rule",
+      "page": "page_1_details",
+      "description": "1600 - Ammo Reloading: Dies - P1",
+      "status": "PROHIBITS",
+      "rule_type": "imperium_rule"
+    },
+    "rule: imperium_rule - 1613 - Ammo Reloading: Shell H... (PROHIBITS)": {
+      "type": "rule",
+      "page": "page_1_details",
+      "description": "1613 - Ammo Reloading: Shell Holders & Plates - P1",
+      "status": "PROHIBITS",
+      "rule_type": "imperium_rule"
+    },
+    "Ammunition reloading dies": {
+      "type": "subcategory",
+      "page": "page_2"
+    },
+    "Ammunition reloading plates, shells, and holders": {
+      "type": "subcategory",
+      "page": "page_2"
+    },
+    "Shell holders for firearms": {
+      "type": "subcategory",
+      "page": "page_2"
+    },
+    "Reloading kit items": {
+      "type": "subcategory",
+      "page": "page_2"
+    },
+    "guideline: Specific ammo dies, shell holders, and plates, are...": {
+      "type": "guideline",
+      "page": "page_2",
+      "description": "Specific ammo dies, shell holders, and plates, are prohibited because they are intended to be used for pistol and assault rifle caliber products."
+    },
+    "rule: policy_rule - Ammunition dies plates only pr... (PROHIBITS)": {
+      "type": "rule",
+      "page": "page_2",
+      "description": "Ammunition dies plates only prohibit the following calibers: .223, 224, 25, 5.7, 32, 357, 380, 40, 44, 45, 460, 480 judge, 5.56mm, 7.62x39mm, 9mm, 300 Blackout.",
+      "status": "PROHIBITS",
+      "rule_type": "policy_rule"
+    },
+    "rule: policy_rule - Shell holders and plates only ... (PROHIBITS)": {
+      "type": "rule",
+      "page": "page_2",
+      "description": "Shell holders and plates only prohibit the following law calibers (from off channel): .223, 224, 25, 5.7, 32, 357, 380, 40, 44, 45, 460, 480 judge, 5.56mm, 7.62x39mm, 9mm, 300 Blackout.",
+      "status": "PROHIBITS",
+      "rule_type": "policy_rule"
+    },
+    "rule: policy_rule - Ammunition dies not listed wit... (ALLOWS)": {
+      "type": "rule",
+      "page": "page_2",
+      "description": "Ammunition dies not listed within the prohibited section are allowed.",
+      "status": "ALLOWS",
+      "rule_type": "policy_rule"
+    },
+    "rule: policy_rule - Shell holders for firearms are... (ALLOWS)": {
+      "type": "rule",
+      "page": "page_2",
+      "description": "Shell holders for firearms are allowed.",
+      "status": "ALLOWS",
+      "rule_type": "policy_rule"
+    },
+    "rule: policy_rule - Cleaning brushes for firearms ... (ALLOWS)": {
+      "type": "rule",
+      "page": "page_2",
+      "description": "Cleaning brushes for firearms are allowed.",
+      "status": "ALLOWS",
+      "rule_type": "policy_rule"
+    },
+    "rule: policy_rule - Reloading kit items such as bu... (ALLOWS)": {
+      "type": "rule",
+      "page": "page_2",
+      "description": "Reloading kit items such as bullet pullers, case trimmers, case tumblers, cleaning brushes, depriming and priming tools, hand presses, neck turners, speed loaders and sifters, and sandbags are allowed.",
+      "status": "ALLOWS",
+      "rule_type": "policy_rule"
+    },
+    "Ammunition, clips, or bullets": {
+      "type": "subcategory",
+      "page": "page_3"
+    }
+  },
+  "edges": [
+    {
+      "source": "Firearms & Accessories",
+      "target": "Ammo Reloading - Dies, Shells Holders & Plates",
+      "data": {
+        "type": "has_subcategory"
+      }
+    },
+    {
+      "source": "Firearms & Accessories",
+      "target": "Ammunition",
+      "data": {
+        "type": "has_subcategory"
+      }
+    },
+    {
+      "source": "Firearms & Accessories",
+      "target": "Ammunition: .223 and 5.56",
+      "data": {
+        "type": "has_subcategory"
+      }
+    },
+    {
+      "source": "Firearms & Accessories",
+      "target": "Ammunition: Production",
+      "data": {
+        "type": "has_subcategory"
+      }
+    },
+    {
+      "source": "Firearms & Accessories",
+      "target": "Armorer's Wrenches",
+      "data": {
+        "type": "has_subcategory"
+      }
+    },
+    {
+      "source": "Firearms & Accessories",
+      "target": "Assault Rifles",
+      "data": {
+        "type": "has_subcategory"
+      }
+    },
+    {
+      "source": "Firearms & Accessories",
+      "target": "Can Guns",
+      "data": {
+        "type": "has_subcategory"
+      }
+    },
+    {
+      "source": "Firearms & Accessories",
+      "target": "Concealed Carrying Weapon Holsters, Belly Bands, & Similar Items",
+      "data": {
+        "type": "has_subcategory"
+      }
+    },
+    {
+      "source": "Firearms & Accessories",
+      "target": "Firearm: Handguns/Pistols",
+      "data": {
+        "type": "has_subcategory"
+      }
+    },
+    {
+      "source": "Firearms & Accessories",
+      "target": "Firearm Magazines and Clips",
+      "data": {
+        "type": "has_subcategory"
+      }
+    },
+    {
+      "source": "Firearms & Accessories",
+      "target": "Firearm Accessories",
+      "data": {
+        "type": "has_subcategory"
+      }
+    },
+    {
+      "source": "Firearms & Accessories",
+      "target": "Firearm Accessories: Flashlights",
+      "data": {
+        "type": "has_subcategory"
+      }
+    },
+    {
+      "source": "Firearms & Accessories",
+      "target": "Firearm Accessories: Handgun Sights",
+      "data": {
+        "type": "has_subcategory"
+      }
+    },
+    {
+      "source": "Firearms & Accessories",
+      "target": "Firearm Accessories: M-LOK & KeyMod",
+      "data": {
+        "type": "has_subcategory"
+      }
+    },
+    {
+      "source": "Firearms & Accessories",
+      "target": "Firearm Accessories: Magazine UPCs",
+      "data": {
+        "type": "has_subcategory"
+      }
+    },
+    {
+      "source": "Firearms & Accessories",
+      "target": "Firearm Accessories: Optics, Scopes, and Sights",
+      "data": {
+        "type": "has_subcategory"
+      }
+    },
+    {
+      "source": "Firearms & Accessories",
+      "target": "Firearm Accessories: Sight Adapter Plates",
+      "data": {
+        "type": "has_subcategory"
+      }
+    },
+    {
+      "source": "Firearms & Accessories",
+      "target": "Firearm Components",
+      "data": {
+        "type": "has_subcategory"
+      }
+    },
+    {
+      "source": "Firearms & Accessories",
+      "target": "Firearm Accessories: Tannerite Targets",
+      "data": {
+        "type": "has_subcategory"
+      }
+    },
+    {
+      "source": "Firearms & Accessories",
+      "target": "Firearm Item ID, UPC, GTIN",
+      "data": {
+        "type": "has_subcategory"
+      }
+    },
+    {
+      "source": "Firearms & Accessories",
+      "target": "Firearm Pistol Grips",
+      "data": {
+        "type": "has_subcategory"
+      }
+    },
+    {
+      "source": "Firearms & Accessories",
+      "target": "Flechette Darts",
+      "data": {
+        "type": "has_subcategory"
+      }
+    },
+    {
+      "source": "Firearms & Accessories",
+      "target": "Fuel Tabs",
+      "data": {
+        "type": "has_subcategory"
+      }
+    },
+    {
+      "source": "Firearms & Accessories",
+      "target": "Gun Tape / Solvent Filter / Solvent Trap",
+      "data": {
+        "type": "has_subcategory"
+      }
+    },
+    {
+      "source": "Firearms & Accessories",
+      "target": "Grenades",
+      "data": {
+        "type": "has_subcategory"
+      }
+    },
+    {
+      "source": "Firearms & Accessories",
+      "target": "Gun Powder",
+      "data": {
+        "type": "has_subcategory"
+      }
+    },
+    {
+      "source": "Firearms & Accessories",
+      "target": "Holstered Security Chemical of Interest (COI)",
+      "data": {
+        "type": "has_subcategory"
+      }
+    },
+    {
+      "source": "Firearms & Accessories",
+      "target": "Human Targets",
+      "data": {
+        "type": "has_subcategory"
+      }
+    },
+    {
+      "source": "Firearms & Accessories",
+      "target": "ITAR Regulated",
+      "data": {
+        "type": "has_subcategory"
+      }
+    },
+    {
+      "source": "Firearms & Accessories",
+      "target": "Modern Sporting Rifle (MSR)",
+      "data": {
+        "type": "has_subcategory"
+      }
+    },
+    {
+      "source": "Firearms & Accessories",
+      "target": "Muzzle Devices & Silencers/Suppressors",
+      "data": {
+        "type": "has_subcategory"
+      }
+    },
+    {
+      "source": "Firearms & Accessories",
+      "target": "NFA Devices",
+      "data": {
+        "type": "has_subcategory"
+      }
+    },
+    {
+      "source": "Firearms & Accessories",
+      "target": "Pinfire Guns",
+      "data": {
+        "type": "has_subcategory"
+      }
+    },
+    {
+      "source": "Firearms & Accessories",
+      "target": "Powdered Metals",
+      "data": {
+        "type": "has_subcategory"
+      }
+    },
+    {
+      "source": "Firearms & Accessories",
+      "target": "Snap-on/Push Levers",
+      "data": {
+        "type": "has_subcategory"
+      }
+    },
+    {
+      "source": "Firearms & Accessories",
+      "target": "Shoulder Harnesses",
+      "data": {
+        "type": "has_subcategory"
+      }
+    },
+    {
+      "source": "Firearms & Accessories",
+      "target": "Snap Caps, Training 'Dummy' Ammunition, Laser Boresights, Headspace Gauges",
+      "data": {
+        "type": "has_subcategory"
+      }
+    },
+    {
+      "source": "Firearms & Accessories",
+      "target": "Sports Scoring Items (Catch-All Rule)",
+      "data": {
+        "type": "has_subcategory"
+      }
+    },
+    {
+      "source": "Firearms & Accessories",
+      "target": "Tactical - Duty Holsters",
+      "data": {
+        "type": "has_subcategory"
+      }
+    },
+    {
+      "source": "Firearms & Accessories",
+      "target": "Tactical Gear: Range Bags",
+      "data": {
+        "type": "has_subcategory"
+      }
+    },
+    {
+      "source": "Firearms & Accessories",
+      "target": "Tactical Gear: Thigh Rigs",
+      "data": {
+        "type": "has_subcategory"
+      }
+    },
+    {
+      "source": "Firearms & Accessories",
+      "target": "Tactical Slings",
+      "data": {
+        "type": "has_subcategory"
+      }
+    },
+    {
+      "source": "Firearms & Accessories",
+      "target": "Toothpick Crossbow",
+      "data": {
+        "type": "has_subcategory"
+      }
+    },
+    {
+      "source": "Firearms & Accessories",
+      "target": "Vinyl Wraps for Firearms",
+      "data": {
+        "type": "has_subcategory"
+      }
+    },
+    {
+      "source": "Firearms & Accessories",
+      "target": "Weapons Conversion Blueprints/Instructions/Manuals",
+      "data": {
+        "type": "has_subcategory"
+      }
+    },
+    {
+      "source": "Firearms & Accessories",
+      "target": "Ammo Reloading: Dies, Shell Holders & Plates",
+      "data": {
+        "type": "has_subcategory"
+      }
+    },
+    {
+      "source": "Firearms & Accessories",
+      "target": "Ammunition reloading dies",
+      "data": {
+        "type": "has_subcategory"
+      }
+    },
+    {
+      "source": "Firearms & Accessories",
+      "target": "Ammunition reloading plates, shells, and holders",
+      "data": {
+        "type": "has_subcategory"
+      }
+    },
+    {
+      "source": "Firearms & Accessories",
+      "target": "Shell holders for firearms",
+      "data": {
+        "type": "has_subcategory"
+      }
+    },
+    {
+      "source": "Firearms & Accessories",
+      "target": "Reloading kit items",
+      "data": {
+        "type": "has_subcategory"
+      }
+    },
+    {
+      "source": "Ammo Reloading: Dies, Shell Holders & Plates",
+      "target": "rule: imperium_rule - 1600 - Ammo Reloading: Dies - ... (PROHIBITS)",
+      "data": {
+        "type": "has_rule"
+      }
+    },
+    {
+      "source": "Ammo Reloading: Dies, Shell Holders & Plates",
+      "target": "rule: imperium_rule - 1613 - Ammo Reloading: Shell H... (PROHIBITS)",
+      "data": {
+        "type": "has_rule"
+      }
+    },
+    {
+      "source": "Ammunition reloading dies",
+      "target": "guideline: Specific ammo dies, shell holders, and plates, are...",
+      "data": {
+        "type": "has_guideline"
+      }
+    },
+    {
+      "source": "Ammunition reloading dies",
+      "target": "rule: policy_rule - Ammunition dies plates only pr... (PROHIBITS)",
+      "data": {
+        "type": "has_rule"
+      }
+    },
+    {
+      "source": "Ammunition reloading dies",
+      "target": "rule: policy_rule - Shell holders and plates only ... (PROHIBITS)",
+      "data": {
+        "type": "has_rule"
+      }
+    },
+    {
+      "source": "Ammunition reloading dies",
+      "target": "rule: policy_rule - Ammunition dies not listed wit... (ALLOWS)",
+      "data": {
+        "type": "has_rule"
+      }
+    },
+    {
+      "source": "Ammunition reloading dies",
+      "target": "rule: policy_rule - Shell holders for firearms are... (ALLOWS)",
+      "data": {
+        "type": "has_rule"
+      }
+    },
+    {
+      "source": "Ammunition reloading dies",
+      "target": "rule: policy_rule - Cleaning brushes for firearms ... (ALLOWS)",
+      "data": {
+        "type": "has_rule"
+      }
+    },
+    {
+      "source": "Ammunition reloading dies",
+      "target": "rule: policy_rule - Reloading kit items such as bu... (ALLOWS)",
+      "data": {
+        "type": "has_rule"
+      }
+    },
+    {
+      "source": "Ammunition reloading plates, shells, and holders",
+      "target": "guideline: Specific ammo dies, shell holders, and plates, are...",
+      "data": {
+        "type": "has_guideline"
+      }
+    },
+    {
+      "source": "Ammunition reloading plates, shells, and holders",
+      "target": "rule: policy_rule - Ammunition dies plates only pr... (PROHIBITS)",
+      "data": {
+        "type": "has_rule"
+      }
+    },
+    {
+      "source": "Ammunition reloading plates, shells, and holders",
+      "target": "rule: policy_rule - Shell holders and plates only ... (PROHIBITS)",
+      "data": {
+        "type": "has_rule"
+      }
+    },
+    {
+      "source": "Ammunition reloading plates, shells, and holders",
+      "target": "rule: policy_rule - Ammunition dies not listed wit... (ALLOWS)",
+      "data": {
+        "type": "has_rule"
+      }
+    },
+    {
+      "source": "Ammunition reloading plates, shells, and holders",
+      "target": "rule: policy_rule - Shell holders for firearms are... (ALLOWS)",
+      "data": {
+        "type": "has_rule"
+      }
+    },
+    {
+      "source": "Ammunition reloading plates, shells, and holders",
+      "target": "rule: policy_rule - Cleaning brushes for firearms ... (ALLOWS)",
+      "data": {
+        "type": "has_rule"
+      }
+    },
+    {
+      "source": "Ammunition reloading plates, shells, and holders",
+      "target": "rule: policy_rule - Reloading kit items such as bu... (ALLOWS)",
+      "data": {
+        "type": "has_rule"
+      }
+    },
+    {
+      "source": "Shell holders for firearms",
+      "target": "guideline: Specific ammo dies, shell holders, and plates, are...",
+      "data": {
+        "type": "has_guideline"
+      }
+    },
+    {
+      "source": "Shell holders for firearms",
+      "target": "rule: policy_rule - Ammunition dies plates only pr... (PROHIBITS)",
+      "data": {
+        "type": "has_rule"
+      }
+    },
+    {
+      "source": "Shell holders for firearms",
+      "target": "rule: policy_rule - Shell holders and plates only ... (PROHIBITS)",
+      "data": {
+        "type": "has_rule"
+      }
+    },
+    {
+      "source": "Shell holders for firearms",
+      "target": "rule: policy_rule - Ammunition dies not listed wit... (ALLOWS)",
+      "data": {
+        "type": "has_rule"
+      }
+    },
+    {
+      "source": "Shell holders for firearms",
+      "target": "rule: policy_rule - Shell holders for firearms are... (ALLOWS)",
+      "data": {
+        "type": "has_rule"
+      }
+    },
+    {
+      "source": "Shell holders for firearms",
+      "target": "rule: policy_rule - Cleaning brushes for firearms ... (ALLOWS)",
+      "data": {
+        "type": "has_rule"
+      }
+    },
+    {
+      "source": "Shell holders for firearms",
+      "target": "rule: policy_rule - Reloading kit items such as bu... (ALLOWS)",
+      "data": {
+        "type": "has_rule"
+      }
+    },
+    {
+      "source": "Reloading kit items",
+      "target": "guideline: Specific ammo dies, shell holders, and plates, are...",
+      "data": {
+        "type": "has_guideline"
+      }
+    },
+    {
+      "source": "Reloading kit items",
+      "target": "rule: policy_rule - Ammunition dies plates only pr... (PROHIBITS)",
+      "data": {
+        "type": "has_rule"
+      }
+    },
+    {
+      "source": "Reloading kit items",
+      "target": "rule: policy_rule - Shell holders and plates only ... (PROHIBITS)",
+      "data": {
+        "type": "has_rule"
+      }
+    },
+    {
+      "source": "Reloading kit items",
+      "target": "rule: policy_rule - Ammunition dies not listed wit... (ALLOWS)",
+      "data": {
+        "type": "has_rule"
+      }
+    },
+    {
+      "source": "Reloading kit items",
+      "target": "rule: policy_rule - Shell holders for firearms are... (ALLOWS)",
+      "data": {
+        "type": "has_rule"
+      }
+    },
+    {
+      "source": "Reloading kit items",
+      "target": "rule: policy_rule - Cleaning brushes for firearms ... (ALLOWS)",
+      "data": {
+        "type": "has_rule"
+      }
+    },
+    {
+      "source": "Reloading kit items",
+      "target": "rule: policy_rule - Reloading kit items such as bu... (ALLOWS)",
+      "data": {
+        "type": "has_rule"
+      }
+    },
+    {
+      "source": "Ammunition, clips, or bullets",
+      "target": "Ammunition",
+      "data": {
+        "type": "has_subcategory"
+      }
+    },
+    {
+      "source": "Ammunition, clips, or bullets",
+      "target": "Ammunition, clips, or bullets",
+      "data": {
+        "type": "has_subcategory"
+      }
+    }
+  ],
+  "spanning_entities": {},
+  "cross_page_relationships": [
+    {
+      "source": "Firearms & Accessories",
+      "source_type": "category",
+      "source_page": "page_2",
+      "target": "Ammo Reloading - Dies, Shells Holders & Plates",
+      "target_type": "subcategory",
+      "target_page": "page_1_toc",
+      "relationship": "has_subcategory"
+    },
+    {
+      "source": "Firearms & Accessories",
+      "source_type": "category",
+      "source_page": "page_2",
+      "target": "Ammunition",
+      "target_type": "subcategory",
+      "target_page": "page_3",
+      "relationship": "has_subcategory"
+    },
+    {
+      "source": "Firearms & Accessories",
+      "source_type": "category",
+      "source_page": "page_2",
+      "target": "Ammunition: .223 and 5.56",
+      "target_type": "subcategory",
+      "target_page": "page_1_toc",
+      "relationship": "has_subcategory"
+    },
+    {
+      "source": "Firearms & Accessories",
+      "source_type": "category",
+      "source_page": "page_2",
+      "target": "Ammunition: Production",
+      "target_type": "subcategory",
+      "target_page": "page_1_toc",
+      "relationship": "has_subcategory"
+    },
+    {
+      "source": "Firearms & Accessories",
+      "source_type": "category",
+      "source_page": "page_2",
+      "target": "Armorer's Wrenches",
+      "target_type": "subcategory",
+      "target_page": "page_1_toc",
+      "relationship": "has_subcategory"
+    },
+    {
+      "source": "Firearms & Accessories",
+      "source_type": "category",
+      "source_page": "page_2",
+      "target": "Assault Rifles",
+      "target_type": "subcategory",
+      "target_page": "page_1_toc",
+      "relationship": "has_subcategory"
+    },
+    {
+      "source": "Firearms & Accessories",
+      "source_type": "category",
+      "source_page": "page_2",
+      "target": "Can Guns",
+      "target_type": "subcategory",
+      "target_page": "page_1_toc",
+      "relationship": "has_subcategory"
+    },
+    {
+      "source": "Firearms & Accessories",
+      "source_type": "category",
+      "source_page": "page_2",
+      "target": "Concealed Carrying Weapon Holsters, Belly Bands, & Similar Items",
+      "target_type": "subcategory",
+      "target_page": "page_1_toc",
+      "relationship": "has_subcategory"
+    },
+    {
+      "source": "Firearms & Accessories",
+      "source_type": "category",
+      "source_page": "page_2",
+      "target": "Firearm: Handguns/Pistols",
+      "target_type": "subcategory",
+      "target_page": "page_1_toc",
+      "relationship": "has_subcategory"
+    },
+    {
+      "source": "Firearms & Accessories",
+      "source_type": "category",
+      "source_page": "page_2",
+      "target": "Firearm Magazines and Clips",
+      "target_type": "subcategory",
+      "target_page": "page_1_toc",
+      "relationship": "has_subcategory"
+    },
+    {
+      "source": "Firearms & Accessories",
+      "source_type": "category",
+      "source_page": "page_2",
+      "target": "Firearm Accessories",
+      "target_type": "subcategory",
+      "target_page": "page_1_toc",
+      "relationship": "has_subcategory"
+    },
+    {
+      "source": "Firearms & Accessories",
+      "source_type": "category",
+      "source_page": "page_2",
+      "target": "Firearm Accessories: Flashlights",
+      "target_type": "subcategory",
+      "target_page": "page_1_toc",
+      "relationship": "has_subcategory"
+    },
+    {
+      "source": "Firearms & Accessories",
+      "source_type": "category",
+      "source_page": "page_2",
+      "target": "Firearm Accessories: Handgun Sights",
+      "target_type": "subcategory",
+      "target_page": "page_1_toc",
+      "relationship": "has_subcategory"
+    },
+    {
+      "source": "Firearms & Accessories",
+      "source_type": "category",
+      "source_page": "page_2",
+      "target": "Firearm Accessories: M-LOK & KeyMod",
+      "target_type": "subcategory",
+      "target_page": "page_1_toc",
+      "relationship": "has_subcategory"
+    },
+    {
+      "source": "Firearms & Accessories",
+      "source_type": "category",
+      "source_page": "page_2",
+      "target": "Firearm Accessories: Magazine UPCs",
+      "target_type": "subcategory",
+      "target_page": "page_1_toc",
+      "relationship": "has_subcategory"
+    },
+    {
+      "source": "Firearms & Accessories",
+      "source_type": "category",
+      "source_page": "page_2",
+      "target": "Firearm Accessories: Optics, Scopes, and Sights",
+      "target_type": "subcategory",
+      "target_page": "page_1_toc",
+      "relationship": "has_subcategory"
+    },
+    {
+      "source": "Firearms & Accessories",
+      "source_type": "category",
+      "source_page": "page_2",
+      "target": "Firearm Accessories: Sight Adapter Plates",
+      "target_type": "subcategory",
+      "target_page": "page_1_toc",
+      "relationship": "has_subcategory"
+    },
+    {
+      "source": "Firearms & Accessories",
+      "source_type": "category",
+      "source_page": "page_2",
+      "target": "Firearm Components",
+      "target_type": "subcategory",
+      "target_page": "page_1_toc",
+      "relationship": "has_subcategory"
+    },
+    {
+      "source": "Firearms & Accessories",
+      "source_type": "category",
+      "source_page": "page_2",
+      "target": "Firearm Accessories: Tannerite Targets",
+      "target_type": "subcategory",
+      "target_page": "page_1_toc",
+      "relationship": "has_subcategory"
+    },
+    {
+      "source": "Firearms & Accessories",
+      "source_type": "category",
+      "source_page": "page_2",
+      "target": "Firearm Item ID, UPC, GTIN",
+      "target_type": "subcategory",
+      "target_page": "page_1_toc",
+      "relationship": "has_subcategory"
+    },
+    {
+      "source": "Firearms & Accessories",
+      "source_type": "category",
+      "source_page": "page_2",
+      "target": "Firearm Pistol Grips",
+      "target_type": "subcategory",
+      "target_page": "page_1_toc",
+      "relationship": "has_subcategory"
+    },
+    {
+      "source": "Firearms & Accessories",
+      "source_type": "category",
+      "source_page": "page_2",
+      "target": "Flechette Darts",
+      "target_type": "subcategory",
+      "target_page": "page_1_toc",
+      "relationship": "has_subcategory"
+    },
+    {
+      "source": "Firearms & Accessories",
+      "source_type": "category",
+      "source_page": "page_2",
+      "target": "Fuel Tabs",
+      "target_type": "subcategory",
+      "target_page": "page_1_toc",
+      "relationship": "has_subcategory"
+    },
+    {
+      "source": "Firearms & Accessories",
+      "source_type": "category",
+      "source_page": "page_2",
+      "target": "Gun Tape / Solvent Filter / Solvent Trap",
+      "target_type": "subcategory",
+      "target_page": "page_1_toc",
+      "relationship": "has_subcategory"
+    },
+    {
+      "source": "Firearms & Accessories",
+      "source_type": "category",
+      "source_page": "page_2",
+      "target": "Grenades",
+      "target_type": "subcategory",
+      "target_page": "page_1_toc",
+      "relationship": "has_subcategory"
+    },
+    {
+      "source": "Firearms & Accessories",
+      "source_type": "category",
+      "source_page": "page_2",
+      "target": "Gun Powder",
+      "target_type": "subcategory",
+      "target_page": "page_1_toc",
+      "relationship": "has_subcategory"
+    },
+    {
+      "source": "Firearms & Accessories",
+      "source_type": "category",
+      "source_page": "page_2",
+      "target": "Holstered Security Chemical of Interest (COI)",
+      "target_type": "subcategory",
+      "target_page": "page_1_toc",
+      "relationship": "has_subcategory"
+    },
+    {
+      "source": "Firearms & Accessories",
+      "source_type": "category",
+      "source_page": "page_2",
+      "target": "Human Targets",
+      "target_type": "subcategory",
+      "target_page": "page_1_toc",
+      "relationship": "has_subcategory"
+    },
+    {
+      "source": "Firearms & Accessories",
+      "source_type": "category",
+      "source_page": "page_2",
+      "target": "ITAR Regulated",
+      "target_type": "subcategory",
+      "target_page": "page_1_toc",
+      "relationship": "has_subcategory"
+    },
+    {
+      "source": "Firearms & Accessories",
+      "source_type": "category",
+      "source_page": "page_2",
+      "target": "Modern Sporting Rifle (MSR)",
+      "target_type": "subcategory",
+      "target_page": "page_1_toc",
+      "relationship": "has_subcategory"
+    },
+    {
+      "source": "Firearms & Accessories",
+      "source_type": "category",
+      "source_page": "page_2",
+      "target": "Muzzle Devices & Silencers/Suppressors",
+      "target_type": "subcategory",
+      "target_page": "page_1_toc",
+      "relationship": "has_subcategory"
+    },
+    {
+      "source": "Firearms & Accessories",
+      "source_type": "category",
+      "source_page": "page_2",
+      "target": "NFA Devices",
+      "target_type": "subcategory",
+      "target_page": "page_1_toc",
+      "relationship": "has_subcategory"
+    },
+    {
+      "source": "Firearms & Accessories",
+      "source_type": "category",
+      "source_page": "page_2",
+      "target": "Pinfire Guns",
+      "target_type": "subcategory",
+      "target_page": "page_1_toc",
+      "relationship": "has_subcategory"
+    },
+    {
+      "source": "Firearms & Accessories",
+      "source_type": "category",
+      "source_page": "page_2",
+      "target": "Powdered Metals",
+      "target_type": "subcategory",
+      "target_page": "page_1_toc",
+      "relationship": "has_subcategory"
+    },
+    {
+      "source": "Firearms & Accessories",
+      "source_type": "category",
+      "source_page": "page_2",
+      "target": "Snap-on/Push Levers",
+      "target_type": "subcategory",
+      "target_page": "page_1_toc",
+      "relationship": "has_subcategory"
+    },
+    {
+      "source": "Firearms & Accessories",
+      "source_type": "category",
+      "source_page": "page_2",
+      "target": "Shoulder Harnesses",
+      "target_type": "subcategory",
+      "target_page": "page_1_toc",
+      "relationship": "has_subcategory"
+    },
+    {
+      "source": "Firearms & Accessories",
+      "source_type": "category",
+      "source_page": "page_2",
+      "target": "Snap Caps, Training 'Dummy' Ammunition, Laser Boresights, Headspace Gauges",
+      "target_type": "subcategory",
+      "target_page": "page_1_toc",
+      "relationship": "has_subcategory"
+    },
+    {
+      "source": "Firearms & Accessories",
+      "source_type": "category",
+      "source_page": "page_2",
+      "target": "Sports Scoring Items (Catch-All Rule)",
+      "target_type": "subcategory",
+      "target_page": "page_1_toc",
+      "relationship": "has_subcategory"
+    },
+    {
+      "source": "Firearms & Accessories",
+      "source_type": "category",
+      "source_page": "page_2",
+      "target": "Tactical - Duty Holsters",
+      "target_type": "subcategory",
+      "target_page": "page_1_toc",
+      "relationship": "has_subcategory"
+    },
+    {
+      "source": "Firearms & Accessories",
+      "source_type": "category",
+      "source_page": "page_2",
+      "target": "Tactical Gear: Range Bags",
+      "target_type": "subcategory",
+      "target_page": "page_1_toc",
+      "relationship": "has_subcategory"
+    },
+    {
+      "source": "Firearms & Accessories",
+      "source_type": "category",
+      "source_page": "page_2",
+      "target": "Tactical Gear: Thigh Rigs",
+      "target_type": "subcategory",
+      "target_page": "page_1_toc",
+      "relationship": "has_subcategory"
+    },
+    {
+      "source": "Firearms & Accessories",
+      "source_type": "category",
+      "source_page": "page_2",
+      "target": "Tactical Slings",
+      "target_type": "subcategory",
+      "target_page": "page_1_toc",
+      "relationship": "has_subcategory"
+    },
+    {
+      "source": "Firearms & Accessories",
+      "source_type": "category",
+      "source_page": "page_2",
+      "target": "Toothpick Crossbow",
+      "target_type": "subcategory",
+      "target_page": "page_1_toc",
+      "relationship": "has_subcategory"
+    },
+    {
+      "source": "Firearms & Accessories",
+      "source_type": "category",
+      "source_page": "page_2",
+      "target": "Vinyl Wraps for Firearms",
+      "target_type": "subcategory",
+      "target_page": "page_1_toc",
+      "relationship": "has_subcategory"
+    },
+    {
+      "source": "Firearms & Accessories",
+      "source_type": "category",
+      "source_page": "page_2",
+      "target": "Weapons Conversion Blueprints/Instructions/Manuals",
+      "target_type": "subcategory",
+      "target_page": "page_1_toc",
+      "relationship": "has_subcategory"
+    },
+    {
+      "source": "Firearms & Accessories",
+      "source_type": "category",
+      "source_page": "page_2",
+      "target": "Ammo Reloading: Dies, Shell Holders & Plates",
+      "target_type": "subcategory",
+      "target_page": "page_1_details",
+      "relationship": "has_subcategory"
+    }
+  ]
+}

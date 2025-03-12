@@ -1,253 +1,74 @@
-# Compliance Entity Extraction & Knowledge Graph
+# Compliance Entity Extractor
+
+A system for extracting compliance entities from product documentation and building a knowledge graph.
 
 ## Overview
-This project extracts structured compliance data from product policy documents (like Prohibited/Allowed Content Guides) and transforms them into a knowledge graph. The system processes compliance guidelines to identify what's prohibited versus allowed, capturing relevant attributes and relationships. It then connects these entities to existing Imperium rules in a Neo4j database.
 
-## Features
-- **Entity Extraction**: Uses GPT-4 Vision to analyze compliance PDFs and extract structured entities 
-- **Rule Identification**: Identifies rule IDs and creates connections to existing Imperium rules
-- **Smart Entity Relationships**: Handles missing rule IDs with conditional relationship creation
-- **Context Awareness**: Maintains category context across multiple document pages
-- **Attribute Extraction**: Captures specific attributes (e.g., caliber, material) that define rules
-- **Knowledge Graph Integration**: Loads extracted data into a Neo4j graph database
-- **Multi-Threaded Processing**: Handles multiple pages in parallel for faster processing
-- **Hybrid TOC Processing**: Specialized detection and extraction for Table of Contents pages
+This project extracts structured information from compliance documentation images, including:
+- Categories
+- Subcategories
+- Guidelines
+- Rules (prohibitions and allowances)
 
-## Knowledge Graph Schema
-- **Offensive_Content_Category**: Top-level categories (e.g., "Firearms & Accessories")
-- **Sub_Category**: Specific categories (e.g., "Ammunition", "Armorers' Wrenches")
-- **Guideline**: High-level compliance guideline text
-- **Imperium_Rule**: Rules with explicit IDs (matched to existing rules)
-- **Policy_Rule**: Textual or policy-based rules without explicit IDs
-- **Image_Detection_Rule**: Rules derived from visual examples
-- **Attribute**: Properties like caliber, material, or purpose tied to specific rules
+The extraction system uses an agentic workflow to process images, identify entities, and generate a graph representation.
 
-## Installation & Setup
+## Architecture
 
-### Prerequisites
-- Python 3.9+
-- Neo4j Database (Community Edition 5.x+)
-- OpenAI API key (for GPT-4 Vision)
-- poppler (for PDF processing)
+The system follows an agentic workflow:
 
-### Environment Setup
+1. **Page Classification**: Determine if a page is TOC, regular, or hybrid
+2. **Entity Extraction**: Extract structured data based on page type
+3. **Context Management**: Maintain relationships between entities across pages
+4. **Cypher Generation**: Generate graph database queries
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/apparels-entity-extractor.git
-   cd apparels-entity-extractor
-   ```
+The system uses prompt templates stored in the `prompts/` folder for different aspects of extraction.
 
-2. Create and activate a virtual environment:
-   ```bash
-   python -m venv venv
-   
-   # On Windows
-   venv\Scripts\activate
-   
-   # On macOS/Linux
-   source venv/bin/activate
-   ```
+## Key Features
 
-3. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
+- **Context-Aware Extraction**: Maintains category and subcategory relationships across pages
+- **Subcategory Normalization**: Matches extracted subcategories against the Table of Contents list
+- **Rule Classification**: Identifies different rule types (imperium_rule, policy_rule)
+- **Color-Aware Processing**: Uses color-coding to determine PROHIBITS/ALLOWS status
 
-4. Install poppler for PDF processing:
-   ```bash
-   # macOS
-   brew install poppler
-   
-   # Ubuntu/Debian
-   sudo apt-get install poppler-utils
-   
-   # Windows (use conda)
-   conda install -c conda-forge poppler
-   ```
-
-5. Set up environment variables by creating a `.env` file:
-   ```
-   OPENAI_API_KEY=your_openai_api_key
-   NEO4J_URI=bolt://localhost:7687
-   NEO4J_USER=neo4j
-   NEO4J_PASSWORD=your_neo4j_password
-   BATCH_SIZE=20
-   ```
-
-## Workflow
-
-### 1. Convert PDF to Images
-Convert your compliance PDF document into images for processing:
+## Usage
 
 ```bash
-# Use the default settings (looks for PDF at ~/Downloads/compliance_document.pdf)
-python pdf_to_images.py
+# Run the agentic workflow on all images
+python run_agentic_workflow.py
 
-# Specify a custom PDF path
-python pdf_to_images.py --pdf /path/to/your/document.pdf
+# Run the workflow on a limited set of images
+python run_agentic_workflow.py --limit 10
 
-# Specify output directory and threads
-python pdf_to_images.py --pdf /path/to/your/document.pdf --output custom_images_dir --threads 8
+# Process images sequentially (default is parallel)
+python run_agentic_workflow.py --sequential
+
+# Specify custom config file
+python run_agentic_workflow.py --config custom_config.json
 ```
-
-You can also set these values in your `.env` file:
-```
-PDF_PATH=/path/to/your/document.pdf
-OUTPUT_DIR=custom_images_dir
-IMAGE_THREADS=8
-```
-
-### 2. Extract Entities
-Process the images using GPT-4 Vision to extract structured compliance entities:
-
-```bash
-# Process all pages
-python entity_extractor.py
-
-# Process a specific number of pages
-python entity_extractor.py 10
-```
-
-This will save extracted entities as JSON files in the `extracted_entities` directory.
-
-### 3. Load Imperium Rules
-Load existing Imperium rules into the Neo4j database:
-
-```bash
-# Use default settings (looks for Excel file at ~/Downloads/Rules.xlsx)
-python process_rules_imperium.py
-
-# Specify a custom Excel path
-python process_rules_imperium.py --excel /path/to/your/Rules.xlsx
-
-# Control batch size and limit the number of rules to process
-python process_rules_imperium.py --batch-size 50 --limit 1000
-
-# Dry run - just load Excel file and count rules without processing
-python process_rules_imperium.py --dry-run
-```
-
-You can also set these values in your `.env` file:
-```
-RULES_EXCEL_PATH=/path/to/your/Rules.xlsx
-BATCH_SIZE=50
-```
-
-### 4. Load Extracted Entities to Graph
-Load the extracted entities into the Neo4j graph database, connecting to existing Imperium rules:
-
-```bash
-python compliance_graph_loader.py
-```
-
-### 5. Query the Graph
-Use the Cypher queries in `experimental/cypher_queries.md` to explore and analyze the knowledge graph.
-
-## Key Files
-
-- **entity_extractor.py**: Main script for extracting entities from images
-- **entity_extraction_prompt.txt**: User prompt for GPT-4 Vision with extraction instructions
-- **entity_system_prompt.txt**: System prompt for entity extraction
-- **toc_extraction_prompt.txt**: User prompt for Table of Contents pages 
-- **toc_system_prompt.txt**: System prompt for TOC extraction
-- **pdf_to_images.py**: Converts PDF to images for processing
-- **compliance_graph_loader.py**: Loads extracted entities into Neo4j
-- **process_rules_imperium.py**: Loads Imperium rules from Excel into Neo4j
-- **entity_context_manager.py**: Manages entity context across multiple pages
-- **clear_graph.py**: Utility to reset the Neo4j database
-- **query_graph.py**: Script to run queries against the graph database
-- **graph_db/**: Database interface implementations
 
 ## Configuration
 
-Adjust settings in `config.json`:
+Edit `config.json` to customize the workflow:
+
 ```json
 {
-  "api_model": "gpt-4-vision-preview",
+  "api_model": "gpt-4o",
   "image_threads": 6,
-  "gpt4_threads": 3
+  "gpt4_threads": 3,
+  "agent_pipeline": ["classifier", "extractor", "context", "cypher"],
+  "first_page_serial": true,
+  "toc_page_index": 0
 }
 ```
 
-## Testing and Verification
+## Analysis & Reporting
 
-The `experimental` directory contains various tools for testing and verification:
-- **cypher_queries.md**: Useful Cypher queries for exploring the graph
-- **graph_stats.py**: Generates statistics about the graph
-- **check_rule_ids.py**: Verifies rule ID connections
-- **test_extraction.py**: Tests entity extraction on a single page
+The project includes several reporting tools in the `experimental/reporting/` directory:
 
-## Troubleshooting
-
-- **API Key Issues**: Ensure your OpenAI API key is set correctly in the `.env` file
-- **Neo4j Connection**: Verify Neo4j is running and credentials are correct
-- **Missing Rule IDs**: Use the experimental scripts to verify rule connections
-- **JSON Parsing Errors**: Check extracted JSON files for formatting issues
-- **TOC Extraction Issues**: If Table of Contents extraction is failing:
-  - Check the `toc_system_prompt.txt` and `toc_extraction_prompt.txt` files
-  - Examine the raw model output for any hallucinated subcategories
-  - Adjust the token limit or use the direct pattern extraction mechanism
-
-## Advanced Usage
-
-### Hybrid TOC Processing Architecture
-
-The system implements a sophisticated approach to handle Table of Contents (TOC) pages in compliance documents:
-
-#### Page Type Detection
-- The `is_table_of_contents()` function sends small API requests to analyze each page
-- It identifies three distinct page types:
-  - **FULL_TOC**: Pages that primarily contain a Table of Contents
-  - **HYBRID**: Pages with both TOC elements and detailed content
-  - **REGULAR**: Standard content pages with no TOC elements
-
-#### Dual-Extraction Process
-For TOC and hybrid pages, the system employs a specialized prompt that:
-1. Extracts the main category and ALL subcategories from TOC sections
-2. Simultaneously processes any detailed content using the same extraction rules as regular pages
-3. Ensures entities are created exactly once (no duplication if a subcategory appears in TOC and detailed sections)
-
-#### Benefits of the Hybrid Approach
-- **Early Structure Construction**: Builds a comprehensive skeleton of categories/subcategories from the beginning
-- **Context Enrichment**: Provides rich context for subsequent pages that may not explicitly mention parent categories
-- **Flexible Document Handling**: Works with documents that interleave TOC elements with detailed content
-- **Enhanced Entity Relationships**: Ensures guidelines and rules connect to the correct subcategories in the hierarchy
-
-#### Implementation Details
-TOC processing is implemented through:
-- A dedicated TOC detection function in `entity_extractor.py`
-- Separate system and user prompts (`toc_system_prompt.txt` and `toc_extraction_prompt.txt`)
-- Direct pattern extraction with regex to handle truncated or malformed JSON responses
-- Special handling of hybrid pages with both TOC elements and detailed content
-- Anti-hallucination mechanisms to prevent generating subcategories not present in the document
-
-### Batch Processing
-For large PDFs, process in batches:
-```bash
-export NUM_FILES=10
-python entity_extractor.py
-```
-
-### Custom Categories
-To enforce a specific primary category:
-```bash
-# Edit entity_context_manager.py to set a primary category
-# In the initialize_context method:
-self.entity_context['offensive_content_category']['Your Primary Category'] = {
-    'is_primary': True
-}
-```
-
-### Manual Rule Connections
-Connect guidelines to Imperium rules manually:
-```bash
-# Edit experimental/connect_guidelines_to_rules.py with your rule IDs
-python experimental/connect_guidelines_to_rules.py
-```
+- `extraction_report.py`: Generate summary and detailed reports of extracted entities
+- `context_inheritance.py`: Analyze entity relationships across pages
+- `toc_evaluation.py`: Evaluate TOC extraction against ground truth
 
 ## License
-[Insert your license information here]
 
-## Contributors
-[List contributors here]
+© 2025 Walmart. All rights reserved.

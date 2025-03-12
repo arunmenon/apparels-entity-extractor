@@ -1,0 +1,180 @@
+{
+  "details": {
+    "page_1_details": {
+      "category": "Firearms & Accessories",
+      "classification": "HYBRID",
+      "subcategories": [
+        "Ammo Reloading - Dies, Shell Holders & Plates"
+      ],
+      "guidelines": [],
+      "rules": [
+        {
+          "type": "imperium_rule",
+          "status": "PROHIBITS",
+          "description": "1600 - Ammo Reloading: Dies - P1"
+        },
+        {
+          "type": "imperium_rule",
+          "status": "PROHIBITS",
+          "description": "1613 - Ammo Reloading: Shell Holders & Plates - P1"
+        }
+      ]
+    },
+    "page_1_toc": {
+      "category": "Firearms & Accessories",
+      "classification": "FULL_TOC",
+      "subcategories": [
+        "Ammo Reloading - Dies, Shell Holders & Plates",
+        "Ammunition"
+      ],
+      "guidelines": [],
+      "rules": []
+    },
+    "page_2": {
+      "category": "Firearms & Accessories",
+      "classification": "REGULAR",
+      "subcategories": [
+        "Ammo Reloading - Dies, Shell Holders & Plates"
+      ],
+      "guidelines": [
+        "Specific ammo dies, shell holders, and plates, are prohibited because they are intended to be used for pistol and assault rifle caliber products."
+      ],
+      "rules": [
+        {
+          "type": "policy_rule",
+          "status": "PROHIBITS",
+          "description": "Ammunition dies plates only prohibit the following calibers: .223, 224, 25, 5.7, 32, 357, 380, 40, 44, 45, 460 Judge, 5.56mm, 7.62x39mm, 9mm, 300 Blackout."
+        },
+        {
+          "type": "policy_rule",
+          "status": "PROHIBITS",
+          "description": "Shell holders and plates only prohibit the following law calibers (from off channels): .223, 224, 25, 5.7, 32, 357, 380, 40, 44, 45, 460 Judge, 5.56mm, 7.62x39mm, 9mm, 300 Blackout."
+        },
+        {
+          "type": "policy_rule",
+          "status": "ALLOWS",
+          "description": "Ammunition dies not listed within the prohibited section are allowed."
+        },
+        {
+          "type": "policy_rule",
+          "status": "ALLOWS",
+          "description": "Shell holders for firearms are allowed."
+        }
+      ]
+    },
+    "page_3": {
+      "category": "Firearms & Accessories",
+      "classification": "REGULAR",
+      "subcategories": [
+        "Ammunition, clips, or bullets",
+        "Assault rifle ammunition"
+      ],
+      "guidelines": [
+        "All types of firearm ammunition are prohibited, including dummy rounds. In addition, any item designed to increase the number of rounds of ammunition a weapon can carry and/or discharge at one time is prohibited, such as ammunition magazines. Firearm and firearm storage devices are allowed. Rule 206 prohibits specific brands and product names that might be commonly associated to ammunition items such as Federal Premium\u00ae, Hornady Critical Defense, Winchester Power Max, etc."
+      ],
+      "rules": [
+        {
+          "type": "policy_rule",
+          "status": "PROHIBITS",
+          "description": "All types of firearm ammunition are prohibited, including dummy rounds."
+        },
+        {
+          "type": "policy_rule",
+          "status": "PROHIBITS",
+          "description": "Any item designed to increase the number of rounds of ammunition a weapon can carry and/or discharge at one time is prohibited."
+        },
+        {
+          "type": "policy_rule",
+          "status": "PROHIBITS",
+          "description": "Shell holders, ammunition belts, bandoleers prohibited."
+        },
+        {
+          "type": "policy_rule",
+          "status": "PROHIBITS",
+          "description": "Not prohibited if any description of 'military'."
+        },
+        {
+          "type": "policy_rule",
+          "status": "ALLOWS",
+          "description": "Anything intended for use in fishing, including lead weights (fishing sinkers)."
+        },
+        {
+          "type": "policy_rule",
+          "status": "ALLOWS",
+          "description": "Ammo-themed novelty items, cell phone cases, bottle openers."
+        },
+        {
+          "type": "policy_rule",
+          "status": "ALLOWS",
+          "description": "Gun cases, gun safes, weapon cases."
+        },
+        {
+          "type": "policy_rule",
+          "status": "ALLOWS",
+          "description": "Note: images of handguns shown on gun safes do not mean gun safes are prohibited, this image is for guidance. Please refer to guidelines for Gun Cases and Ammo Boxes for additional information."
+        },
+        {
+          "type": "policy_rule",
+          "status": "ALLOWS",
+          "description": "Non-lead Gek."
+        }
+      ]
+    }
+  },
+  "summary": [
+    {
+      "Page": "page_1_details",
+      "Type": "HYBRID",
+      "Category": "Firearms & Accessories",
+      "Subcategories": 1,
+      "Guidelines": 0,
+      "Rules": 2,
+      "Rule_Types": {
+        "imperium_rule": 2
+      },
+      "Rule_Statuses": {
+        "PROHIBITS": 2
+      }
+    },
+    {
+      "Page": "page_1_toc",
+      "Type": "FULL_TOC",
+      "Category": "Firearms & Accessories",
+      "Subcategories": 2,
+      "Guidelines": 0,
+      "Rules": 0,
+      "Rule_Types": {},
+      "Rule_Statuses": {}
+    },
+    {
+      "Page": "page_2",
+      "Type": "REGULAR",
+      "Category": "Firearms & Accessories",
+      "Subcategories": 1,
+      "Guidelines": 1,
+      "Rules": 4,
+      "Rule_Types": {
+        "policy_rule": 4
+      },
+      "Rule_Statuses": {
+        "PROHIBITS": 2,
+        "ALLOWS": 2
+      }
+    },
+    {
+      "Page": "page_3",
+      "Type": "REGULAR",
+      "Category": "Firearms & Accessories",
+      "Subcategories": 2,
+      "Guidelines": 1,
+      "Rules": 9,
+      "Rule_Types": {
+        "policy_rule": 9
+      },
+      "Rule_Statuses": {
+        "PROHIBITS": 4,
+        "ALLOWS": 5
+      }
+    }
+  ]
+}

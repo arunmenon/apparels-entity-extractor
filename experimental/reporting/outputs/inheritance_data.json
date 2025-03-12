@@ -1,0 +1,95 @@
+{
+  "inheritance_report": [
+    {
+      "Page": "page_1_details",
+      "Actual_Category": "Firearms & Accessories",
+      "Should_Inherit_From": "Firearms & Accessories",
+      "Inheritance_Issue": "NO",
+      "Subcategories": 1,
+      "Guidelines": 0,
+      "Rules": 2,
+      "Classification": "HYBRID"
+    },
+    {
+      "Page": "page_1_toc",
+      "Actual_Category": "Firearms & Accessories",
+      "Should_Inherit_From": "Firearms & Accessories",
+      "Inheritance_Issue": "NO",
+      "Subcategories": 47,
+      "Guidelines": 0,
+      "Rules": 0,
+      "Classification": "FULL_TOC"
+    },
+    {
+      "Page": "page_2",
+      "Actual_Category": "Firearms & Accessories",
+      "Should_Inherit_From": "Firearms & Accessories",
+      "Inheritance_Issue": "NO",
+      "Subcategories": 2,
+      "Guidelines": 1,
+      "Rules": 3,
+      "Classification": "REGULAR"
+    }
+  ],
+  "categorized_subcategories": {
+    "Firearms & Accessories": [
+      "Ammo Reloading - Dies, Shells Holders & Plates",
+      "Ammunition",
+      "Ammunition: .223 and 5.56",
+      "Ammunition: Production",
+      "Armorer's Wrenches",
+      "Assault Rifles",
+      "Can Guns",
+      "Concealed Carrying Weapon Holsters, Belly Bands, & Similar Items",
+      "Firearm: Handguns/Pistols",
+      "Firearm: Magazines and Clips",
+      "Firearm Accessories",
+      "Firearm Accessories: Flashlights",
+      "Firearm Accessories: Handgun Sights",
+      "Firearm Accessories: M-LOK & KeyMod",
+      "Firearm Accessories: Magazine UPCs",
+      "Firearm Accessories: Optics, Scopes, and Sights",
+      "Firearm Accessories: Sight Adapter Plates",
+      "Firearm Components",
+      "Firearm Accessories: Tannerite Targets",
+      "Firearm Item ID, UPC, GTIN",
+      "Firearm Pistol Grips",
+      "Flechette Darts",
+      "Fuel Tabs",
+      "Gun Tape / Solvent Filter / Solvent Trap",
+      "Grenades",
+      "Gun Powder",
+      "Homeland Security Chemical of Interest (COI)",
+      "Human Targets",
+      "ITAR Regulated",
+      "Modern Sporting Rifle (MSR)",
+      "Muzzle Devices and Silencers/Suppressors",
+      "NFA Weapons",
+      "Paintball Guns",
+      "Pinfire Guns",
+      "Powdered Metals",
+      "Snap Caps",
+      "Sopwith Levers",
+      "Shoulder Harnesses",
+      "Snap Caps, Training 'Dummy' Ammunition, Laser Boresights, Headspace Gauges",
+      "Sports Scoring Devices (Catch-All Rule)",
+      "Tactical - Duty Holsters",
+      "Tactical Gear: Range Bags",
+      "Tactical Gear: Thigh Rigs",
+      "Tactical Slings",
+      "Toothpick Crossbow",
+      "Vinyl Wraps for Firearms",
+      "Weapons Conversion Blueprints/Instructions/Manuals"
+    ]
+  },
+  "uncategorized_subcategories": [
+    {
+      "page": "page_1_details",
+      "subcategory": "Ammo Reloading - Dies, Shell Holders & Plates"
+    },
+    {
+      "page": "page_2",
+      "subcategory": "Ammunition reloading dies"
+    }
+  ]
+}

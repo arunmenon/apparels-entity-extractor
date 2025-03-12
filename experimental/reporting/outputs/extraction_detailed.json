@@ -1,0 +1,125 @@
+{
+  "page_1_toc": {
+    "subcategories": [
+      "Ammo Reloading - Dies, Shells Holders & Plates",
+      "Ammunition",
+      "Ammunition: .223 and 5.56",
+      "Ammunition: Production",
+      "Armorer's Wrenches",
+      "Assault Rifles",
+      "Can Guns",
+      "Concealed Carrying Weapon Holsters, Belly Bands, & Similar Items",
+      "Firearm: Handguns/Pistols",
+      "Firearm Magazines and Clips",
+      "Firearm Accessories",
+      "Firearm Accessories: Flashlights",
+      "Firearm Accessories: Handgun Sights",
+      "Firearm Accessories: M-LOK & KeyMod",
+      "Firearm Accessories: Magazine UPCs",
+      "Firearm Accessories: Optics, Scopes, and Sights",
+      "Firearm Accessories: Sight Adapter Plates",
+      "Firearm Components",
+      "Firearm Accessories: Tannerite Targets",
+      "Firearm Item ID, UPC, GTIN",
+      "Firearm Pistol Grips",
+      "Flechette Darts",
+      "Fuel Tabs",
+      "Gun Tape / Solvent Filter / Solvent Trap",
+      "Grenades",
+      "Gun Powder",
+      "Holstered Security Chemical of Interest (COI)",
+      "Human Targets",
+      "ITAR Regulated",
+      "Modern Sporting Rifle (MSR)",
+      "Muzzle Devices & Silencers/Suppressors",
+      "NFA Devices",
+      "Pinfire Guns",
+      "Powdered Metals",
+      "Snap-on/Push Levers",
+      "Shoulder Harnesses",
+      "Snap Caps, Training 'Dummy' Ammunition, Laser Boresights, Headspace Gauges",
+      "Sports Scoring Items (Catch-All Rule)",
+      "Tactical - Duty Holsters",
+      "Tactical Gear: Range Bags",
+      "Tactical Gear: Thigh Rigs",
+      "Tactical Slings",
+      "Toothpick Crossbow",
+      "Vinyl Wraps for Firearms",
+      "Weapons Conversion Blueprints/Instructions/Manuals"
+    ],
+    "guidelines": [],
+    "rules": []
+  },
+  "page_1_details": {
+    "subcategories": [
+      "Ammo Reloading: Dies, Shell Holders & Plates"
+    ],
+    "guidelines": [],
+    "rules": [
+      "imperium_rule (PROHIBITS): 1600 - Ammo Reloading: Dies - P1",
+      "imperium_rule (PROHIBITS): 1613 - Ammo Reloading: Shell Holders & Plates - P1"
+    ]
+  },
+  "page_2": {
+    "subcategories": [
+      "Ammunition reloading dies",
+      "Ammunition reloading plates, shells, and holders",
+      "Shell holders for firearms",
+      "Reloading kit items"
+    ],
+    "guidelines": [
+      "Specific ammo dies, shell holders, and plates, are prohibited because they are intended to be used for pistol and assault rifle caliber products."
+    ],
+    "rules": [
+      "policy_rule (PROHIBITS): Ammunition dies plates only prohibit the following calibers: .223, 224, 25, 5.7, 32, 357, 380, 40, 44, 45, 460, 480 judge, 5.56mm, 7.62x39mm, 9mm, 300 Blackout.",
+      "policy_rule (PROHIBITS): Shell holders and plates only prohibit the following law calibers (from off channel): .223, 224, 25, 5.7, 32, 357, 380, 40, 44, 45, 460, 480 judge, 5.56mm, 7.62x39mm, 9mm, 300 Blackout.",
+      "policy_rule (ALLOWS): Ammunition dies not listed within the prohibited section are allowed.",
+      "policy_rule (ALLOWS): Shell holders for firearms are allowed.",
+      "policy_rule (ALLOWS): Cleaning brushes for firearms are allowed.",
+      "policy_rule (ALLOWS): Reloading kit items such as bullet pullers, case trimmers, case tumblers, cleaning brushes, depriming and priming tools, hand presses, neck turners, speed loaders and sifters, and sandbags are allowed."
+    ]
+  },
+  "page_3": {
+    "subcategories": [
+      "Ammunition",
+      "Ammunition, clips, or bullets"
+    ],
+    "guidelines": [],
+    "rules": []
+  },
+  "page_4": {
+    "subcategories": [],
+    "guidelines": [],
+    "rules": []
+  },
+  "page_5": {
+    "subcategories": [],
+    "guidelines": [],
+    "rules": []
+  },
+  "page_6": {
+    "subcategories": [],
+    "guidelines": [],
+    "rules": []
+  },
+  "page_7": {
+    "subcategories": [],
+    "guidelines": [],
+    "rules": []
+  },
+  "page_8": {
+    "subcategories": [],
+    "guidelines": [],
+    "rules": []
+  },
+  "page_9": {
+    "subcategories": [],
+    "guidelines": [],
+    "rules": []
+  },
+  "page_10": {
+    "subcategories": [],
+    "guidelines": [],
+    "rules": []
+  }
+}

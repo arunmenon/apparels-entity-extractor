@@ -1,20 +1,34 @@
+import os
 import json
-import re
+import requests
+import time
+import sys
 
 class CypherGeneratorAgent:
     """
     Agent 4: Cypher Query Generation
     
-    Generates Neo4j Cypher queries from the consolidated entity context.
-    Can generate incremental queries per page or a final comprehensive query.
+    Generates Neo4j Cypher queries from the extracted entity data.
+    Uses LLM to generate optimal queries rather than procedural generation.
     """
     
-    def __init__(self):
-        pass
+    def __init__(self, api_key=None, model=None, prompt_path="prompts/cypher_generator_prompt.txt"):
+        """Initialize the Cypher Generator with API credentials and prompts."""
+        # Set up API key and model
+        self.api_key = api_key or os.getenv('OPENAI_API_KEY', '')
+        self.model = model or os.getenv('OPENAI_MODEL', 'gpt-4o')
+        
+        # Load prompt
+        try:
+            with open(prompt_path, "r") as f:
+                self.system_prompt = f.read()
+        except Exception as e:
+            print(f"Warning: Could not load Cypher generator prompt from {prompt_path}: {e}")
+            self.system_prompt = "Generate a Neo4j Cypher query from the given entity data."
     
     def build_cypher(self, context):
         """
-        Generate Cypher queries from the consolidated context object.
+        Generate a comprehensive Cypher query from the full entity context.
         
         Args:
             context: The full entity context from ContextAgent
@@ -22,119 +36,16 @@ class CypherGeneratorAgent:
         Returns:
             A JSON object with a "cypher_query" field containing the Neo4j query.
         """
-        cypher_parts = []
+        # Create a structured representation of all entities for the LLM
+        prompt_data = self._format_context_for_prompt(context)
         
-        # Find the primary category
-        primary_category = None
-        for cat_name, cat_info in context["offensive_content_category"].items():
-            if cat_info.get('is_primary'):
-                primary_category = cat_name
-                break
+        # Generate the query using LLM
+        cypher_query = self._generate_cypher_with_llm(
+            "Generate a comprehensive Cypher query for the entire entity context.",
+            prompt_data
+        )
         
-        # Default if no primary category found
-        if not primary_category and context["offensive_content_category"]:
-            # Just use the first category
-            primary_category = list(context["offensive_content_category"].keys())[0]
-        elif not primary_category:
-            primary_category = "Firearms & Accessories"
-        
-        # 1. Create the primary offensive content category
-        cypher_parts.append(f"MERGE (occ:Offensive_Content_Category {{name: '{self._escape_quotes(primary_category)}'}})")
-        
-        # 2. Add all subcategories
-        for idx, (subcat_name, subcat_info) in enumerate(context["sub_category"].items(), 1):
-            parent_category = subcat_info.get("parent_category", primary_category)
-            
-            # Sanitize parent category to match primary if needed
-            if parent_category != primary_category:
-                for cat_name, cat_info in context["offensive_content_category"].items():
-                    if cat_info.get('is_primary') and cat_name == primary_category:
-                        # Check if this parent is an alias
-                        aliases = cat_info.get('aliases', [])
-                        if parent_category in aliases:
-                            parent_category = primary_category
-                            break
-            
-            subcat_name_escaped = self._escape_quotes(subcat_name)
-            cypher_parts.append(f"MERGE (sc{idx}:Sub_Category {{name: '{subcat_name_escaped}'}})")
-            
-            # Only connect to primary category if parent matches or is normalized
-            if parent_category == primary_category:
-                cypher_parts.append(f"MERGE (occ)-[:HAS_SUB_CATEGORY]->(sc{idx})")
-        
-        # 3. Add all guidelines with connections to subcategories
-        for g_idx, (guideline_desc, guideline_info) in enumerate(context["guideline"].items(), 1):
-            parent_subcategory = guideline_info.get("parent_subcategory")
-            
-            guideline_desc_escaped = self._escape_quotes(guideline_desc)
-            cypher_parts.append(f"MERGE (g{g_idx}:Guideline {{description: '{guideline_desc_escaped}'}})")
-            
-            # Connect to parent subcategory if available
-            if parent_subcategory:
-                # Find the subcategory index
-                for sc_idx, (subcat_name, _) in enumerate(context["sub_category"].items(), 1):
-                    if subcat_name == parent_subcategory:
-                        cypher_parts.append(f"MERGE (sc{sc_idx})-[:HAS_GUIDELINE]->(g{g_idx})")
-                        break
-        
-        # 4. Process pending rules
-        rule_counter = {
-            "imperium_rule": 1,
-            "policy_rule": 1,
-            "image_detection_rule": 1
-        }
-        
-        # Function to add a rule with the appropriate type
-        def add_rule_to_cypher(rule, guideline_idx=None):
-            rule_type = rule.get("type", "policy_rule").lower()
-            rule_desc = rule.get("description", "")
-            rule_status = rule.get("status", "PROHIBITS")
-            rule_id = rule.get("rule_id", "")
-            
-            rule_desc_escaped = self._escape_quotes(rule_desc)
-            
-            if rule_type == "imperium_rule":
-                node_idx = rule_counter["imperium_rule"]
-                cypher_parts.append(f"MERGE (ir{node_idx}:Imperium_Rule {{description: '{rule_desc_escaped}'{', rule_id: \'' + rule_id + '\'' if rule_id else ''}}})")
-                if guideline_idx:
-                    cypher_parts.append(f"MERGE (g{guideline_idx})-[rImp:{rule_status}]->(ir{node_idx})")
-                rule_counter["imperium_rule"] += 1
-            
-            elif rule_type == "policy_rule":
-                node_idx = rule_counter["policy_rule"]
-                cypher_parts.append(f"MERGE (pr{node_idx}:Policy_Rule {{description: '{rule_desc_escaped}'}})")
-                if guideline_idx:
-                    cypher_parts.append(f"MERGE (g{guideline_idx})-[rPol:{rule_status}]->(pr{node_idx})")
-                rule_counter["policy_rule"] += 1
-            
-            elif rule_type == "image_detection_rule":
-                node_idx = rule_counter["image_detection_rule"]
-                cypher_parts.append(f"MERGE (idr{node_idx}:Image_Detection_Rule {{description: '{rule_desc_escaped}'}})")
-                if guideline_idx:
-                    cypher_parts.append(f"MERGE (g{guideline_idx})-[rImg:{rule_status}]->(idr{node_idx})")
-                rule_counter["image_detection_rule"] += 1
-        
-        # Process pending rules
-        for pending in context["pending_rules"]:
-            rule = pending.get("rule")
-            guideline_hint = pending.get("guideline_hint")
-            
-            if rule and guideline_hint:
-                # Find the guideline index
-                for g_idx, (guideline_desc, _) in enumerate(context["guideline"].items(), 1):
-                    if guideline_desc == guideline_hint:
-                        add_rule_to_cypher(rule, g_idx)
-                        break
-                else:
-                    # If guideline not found, just add the rule without connection
-                    add_rule_to_cypher(rule)
-            elif rule:
-                add_rule_to_cypher(rule)
-        
-        # Join all Cypher parts
-        cypher_query = " ".join(cypher_parts)
-        
-        # Return properly formatted JSON
+        # Return the query in the expected format
         return {"cypher_query": cypher_query}
     
     def build_incremental_cypher(self, context, page_data, page_num):
@@ -149,112 +60,140 @@ class CypherGeneratorAgent:
         Returns:
             A JSON object with a "cypher_query" field for this page's entities.
         """
-        cypher_parts = []
+        # Get primary category from context for normalization
+        primary_category = self._get_primary_category(context)
         
-        # Find the primary category from context
-        primary_category = None
-        for cat_name, cat_info in context["offensive_content_category"].items():
-            if cat_info.get('is_primary'):
-                primary_category = cat_name
-                break
-        
-        # Default if no primary category found
-        if not primary_category:
-            primary_category = "Firearms & Accessories"
-        
-        # Get entities from this page
-        category_name = page_data.get("offensive_content_category", primary_category)
-        subcategories = page_data.get("sub_categories", [])
-        guidelines = page_data.get("guidelines", [])
-        rules = page_data.get("rules", [])
-        
-        # Normalize category if needed
-        if category_name != primary_category:
-            for cat_name, cat_info in context["offensive_content_category"].items():
-                if cat_info.get('is_primary') and cat_name == primary_category:
-                    # Check if this category is an alias
-                    aliases = cat_info.get('aliases', [])
-                    if category_name in aliases:
-                        category_name = primary_category
-                        break
-        
-        # 1. Add the offensive content category (normalized to primary)
-        cypher_parts.append(f"MERGE (occ:Offensive_Content_Category {{name: '{self._escape_quotes(primary_category)}'}})")
-        
-        # 2. Add subcategories
-        for idx, subcategory in enumerate(subcategories, 1):
-            if isinstance(subcategory, dict) and "name" in subcategory:
-                subcategory = subcategory["name"]
-            
-            subcat_name_escaped = self._escape_quotes(subcategory)
-            cypher_parts.append(f"MERGE (sc{idx}:Sub_Category {{name: '{subcat_name_escaped}'}})")
-            cypher_parts.append(f"MERGE (occ)-[:HAS_SUB_CATEGORY]->(sc{idx})")
-        
-        # 3. Add guidelines with connections to subcategories
-        for g_idx, guideline in enumerate(guidelines, 1):
-            if isinstance(guideline, dict) and "description" in guideline:
-                guideline_desc = guideline["description"]
-            else:
-                guideline_desc = guideline
-            
-            guideline_desc_escaped = self._escape_quotes(guideline_desc)
-            cypher_parts.append(f"MERGE (g{g_idx}:Guideline {{description: '{guideline_desc_escaped}'}})")
-            
-            # Connect to parent subcategory
-            # If we have just one subcategory, connect the guideline to it
-            if len(subcategories) == 1:
-                cypher_parts.append(f"MERGE (sc1)-[:HAS_GUIDELINE]->(g{g_idx})")
-        
-        # 4. Add rules with connections to guidelines
-        rule_counter = {
-            "imperium_rule": 1,
-            "policy_rule": 1, 
-            "image_detection_rule": 1
+        # Create a structured representation of page entities
+        prompt_data = {
+            "page_number": page_num,
+            "primary_category": primary_category,
+            "page_data": page_data
         }
         
-        for rule in rules:
-            rule_type = rule.get("type", "policy_rule").lower()
-            rule_desc = rule.get("description", "")
-            rule_status = rule.get("status", "PROHIBITS")
-            rule_id = rule.get("rule_id", "")
-            
-            rule_desc_escaped = self._escape_quotes(rule_desc)
-            
-            if rule_type == "imperium_rule":
-                node_idx = rule_counter["imperium_rule"]
-                cypher_parts.append(f"MERGE (ir{node_idx}:Imperium_Rule {{description: '{rule_desc_escaped}'{', rule_id: \'' + rule_id + '\'' if rule_id else ''}}})")
-                # Connect to guideline if available
-                if guidelines:
-                    cypher_parts.append(f"MERGE (g1)-[rImp:{rule_status}]->(ir{node_idx})")
-                rule_counter["imperium_rule"] += 1
-            
-            elif rule_type == "policy_rule":
-                node_idx = rule_counter["policy_rule"]
-                cypher_parts.append(f"MERGE (pr{node_idx}:Policy_Rule {{description: '{rule_desc_escaped}'}})")
-                # Connect to guideline if available
-                if guidelines:
-                    cypher_parts.append(f"MERGE (g1)-[rPol:{rule_status}]->(pr{node_idx})")
-                rule_counter["policy_rule"] += 1
-            
-            elif rule_type == "image_detection_rule":
-                node_idx = rule_counter["image_detection_rule"]
-                cypher_parts.append(f"MERGE (idr{node_idx}:Image_Detection_Rule {{description: '{rule_desc_escaped}'}})")
-                # Connect to guideline if available
-                if guidelines:
-                    cypher_parts.append(f"MERGE (g1)-[rImg:{rule_status}]->(idr{node_idx})")
-                rule_counter["image_detection_rule"] += 1
+        # Generate the query using LLM
+        cypher_query = self._generate_cypher_with_llm(
+            f"Generate an incremental Cypher query for page {page_num}. "
+            f"This should only include entities from this specific page.",
+            prompt_data
+        )
         
-        # Join all Cypher parts
-        cypher_query = " ".join(cypher_parts)
-        
-        # Return properly formatted JSON with page info
+        # Return the query with page info
         return {
             "cypher_query": cypher_query,
             "page": page_num
         }
     
-    def _escape_quotes(self, text):
-        """Escape single quotes in text for Cypher queries."""
-        if not text:
-            return ""
-        return str(text).replace("'", "\\'").replace('"', '\\"')
+    def _format_context_for_prompt(self, context):
+        """Format the context data into a cleaner structure for the LLM prompt."""
+        # Get primary category
+        primary_category = self._get_primary_category(context)
+        
+        # Format subcategories with their parent info
+        subcategories = []
+        for subcat_name, subcat_info in context.get("sub_category", {}).items():
+            subcategories.append({
+                "name": subcat_name,
+                "parent_category": subcat_info.get("parent_category", primary_category)
+            })
+        
+        # Format guidelines with their parent info
+        guidelines = []
+        for guideline_desc, guideline_info in context.get("guideline", {}).items():
+            guidelines.append({
+                "description": guideline_desc,
+                "parent_subcategory": guideline_info.get("parent_subcategory")
+            })
+        
+        # Format pending rules
+        pending_rules = []
+        for rule_info in context.get("pending_rules", []):
+            if "rule" in rule_info:
+                rule = rule_info["rule"].copy()
+                rule["guideline_hint"] = rule_info.get("guideline_hint")
+                rule["subcategory_hint"] = rule_info.get("subcategory_hint")
+                pending_rules.append(rule)
+        
+        # Return formatted data
+        return {
+            "primary_category": primary_category,
+            "subcategories": subcategories,
+            "guidelines": guidelines,
+            "pending_rules": pending_rules
+        }
+    
+    def _get_primary_category(self, context):
+        """Extract the primary category from context."""
+        # Find primary category
+        for cat_name, cat_info in context.get("offensive_content_category", {}).items():
+            if cat_info.get('is_primary'):
+                return cat_name
+        
+        # Default if no primary category found
+        if context.get("offensive_content_category"):
+            return list(context["offensive_content_category"].keys())[0]
+        return "Firearms & Accessories"
+    
+    def _generate_cypher_with_llm(self, instruction, data):
+        """
+        Generate a Cypher query using the LLM.
+        
+        Args:
+            instruction: Specific instructions for this query
+            data: Structured entity data
+            
+        Returns:
+            Cypher query string
+        """
+        # Format the user message with the instruction and data
+        user_message = f"{instruction}\n\nEntity Data:\n{json.dumps(data, indent=2)}"
+        
+        # Prepare the API call
+        headers = {
+            "Content-Type": "application/json",
+            "Authorization": f"Bearer {self.api_key}"
+        }
+        
+        payload = {
+            "model": self.model,
+            "messages": [
+                {"role": "system", "content": self.system_prompt},
+                {"role": "user", "content": user_message}
+            ],
+            "temperature": 0.2  # Lower temperature for more consistent queries
+        }
+        
+        # Call the API with retries
+        max_retries = 3
+        for attempt in range(max_retries):
+            try:
+                response = requests.post(
+                    "https://api.openai.com/v1/chat/completions",
+                    headers=headers,
+                    json=payload
+                )
+                response.raise_for_status()
+                
+                # Extract the query from the response
+                result = response.json()
+                cypher_query = result["choices"][0]["message"]["content"].strip()
+                
+                # Clean up the response (remove markdown code blocks if present)
+                if cypher_query.startswith("```") and cypher_query.endswith("```"):
+                    # Extract content between triple backticks
+                    lines = cypher_query.split("\n")
+                    if len(lines) > 2:
+                        # Remove first and last lines (the ```cypher and ```)
+                        cypher_query = "\n".join(lines[1:-1])
+                
+                return cypher_query
+                
+            except Exception as e:
+                print(f"Error during Cypher generation (attempt {attempt+1}/{max_retries}): {str(e)}")
+                if attempt < max_retries - 1:
+                    # Exponential backoff
+                    wait_time = 2 ** attempt
+                    print(f"Retrying in {wait_time} seconds...")
+                    time.sleep(wait_time)
+                else:
+                    # Return a basic query if all retries fail
+                    return f"MERGE (occ:Offensive_Content_Category {{name: 'Firearms & Accessories'}})"

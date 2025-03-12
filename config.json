@@ -1,5 +1,8 @@
 {
   "api_model": "gpt-4o",
   "image_threads": 6,
-  "gpt4_threads": 3
+  "gpt4_threads": 3,
+  "agent_pipeline": ["classifier", "extractor", "context", "cypher"],
+  "first_page_serial": true,
+  "toc_page_index": 0
 }

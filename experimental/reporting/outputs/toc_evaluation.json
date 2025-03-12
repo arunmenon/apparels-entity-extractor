@@ -1,0 +1,313 @@
+{
+  "matches": [
+    [
+      "Ammo Reloading - Dies, Shells Holders & Plates",
+      "Ammo Reloading - Dies, Shell Holders & Plates",
+      0.989010989010989
+    ],
+    [
+      "Ammunition",
+      "Ammunition",
+      1.0
+    ],
+    [
+      "Ammunition: .223 and 5.56",
+      "Ammunition: 223 and 556",
+      0.9583333333333334
+    ],
+    [
+      "Ammunition: Production",
+      "Ammunition Production",
+      0.9767441860465116
+    ],
+    [
+      "Armorer's Wrenches",
+      "Armorer's Wrenches",
+      1.0
+    ],
+    [
+      "Can Guns",
+      "Cane Guns",
+      0.9411764705882353
+    ],
+    [
+      "Weapons Conversion Blueprints/Instructions/Manuals",
+      "Weapons Conversion Blueprints / Instructions / Manuals",
+      0.9615384615384616
+    ]
+  ],
+  "missing": [
+    [
+      6,
+      "Firearms"
+    ],
+    [
+      7,
+      "Firearm Accessories - Grips, Rails, Bipods, Stocks, and Sights"
+    ],
+    [
+      8,
+      "Firearm Accessories - Magazines, Speed Loaders, and Clips"
+    ],
+    [
+      9,
+      "Firearm Accessories - Mounts and Plates"
+    ],
+    [
+      10,
+      "Firearm Accessories - Other"
+    ],
+    [
+      11,
+      "Firearm Barrels & Upper Receivers"
+    ],
+    [
+      12,
+      "Firearm Blueprints / Instructions / Manuals"
+    ],
+    [
+      13,
+      "Firearm Frames / Receivers"
+    ],
+    [
+      14,
+      "Firearm Kits"
+    ],
+    [
+      15,
+      "Firearm Muzzle Devices"
+    ],
+    [
+      16,
+      "Firearm Parts"
+    ],
+    [
+      17,
+      "Firearm Triggers / Safeties"
+    ],
+    [
+      18,
+      "Holsters"
+    ],
+    [
+      19,
+      "Muzzleloaders"
+    ],
+    [
+      20,
+      "Optics & Scopes"
+    ],
+    [
+      21,
+      "Pistol Braces"
+    ],
+    [
+      22,
+      "Silencers / Suppressors"
+    ],
+    [
+      23,
+      "Shooting Accessories - Hearing Protection (EOP)"
+    ],
+    [
+      24,
+      "Shooting Accessories - Other"
+    ],
+    [
+      25,
+      "Shooting Rests"
+    ],
+    [
+      26,
+      "Shooting Targets"
+    ],
+    [
+      27,
+      "Shotgun Barrels & Chokes"
+    ],
+    [
+      28,
+      "Sporting Goods LLC (Firearm Coach & AI Rules)"
+    ],
+    [
+      29,
+      "Tactical Gear - Other"
+    ],
+    [
+      30,
+      "Tactical Gear - Body Armor"
+    ],
+    [
+      31,
+      "Tactical Gear - Helmets"
+    ],
+    [
+      32,
+      "Tactical Gear - Shields"
+    ],
+    [
+      33,
+      "Tactical Gear - Slings"
+    ]
+  ],
+  "hallucinated": [
+    [
+      5,
+      "Assault Rifles"
+    ],
+    [
+      7,
+      "Concealed Carrying Weapon Holsters, Belly Bands, & Similar Items"
+    ],
+    [
+      8,
+      "Firearm: Handguns/Pistols"
+    ],
+    [
+      9,
+      "Firearm Magazines and Clips"
+    ],
+    [
+      10,
+      "Firearm Accessories"
+    ],
+    [
+      11,
+      "Firearm Accessories: Flashlights"
+    ],
+    [
+      12,
+      "Firearm Accessories: Handgun Sights"
+    ],
+    [
+      13,
+      "Firearm Accessories: M-LOK & KeyMod"
+    ],
+    [
+      14,
+      "Firearm Accessories: Magazine UPCs"
+    ],
+    [
+      15,
+      "Firearm Accessories: Optics, Scopes, and Sights"
+    ],
+    [
+      16,
+      "Firearm Accessories: Sight Adapter Plates"
+    ],
+    [
+      17,
+      "Firearm Components"
+    ],
+    [
+      18,
+      "Firearm Accessories: Tannerite Targets"
+    ],
+    [
+      19,
+      "Firearm Item ID, UPC, GTIN"
+    ],
+    [
+      20,
+      "Firearm Pistol Grips"
+    ],
+    [
+      21,
+      "Flechette Darts"
+    ],
+    [
+      22,
+      "Fuel Tabs"
+    ],
+    [
+      23,
+      "Gun Tape / Solvent Filter / Solvent Trap"
+    ],
+    [
+      24,
+      "Grenades"
+    ],
+    [
+      25,
+      "Gun Powder"
+    ],
+    [
+      26,
+      "Holstered Security Chemical of Interest (COI)"
+    ],
+    [
+      27,
+      "Human Targets"
+    ],
+    [
+      28,
+      "ITAR Regulated"
+    ],
+    [
+      29,
+      "Modern Sporting Rifle (MSR)"
+    ],
+    [
+      30,
+      "Muzzle Devices & Silencers/Suppressors"
+    ],
+    [
+      31,
+      "NFA Devices"
+    ],
+    [
+      32,
+      "Pinfire Guns"
+    ],
+    [
+      33,
+      "Powdered Metals"
+    ],
+    [
+      34,
+      "Snap-on/Push Levers"
+    ],
+    [
+      35,
+      "Shoulder Harnesses"
+    ],
+    [
+      36,
+      "Snap Caps, Training 'Dummy' Ammunition, Laser Boresights, Headspace Gauges"
+    ],
+    [
+      37,
+      "Sports Scoring Items (Catch-All Rule)"
+    ],
+    [
+      38,
+      "Tactical - Duty Holsters"
+    ],
+    [
+      39,
+      "Tactical Gear: Range Bags"
+    ],
+    [
+      40,
+      "Tactical Gear: Thigh Rigs"
+    ],
+    [
+      41,
+      "Tactical Slings"
+    ],
+    [
+      42,
+      "Toothpick Crossbow"
+    ],
+    [
+      43,
+      "Vinyl Wraps for Firearms"
+    ]
+  ],
+  "precision": 0.15555555555555556,
+  "recall": 0.2,
+  "f1_score": 0.17500000000000002,
+  "match_count": 7,
+  "total_extracted": 45,
+  "total_ground_truth": 35
+}

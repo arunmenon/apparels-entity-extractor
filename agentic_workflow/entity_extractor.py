@@ -31,9 +31,10 @@ class EntityExtractorAgent:
         self.category_pattern = re.compile(r'MERGE\s+\((?:occ|c):Offensive_Content_Category\s+\{name:\s*\'([^\']+)\'\}\)')
         self.subcategory_pattern = re.compile(r'MERGE\s+\((?:sc\d+|s\d+):Sub_Category\s+\{name:\s*\'([^\']+)\'\}\)')
 
-    def extract_entities(self, classification, base64_image):
+    def extract_entities(self, classification, base64_image, context=None):
         """
         Returns a structured JSON dict describing the recognized entities/hierarchy.
+        Context parameter can be provided to enable context-aware extraction.
         """
         print("\n=== ENTITY EXTRACTION TRACING ===")
         start_time = time.time()
@@ -50,6 +51,15 @@ class EntityExtractorAgent:
             user_prompt = self.std_prompt_user
             max_tokens = 2048  # Reduced from 3072 to improve performance
             print(f"Using standard prompts with max_tokens={max_tokens}")
+            
+        # Enhance prompts with context if available
+        if context and classification not in ["FULL_TOC", "HYBRID"]:
+            # Don't apply context to TOC pages as they define the primary structure
+            from .enhanced_extractor import create_context_aware_prompt
+            system_prompt, user_prompt = create_context_aware_prompt(
+                system_prompt, user_prompt, context
+            )
+            print("Enhanced extraction with context from previous pages")
 
         headers = {
             "Content-Type": "application/json",
