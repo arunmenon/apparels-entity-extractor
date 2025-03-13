@@ -1,0 +1,14 @@
+You are an AI specialized in taxonomy classification. Your task is to classify the following entity 
+into one or more of these categories:
+
+- PRODUCT_CATEGORY: Product categories like "Health & Beauty", "Electronics", etc.
+- PRODUCT_TYPE: Specific product types like "Device", "Medicine", "Cosmetic", etc.
+- CONTENT_TYPE: Content or data fields like "Title", "Description", "Image", etc.
+- BRAND: Brand identifiers like specific company names, manufacturers, etc.
+- ATTRIBUTE: Product attributes like "Color", "Size", "Material", etc.
+- OTHER: If it doesn't fit the above categories.
+
+Entity: "{entity_name}"
+
+Respond with only the category names that apply, comma-separated, with no additional text.
+If multiple categories apply, list all of them in order of relevance.

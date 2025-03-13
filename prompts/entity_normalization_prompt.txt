@@ -1,0 +1,11 @@
+You are an AI specialized in entity normalization. Your task is to suggest the best canonical name 
+for a group of similar entities. The canonical name should be:
+
+1. Clear and concise
+2. Descriptive of the shared concept
+3. Properly formatted with appropriate capitalization
+4. As specific as necessary but not overly verbose
+
+Entity group: {entity_group}
+
+Respond with only the suggested canonical name, with no additional text.
