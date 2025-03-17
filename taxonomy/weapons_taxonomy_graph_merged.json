@@ -1,0 +1,1477 @@
+{
+  "nodes": [
+    {
+      "id": "Weapons",
+      "type": "Category",
+      "label": "Root Weapons Category"
+    },
+
+    {
+      "id": "Firearms",
+      "type": "Subcategory",
+      "label": "Firearms (handguns, rifles, shotguns, etc.)"
+    },
+    {
+      "id": "Ammunition",
+      "type": "Subcategory",
+      "label": "Ammunition (bullets, cartridges, shells)"
+    },
+    {
+      "id": "Blades (Knives & Swords)",
+      "type": "Subcategory",
+      "label": "Edged Weapons (knives, switchblades, swords)"
+    },
+    {
+      "id": "Self-Defense Tools",
+      "type": "Subcategory",
+      "label": "Non-lethal personal defense items (pepper spray, stun guns)"
+    },
+    {
+      "id": "Military-Grade Weapons",
+      "type": "Subcategory",
+      "label": "Heavy arms restricted to military/LE (machine guns, artillery)"
+    },
+    {
+      "id": "Explosives & Incendiaries",
+      "type": "Subcategory",
+      "label": "Commercial explosives, bombs, grenades, fireworks"
+    },
+
+    {
+      "id": "Handguns",
+      "type": "Subcategory",
+      "label": "Handguns"
+    },
+    {
+      "id": "Pistols",
+      "type": "Subcategory",
+      "label": "Pistols"
+    },
+    {
+      "id": "Revolvers",
+      "type": "Subcategory",
+      "label": "Revolvers"
+    },
+    {
+      "id": "Machine Pistols",
+      "type": "Subcategory",
+      "label": "Machine Pistols"
+    },
+    {
+      "id": "Rifles",
+      "type": "Subcategory",
+      "label": "Rifles"
+    },
+    {
+      "id": "Bolt-Action Rifles",
+      "type": "Subcategory",
+      "label": "Bolt-Action Rifles"
+    },
+    {
+      "id": "Semi-Automatic Rifles",
+      "type": "Subcategory",
+      "label": "Semi-Automatic Rifles"
+    },
+    {
+      "id": "Assault Rifles",
+      "type": "Subcategory",
+      "label": "Assault Rifles (select-fire, intermediate calibers)"
+    },
+    {
+      "id": "Battle Rifles",
+      "type": "Subcategory",
+      "label": "Battle Rifles (full-power cartridges)"
+    },
+    {
+      "id": "Short-Barreled Rifles (SBR)",
+      "type": "Subcategory",
+      "label": "Short-Barreled Rifles (SBR)"
+    },
+    {
+      "id": "Shotguns",
+      "type": "Subcategory",
+      "label": "Shotguns"
+    },
+    {
+      "id": "Pump-Action Shotguns",
+      "type": "Subcategory",
+      "label": "Pump-Action Shotguns"
+    },
+    {
+      "id": "Semi-Automatic Shotguns",
+      "type": "Subcategory",
+      "label": "Semi-Automatic Shotguns"
+    },
+    {
+      "id": "Sawed-Off Shotguns",
+      "type": "Subcategory",
+      "label": "Sawed-Off Shotguns"
+    },
+    {
+      "id": "Submachine Guns",
+      "type": "Subcategory",
+      "label": "Submachine Guns"
+    },
+    {
+      "id": "Machine Guns",
+      "type": "Subcategory",
+      "label": "Machine Guns (Full-auto firearms)"
+    },
+    {
+      "id": "Improvised & Homemade Firearms",
+      "type": "Subcategory",
+      "label": "Improvised & Homemade Firearms"
+    },
+    {
+      "id": "Ghost Guns",
+      "type": "Subcategory",
+      "label": "Ghost Guns (Unserialized DIY firearms)"
+    },
+    {
+      "id": "3D-Printed Firearms",
+      "type": "Subcategory",
+      "label": "3D-Printed Firearms"
+    },
+    {
+      "id": "Zip Guns",
+      "type": "Subcategory",
+      "label": "Zip Guns (Crude improvised firearms)"
+    },
+    {
+      "id": "Firearm Accessories",
+      "type": "Subcategory",
+      "label": "Firearm Accessories"
+    },
+    {
+      "id": "Suppressors (Silencers)",
+      "type": "Subcategory",
+      "label": "Suppressors (Silencers)"
+    },
+    {
+      "id": "Conversion Devices & Rapid-Fire Mods",
+      "type": "Subcategory",
+      "label": "Conversion Devices & Rapid-Fire Mods"
+    },
+    {
+      "id": "Auto Sears (\"Glock switches\")",
+      "type": "Subcategory",
+      "label": "Auto Sears (\"Glock switches\")"
+    },
+    {
+      "id": "Bump Stocks",
+      "type": "Subcategory",
+      "label": "Bump Stocks"
+    },
+    {
+      "id": "Binary Triggers",
+      "type": "Subcategory",
+      "label": "Binary Triggers"
+    },
+    {
+      "id": "Forced Reset Triggers",
+      "type": "Subcategory",
+      "label": "Forced Reset Triggers (FRT)"
+    },
+    {
+      "id": "High-Capacity Magazines",
+      "type": "Subcategory",
+      "label": "High-Capacity Magazines"
+    },
+
+    {
+      "id": "Grenades",
+      "type": "Subcategory",
+      "label": "Grenades"
+    },
+    {
+      "id": "Fragmentation Grenades",
+      "type": "Subcategory",
+      "label": "Fragmentation Grenades"
+    },
+    {
+      "id": "Stun Grenades (Flashbangs)",
+      "type": "Subcategory",
+      "label": "Stun Grenades (Flashbangs)"
+    },
+    {
+      "id": "Smoke Grenades",
+      "type": "Subcategory",
+      "label": "Smoke Grenades"
+    },
+    {
+      "id": "Bombs & IEDs",
+      "type": "Subcategory",
+      "label": "Bombs & IEDs"
+    },
+    {
+      "id": "Improvised Explosive Devices",
+      "type": "Subcategory",
+      "label": "Improvised Explosive Devices"
+    },
+    {
+      "id": "Pipe Bombs",
+      "type": "Subcategory",
+      "label": "Pipe Bombs"
+    },
+    {
+      "id": "Vehicle-Borne IEDs",
+      "type": "Subcategory",
+      "label": "Vehicle-Borne IEDs"
+    },
+    {
+      "id": "Suicide Bombs",
+      "type": "Subcategory",
+      "label": "Suicide Bombs"
+    },
+    {
+      "id": "Mines",
+      "type": "Subcategory",
+      "label": "Mines"
+    },
+    {
+      "id": "Anti-Personnel Mines",
+      "type": "Subcategory",
+      "label": "Anti-Personnel Mines"
+    },
+    {
+      "id": "Anti-Tank Mines",
+      "type": "Subcategory",
+      "label": "Anti-Tank Mines"
+    },
+
+    {
+      "id": "Bladed Weapons",
+      "type": "Subcategory",
+      "label": "Bladed Weapons"
+    },
+    {
+      "id": "Knives",
+      "type": "Subcategory",
+      "label": "Knives"
+    },
+    {
+      "id": "Switchblades",
+      "type": "Subcategory",
+      "label": "Switchblades (Automatic opening knives)"
+    },
+    {
+      "id": "Daggers & Stilettos",
+      "type": "Subcategory",
+      "label": "Daggers & Stilettos"
+    },
+    {
+      "id": "Swords & Machetes",
+      "type": "Subcategory",
+      "label": "Swords & Machetes"
+    },
+    {
+      "id": "Axes & Tomahawks",
+      "type": "Subcategory",
+      "label": "Axes & Tomahawks"
+    },
+
+    {
+      "id": "Blunt Weapons",
+      "type": "Subcategory",
+      "label": "Blunt Weapons"
+    },
+    {
+      "id": "Clubs & Bats",
+      "type": "Subcategory",
+      "label": "Clubs & Bats"
+    },
+    {
+      "id": "Batons",
+      "type": "Subcategory",
+      "label": "Batons"
+    },
+    {
+      "id": "Maces & War Hammers",
+      "type": "Subcategory",
+      "label": "Maces & War Hammers"
+    },
+    {
+      "id": "Brass Knuckles",
+      "type": "Subcategory",
+      "label": "Brass Knuckles"
+    },
+
+    {
+      "id": "Flexible Weapons",
+      "type": "Subcategory",
+      "label": "Flexible Weapons"
+    },
+    {
+      "id": "Nunchaku (Nunchucks)",
+      "type": "Subcategory",
+      "label": "Nunchaku (Nunchucks)"
+    },
+    {
+      "id": "Garrote",
+      "type": "Subcategory",
+      "label": "Garrote"
+    },
+
+    {
+      "id": "Less-Lethal (Electrical)",
+      "type": "Subcategory",
+      "label": "Electrical Weapons"
+    },
+    {
+      "id": "Stun Guns & Tasers",
+      "type": "Subcategory",
+      "label": "Stun Guns & Tasers"
+    },
+    {
+      "id": "Less-Lethal (Chemical)",
+      "type": "Subcategory",
+      "label": "Chemical Incapacitants"
+    },
+    {
+      "id": "Pepper Spray (OC)",
+      "type": "Subcategory",
+      "label": "Pepper Spray (OC)"
+    },
+    {
+      "id": "Tear Gas",
+      "type": "Subcategory",
+      "label": "Tear Gas (CS/CN sprays)"
+    },
+    {
+      "id": "Impact Projectile (Less-Lethal)",
+      "type": "Subcategory",
+      "label": "Less-Lethal Impact Projectile"
+    },
+    {
+      "id": "Bean Bag Rounds",
+      "type": "Subcategory",
+      "label": "Bean Bag Rounds"
+    },
+    {
+      "id": "Rubber Bullets",
+      "type": "Subcategory",
+      "label": "Rubber Bullets"
+    },
+
+    {
+      "id": "Product Safety",
+      "type": "ComplianceArea",
+      "label": "Product Safety"
+    },
+    {
+      "id": "Labeling",
+      "type": "ComplianceArea",
+      "label": "Labeling"
+    },
+    {
+      "id": "Trade Compliance",
+      "type": "ComplianceArea",
+      "label": "Trade (Import/Export) Compliance"
+    },
+    {
+      "id": "Intellectual Property",
+      "type": "ComplianceArea",
+      "label": "Intellectual Property"
+    },
+    {
+      "id": "Supply Chain",
+      "type": "ComplianceArea",
+      "label": "Supply Chain"
+    },
+    {
+      "id": "Sustainability",
+      "type": "ComplianceArea",
+      "label": "Sustainability"
+    },
+    {
+      "id": "Age Restrictions & Sales",
+      "type": "ComplianceArea",
+      "label": "Age Restrictions & Sales"
+    },
+    {
+      "id": "Advertising & Marketing",
+      "type": "ComplianceArea",
+      "label": "Advertising & Marketing"
+    },
+
+    {
+      "id": "Gun Control Act (GCA)",
+      "type": "Law/Regulation",
+      "label": "Gun Control Act of 1968 (18 U.S.C. §921 et seq.)"
+    },
+    {
+      "id": "National Firearms Act (NFA)",
+      "type": "Law/Regulation",
+      "label": "NFA (26 U.S.C. Chapter 53)"
+    },
+    {
+      "id": "ITAR",
+      "type": "Law/Regulation",
+      "label": "International Traffic in Arms Regulations (22 CFR 120-130)"
+    },
+    {
+      "id": "EAR",
+      "type": "Law/Regulation",
+      "label": "Export Administration Regulations (15 CFR 730-774)"
+    },
+    {
+      "id": "Federal Explosives Laws (18 USC Chapter 40)",
+      "type": "Law/Regulation",
+      "label": "Federal Explosives Laws"
+    },
+    {
+      "id": "CPSA",
+      "type": "Law/Regulation",
+      "label": "Consumer Product Safety Act (15 U.S.C. §2051 et seq.)"
+    },
+    {
+      "id": "FHSA",
+      "type": "Law/Regulation",
+      "label": "Federal Hazardous Substances Act (15 U.S.C. §1261 et seq.)"
+    },
+    {
+      "id": "Switchblade Knife Act",
+      "type": "Law/Regulation",
+      "label": "15 U.S.C. §§1241-1245"
+    },
+    {
+      "id": "FIFRA",
+      "type": "Law/Regulation",
+      "label": "Federal Insecticide, Fungicide, and Rodenticide Act"
+    },
+    {
+      "id": "19 U.S.C. 1304",
+      "type": "Law/Regulation",
+      "label": "Country of Origin Marking Requirement"
+    },
+    {
+      "id": "RCRA",
+      "type": "Law/Regulation",
+      "label": "Resource Conservation and Recovery Act"
+    },
+    {
+      "id": "TSCA",
+      "type": "Law/Regulation",
+      "label": "Toxic Substances Control Act"
+    },
+    {
+      "id": "Lacey Act",
+      "type": "Law/Regulation",
+      "label": "Lacey Act (re: illegal wildlife, plant trade)"
+    }
+  ],
+  "edges": [
+    {
+      "source": "Weapons",
+      "target": "Firearms",
+      "relationship": "<parent_of>",
+      "properties": {
+        "description": "Firearms subcategory includes handguns, rifles, shotguns, typical civilian guns."
+      }
+    },
+    {
+      "source": "Weapons",
+      "target": "Ammunition",
+      "relationship": "<parent_of>",
+      "properties": {
+        "description": "Bullets, shells, and all firearm ammo, plus components like powder or primers."
+      }
+    },
+    {
+      "source": "Weapons",
+      "target": "Blades (Knives & Swords)",
+      "relationship": "<parent_of>",
+      "properties": {
+        "description": "Edged weapons: knives, swords, daggers, etc."
+      }
+    },
+    {
+      "source": "Weapons",
+      "target": "Self-Defense Tools",
+      "relationship": "<parent_of>",
+      "properties": {
+        "description": "Pepper spray, stun guns, tasers, batons, etc."
+      }
+    },
+    {
+      "source": "Weapons",
+      "target": "Military-Grade Weapons",
+      "relationship": "<parent_of>",
+      "properties": {
+        "description": "Heavy arms (machine guns, suppressors, artillery, missiles, etc.)"
+      }
+    },
+    {
+      "source": "Weapons",
+      "target": "Explosives & Incendiaries",
+      "relationship": "<parent_of>",
+      "properties": {
+        "description": "Commercial explosives, bombs, grenades, fireworks, flamethrowers."
+      }
+    },
+
+    {
+      "source": "Firearms",
+      "target": "Handguns",
+      "relationship": "<parent_of>"
+    },
+    {
+      "source": "Handguns",
+      "target": "Pistols",
+      "relationship": "<parent_of>"
+    },
+    {
+      "source": "Handguns",
+      "target": "Revolvers",
+      "relationship": "<parent_of>"
+    },
+    {
+      "source": "Handguns",
+      "target": "Machine Pistols",
+      "relationship": "<parent_of>"
+    },
+
+    {
+      "source": "Firearms",
+      "target": "Rifles",
+      "relationship": "<parent_of>"
+    },
+    {
+      "source": "Rifles",
+      "target": "Bolt-Action Rifles",
+      "relationship": "<parent_of>"
+    },
+    {
+      "source": "Rifles",
+      "target": "Semi-Automatic Rifles",
+      "relationship": "<parent_of>"
+    },
+    {
+      "source": "Rifles",
+      "target": "Assault Rifles",
+      "relationship": "<parent_of>"
+    },
+    {
+      "source": "Rifles",
+      "target": "Battle Rifles",
+      "relationship": "<parent_of>"
+    },
+    {
+      "source": "Rifles",
+      "target": "Short-Barreled Rifles (SBR)",
+      "relationship": "<parent_of>"
+    },
+
+    {
+      "source": "Firearms",
+      "target": "Shotguns",
+      "relationship": "<parent_of>"
+    },
+    {
+      "source": "Shotguns",
+      "target": "Pump-Action Shotguns",
+      "relationship": "<parent_of>"
+    },
+    {
+      "source": "Shotguns",
+      "target": "Semi-Automatic Shotguns",
+      "relationship": "<parent_of>"
+    },
+    {
+      "source": "Shotguns",
+      "target": "Sawed-Off Shotguns",
+      "relationship": "<parent_of>"
+    },
+
+    {
+      "source": "Firearms",
+      "target": "Submachine Guns",
+      "relationship": "<parent_of>"
+    },
+    {
+      "source": "Firearms",
+      "target": "Machine Guns",
+      "relationship": "<parent_of>"
+    },
+
+    {
+      "source": "Firearms",
+      "target": "Improvised & Homemade Firearms",
+      "relationship": "<parent_of>"
+    },
+    {
+      "source": "Improvised & Homemade Firearms",
+      "target": "Ghost Guns",
+      "relationship": "<parent_of>"
+    },
+    {
+      "source": "Improvised & Homemade Firearms",
+      "target": "3D-Printed Firearms",
+      "relationship": "<parent_of>"
+    },
+    {
+      "source": "Improvised & Homemade Firearms",
+      "target": "Zip Guns",
+      "relationship": "<parent_of>"
+    },
+
+    {
+      "source": "Firearms",
+      "target": "Firearm Accessories",
+      "relationship": "<parent_of>"
+    },
+    {
+      "source": "Firearm Accessories",
+      "target": "Suppressors (Silencers)",
+      "relationship": "<parent_of>"
+    },
+    {
+      "source": "Firearm Accessories",
+      "target": "Conversion Devices & Rapid-Fire Mods",
+      "relationship": "<parent_of>"
+    },
+    {
+      "source": "Conversion Devices & Rapid-Fire Mods",
+      "target": "Auto Sears (\"Glock switches\")",
+      "relationship": "<parent_of>"
+    },
+    {
+      "source": "Conversion Devices & Rapid-Fire Mods",
+      "target": "Bump Stocks",
+      "relationship": "<parent_of>"
+    },
+    {
+      "source": "Conversion Devices & Rapid-Fire Mods",
+      "target": "Binary Triggers",
+      "relationship": "<parent_of>"
+    },
+    {
+      "source": "Conversion Devices & Rapid-Fire Mods",
+      "target": "Forced Reset Triggers",
+      "relationship": "<parent_of>"
+    },
+    {
+      "source": "Firearm Accessories",
+      "target": "High-Capacity Magazines",
+      "relationship": "<parent_of>"
+    },
+
+    {
+      "source": "Explosives & Incendiaries",
+      "target": "Grenades",
+      "relationship": "<parent_of>"
+    },
+    {
+      "source": "Grenades",
+      "target": "Fragmentation Grenades",
+      "relationship": "<parent_of>"
+    },
+    {
+      "source": "Grenades",
+      "target": "Stun Grenades (Flashbangs)",
+      "relationship": "<parent_of>"
+    },
+    {
+      "source": "Grenades",
+      "target": "Smoke Grenades",
+      "relationship": "<parent_of>"
+    },
+    {
+      "source": "Explosives & Incendiaries",
+      "target": "Bombs & IEDs",
+      "relationship": "<parent_of>"
+    },
+    {
+      "source": "Bombs & IEDs",
+      "target": "Improvised Explosive Devices",
+      "relationship": "<parent_of>"
+    },
+    {
+      "source": "Bombs & IEDs",
+      "target": "Pipe Bombs",
+      "relationship": "<parent_of>"
+    },
+    {
+      "source": "Bombs & IEDs",
+      "target": "Vehicle-Borne IEDs",
+      "relationship": "<parent_of>"
+    },
+    {
+      "source": "Bombs & IEDs",
+      "target": "Suicide Bombs",
+      "relationship": "<parent_of>"
+    },
+    {
+      "source": "Explosives & Incendiaries",
+      "target": "Mines",
+      "relationship": "<parent_of>"
+    },
+    {
+      "source": "Mines",
+      "target": "Anti-Personnel Mines",
+      "relationship": "<parent_of>"
+    },
+    {
+      "source": "Mines",
+      "target": "Anti-Tank Mines",
+      "relationship": "<parent_of>"
+    },
+
+    {
+      "source": "Blades (Knives & Swords)",
+      "target": "Bladed Weapons",
+      "relationship": "<parent_of>"
+    },
+    {
+      "source": "Bladed Weapons",
+      "target": "Knives",
+      "relationship": "<parent_of>"
+    },
+    {
+      "source": "Knives",
+      "target": "Switchblades",
+      "relationship": "<parent_of>"
+    },
+    {
+      "source": "Knives",
+      "target": "Daggers & Stilettos",
+      "relationship": "<parent_of>"
+    },
+    {
+      "source": "Bladed Weapons",
+      "target": "Swords & Machetes",
+      "relationship": "<parent_of>"
+    },
+    {
+      "source": "Bladed Weapons",
+      "target": "Axes & Tomahawks",
+      "relationship": "<parent_of>"
+    },
+    {
+      "source": "Blades (Knives & Swords)",
+      "target": "Blunt Weapons",
+      "relationship": "<parent_of>"
+    },
+    {
+      "source": "Blunt Weapons",
+      "target": "Clubs & Bats",
+      "relationship": "<parent_of>"
+    },
+    {
+      "source": "Blunt Weapons",
+      "target": "Batons",
+      "relationship": "<parent_of>"
+    },
+    {
+      "source": "Blunt Weapons",
+      "target": "Maces & War Hammers",
+      "relationship": "<parent_of>"
+    },
+    {
+      "source": "Blunt Weapons",
+      "target": "Brass Knuckles",
+      "relationship": "<parent_of>"
+    },
+    {
+      "source": "Blades (Knives & Swords)",
+      "target": "Flexible Weapons",
+      "relationship": "<parent_of>"
+    },
+    {
+      "source": "Flexible Weapons",
+      "target": "Nunchaku (Nunchucks)",
+      "relationship": "<parent_of>"
+    },
+    {
+      "source": "Flexible Weapons",
+      "target": "Garrote",
+      "relationship": "<parent_of>"
+    },
+
+    {
+      "source": "Self-Defense Tools",
+      "target": "Less-Lethal (Electrical)",
+      "relationship": "<parent_of>"
+    },
+    {
+      "source": "Less-Lethal (Electrical)",
+      "target": "Stun Guns & Tasers",
+      "relationship": "<parent_of>"
+    },
+    {
+      "source": "Self-Defense Tools",
+      "target": "Less-Lethal (Chemical)",
+      "relationship": "<parent_of>"
+    },
+    {
+      "source": "Less-Lethal (Chemical)",
+      "target": "Pepper Spray (OC)",
+      "relationship": "<parent_of>"
+    },
+    {
+      "source": "Less-Lethal (Chemical)",
+      "target": "Tear Gas",
+      "relationship": "<parent_of>"
+    },
+    {
+      "source": "Self-Defense Tools",
+      "target": "Impact Projectile (Less-Lethal)",
+      "relationship": "<parent_of>"
+    },
+    {
+      "source": "Impact Projectile (Less-Lethal)",
+      "target": "Bean Bag Rounds",
+      "relationship": "<parent_of>"
+    },
+    {
+      "source": "Impact Projectile (Less-Lethal)",
+      "target": "Rubber Bullets",
+      "relationship": "<parent_of>"
+    },
+
+    {
+      "source": "Firearms",
+      "target": "Product Safety",
+      "relationship": "<regulated_by>",
+      "properties": {
+        "notes": [
+          "Firearms exempt from CPSC oversight; must meet industry standards/ATF rules",
+          "Design safety (avoid accidental discharge, liability if defectively designed)"
+        ]
+      }
+    },
+    {
+      "source": "Firearms",
+      "target": "Labeling",
+      "relationship": "<regulated_by>",
+      "properties": {
+        "notes": [
+          "Serial number & manufacturer marking required (27 CFR 478.92)",
+          "Imported firearms must show country of origin"
+        ]
+      }
+    },
+    {
+      "source": "Firearms",
+      "target": "Trade Compliance",
+      "relationship": "<regulated_by>",
+      "properties": {
+        "notes": [
+          "Export often governed by ITAR Category I (small arms)",
+          "Imports need ATF authorization (18 U.S.C. 922(a)(3)); sporting-use test"
+        ]
+      }
+    },
+    {
+      "source": "Firearms",
+      "target": "Intellectual Property",
+      "relationship": "<regulated_by>",
+      "properties": {
+        "notes": [
+          "Trademarks/patents protect gun designs",
+          "Counterfeit parts lead to Customs seizures"
+        ]
+      }
+    },
+    {
+      "source": "Firearms",
+      "target": "Supply Chain",
+      "relationship": "<regulated_by>",
+      "properties": {
+        "notes": [
+          "FFLs maintain transaction records (18 U.S.C. 923(g))",
+          "Parts from embargoed countries prohibited",
+          "Arms Export Control Act (22 U.S.C. 2778) & ITAR for exports"
+        ]
+      }
+    },
+    {
+      "source": "Firearms",
+      "target": "Sustainability",
+      "relationship": "<regulated_by>",
+      "properties": {
+        "notes": [
+          "Lead ammo can contaminate environment; EPA RCRA applies to shooting range cleanup"
+        ]
+      }
+    },
+    {
+      "source": "Firearms",
+      "target": "Age Restrictions & Sales",
+      "relationship": "<regulated_by>",
+      "properties": {
+        "notes": [
+          "18 U.S.C. 922(b)(1): 21+ for handguns, 18+ for rifles/shotguns from dealers",
+          "Background checks required for dealer sales (Brady Act)"
+        ]
+      }
+    },
+    {
+      "source": "Firearms",
+      "target": "Advertising & Marketing",
+      "relationship": "<regulated_by>",
+      "properties": {
+        "notes": [
+          "FTC Act prohibits deceptive ads (15 U.S.C. §45)",
+          "Cannot market to minors; PLCAA immunity doesn't override marketing regs"
+        ]
+      }
+    },
+
+    {
+      "source": "Ammunition",
+      "target": "Product Safety",
+      "relationship": "<regulated_by>",
+      "properties": {
+        "notes": [
+          "Exempt from CPSC consumer regs; primarily industry-driven standards",
+          "ATF & DOT rules for explosive classification and safe primer sensitivity"
+        ]
+      }
+    },
+    {
+      "source": "Ammunition",
+      "target": "Labeling",
+      "relationship": "<regulated_by>",
+      "properties": {
+        "notes": [
+          "16 CFR 1500.83(a)(6): must bear common name, warning like 'Keep out of reach of children', manufacturer info",
+          "DOT hazmat labeling for transport (49 CFR)"
+        ]
+      }
+    },
+    {
+      "source": "Ammunition",
+      "target": "Trade Compliance",
+      "relationship": "<regulated_by>",
+      "properties": {
+        "notes": [
+          "Many ammo types on USML Cat III (ITAR license needed)",
+          "Ear restrictions apply if not on USML",
+          "Import of armor-piercing ammo restricted (18 U.S.C. 922(a)(7)&(8))",
+          "49 CFR hazmat rules for domestic shipping"
+        ]
+      }
+    },
+    {
+      "source": "Ammunition",
+      "target": "Intellectual Property",
+      "relationship": "<regulated_by>",
+      "properties": {
+        "notes": [
+          "Cartridge designs/trademarks may be patented or trademarked",
+          "Counterfeit brand ammo packaging is IP infringement"
+        ]
+      }
+    },
+    {
+      "source": "Ammunition",
+      "target": "Supply Chain",
+      "relationship": "<regulated_by>",
+      "properties": {
+        "notes": [
+          "Ammo manufacturers need FFL for production; record-keeping required",
+          "Powder, primers may need explosives license under 18 U.S.C. Chapter 40"
+        ]
+      }
+    },
+    {
+      "source": "Ammunition",
+      "target": "Sustainability",
+      "relationship": "<regulated_by>",
+      "properties": {
+        "notes": [
+          "Lead bullets cause environmental contamination; RCRA for range disposal",
+          "EPA has considered restricting lead ammo under TSCA"
+        ]
+      }
+    },
+    {
+      "source": "Ammunition",
+      "target": "Age Restrictions & Sales",
+      "relationship": "<regulated_by>",
+      "properties": {
+        "notes": [
+          "Handgun ammo = 21+, rifle/shotgun ammo = 18+ from dealers",
+          "Online sales often require age verification"
+        ]
+      }
+    },
+    {
+      "source": "Ammunition",
+      "target": "Advertising & Marketing",
+      "relationship": "<regulated_by>",
+      "properties": {
+        "notes": [
+          "FTC Act applies; must not mislead or claim 'armor-piercing' if illegal",
+          "No targeting minors; must follow hazardous product ad guidelines"
+        ]
+      }
+    },
+
+    {
+      "source": "Blades (Knives & Swords)",
+      "target": "Product Safety",
+      "relationship": "<regulated_by>",
+      "properties": {
+        "notes": [
+          "Knives are generally treated as tools, subject to normal product liability",
+          "Certain dangerous features (like ballistic knives) are outright banned"
+        ]
+      }
+    },
+    {
+      "source": "Blades (Knives & Swords)",
+      "target": "Labeling",
+      "relationship": "<regulated_by>",
+      "properties": {
+        "notes": [
+          "19 U.S.C. 1304 requires country of origin marking for imports",
+          "Switchblades are restricted under the Switchblade Knife Act"
+        ]
+      }
+    },
+    {
+      "source": "Blades (Knives & Swords)",
+      "target": "Trade Compliance",
+      "relationship": "<regulated_by>",
+      "properties": {
+        "notes": [
+          "Interstate commerce ban on switchblades (15 U.S.C. §1242) except for military",
+          "Export not heavily restricted unless it's a military blade (bayonet on USML)",
+          "Animal materials (ivory handles) can trigger ESA/CITES"
+        ]
+      }
+    },
+    {
+      "source": "Blades (Knives & Swords)",
+      "target": "Intellectual Property",
+      "relationship": "<regulated_by>",
+      "properties": {
+        "notes": [
+          "Patents protect unique folding mechanisms, trademarks for brand names",
+          "Counterfeit high-end knives or replica swords violate IP laws"
+        ]
+      }
+    },
+    {
+      "source": "Blades (Knives & Swords)",
+      "target": "Supply Chain",
+      "relationship": "<regulated_by>",
+      "properties": {
+        "notes": [
+          "Retailers must avoid importing illegal switchblades",
+          "Carriers sometimes refuse shipping automatics to individuals",
+          "Exotic handle materials must comply with Lacey Act or CITES"
+        ]
+      }
+    },
+    {
+      "source": "Blades (Knives & Swords)",
+      "target": "Sustainability",
+      "relationship": "<regulated_by>",
+      "properties": {
+        "notes": [
+          "Sustainable materials for handles (no endangered woods/ivory)",
+          "Disposal rarely regulated, but packaging falls under general environmental laws"
+        ]
+      }
+    },
+    {
+      "source": "Blades (Knives & Swords)",
+      "target": "Age Restrictions & Sales",
+      "relationship": "<regulated_by>",
+      "properties": {
+        "notes": [
+          "No federal age limit for ordinary knives, but many states ban sales of 'deadly weapons' to minors",
+          "Switchblades sometimes restricted to LE/military only"
+        ]
+      }
+    },
+    {
+      "source": "Blades (Knives & Swords)",
+      "target": "Advertising & Marketing",
+      "relationship": "<regulated_by>",
+      "properties": {
+        "notes": [
+          "FTC Act: cannot misrepresent safety or lawful usage",
+          "Online platforms often restrict depiction of knives as 'weapons'"
+        ]
+      }
+    },
+
+    {
+      "source": "Self-Defense Tools",
+      "target": "Product Safety",
+      "relationship": "<regulated_by>",
+      "properties": {
+        "notes": [
+          "Pepper spray, stun guns can be considered consumer products; some general safety rules apply",
+          "CPSC might have limited oversight except for firearms-like devices"
+        ]
+      }
+    },
+    {
+      "source": "Self-Defense Tools",
+      "target": "Labeling",
+      "relationship": "<regulated_by>",
+      "properties": {
+        "notes": [
+          "Pepper spray for animals under FIFRA (EPA-registered). For humans, must have caution/first-aid statements",
+          "Stun gun packaging includes usage warnings and legal disclaimers"
+        ]
+      }
+    },
+    {
+      "source": "Self-Defense Tools",
+      "target": "Trade Compliance",
+      "relationship": "<regulated_by>",
+      "properties": {
+        "notes": [
+          "Often fall under EAR as 'crime control' devices; exports to certain countries require license",
+          "High-powered Tasers or tear gas can face stricter export controls"
+        ]
+      }
+    },
+    {
+      "source": "Self-Defense Tools",
+      "target": "Intellectual Property",
+      "relationship": "<regulated_by>",
+      "properties": {
+        "notes": [
+          "TASER brand is trademarked; patents on stun device technology",
+          "Pepper spray formula/nozzles can be patented"
+        ]
+      }
+    },
+    {
+      "source": "Self-Defense Tools",
+      "target": "Supply Chain",
+      "relationship": "<regulated_by>",
+      "properties": {
+        "notes": [
+          "OC chemical must be consistent potency; imported electronics must meet FCC or duty requirements",
+          "Quality checks to ensure device reliability"
+        ]
+      }
+    },
+    {
+      "source": "Self-Defense Tools",
+      "target": "Sustainability",
+      "relationship": "<regulated_by>",
+      "properties": {
+        "notes": [
+          "Disposal of chemical sprays or lithium batteries subject to hazardous waste rules",
+          "No ozone-depleting propellants"
+        ]
+      }
+    },
+    {
+      "source": "Self-Defense Tools",
+      "target": "Age Restrictions & Sales",
+      "relationship": "<regulated_by>",
+      "properties": {
+        "notes": [
+          "No general federal age rule, states often require 18+ or no felony record",
+          "Online sales restricted in some jurisdictions (cannot ship pepper spray/tasers to banned states)"
+        ]
+      }
+    },
+    {
+      "source": "Self-Defense Tools",
+      "target": "Advertising & Marketing",
+      "relationship": "<regulated_by>",
+      "properties": {
+        "notes": [
+          "Must advertise as defensive, not for assault; no false 'guaranteed incapacitation' claims",
+          "Platforms limit ads for weapons or restricted items"
+        ]
+      }
+    },
+
+    {
+      "source": "Military-Grade Weapons",
+      "target": "Product Safety",
+      "relationship": "<regulated_by>",
+      "properties": {
+        "notes": [
+          "Designed to mil-spec; emphasis on safe storage/handling to protect public",
+          "National Firearms Act extends to machine guns, destructive devices"
+        ]
+      }
+    },
+    {
+      "source": "Military-Grade Weapons",
+      "target": "Labeling",
+      "relationship": "<regulated_by>",
+      "properties": {
+        "notes": [
+          "Marked per ATF/military rules (serial, model). Deactivated items must be clearly inert"
+        ]
+      }
+    },
+    {
+      "source": "Military-Grade Weapons",
+      "target": "Trade Compliance",
+      "relationship": "<regulated_by>",
+      "properties": {
+        "notes": [
+          "ITAR coverage for basically all heavy arms. Exports require State Department authorization",
+          "Imports often banned or severely restricted (e.g., post-1986 machine guns illegal for civilians)"
+        ]
+      }
+    },
+    {
+      "source": "Military-Grade Weapons",
+      "target": "Intellectual Property",
+      "relationship": "<regulated_by>",
+      "properties": {
+        "notes": [
+          "Defense contractors hold patents on advanced systems",
+          "Unauthorized use of military logos or designs can violate trademark laws"
+        ]
+      }
+    },
+    {
+      "source": "Military-Grade Weapons",
+      "target": "Supply Chain",
+      "relationship": "<regulated_by>",
+      "properties": {
+        "notes": [
+          "Tightly regulated by DOD, State Dept, ITAR for prime contractors & subcontractors",
+          "Strict chain-of-custody and background checks for NFA items"
+        ]
+      }
+    },
+    {
+      "source": "Military-Grade Weapons",
+      "target": "Sustainability",
+      "relationship": "<regulated_by>",
+      "properties": {
+        "notes": [
+          "Disposal of decommissioned ordnance must meet environmental rules (e.g., toxic substances cleanup)",
+          "Open burn/open detonation for old munitions regulated under environmental law"
+        ]
+      }
+    },
+    {
+      "source": "Military-Grade Weapons",
+      "target": "Age Restrictions & Sales",
+      "relationship": "<regulated_by>",
+      "properties": {
+        "notes": [
+          "Generally no civilian ownership for most items. If allowed (pre-86 machine gun), buyer must be 21+ and pass extensive NFA process"
+        ]
+      }
+    },
+    {
+      "source": "Military-Grade Weapons",
+      "target": "Advertising & Marketing",
+      "relationship": "<regulated_by>",
+      "properties": {
+        "notes": [
+          "Marketed B2G or to licensed defense contractors, not consumers",
+          "ITAR restricts sharing of technical data publicly"
+        ]
+      }
+    },
+
+    {
+      "source": "Explosives & Incendiaries",
+      "target": "Product Safety",
+      "relationship": "<regulated_by>",
+      "properties": {
+        "notes": [
+          "Manufacture & storage under OSHA & ATF standards (27 CFR Part 555)",
+          "Consumer fireworks must meet CPSC regs"
+        ]
+      }
+    },
+    {
+      "source": "Explosives & Incendiaries",
+      "target": "Labeling",
+      "relationship": "<regulated_by>",
+      "properties": {
+        "notes": [
+          "Explosive hazard labels per DOT (1.1, 1.2, etc.)",
+          "Fireworks require safety warnings/instructions"
+        ]
+      }
+    },
+    {
+      "source": "Explosives & Incendiaries",
+      "target": "Trade Compliance",
+      "relationship": "<regulated_by>",
+      "properties": {
+        "notes": [
+          "Many explosives on USML (Category V) or require ATF import license",
+          "Export under ITAR or EAR 'explosive' categories"
+        ]
+      }
+    },
+    {
+      "source": "Explosives & Incendiaries",
+      "target": "Intellectual Property",
+      "relationship": "<regulated_by>",
+      "properties": {
+        "notes": [
+          "Patented blasting compounds; firework brand trademarks",
+          "Publishing bomb-making instructions can be criminal (beyond IP issues)"
+        ]
+      }
+    },
+    {
+      "source": "Explosives & Incendiaries",
+      "target": "Supply Chain",
+      "relationship": "<regulated_by>",
+      "properties": {
+        "notes": [
+          "Federal Explosives License/Permit for commerce",
+          "Strict recordkeeping, theft/loss reported to ATF"
+        ]
+      }
+    },
+    {
+      "source": "Explosives & Incendiaries",
+      "target": "Sustainability",
+      "relationship": "<regulated_by>",
+      "properties": {
+        "notes": [
+          "Disposal of UXO or old explosives must follow EPA/DoD guidelines",
+          "Open burning/detonation regulated for environmental impact"
+        ]
+      }
+    },
+    {
+      "source": "Explosives & Incendiaries",
+      "target": "Age Restrictions & Sales",
+      "relationship": "<regulated_by>",
+      "properties": {
+        "notes": [
+          "18 U.S.C. 842(d) bans providing explosives to under 21 or unlicensed persons",
+          "Consumer fireworks: states often require 18+"
+        ]
+      }
+    },
+    {
+      "source": "Explosives & Incendiaries",
+      "target": "Advertising & Marketing",
+      "relationship": "<regulated_by>",
+      "properties": {
+        "notes": [
+          "High explosives not consumer goods, minimal public ads",
+          "Fireworks ads must align with CPSC guidelines, no 'safe for kids' claims if adult fireworks"
+        ]
+      }
+    },
+
+    {
+      "source": "Product Safety",
+      "target": "CPSA",
+      "relationship": "<governed_by>",
+      "properties": {
+        "scope": "General consumer product safety. Firearms/ammo exempt, but other weapons (e.g. pepper spray) can fall under CPSC oversight"
+      }
+    },
+    {
+      "source": "Product Safety",
+      "target": "Gun Control Act (GCA)",
+      "relationship": "<governed_by>",
+      "properties": {
+        "scope": "Mandates certain safety device requirements (handgun locks), sets standards for gun commerce"
+      }
+    },
+    {
+      "source": "Product Safety",
+      "target": "Federal Explosives Laws (18 USC Chapter 40)",
+      "relationship": "<governed_by>",
+      "properties": {
+        "scope": "Requires safe handling/storage for explosives, prohibits distribution to minors or unlicensed persons"
+      }
+    },
+
+    {
+      "source": "Labeling",
+      "target": "FHSA",
+      "relationship": "<governed_by>",
+      "properties": {
+        "scope": "Hazardous household substances labeling; can apply to pepper spray, ammo boxes"
+      }
+    },
+    {
+      "source": "Labeling",
+      "target": "Gun Control Act (GCA)",
+      "relationship": "<governed_by>",
+      "properties": {
+        "scope": "Requires manufacturer/serial marking on firearms"
+      }
+    },
+    {
+      "source": "Labeling",
+      "target": "19 U.S.C. 1304",
+      "relationship": "<governed_by>",
+      "properties": {
+        "scope": "Country of origin marking for imported knives/swords, firearms, etc."
+      }
+    },
+
+    {
+      "source": "Trade Compliance",
+      "target": "ITAR",
+      "relationship": "<governed_by>",
+      "properties": {
+        "scope": "Covers defense articles (firearms, certain explosives, military gear). Export license from State Dept required"
+      }
+    },
+    {
+      "source": "Trade Compliance",
+      "target": "EAR",
+      "relationship": "<governed_by>",
+      "properties": {
+        "scope": "Dual-use or 'less sensitive' items (some shotguns, self-defense gear) under Commerce export controls"
+      }
+    },
+    {
+      "source": "Trade Compliance",
+      "target": "Switchblade Knife Act",
+      "relationship": "<governed_by>",
+      "properties": {
+        "scope": "Prohibits interstate commerce in switchblades except for military/law enforcement"
+      }
+    },
+    {
+      "source": "Trade Compliance",
+      "target": "Federal Explosives Laws (18 USC Chapter 40)",
+      "relationship": "<governed_by>",
+      "properties": {
+        "scope": "Imports/exports of explosive materials require license/permit"
+      }
+    },
+
+    {
+      "source": "Intellectual Property",
+      "target": "Lacey Act",
+      "relationship": "<governed_by>",
+      "properties": {
+        "scope": "While primarily about wildlife trade, can apply if exotic handle materials used illegally (overlap with IP if branded goods are mislabeled)."
+      }
+    },
+
+    {
+      "source": "Sustainability",
+      "target": "RCRA",
+      "relationship": "<governed_by>",
+      "properties": {
+        "scope": "Hazardous waste regulation for lead at shooting ranges, old explosives disposal"
+      }
+    },
+    {
+      "source": "Sustainability",
+      "target": "TSCA",
+      "relationship": "<governed_by>",
+      "properties": {
+        "scope": "EPA could restrict chemicals in ammo or self-defense sprays for environmental/health reasons"
+      }
+    }
+  ]
+}

@@ -1,15 +1,18 @@
 import os
-from dotenv import load_dotenv
+try:
+    from dotenv import load_dotenv
+    # Load environment variables
+    load_dotenv()
+except ImportError:
+    # Continue even if dotenv is not available
+    pass
 from neo4j import GraphDatabase
-
-# Load environment variables
-load_dotenv()
 
 def run_query(query):
     """Run a query against the Neo4j database"""
-    uri = os.getenv("NEO4J_URI")
-    user = os.getenv("NEO4J_USER")
-    password = os.getenv("NEO4J_PASSWORD")
+    uri = "bolt://localhost:7687"  # Hardcoded URI
+    user = "neo4j"  # Hardcoded user
+    password = "Rathum12!"  # Hardcoded password
     
     with GraphDatabase.driver(uri, auth=(user, password)) as driver:
         with driver.session() as session:
