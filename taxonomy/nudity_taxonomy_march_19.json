@@ -1,0 +1,1096 @@
+{
+    "nodes": [
+      {
+        "id": "Nudity",
+        "type": "Category",
+        "label": "Root Nudity Category",
+        "description": "Root classification covering all visual depictions of partial or full human nakedness, with relevance to compliance, age-restrictions, product guidelines, and trust & safety policies.",
+        "properties": {
+          "context": "This category encompasses any image, video, or digital depiction of a human body in a state of undress, covering both adult and minor situations. The subcategories below address whether it is sexual, non-sexual, or involves special contexts (e.g. art, child-related, non-consensual).",
+          "examples": [
+            "Photographs or videos of nude individuals",
+            "Minimal clothing images that verge on nudity"
+          ],
+          "edge_cases": [
+            "Cultural or ritual nudity (e.g., indigenous practices)",
+            "Historic or documentary images where nudity appears incidentally"
+          ]
+        }
+      },
+      {
+        "id": "Explicit_Nudity",
+        "type": "Subcategory",
+        "label": "Explicit Nudity",
+        "description": "Depictions where genitals, breasts, or sexual acts are clearly visible and intended to sexually arouse or offend. Common in adult entertainment products, images, or accessories.",
+        "properties": {
+          "context": "Adult-oriented content featuring clearly visible breasts (female nipples), genitals, or explicit sexual activities. Often considered pornographic or adult content. May be subject to age restrictions and obscenity laws.",
+          "examples": [
+            "Pornographic magazines showing full frontal nudity",
+            "Hardcore videos depicting clear sexual acts"
+          ],
+          "edge_cases": [
+            "Simulated sex with partial nudity might fall under suggestive vs. explicit",
+            "Art photography displaying genitals in an artistic context"
+          ]
+        }
+      },
+      {
+        "id": "Suggestive_Nudity",
+        "type": "Subcategory",
+        "label": "Suggestive Nudity",
+        "description": "Content where nudity is implied but not directly shown, using poses, partial clothing, or strategic coverage that suggests nakedness.",
+        "properties": {
+          "context": "Sexually suggestive content without fully exposed genitals or nipples. Poses, partial or sheer coverage that teases nudity. Can be borderline adult or considered erotic, depending on platform.",
+          "examples": [
+            "Lingerie shoots revealing shape but not explicit detail",
+            "Strategically placed objects obscuring genitals"
+          ],
+          "edge_cases": [
+            "Very small bikini or thong might be borderline explicit vs. just minimal clothing",
+            "Body paint covering breasts/genitals could appear effectively nude"
+          ]
+        }
+      },
+      {
+        "id": "Non_Sexual_Nudity",
+        "type": "Subcategory",
+        "label": "Non-Sexual Nudity",
+        "description": "Nudity represented in non-sexual contexts such as art, medicine, or educational content. Often requires nuanced classification to distinguish from inappropriate content.",
+        "properties": {
+          "context": "Covers all forms of nudity that are not meant to arouse but serve legitimate educational, artistic, or social functions. May still require gating or disclaimers depending on policy.",
+          "examples": [
+            "Medical demonstrations of the human body",
+            "Breastfeeding or childbirth images",
+            "Cultural or anthropological documentation of indigenous nudity"
+          ],
+          "edge_cases": [
+            "Borderline artistic vs. erotic photography",
+            "Documentary footage of nudity that could be misused"
+          ]
+        }
+      },
+      {
+        "id": "Artistic_Nudity",
+        "type": "Subcategory",
+        "label": "Artistic Nudity",
+        "description": "Classical or modern art forms displaying nudity—paintings, sculptures, and installations—often protected under freedom of expression but needs review in retail/online settings.",
+        "properties": {
+          "context": "Specifically highlights nudity in artworks, from classical paintings to modern art pieces, usually recognized for cultural or aesthetic value rather than sexual content.",
+          "examples": [
+            "Renaissance sculptures (e.g., Michelangelo’s David)",
+            "Gallery exhibitions featuring nude figure drawings"
+          ],
+          "edge_cases": [
+            "Contemporary art photography that some may interpret as erotic",
+            "Performance art that involves partial or full nudity"
+          ]
+        }
+      },
+      {
+        "id": "Child_Nudity",
+        "type": "Subcategory",
+        "label": "Child Nudity",
+        "description": "Any depiction of underage individuals in states of undress, requiring strict monitoring and often prohibited regardless of context.",
+        "properties": {
+          "context": "Covers all nudity of minors (under 18). Even if not sexual, such content is heavily restricted or disallowed to prevent abuse or potential sexual exploitation. Strict legal compliance required.",
+          "examples": [
+            "Family photos showing partially nude children (bathtub pictures)",
+            "Documentary footage of unclothed minors in certain cultures"
+          ],
+          "edge_cases": [
+            "Historic war/famine images including nude children",
+            "Incidental background child nudity captured inadvertently"
+          ]
+        }
+      },
+      {
+        "id": "Digitally_Altered_Nudity",
+        "type": "Subcategory",
+        "label": "AI/Digitally Altered Nudity",
+        "description": "Nudity created or modified using digital tools, AI generation, or manipulation techniques.",
+        "properties": {
+          "context": "Content in which nudity is introduced or manipulated via digital means—Photoshop, AI, face-swapping. May be consensual or non-consensual. Can involve synthetic media (deepfakes).",
+          "examples": [
+            "Photoshopped images that remove clothing",
+            "AI-generated nude 'art' that never involved a real model"
+          ],
+          "edge_cases": [
+            "Celebrity deepfakes used for malicious or harassing ends",
+            "Cartoonish transformations that are obviously fake vs. realistic manipulations"
+          ]
+        }
+      },
+      {
+        "id": "Fetish_Content",
+        "type": "Subcategory",
+        "label": "Fetish or Kink-Based Nudity",
+        "description": "Nudity associated with specific sexual preferences, fetishes, or kink communities, often involving specialized clothing, accessories, or scenarios.",
+        "properties": {
+          "context": "Content that centers on fetish or BDSM themes rather than 'vanilla' sexual depiction. Legal if adults consent, but it may overlap with extreme or obscene content if violent or bestial.",
+          "examples": [
+            "BDSM imagery featuring restraints, latex clothing, consensual bondage",
+            "Foot fetish photography focusing on naked body parts in a fetish context"
+          ],
+          "edge_cases": [
+            "Severe pain or injury can be mistaken for non-consensual abuse",
+            "Bestial or necrophilic fetish is outright disallowed (illegal, obscene)"
+          ]
+        }
+      },
+      {
+        "id": "Contextual_Nudity",
+        "type": "Subcategory",
+        "label": "Contextual Nudity (e.g., bath scenes, medical)",
+        "description": "Nudity shown within specific contexts that provide legitimate reasons for the display, such as bathing scenes or medical situations.",
+        "properties": {
+          "context": "Nudity displayed for reasons incidental to normal life events (bath, medical exam) or other contexts not primarily sexual. Overlaps with non-sexual if the subject matter is purely functional.",
+          "examples": [
+            "Shower scenes in a film that are not sexually charged",
+            "Medical tutorial showing a nude patient for demonstration"
+          ],
+          "edge_cases": [
+            "Disrobing scenes that could be exploited or reinterpreted as erotic",
+            "Soap ads featuring partial nudity in a bathing context"
+          ]
+        }
+      },
+      {
+        "id": "Adult_Animated_Nudity",
+        "type": "Subcategory",
+        "label": "Adult Animated/Cartoon Nudity",
+        "description": "Animated or cartoon depictions of adult nudity, including anime, hentai, and adult-oriented cartoons.",
+        "properties": {
+          "context": "Cartoon or CGI-based nudity featuring adults in sexual or nude scenarios. Often treated similarly to real adult nudity for rating or gating purposes. If it includes minors (even fictitious), it becomes CSAM or obscene content.",
+          "examples": [
+            "Hentai scenes depicting adult characters in sexual acts",
+            "3D animated porn with fantasy creatures (adult content)"
+          ],
+          "edge_cases": [
+            "Indistinguishable CGI from real humans may trigger stricter moderation",
+            "Animated incest or bestial themes become obscene or illegal"
+          ]
+        }
+      },
+      {
+        "id": "Accidental_Nudity",
+        "type": "Subcategory",
+        "label": "Accidental/Unintentional Exposure",
+        "description": "Inadvertent exposure of private body parts, often in candid photography, sports events, or wardrobe malfunctions.",
+        "properties": {
+          "context": "Images or videos where the subject did not intend to be nude, but a slip or accident occurred. This differs from intentional nudity; distribution may raise privacy issues if non-consensual.",
+          "examples": [
+            "Wardrobe malfunctions at live events",
+            "Sports photography capturing brief exposures"
+          ],
+          "edge_cases": [
+            "Publicly distributed “nip slip” photos could be considered non-consensual intimate content",
+            "Subject might not be aware they were photographed in that moment"
+          ]
+        }
+      },
+      {
+        "id": "Entertainment_Nudity",
+        "type": "Subcategory",
+        "label": "Film/TV Entertainment Nudity",
+        "description": "Nudity portrayed in mainstream film, television, or streaming content for artistic or narrative purposes.",
+        "properties": {
+          "context": "Nudity found in commercially produced movies or shows, typically regulated by rating systems (MPAA, TV ratings). Often not pornographic but can be restricted from minors’ view.",
+          "examples": [
+            "R-rated movie scenes with brief topless exposure",
+            "TV series featuring sexual content for plot or character development"
+          ],
+          "edge_cases": [
+            "Extended, graphic sex scenes in mainstream films can border on pornography",
+            "Foreign films with cultural norms allowing more frontal nudity"
+          ]
+        }
+      },
+      {
+        "id": "Historical_Nudity",
+        "type": "Subcategory",
+        "label": "Historical/Documentary Nudity",
+        "description": "Nudity presented in historical contexts or documentary materials, often for educational or archival purposes.",
+        "properties": {
+          "context": "Images or footage from past eras or real-world events (conflicts, famine, tribal life) where nudity is incidental or part of cultural/historical record. Typically granted more leniency if purely documentary.",
+          "examples": [
+            "Archival war photography containing partially nude subjects",
+            "Anthropological films capturing indigenous groups with minimal clothing"
+          ],
+          "edge_cases": [
+            "Exploitation of historical images for prurient interest",
+            "Defining whether the historical context outweighs potential sexualization"
+          ]
+        }
+      },
+  
+      {
+        "id": "Sexual_Acts",
+        "type": "Subcategory",
+        "label": "Visible Sexual Acts (real or simulated)",
+        "description": "Content depicting sexual activities, whether actually performed or simulated.",
+        "properties": {
+          "context": "A broad subcategory covering any depiction of intercourse, oral sex, masturbation, or sexual conduct between consenting adults—overlaps with explicit nudity. Possibly subject to age gating or legal restrictions on pornography.",
+          "examples": [
+            "A video of consenting adults engaging in intercourse",
+            "Simulated sex scenes in mainstream cinema"
+          ],
+          "edge_cases": [
+            "Explicit porn vs. softcore scenes with no explicit genital display",
+            "Platform differences on what counts as adult sexual content"
+          ]
+        }
+      },
+      {
+        "id": "Translucent_Clothing",
+        "type": "Subcategory",
+        "label": "Nudity through See-Through Apparel",
+        "description": "Clothing that is transparent, translucent, or sheer enough to reveal body parts underneath.",
+        "properties": {
+          "context": "Covers attire that reveals otherwise private body parts—often considered partial or implied nudity. May be flagged depending on the extent of body reveal.",
+          "examples": [
+            "Sheer lingerie exposing nipples or genitals",
+            "Wet t-shirt scenario highlighting breast outlines"
+          ],
+          "edge_cases": [
+            "Dark vs. light see-through fabrics (some might obscure details)",
+            "Stylized runway fashion or art photography"
+          ]
+        }
+      },
+      {
+        "id": "Erotic_Posing",
+        "type": "Subcategory",
+        "label": "Erotic or Provocative Posing without Direct Exposure",
+        "description": "Poses intended to be sexually suggestive without explicit nudity.",
+        "properties": {
+          "context": "Covers sexual or alluring body positions that do not necessarily show explicit nudity but strongly imply sexuality or accentuate private areas.",
+          "examples": [
+            "Instagram poses in tight bikinis, focusing on butt or chest",
+            "Boudoir photography without direct frontal nudity"
+          ],
+          "edge_cases": [
+            "Context-driven: a yoga pose vs. an intentionally erotic posture",
+            "Overlaps with ‘suggestive nudity’ if near-nude clothing is used"
+          ]
+        }
+      },
+      {
+        "id": "Child_Illustrations",
+        "type": "Subcategory",
+        "label": "Cartoon/AI Child Nudity",
+        "description": "Animated, illustrated, or AI-generated depictions of children in states of undress.",
+        "properties": {
+          "context": "Depictions of minors (under 18) in non-real mediums—cartoons, 3D models, or AI—for explicit or non-explicit reasons. Treated with the same caution as real child images due to risk of sexual exploitation or grooming.",
+          "examples": [
+            "Anime featuring underage characters in minimal clothing",
+            "AI generated images of a child’s face or body in partial nudity"
+          ],
+          "edge_cases": [
+            "If content is erotic or sexual, it can be considered CSAM even if no real child was used (PROTECT Act).",
+            "Cartoonish stylization might mislead moderation if childlike features are borderline."
+          ]
+        }
+      },
+      {
+        "id": "Deepfake_Nudity",
+        "type": "Subcategory",
+        "label": "Deepfake Nudity (Face Swaps)",
+        "description": "Technology-enabled creation of fake nude imagery by swapping faces onto nude bodies.",
+        "properties": {
+          "context": "Subcategory of digitally altered content specifically for non-consensual or deceptive uses—someone’s face placed on a nude or sexual image. Often considered a form of harassment or privacy violation.",
+          "examples": [
+            "Celebrity deepfake porn videos posted on adult sites",
+            "A revenge porn scenario using AI face-swapping to humiliate the victim"
+          ],
+          "edge_cases": [
+            "Parody or comedic deepfakes not intended to degrade or sexualize",
+            "Technical detection challenges when deepfake is highly realistic"
+          ]
+        }
+      },
+      {
+        "id": "Virtual_Avatars",
+        "type": "Subcategory",
+        "label": "Virtual Nudity (Avatars in Games/VR/Metaverse)",
+        "description": "Digital representations of nudity in virtual environments, games, or platforms.",
+        "properties": {
+          "context": "Game characters or metaverse avatars that can appear nude or sexual. If intended for adult scenarios (e.g. VR sex simulations), typically subject to adult rating. Distinct from real-life nudity but still regulated on many platforms.",
+          "examples": [
+            "A VR chatroom where users design nude avatars",
+            "Role-playing games with explicit sexual character options"
+          ],
+          "edge_cases": [
+            "Might overlap with child-protection concerns if minors can create or view adult avatars",
+            "Moderation difficulty in user-created virtual worlds"
+          ]
+        }
+      },
+      {
+        "id": "Nudity_in_Education",
+        "type": "Subcategory",
+        "label": "Nudity in Medical/Scientific/Educational Context",
+        "description": "Nudity presented for educational, scientific, or medical purposes.",
+        "properties": {
+          "context": "Explicit or partial nudity used to teach or demonstrate. Common in medical textbooks, documentaries, or anatomy classes. Treated more leniently if non-sexual and purely instructional.",
+          "examples": [
+            "Medical diagrams showing reproductive organs",
+            "Educational videos about childbirth or breast exams"
+          ],
+          "edge_cases": [
+            "May still require adult gating if images are graphic",
+            "Online platforms might automatically flag if not clearly labeled as educational"
+          ]
+        }
+      },
+      {
+        "id": "Cultural_Nudity",
+        "type": "Subcategory",
+        "label": "Nudity Depicting Ritual/Cultural Traditions",
+        "description": "Traditional or cultural practices involving nudity or minimal clothing that reflects specific cultural contexts.",
+        "properties": {
+          "context": "Images or videos from ceremonies, tribes, or historical events in which partial or full nudity is a normal aspect of culture rather than sexual. Often appears in anthropology or documentary media.",
+          "examples": [
+            "Indigenous group ceremonies without western clothing",
+            "Historic tribe photos with minimal attire"
+          ],
+          "edge_cases": [
+            "Potential objectification or voyeurism by viewers outside the culture",
+            "Distinguishing legitimate documentary from exploitative fetish content"
+          ]
+        }
+      },
+  
+      {
+        "id": "Non_Consensual_Intimate_Content",
+        "type": "Subcategory",
+        "label": "Non-Consensual Intimate Content",
+        "description": "Sexual or nude content that was created or distributed without the subject’s consent, encompassing revenge porn, voyeuristic material, or deepfake porn that violates privacy.",
+        "properties": {
+          "context": "Includes any scenario where the depicted individual did not agree to the capture or sharing of their intimate images. Illegal in most U.S. states, and typically a priority removal for platforms.",
+          "examples": [
+            "Hidden-camera recordings in bathrooms",
+            "Leaked private sexts posted to humiliate an ex-partner"
+          ],
+          "edge_cases": [
+            "Original consent to be photographed does not include consent for public posting",
+            "Differentiating malicious deepfakes from comedic face-swaps"
+          ]
+        }
+      },
+      {
+        "id": "Sexual_Violence",
+        "type": "Subcategory",
+        "label": "Sexual Violence / Rape Content",
+        "description": "Depictions of rape, sexual assault, or other non-consensual sexual acts, whether real or staged. Typically disallowed in mainstream contexts.",
+        "properties": {
+          "context": "Imagery or video showing forced sexual acts. Legally considered extremely harmful content. Platforms generally ban it outright, even if it's a simulated 'fantasy' scenario, due to the depiction of sexual harm.",
+          "examples": [
+            "A porn scene depicting realistic rape or assault",
+            "Clips of a drunk or unconscious person being violated"
+          ],
+          "edge_cases": [
+            "BDSM roleplay can appear non-consensual; context that all parties consented might not override the depiction of forced sex in some policies",
+            "Documentary footage evidencing real sexual violence used as legal evidence or news coverage"
+          ]
+        }
+      },
+      {
+        "id": "Extreme_Obscene_Porn",
+        "type": "Subcategory",
+        "label": "Extreme or Obscene Pornography",
+        "description": "Highly extreme adult sexual content that may be deemed obscene under the Miller test, including bestiality, necrophilia, or incest themes.",
+        "properties": {
+          "context": "Covers the most egregious forms of adult sexual content lacking serious value and likely to be considered obscene. Often illegal to distribute. Overlaps with cruelty (e.g. bestiality, necrophilia).",
+          "examples": [
+            "Bestiality videos involving humans and animals",
+            "Material depicting necrophilia or incest",
+            "Hardcore violent porn with no redeeming artistic or social value"
+          ],
+          "edge_cases": [
+            "Fictional or animated depictions of these acts are still typically disallowed if considered obscene",
+            "Cultural differences in definitions of ‘extreme’ or ‘shock porn’"
+          ]
+        }
+      },
+      {
+        "id": "Child_Sexual_Abuse_Material",
+        "type": "Subcategory",
+        "label": "Child Sexual Abuse Material (CSAM)",
+        "description": "Visual content depicting minors in any sexual act or context, unequivocally illegal to produce, distribute, or possess.",
+        "properties": {
+          "context": "Covers any sexually explicit depiction of a minor under 18, including actual or simulated acts. Zero tolerance. Strictly illegal and must be removed/reported. Federal laws mandate immediate escalation.",
+          "examples": [
+            "Photos or videos of minors engaged in intercourse or sexual posing",
+            "Digitally manipulated images placing a minor’s head on adult porn"
+          ],
+          "edge_cases": [
+            "Drawn or CG child sexual content is criminally prosecutable if obscene",
+            "Sexting among teens still qualifies as production/distribution of child porn"
+          ]
+        }
+      },
+  
+      {
+        "id": "Federal_Obscenity_Law",
+        "type": "Law/Regulation",
+        "label": "Federal Obscenity Law (Miller Test, 18 U.S.C. §§1460-1466)",
+        "description": "Defines and criminalizes obscene adult content lacking literary, artistic, political, or scientific value. Distribution can lead to fines or prison.",
+        "properties": {
+          "context": "Applies the Miller test to decide if adult content is obscene and unprotected. Violations can result in prosecution under federal statutes. States also apply local community standards.",
+          "examples": [
+            "Hardcore bestiality or necrophilia content sold online",
+            "Certain extreme fetish videos deemed patently offensive"
+          ],
+          "edge_cases": [
+            "Adult films with some narrative or artistic claim might avoid obscenity charges",
+            "Local variation in what is considered ‘patently offensive’"
+          ]
+        }
+      },
+      {
+        "id": "Child_Sexual_Abuse_Laws",
+        "type": "Law/Regulation",
+        "label": "Child Sexual Abuse Laws (18 U.S.C. §2256 et seq.)",
+        "description": "Federal statutes banning child pornography or any sexual depiction of minors, with severe criminal penalties for production, distribution, or possession.",
+        "properties": {
+          "context": "Includes definitions for CSAM, mandatory reporting to NCMEC, and zero-tolerance approach. Child sexual content is never protected speech.",
+          "examples": [
+            "18 U.S.C. 2251-2258 dealing with production, distribution, reporting",
+            "State-level equivalents criminalizing any child sexual imagery"
+          ],
+          "edge_cases": [
+            "Animated child porn still prosecuted if obscene",
+            "Minor sexting complexities (some states reduce penalties but still illegal federally)"
+          ]
+        }
+      },
+      {
+        "id": "Indecency_Broadcasting",
+        "type": "Law/Regulation",
+        "label": "FCC Indecency Rules (18 U.S.C. §1464)",
+        "description": "FCC restricts indecent sexual content on public airwaves (radio/TV) during hours when children may be present. Fines for violations.",
+        "properties": {
+          "context": "Material doesn't meet the obscenity threshold but is still considered offensive for general broadcast. Cable/Internet are not bound by these rules, but many networks self-regulate.",
+          "examples": [
+            "Network show with partial nudity at 8pm draws FCC complaints",
+            "Profanity or graphic sexual talk on daytime radio"
+          ],
+          "edge_cases": [
+            "Educational vs. prurient content (e.g., anatomy documentary in prime time)",
+            "Streaming platforms labeling content with disclaimers"
+          ]
+        }
+      },
+      {
+        "id": "Record_Keeping_2257",
+        "type": "Law/Regulation",
+        "label": "Record-Keeping (18 U.S.C. §2257)",
+        "description": "Requires producers of sexually explicit content to verify and keep records proving all performers are adults (18+).",
+        "properties": {
+          "context": "Aimed at preventing underage appearances in porn. Primary producers check IDs; secondary distributors also must maintain compliance statements. Subject to DOJ inspections.",
+          "examples": [
+            "Porn studios storing IDs of all performers",
+            "Adult websites displaying a 2257 compliance notice"
+          ],
+          "edge_cases": [
+            "User-generated sites uncertain if considered 'secondary producers'",
+            "Foreign producers distributing content in the U.S. might face liability"
+          ]
+        }
+      },
+      {
+        "id": "Age_Verification_Laws",
+        "type": "Law/Regulation",
+        "label": "Age Verification (e.g., LA Act 440)",
+        "description": "State laws requiring porn sites to verify user age (18+) before granting access, aimed at limiting minor exposure.",
+        "properties": {
+          "context": "Some states impose ID checks for adult websites. Non-compliance can result in civil liability if minors view explicit content. Emergent area with privacy concerns.",
+          "examples": [
+            "Sites requesting driver's license upload for age verification",
+            "Blocking entire states to avoid complex compliance"
+          ],
+          "edge_cases": [
+            "VPN bypass to circumvent age gates",
+            "Potential conflict with user privacy / anonymity"
+          ]
+        }
+      },
+      {
+        "id": "Revenge_Porn_Laws",
+        "type": "Law/Regulation",
+        "label": "Revenge Porn Statutes (Varies by State)",
+        "description": "Criminalizes sharing private sexual images without consent to harass or embarrass. Most U.S. states have such laws, with possible civil remedies for victims.",
+        "properties": {
+          "context": "A patchwork of state-level laws penalizing distribution of non-consensual intimate material. Overlaps with harassment, extortion, privacy rights. Often called ‘image-based sexual abuse.’",
+          "examples": [
+            "Posting an ex-partner's nudes on the internet for revenge",
+            "Threatening to release intimate images to coerce or blackmail"
+          ],
+          "edge_cases": [
+            "If the subject initially consented to photography but not public dissemination",
+            "Deepfake porn of a real individual (some states explicitly ban it, others do not yet)"
+          ]
+        }
+      },
+      {
+        "id": "FOSTA_SESTA",
+        "type": "Law/Regulation",
+        "label": "FOSTA-SESTA",
+        "description": "U.S. legislation making it easier to target websites that facilitate sex trafficking or prostitution, amending Section 230 immunity.",
+        "properties": {
+          "context": "Removes platform immunity if they 'promote or facilitate prostitution.' Intended to curb sex trafficking but also impacts consensual adult content. Platforms must remove suspect content.",
+          "examples": [
+            "Shutdown of personal ads sections post-FOSTA",
+            "Increased moderation of escort or adult service listings"
+          ],
+          "edge_cases": [
+            "Separating legal sex work discussion vs. trafficking facilitation",
+            "Chilling effect on legitimate adult communities or harm reduction sites"
+          ]
+        }
+      },
+      {
+        "id": "Section230",
+        "type": "Law/Regulation",
+        "label": "Communications Decency Act - Section 230",
+        "description": "U.S. law providing immunity from liability for providers of an interactive computer service who publish information provided by others.",
+        "properties": {
+          "context": "Historically protected platforms from being liable for user-generated content. FOSTA-SESTA narrowed this protection regarding sex trafficking or prostitution.",
+          "examples": [
+            "Social networks not directly liable for user posts with nudity or adult content",
+            "Exemptions if platform is found complicit in illegal activity"
+          ],
+          "edge_cases": [
+            "Ambiguity over content moderation decisions and how they affect immunity",
+            "Future reforms or expansions may further limit Section 230 protections"
+          ]
+        }
+      },
+      {
+        "id": "State_Obscenity_Laws",
+        "type": "Law/Regulation",
+        "label": "State-Level Obscenity and Morality Laws",
+        "description": "Varying state laws regulating obscene content and nudity based on local community standards.",
+        "properties": {
+          "context": "States adopt local definitions of obscenity consistent with the Miller test. Some jurisdictions ban certain sexual acts or displays more stringently.",
+          "examples": [
+            "A state law banning the sale of adult magazines in particular counties",
+            "Restrictions on adult video stores near schools or churches"
+          ],
+          "edge_cases": [
+            "One county’s moral standard may differ from another’s",
+            "Online distribution complicates geographic enforcement"
+          ]
+        }
+      },
+      {
+        "id": "DMCA",
+        "type": "Law/Regulation",
+        "label": "Digital Millennium Copyright Act",
+        "description": "U.S. copyright law addressing digital rights management and copyright infringement liability.",
+        "properties": {
+          "context": "Applies if nude or sexual content is also copyrighted (e.g. professional photography). Platforms may receive takedown requests for copyrighted adult content. Doesn’t directly govern the legality of nudity itself.",
+          "examples": [
+            "Adult film studio filing a DMCA claim to remove pirated clips",
+            "Photographer issuing takedown for unauthorized nude images"
+          ],
+          "edge_cases": [
+            "User claims ‘fair use’ but the content is purely re-uploaded porn",
+            "Overlap with non-consensual content where copyright might be a separate removal path"
+          ]
+        }
+      },
+      {
+        "id": "FCC_Regulations",
+        "type": "Law/Regulation",
+        "label": "Federal Communications Commission Regulations",
+        "description": "U.S. broadcasting regulations that restrict indecent and obscene content on public airwaves.",
+        "properties": {
+          "context": "Enforces 18 U.S.C. §1464 and related rules on broadcast radio/TV. Nudity or explicit sex in prime-time can result in fines. Cable, satellite, streaming are not fully bound by these but still often adopt similar guidelines.",
+          "examples": [
+            "FCC fining a network for airing a sexually explicit music video at 7 p.m.",
+            "Restricting F-words or explicit references to sexual acts on live TV"
+          ],
+          "edge_cases": [
+            "‘Safe harbor’ from 10 p.m. to 6 a.m. allows more adult content",
+            "Artistic or fleeting nudity might be less penalized"
+          ]
+        }
+      },
+      {
+        "id": "ASA_CAP_Code",
+        "type": "Law/Regulation",
+        "label": "Advertising Standards Authority Code of Non-broadcast Advertising and Direct & Promotional Marketing",
+        "description": "UK advertising standards that govern content in non-broadcast media.",
+        "properties": {
+          "context": "While primarily UK-focused, it can influence global marketing guidelines for nudity in ads. Nudity or sexual content in promotional materials can be restricted or must meet decency standards.",
+          "examples": [
+            "Banned risqué billboard featuring near-nude model in the UK",
+            "Complaint-based system responding to public offense or harm"
+          ],
+          "edge_cases": [
+            "Ads for adult products that show partial nudity",
+            "Difference in local vs. global ad campaigns"
+          ]
+        }
+      },
+  
+      {
+        "id": "COPPA",
+        "type": "Law/Regulation",
+        "label": "Children's Online Privacy Protection Act",
+        "description": "U.S. federal law restricting the collection of personal information from children under 13.",
+        "properties": {
+          "context": "Focused on data privacy, but relevant if a platform is child-directed. Nudity or explicit content is disallowed on sites aimed at children. Strict parental consent rules for data collection.",
+          "examples": [
+            "Kid-focused websites cannot host adult or nude content at all",
+            "Apps requiring parental consent for any user under 13"
+          ],
+          "edge_cases": [
+            "Mixed-audience sites must have robust age screens or content filters",
+            "Over-collection of data from minors might violate COPPA even if no nudity is shown"
+          ]
+        }
+      },
+      {
+        "id": "PROTECT_Act",
+        "type": "Law/Regulation",
+        "label": "Prosecutorial Remedies ... (PROTECT Act)",
+        "description": "U.S. law prohibiting virtual child pornography and strengthening child exploitation laws.",
+        "properties": {
+          "context": "Criminalizes obscene computer-generated imagery of minors (if it visually depicts minors in sexual acts). Expands the definition of child porn to include simulated or digital forms that are indistinguishable from real children.",
+          "examples": [
+            "CGI cartoons showing minors in explicit acts, prosecuted under obscenity provisions",
+            "Court expansions to handle AI child porn that looks real"
+          ],
+          "edge_cases": [
+            "Purely fantasy-like cartoons sometimes disputed if they do not look real",
+            "The 'appears to be' standard can trigger legal action if it’s close enough"
+          ]
+        }
+      }
+    ],
+    "edges": [
+      {
+        "source": "Nudity",
+        "target": "Explicit_Nudity",
+        "relationship": "<parent_of>"
+      },
+      {
+        "source": "Nudity",
+        "target": "Suggestive_Nudity",
+        "relationship": "<parent_of>"
+      },
+      {
+        "source": "Nudity",
+        "target": "Non_Sexual_Nudity",
+        "relationship": "<parent_of>"
+      },
+      {
+        "source": "Nudity",
+        "target": "Artistic_Nudity",
+        "relationship": "<parent_of>"
+      },
+      {
+        "source": "Nudity",
+        "target": "Child_Nudity",
+        "relationship": "<parent_of>"
+      },
+      {
+        "source": "Nudity",
+        "target": "Digitally_Altered_Nudity",
+        "relationship": "<parent_of>"
+      },
+      {
+        "source": "Nudity",
+        "target": "Fetish_Content",
+        "relationship": "<parent_of>"
+      },
+      {
+        "source": "Nudity",
+        "target": "Contextual_Nudity",
+        "relationship": "<parent_of>"
+      },
+      {
+        "source": "Nudity",
+        "target": "Adult_Animated_Nudity",
+        "relationship": "<parent_of>"
+      },
+      {
+        "source": "Nudity",
+        "target": "Accidental_Nudity",
+        "relationship": "<parent_of>"
+      },
+      {
+        "source": "Nudity",
+        "target": "Entertainment_Nudity",
+        "relationship": "<parent_of>"
+      },
+      {
+        "source": "Nudity",
+        "target": "Historical_Nudity",
+        "relationship": "<parent_of>"
+      },
+      {
+        "source": "Explicit_Nudity",
+        "target": "Genital_Exposure",
+        "relationship": "<parent_of>"
+      },
+      {
+        "source": "Explicit_Nudity",
+        "target": "Female_Breast_Exposure",
+        "relationship": "<parent_of>"
+      },
+      {
+        "source": "Explicit_Nudity",
+        "target": "Buttocks_Exposure",
+        "relationship": "<parent_of>"
+      },
+      {
+        "source": "Explicit_Nudity",
+        "target": "Sexual_Acts",
+        "relationship": "<parent_of>"
+      },
+      {
+        "source": "Suggestive_Nudity",
+        "target": "Translucent_Clothing",
+        "relationship": "<parent_of>"
+      },
+      {
+        "source": "Suggestive_Nudity",
+        "target": "Erotic_Posing",
+        "relationship": "<parent_of>"
+      },
+      {
+        "source": "Child_Nudity",
+        "target": "Child_Illustrations",
+        "relationship": "<parent_of>"
+      },
+      {
+        "source": "Child_Nudity",
+        "target": "Child_Sexual_Abuse_Material",
+        "relationship": "<parent_of>"
+      },
+      {
+        "source": "Digitally_Altered_Nudity",
+        "target": "Deepfake_Nudity",
+        "relationship": "<parent_of>"
+      },
+      {
+        "source": "Digitally_Altered_Nudity",
+        "target": "Virtual_Avatars",
+        "relationship": "<parent_of>"
+      },
+      {
+        "source": "Non_Sexual_Nudity",
+        "target": "Nudity_in_Education",
+        "relationship": "<parent_of>"
+      },
+      {
+        "source": "Non_Sexual_Nudity",
+        "target": "Cultural_Nudity",
+        "relationship": "<parent_of>"
+      },
+      {
+        "source": "Non_Sexual_Nudity",
+        "target": "Historical_Nudity",
+        "relationship": "<parent_of>"
+      },
+      {
+        "source": "Contextual_Nudity",
+        "target": "Accidental_Nudity",
+        "relationship": "<parent_of>"
+      },
+      {
+        "source": "Artistic_Nudity",
+        "target": "Entertainment_Nudity",
+        "relationship": "<parent_of>"
+      },
+  
+      {
+        "source": "Sexual_Acts",
+        "target": "Sexual_Violence",
+        "relationship": "<parent_of>"
+      },
+      {
+        "source": "Sexual_Acts",
+        "target": "Extreme_Obscene_Porn",
+        "relationship": "<parent_of>"
+      },
+      {
+        "source": "Sexual_Acts",
+        "target": "Non_Consensual_Intimate_Content",
+        "relationship": "<parent_of>"
+      },
+      {
+        "source": "Explicit_Nudity",
+        "target": "Age Restrictions & Sales",
+        "relationship": "<regulated_by>"
+      },
+      {
+        "source": "Explicit_Nudity",
+        "target": "Advertising & Marketing",
+        "relationship": "<regulated_by>"
+      },
+      {
+        "source": "Explicit_Nudity",
+        "target": "Digital Ethics",
+        "relationship": "<regulated_by>"
+      },
+      {
+        "source": "Explicit_Nudity",
+        "target": "Platform Content Moderation",
+        "relationship": "<regulated_by>"
+      },
+      {
+        "source": "Explicit_Nudity",
+        "target": "Broadcasting Standards",
+        "relationship": "<regulated_by>"
+      },
+  
+      {
+        "source": "Child_Nudity",
+        "target": "Child Protection",
+        "relationship": "<regulated_by>"
+      },
+      {
+        "source": "Child_Nudity",
+        "target": "Digital Ethics",
+        "relationship": "<regulated_by>"
+      },
+      {
+        "source": "Child_Nudity",
+        "target": "Age Restrictions & Sales",
+        "relationship": "<regulated_by>"
+      },
+      {
+        "source": "Child_Nudity",
+        "target": "Platform Content Moderation",
+        "relationship": "<regulated_by>"
+      },
+  
+      {
+        "source": "Child_Sexual_Abuse_Material",
+        "target": "Child Protection",
+        "relationship": "<regulated_by>"
+      },
+  
+      {
+        "source": "Digitally_Altered_Nudity",
+        "target": "Platform Content Moderation",
+        "relationship": "<regulated_by>"
+      },
+      {
+        "source": "Digitally_Altered_Nudity",
+        "target": "Labeling",
+        "relationship": "<regulated_by>"
+      },
+      {
+        "source": "Digitally_Altered_Nudity",
+        "target": "Digital Ethics",
+        "relationship": "<regulated_by>"
+      },
+  
+      {
+        "source": "Artistic_Nudity",
+        "target": "Product Safety",
+        "relationship": "<regulated_by>"
+      },
+      {
+        "source": "Artistic_Nudity",
+        "target": "Labeling",
+        "relationship": "<regulated_by>"
+      },
+      {
+        "source": "Artistic_Nudity",
+        "target": "Platform Content Moderation",
+        "relationship": "<regulated_by>"
+      },
+  
+      {
+        "source": "Suggestive_Nudity",
+        "target": "Advertising & Marketing",
+        "relationship": "<regulated_by>"
+      },
+      {
+        "source": "Suggestive_Nudity",
+        "target": "Digital Ethics",
+        "relationship": "<regulated_by>"
+      },
+      {
+        "source": "Suggestive_Nudity",
+        "target": "Platform Content Moderation",
+        "relationship": "<regulated_by>"
+      },
+  
+      {
+        "source": "Fetish_Content",
+        "target": "Age Restrictions & Sales",
+        "relationship": "<regulated_by>"
+      },
+      {
+        "source": "Fetish_Content",
+        "target": "Platform Content Moderation",
+        "relationship": "<regulated_by>"
+      },
+      {
+        "source": "Fetish_Content",
+        "target": "Labeling",
+        "relationship": "<regulated_by>"
+      },
+  
+      {
+        "source": "Contextual_Nudity",
+        "target": "Digital Ethics",
+        "relationship": "<regulated_by>"
+      },
+      {
+        "source": "Contextual_Nudity",
+        "target": "Platform Content Moderation",
+        "relationship": "<regulated_by>"
+      },
+  
+      {
+        "source": "Entertainment_Nudity",
+        "target": "Broadcasting Standards",
+        "relationship": "<regulated_by>"
+      },
+      {
+        "source": "Entertainment_Nudity",
+        "target": "Labeling",
+        "relationship": "<regulated_by>"
+      },
+      {
+        "source": "Entertainment_Nudity",
+        "target": "Age Restrictions & Sales",
+        "relationship": "<regulated_by>"
+      },
+  
+      {
+        "source": "Adult_Animated_Nudity",
+        "target": "Platform Content Moderation",
+        "relationship": "<regulated_by>"
+      },
+      {
+        "source": "Adult_Animated_Nudity",
+        "target": "Age Restrictions & Sales",
+        "relationship": "<regulated_by>"
+      },
+      {
+        "source": "Child_Nudity",
+        "target": "COPPA",
+        "relationship": "<regulated_under>"
+      },
+      {
+        "source": "Child_Nudity",
+        "target": "PROTECT_Act",
+        "relationship": "<regulated_under>"
+      },
+      {
+        "source": "Child_Illustrations",
+        "target": "PROTECT_Act",
+        "relationship": "<regulated_under>"
+      },
+      {
+        "source": "Child_Sexual_Abuse_Material",
+        "target": "Child_Sexual_Abuse_Laws",
+        "relationship": "<regulated_under>"
+      },
+  
+      {
+        "source": "Explicit_Nudity",
+        "target": "Section230",
+        "relationship": "<regulated_under>"
+      },
+      {
+        "source": "Explicit_Nudity",
+        "target": "FOSTA_SESTA",
+        "relationship": "<regulated_under>"
+      },
+      {
+        "source": "Explicit_Nudity",
+        "target": "FCC_Regulations",
+        "relationship": "<regulated_under>"
+      },
+  
+      {
+        "source": "Nudity",
+        "target": "State_Obscenity_Laws",
+        "relationship": "<regulated_under>"
+      },
+      {
+        "source": "Nudity",
+        "target": "Federal_Obscenity_Law",
+        "relationship": "<regulated_under>"
+      },
+  
+      {
+        "source": "Entertainment_Nudity",
+        "target": "FCC_Regulations",
+        "relationship": "<regulated_under>"
+      },
+  
+      {
+        "source": "Suggestive_Nudity",
+        "target": "ASA_CAP_Code",
+        "relationship": "<regulated_under>"
+      },
+  
+      {
+        "source": "Sexual_Acts",
+        "target": "Federal_Obscenity_Law",
+        "relationship": "<regulated_under>"
+      },
+      {
+        "source": "Sexual_Violence",
+        "target": "Federal_Obscenity_Law",
+        "relationship": "<regulated_under>"
+      },
+      {
+        "source": "Extreme_Obscene_Porn",
+        "target": "Federal_Obscenity_Law",
+        "relationship": "<regulated_under>"
+      },
+  
+      {
+        "source": "Child_Sexual_Abuse_Material",
+        "target": "Child_Sexual_Abuse_Laws",
+        "relationship": "<regulated_under>"
+      },
+  
+      {
+        "source": "Non_Consensual_Intimate_Content",
+        "target": "Revenge_Porn_Laws",
+        "relationship": "<regulated_under>"
+      },
+      {
+        "source": "Non_Consensual_Intimate_Content",
+        "target": "FOSTA_SESTA",
+        "relationship": "<regulated_under>"
+      },
+  
+      {
+        "source": "Digitally_Altered_Nudity",
+        "target": "DMCA",
+        "relationship": "<regulated_under>"
+      },
+      {
+        "source": "Record_Keeping_2257",
+        "target": "Explicit_Nudity",
+        "relationship": "<implements>"
+      },
+  
+      {
+        "source": "Sexual_Acts",
+        "target": "Age_Verification_Laws",
+        "relationship": "<regulated_under>"
+      },
+  
+      {
+        "source": "Advertising & Marketing",
+        "target": "ASA_CAP_Code",
+        "relationship": "<implements>"
+      }
+    ]
+  }
+  

@@ -160,12 +160,22 @@ class CypherQueryBuilder:
         self.params = {}
     
     def create_node(self, label: str, id_value: str, properties: Dict[str, Any] = None) -> 'CypherQueryBuilder':
-        prop_str = ", ".join([f"{k}: ${k}" for k in (properties or {}).keys()])
+        # Process properties to handle complex objects like dictionaries and lists
+        processed_props = {}
+        for k, v in (properties or {}).items():
+            if isinstance(v, dict) or isinstance(v, list):
+                # Convert complex structures to JSON strings for Neo4j storage
+                processed_props[k] = json.dumps(v)
+            else:
+                processed_props[k] = v
+        
+        # Build the property string for the query
+        prop_str = ", ".join([f"{k}: ${k}" for k in processed_props.keys()])
         if prop_str:
             prop_str = f", {prop_str}"
         
         self.query = f"MERGE (n:{label} {{id: $id{prop_str}}}) RETURN n"
-        self.params = {"id": id_value, **(properties or {})}
+        self.params = {"id": id_value, **processed_props}
         return self
     
     def create_relationship(self, source_label: str, source_id: str, 
@@ -348,10 +358,24 @@ class TaxonomyLoader:
             
             # Create appropriate node based on type (using the mapped type for Neo4j compatibility)
             neo4j_type = self.node_type_map.get(node_type, node_type)
+            
+            # Start with basic properties
             properties = {
                 "label": node.get("label", ""),
-                "description": node.get("description", "")
+                "description": node.get("description", ""),
+                "type": node.get("type", ""),
+                "id": node.get("id", "")
             }
+            
+            # Include any additional properties from the node
+            # This is important for enhanced taxonomies with context, examples, and edge cases
+            if "properties" in node:
+                properties["properties"] = node["properties"]
+            
+            # Add any other custom fields that might be in the node
+            for key, value in node.items():
+                if key not in ["id", "type", "label", "description", "properties"]:
+                    properties[key] = value
             
             # Remove empty properties
             properties = {k: v for k, v in properties.items() if v}
