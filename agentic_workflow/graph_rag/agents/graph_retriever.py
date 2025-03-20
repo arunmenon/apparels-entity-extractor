@@ -5,6 +5,7 @@ This agent is responsible for:
 1. Connecting to the graph database
 2. Executing Cypher queries
 3. Processing and formatting the results
+4. Validating and fixing queries before execution
 """
 
 import logging
@@ -12,6 +13,7 @@ from typing import Dict, List, Any, Optional
 
 from ...agent_base import Agent
 from graph_db.graph_strategy_factory import GraphDatabaseFactory
+from .query_validator import QueryValidator
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
@@ -24,6 +26,7 @@ class GraphRetrieverAgent(Agent):
         """Initialize the graph retriever agent."""
         super().__init__()
         self.graph_db = None
+        self.query_validator = QueryValidator()
     
     def connect_to_database(self):
         """Connect to the Neo4j database."""
@@ -90,13 +93,22 @@ class GraphRetrieverAgent(Agent):
                 logger.info(f"Executing query for: {purpose}")
                 
                 try:
-                    # Execute the query
-                    result = self.graph_db.execute_query(cypher)
+                    # Validate and fix the query before execution
+                    fixed_cypher, is_valid, validation_message = self.query_validator.validate_and_fix(cypher)
+                    
+                    if validation_message:
+                        logger.warning(f"Query validation message: {validation_message}")
+                    
+                    # Execute the query (fixed version if available)
+                    result = self.graph_db.execute_query(fixed_cypher)
                     
                     # Format the result
                     formatted_result = {
                         'purpose': purpose,
-                        'cypher': cypher,
+                        'original_cypher': cypher,
+                        'executed_cypher': fixed_cypher if fixed_cypher != cypher else cypher,
+                        'was_modified': fixed_cypher != cypher,
+                        'validation_message': validation_message,
                         'result': result,
                         'result_count': len(result) if result else 0
                     }
@@ -107,7 +119,7 @@ class GraphRetrieverAgent(Agent):
                     logger.error(f"Error executing query: {query_error}")
                     retrieved_context.append({
                         'purpose': purpose,
-                        'cypher': cypher,
+                        'original_cypher': cypher,
                         'error': str(query_error),
                         'result': [],
                         'result_count': 0
