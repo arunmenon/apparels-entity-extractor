@@ -1,0 +1,206 @@
+{
+  "PARENT_OF": {
+    "description": {
+      "type": "text",
+      "semantic_role": "explanation",
+      "connections": [
+        {
+          "source": "Category",
+          "target": "Subcategory"
+        }
+      ],
+      "statistics": {},
+      "sample_values": [
+        "Novel or cutting-edge technology weapons, including electronic or energy-based systems.",
+        "Firearms subcategory includes handguns, rifles, shotguns, typical civilian guns.",
+        "Bullets, shells, and all firearm ammo, plus components like powder or primers.",
+        "Edged weapons: knives, swords, daggers, etc.",
+        "Pepper spray, stun guns, tasers, batons, etc."
+      ]
+    }
+  },
+  "REGULATED_BY": {
+    "notes": {
+      "type": "text",
+      "semantic_role": "explanation",
+      "connections": [
+        {
+          "source": "Subcategory",
+          "target": "ComplianceArea"
+        }
+      ],
+      "statistics": {},
+      "sample_values": [
+        "[\"Firearms exempt from CPSC oversight; must meet industry standards/ATF rules\", \"Design safety (avoid accidental discharge, liability if defectively designed)\"]",
+        "[\"Serial number & manufacturer marking required (27 CFR 478.92)\", \"Imported firearms must show country of origin\"]",
+        "[\"Export often governed by ITAR Category I (small arms)\", \"Imports need ATF authorization (18 U.S.C. 922(a)(3)); sporting-use test\"]",
+        "[\"Trademarks/patents protect gun designs\", \"Counterfeit parts lead to Customs seizures\"]",
+        "[\"FFLs maintain transaction records (18 U.S.C. 923(g))\", \"Parts from embargoed countries prohibited\", \"Arms Export Control Act (22 U.S.C. 2778) & ITAR for exports\"]"
+      ]
+    }
+  },
+  "GOVERNED_BY": {
+    "scope": {
+      "type": "text",
+      "semantic_role": "attribute",
+      "connections": [
+        {
+          "source": "ComplianceArea",
+          "target": "Law_Regulation"
+        }
+      ],
+      "statistics": {},
+      "sample_values": [
+        "General consumer product safety. Firearms/ammo exempt, but other weapons (e.g. pepper spray) can fall under CPSC oversight",
+        "Mandates certain safety device requirements (handgun locks), sets standards for gun commerce",
+        "Requires safe handling/storage for explosives, prohibits distribution to minors or unlicensed persons",
+        "Hazardous household substances labeling; can apply to pepper spray, ammo boxes",
+        "Requires manufacturer/serial marking on firearms"
+      ]
+    }
+  },
+  "HAS_ATTRIBUTE": {
+    "unit_of_measure": {
+      "type": "text",
+      "semantic_role": "attribute",
+      "connections": [
+        {
+          "source": "ProductType",
+          "target": "Attribute"
+        }
+      ],
+      "statistics": {},
+      "sample_values": [
+        "inches",
+        "minutes",
+        "ml",
+        "inches",
+        "meters"
+      ]
+    },
+    "description": {
+      "type": "text",
+      "semantic_role": "explanation",
+      "connections": [
+        {
+          "source": "ProductType",
+          "target": "Attribute"
+        }
+      ],
+      "statistics": {},
+      "sample_values": [
+        "Width of the brim, affecting sun protection and style.",
+        "Defines the design or type of hat, influencing fashion appeal.",
+        "Color of the hat, important for style and matching with outfits.",
+        "Indicates the fabric or material used, affecting comfort and durability.",
+        "Determines the fit of the hat on the wearer's head."
+      ]
+    },
+    "type": {
+      "type": "text",
+      "semantic_role": "attribute",
+      "connections": [
+        {
+          "source": "ProductType",
+          "target": "Attribute"
+        }
+      ],
+      "statistics": {},
+      "sample_values": [
+        "PHYSICAL",
+        "CATEGORICAL",
+        "PHYSICAL",
+        "PHYSICAL",
+        "PHYSICAL"
+      ]
+    },
+    "example_values": {
+      "type": "text",
+      "semantic_role": "attribute",
+      "connections": [
+        {
+          "source": "ProductType",
+          "target": "Attribute"
+        }
+      ],
+      "statistics": {},
+      "sample_values": [
+        "[\"2 inches\", \"3 inches\", \"Wide Brim\", \"Narrow Brim\"]",
+        "[\"Fedora\", \"Baseball Cap\", \"Beanie\", \"Sun Hat\"]",
+        "[\"Black\", \"Blue\", \"Red\", \"Beige\"]",
+        "[\"Cotton\", \"Wool\", \"Polyester\", \"Straw\"]",
+        "[\"Small\", \"Medium\", \"Large\", \"One Size\"]"
+      ]
+    },
+    "is_variant_attribute": {
+      "type": "integer",
+      "semantic_role": "attribute",
+      "connections": [
+        {
+          "source": "ProductType",
+          "target": "Attribute"
+        }
+      ],
+      "statistics": {
+        "min": false,
+        "max": true,
+        "mean": 0.38,
+        "median": 0.0,
+        "p75": true,
+        "p90": true,
+        "high_threshold": true
+      },
+      "sample_values": [
+        false,
+        false,
+        true,
+        false,
+        true
+      ]
+    }
+  },
+  "MAY_VIOLATE": {
+    "confidence_score": {
+      "type": "numeric",
+      "semantic_role": "confidence_measure",
+      "connections": [
+        {
+          "source": "ProductType",
+          "target": "Subcategory"
+        }
+      ],
+      "statistics": {
+        "min": 0.2,
+        "max": 0.92,
+        "mean": 0.35789473684210527,
+        "median": 0.2,
+        "p75": 0.4,
+        "p90": 0.85,
+        "high_threshold": 0.4
+      },
+      "sample_values": [
+        0.2,
+        0.2,
+        0.2,
+        0.2,
+        0.2
+      ]
+    },
+    "reasoning": {
+      "type": "long_text",
+      "semantic_role": "explanation",
+      "connections": [
+        {
+          "source": "ProductType",
+          "target": "Subcategory"
+        }
+      ],
+      "statistics": {},
+      "sample_values": [
+        "Rain umbrellas are not firearms and are not regulated as such. However, there is a very remote possi...",
+        "Although key cases are not designed as self-defense items, there is a very remote possibility someon...",
+        "Although hand fans are generally decorative or utilitarian items, there is a remote possibility that..."
+      ]
+    }
+  }
+}

@@ -1,0 +1,48 @@
+Analyze the following question about a product taxonomy and decompose it into Neo4j Cypher queries.
+
+QUESTION:
+{{question}}
+
+{{schema}}
+
+Step 1: Identify the key entities and relationships in the question.
+Step 2: Look at the provided schema and examples to understand the data structure.
+Step 3: Review the common queries for similar patterns you can adapt.
+Step 4: Formulate one or more Cypher queries to retrieve the relevant information.
+Step 5: Ensure your queries are efficient and focused on the specific question asked.
+
+IMPORTANT GUIDELINES:
+- Use the actual node labels and relationship types from the schema
+- Reference the node examples to understand what properties are available
+- Look at the relationship examples to understand how entities connect
+- Pay special attention to the "Relationships with Confidence Measures" section in the schema
+- Use the exact thresholds provided in the schema rather than hardcoding arbitrary values
+- Adapt the common queries where possible instead of creating queries from scratch
+- Focus on retrieving only the data needed to answer the question
+- Include properties in your query that will be helpful for the final answer
+
+RELATIONSHIP PROPERTY GUIDELINES:
+- For relationships with confidence measures (shown in the schema), use the actual threshold values provided
+- For relationships with explanation properties, include these in your RETURN statement
+- When following hierarchical paths, use path-based queries to show the full hierarchy
+- Look at the example queries in the schema for guidance on query structure
+
+For example, if the question is "What regulations apply to Apparel products?", you might generate:
+```cypher
+MATCH (pc:ProductCategory {name: "Apparel"})-[:REGULATED_UNDER]->(reg:Law_Regulation)
+RETURN pc.name as Category, reg.id as RegulationID, reg.name as Regulation, reg.description as Description
+```
+
+Return a JSON object with the following structure:
+```json
+{
+  "query_plan": [
+    {
+      "purpose": "Description of what this query retrieves",
+      "cypher": "The Cypher query"
+    },
+    ...
+  ],
+  "thought_process": "Explanation of your reasoning and how these queries will help answer the question"
+}
+```

@@ -1,0 +1,12 @@
+{
+  "schema": {
+    "node_types": {},
+    "relationship_types": {},
+    "relationships": [],
+    "relationship_map": {},
+    "node_counts": {},
+    "error": "'bool' object is not iterable"
+  },
+  "formatted_schema": "TAXONOMY SCHEMA:\nNode Types:\n\nRelationship Types:\n\nRelationship Patterns:\n\nRelationships with Confidence Measures:\n- (ProductType)-[:MAY_VIOLATE]->(Subcategory) with confidence_score >= 0.4",
+  "timestamp": 1742499395.451136
+}

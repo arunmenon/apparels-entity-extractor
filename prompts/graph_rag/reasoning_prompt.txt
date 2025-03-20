@@ -1,0 +1,22 @@
+Reason over the following graph context to answer the original question.
+
+ORIGINAL QUESTION:
+{{original_question}}
+
+GRAPH CONTEXT:
+{{graph_context}}
+
+First analyze the retrieved information and identify relevant facts and patterns.
+Then reason step-by-step to develop an answer to the original question.
+Be clear and concise in your explanation, and cite specific evidence from the graph results.
+If the retrieved information is insufficient to answer the question completely, acknowledge the limitations and provide the best possible answer based on available data.
+
+Return your answer in the following JSON format:
+```json
+{
+  "answer": "Your detailed answer to the question",
+  "reasoning": "Your step-by-step reasoning process",
+  "evidence": ["Specific piece of evidence 1", "Specific piece of evidence 2", ...],
+  "confidence": 0-1 (your confidence in the answer based on available evidence)
+}
+```
