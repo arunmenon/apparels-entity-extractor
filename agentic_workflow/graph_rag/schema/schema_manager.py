@@ -446,20 +446,9 @@ class SchemaManager:
             # and relationships with text properties (explanations, reasonings)
             # This avoids hardcoding any specific relationship type
             
-            numeric_properties_query = """
-            MATCH ()-[r]->()
-            WHERE ANY(prop IN keys(r) WHERE prop CONTAINS 'score' OR prop CONTAINS 'confidence' 
-                  OR prop CONTAINS 'weight' OR prop CONTAINS 'probability')
-                  AND ANY(prop IN keys(r) WHERE r[prop] IS NOT NULL AND (apoc.meta.type(r[prop]) = 'Float' OR apoc.meta.type(r[prop]) = 'Integer'))
-            RETURN DISTINCT type(r) AS rel_type, 
-                   [prop IN keys(r) WHERE prop CONTAINS 'score' OR prop CONTAINS 'confidence' 
-                    OR prop CONTAINS 'weight' OR prop CONTAINS 'probability'][0] AS score_property,
-                   [prop IN keys(r) WHERE prop CONTAINS 'reason' OR prop CONTAINS 'explanation' 
-                    OR prop CONTAINS 'description'][0] AS explanation_property
-            """
-            
-            # Fallback query if APOC isn't available
-            simple_numeric_properties_query = """
+            # Query for relationship types with properties that might include confidence scores
+            # Avoid using APOC plugin which might not be available in all environments
+            properties_query = """
             MATCH ()-[r]->()
             WHERE ANY(prop IN keys(r) WHERE prop CONTAINS 'score' OR prop CONTAINS 'confidence' 
                   OR prop CONTAINS 'weight' OR prop CONTAINS 'probability')
@@ -471,12 +460,8 @@ class SchemaManager:
             """
             
             try:
-                try:
-                    # Try with APOC first
-                    rel_types_with_properties = db.execute_query(numeric_properties_query)
-                except Exception:
-                    # Fall back to simpler query if APOC isn't available
-                    rel_types_with_properties = db.execute_query(simple_numeric_properties_query)
+                # Execute query without relying on APOC
+                rel_types_with_properties = db.execute_query(properties_query)
                 
                 # For each relationship type with numeric properties
                 for rel_type_record in rel_types_with_properties:
