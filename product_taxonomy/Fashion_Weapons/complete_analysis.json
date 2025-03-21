@@ -1,0 +1,296 @@
+[
+  {
+    "product": {
+      "category": "Fashion",
+      "product_type_group": "Carried Fashion Accessories",
+      "product_type": "Key Cases",
+      "attributes": [
+        {
+          "example_values": "[\"4 keys\", \"6 keys\", \"8 keys\"]",
+          "name": "Capacity",
+          "description": "Indicates the number of keys the case can hold.",
+          "is_variant": false,
+          "type": "FUNCTIONAL"
+        },
+        {
+          "example_values": "[\"Zipper\", \"Snap\", \"Magnetic\"]",
+          "name": "Closure Type",
+          "description": "Determines how the case is secured.",
+          "is_variant": false,
+          "type": "FUNCTIONAL"
+        },
+        {
+          "example_values": "[\"Black\", \"Brown\", \"Red\"]",
+          "name": "Color",
+          "description": "Influences style and personal preference.",
+          "is_variant": true,
+          "type": "PHYSICAL"
+        },
+        {
+          "example_values": "[\"Leather\", \"Metal\", \"Fabric\"]",
+          "name": "Material",
+          "description": "Affects durability and aesthetic appeal.",
+          "is_variant": false,
+          "type": "PHYSICAL"
+        }
+      ]
+    },
+    "subcategory_id": "Firearms",
+    "analysis": {
+      "confidence_score": 0.0,
+      "reasoning": "Key cases are designed for organizing and carrying keys, with attributes such as capacity, closure type, color, and material. They have no inherent function related to expelling a projectile, nor do they share regulatory concerns associated with firearms. There is no historical precedent of key cases being subject to firearm regulations. Therefore, there is no direct relationship to the Firearms subcategory."
+    }
+  },
+  {
+    "product": {
+      "category": "Fashion",
+      "product_type_group": "Carried Fashion Accessories",
+      "product_type": "Key Cases",
+      "attributes": [
+        {
+          "example_values": "[\"4 keys\", \"6 keys\", \"8 keys\"]",
+          "name": "Capacity",
+          "description": "Indicates the number of keys the case can hold.",
+          "is_variant": false,
+          "type": "FUNCTIONAL"
+        },
+        {
+          "example_values": "[\"Zipper\", \"Snap\", \"Magnetic\"]",
+          "name": "Closure Type",
+          "description": "Determines how the case is secured.",
+          "is_variant": false,
+          "type": "FUNCTIONAL"
+        },
+        {
+          "example_values": "[\"Black\", \"Brown\", \"Red\"]",
+          "name": "Color",
+          "description": "Influences style and personal preference.",
+          "is_variant": true,
+          "type": "PHYSICAL"
+        },
+        {
+          "example_values": "[\"Leather\", \"Metal\", \"Fabric\"]",
+          "name": "Material",
+          "description": "Affects durability and aesthetic appeal.",
+          "is_variant": false,
+          "type": "PHYSICAL"
+        }
+      ]
+    },
+    "subcategory_id": "Military-Grade Weapons",
+    "analysis": {
+      "confidence_score": 0.0,
+      "reasoning": "Key cases are small accessories used to hold and organize keys. They lack any features or components related to high-capacity or heavy weaponry. No attribute (capacity for keys, closure type, color, or material) suggests linkage to military-grade firearms or advanced weapon systems. Thus, there is no relevance to this subcategory."
+    }
+  },
+  {
+    "product": {
+      "category": "Fashion",
+      "product_type_group": "Carried Fashion Accessories",
+      "product_type": "Key Cases",
+      "attributes": [
+        {
+          "example_values": "[\"4 keys\", \"6 keys\", \"8 keys\"]",
+          "name": "Capacity",
+          "description": "Indicates the number of keys the case can hold.",
+          "is_variant": false,
+          "type": "FUNCTIONAL"
+        },
+        {
+          "example_values": "[\"Zipper\", \"Snap\", \"Magnetic\"]",
+          "name": "Closure Type",
+          "description": "Determines how the case is secured.",
+          "is_variant": false,
+          "type": "FUNCTIONAL"
+        },
+        {
+          "example_values": "[\"Black\", \"Brown\", \"Red\"]",
+          "name": "Color",
+          "description": "Influences style and personal preference.",
+          "is_variant": true,
+          "type": "PHYSICAL"
+        },
+        {
+          "example_values": "[\"Leather\", \"Metal\", \"Fabric\"]",
+          "name": "Material",
+          "description": "Affects durability and aesthetic appeal.",
+          "is_variant": false,
+          "type": "PHYSICAL"
+        }
+      ]
+    },
+    "subcategory_id": "Self-Defense Tools",
+    "analysis": {
+      "confidence_score": 0.0,
+      "reasoning": "This product is simply a key holder designed to store keys. It does not incorporate defensive mechanisms such as pepper spray or stun gun functionality. None of the listed attributes (capacity for keys, closure method, color, material) indicate it could be used as a non-lethal defensive device. Consequently, it does not pose compliance concerns under this subcategory."
+    }
+  },
+  {
+    "product": {
+      "category": "Fashion",
+      "product_type_group": "Carried Fashion Accessories",
+      "product_type": "Key Cases",
+      "attributes": [
+        {
+          "example_values": "[\"4 keys\", \"6 keys\", \"8 keys\"]",
+          "name": "Capacity",
+          "description": "Indicates the number of keys the case can hold.",
+          "is_variant": false,
+          "type": "FUNCTIONAL"
+        },
+        {
+          "example_values": "[\"Zipper\", \"Snap\", \"Magnetic\"]",
+          "name": "Closure Type",
+          "description": "Determines how the case is secured.",
+          "is_variant": false,
+          "type": "FUNCTIONAL"
+        },
+        {
+          "example_values": "[\"Black\", \"Brown\", \"Red\"]",
+          "name": "Color",
+          "description": "Influences style and personal preference.",
+          "is_variant": true,
+          "type": "PHYSICAL"
+        },
+        {
+          "example_values": "[\"Leather\", \"Metal\", \"Fabric\"]",
+          "name": "Material",
+          "description": "Affects durability and aesthetic appeal.",
+          "is_variant": false,
+          "type": "PHYSICAL"
+        }
+      ]
+    },
+    "subcategory_id": "Emerging & Advanced Weapons",
+    "analysis": {
+      "confidence_score": 0.0,
+      "reasoning": "A key case is a straightforward carried accessory designed to organize or protect keys. It has no inherent weapon-related features (e.g., advanced propulsion, directed energy) and is neither designed nor commonly misused as a weapon. There is no historical or regulatory precedent linking standard key cases to advanced or novel weapons."
+    }
+  },
+  {
+    "product": {
+      "category": "Fashion",
+      "product_type_group": "Carried Fashion Accessories",
+      "product_type": "Key Cases",
+      "attributes": [
+        {
+          "example_values": "[\"4 keys\", \"6 keys\", \"8 keys\"]",
+          "name": "Capacity",
+          "description": "Indicates the number of keys the case can hold.",
+          "is_variant": false,
+          "type": "FUNCTIONAL"
+        },
+        {
+          "example_values": "[\"Zipper\", \"Snap\", \"Magnetic\"]",
+          "name": "Closure Type",
+          "description": "Determines how the case is secured.",
+          "is_variant": false,
+          "type": "FUNCTIONAL"
+        },
+        {
+          "example_values": "[\"Black\", \"Brown\", \"Red\"]",
+          "name": "Color",
+          "description": "Influences style and personal preference.",
+          "is_variant": true,
+          "type": "PHYSICAL"
+        },
+        {
+          "example_values": "[\"Leather\", \"Metal\", \"Fabric\"]",
+          "name": "Material",
+          "description": "Affects durability and aesthetic appeal.",
+          "is_variant": false,
+          "type": "PHYSICAL"
+        }
+      ]
+    },
+    "subcategory_id": "Explosives & Incendiaries",
+    "analysis": {
+      "confidence_score": 0.0,
+      "reasoning": "This product is intended solely for holding keys and does not incorporate or facilitate explosives or incendiary components. There is no typical or even remote usage scenario where such a key case would be associated with commercial explosives or similar devices, and it does not raise regulatory concerns in this regard."
+    }
+  },
+  {
+    "product": {
+      "category": "Fashion",
+      "product_type_group": "Carried Fashion Accessories",
+      "product_type": "Key Cases",
+      "attributes": [
+        {
+          "example_values": "[\"4 keys\", \"6 keys\", \"8 keys\"]",
+          "name": "Capacity",
+          "description": "Indicates the number of keys the case can hold.",
+          "is_variant": false,
+          "type": "FUNCTIONAL"
+        },
+        {
+          "example_values": "[\"Zipper\", \"Snap\", \"Magnetic\"]",
+          "name": "Closure Type",
+          "description": "Determines how the case is secured.",
+          "is_variant": false,
+          "type": "FUNCTIONAL"
+        },
+        {
+          "example_values": "[\"Black\", \"Brown\", \"Red\"]",
+          "name": "Color",
+          "description": "Influences style and personal preference.",
+          "is_variant": true,
+          "type": "PHYSICAL"
+        },
+        {
+          "example_values": "[\"Leather\", \"Metal\", \"Fabric\"]",
+          "name": "Material",
+          "description": "Affects durability and aesthetic appeal.",
+          "is_variant": false,
+          "type": "PHYSICAL"
+        }
+      ]
+    },
+    "subcategory_id": "Blades (Knives & Swords)",
+    "analysis": {
+      "confidence_score": 0.0,
+      "reasoning": "Key cases are small pouches or holders designed to organize keys, with no inherent blades or sharpened edges. They are not used to cut or thrust, nor do they conceal any blade-like mechanism. Therefore, there is no relationship to edged weapons."
+    }
+  },
+  {
+    "product": {
+      "category": "Fashion",
+      "product_type_group": "Carried Fashion Accessories",
+      "product_type": "Key Cases",
+      "attributes": [
+        {
+          "example_values": "[\"4 keys\", \"6 keys\", \"8 keys\"]",
+          "name": "Capacity",
+          "description": "Indicates the number of keys the case can hold.",
+          "is_variant": false,
+          "type": "FUNCTIONAL"
+        },
+        {
+          "example_values": "[\"Zipper\", \"Snap\", \"Magnetic\"]",
+          "name": "Closure Type",
+          "description": "Determines how the case is secured.",
+          "is_variant": false,
+          "type": "FUNCTIONAL"
+        },
+        {
+          "example_values": "[\"Black\", \"Brown\", \"Red\"]",
+          "name": "Color",
+          "description": "Influences style and personal preference.",
+          "is_variant": true,
+          "type": "PHYSICAL"
+        },
+        {
+          "example_values": "[\"Leather\", \"Metal\", \"Fabric\"]",
+          "name": "Material",
+          "description": "Affects durability and aesthetic appeal.",
+          "is_variant": false,
+          "type": "PHYSICAL"
+        }
+      ]
+    },
+    "subcategory_id": "Ammunition",
+    "analysis": {
+      "confidence_score": 0.0,
+      "reasoning": "Key cases have no functionality related to storing or using ammunition. They are made to hold keys, and there is no precedent or design feature suggesting they contain bullets or cartridges. Consequently, there is no relevance to ammunition regulations."
+    }
+  }
+]

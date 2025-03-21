@@ -1,0 +1,152 @@
+{
+  "nodes": [
+    {
+      "id": "Key Cases",
+      "name": "Key Cases",
+      "type": "ProductType",
+      "properties": {
+        "category": "Fashion",
+        "product_type_group": "Carried Fashion Accessories"
+      }
+    },
+    {
+      "id": "Firearms",
+      "name": "Firearms (handguns, rifles, shotguns, etc.)",
+      "type": "Subcategory",
+      "properties": {
+        "description": null,
+        "parent_category": "Weapons"
+      }
+    },
+    {
+      "id": "Military-Grade Weapons",
+      "name": "Heavy arms restricted to military/LE (machine guns, artillery)",
+      "type": "Subcategory",
+      "properties": {
+        "description": null,
+        "parent_category": "Weapons"
+      }
+    },
+    {
+      "id": "Self-Defense Tools",
+      "name": "Non-lethal personal defense items (pepper spray, stun guns)",
+      "type": "Subcategory",
+      "properties": {
+        "description": null,
+        "parent_category": "Weapons"
+      }
+    },
+    {
+      "id": "Emerging & Advanced Weapons",
+      "name": "Emerging & Advanced Weapons",
+      "type": "Subcategory",
+      "properties": {
+        "description": null,
+        "parent_category": "Weapons"
+      }
+    },
+    {
+      "id": "Explosives & Incendiaries",
+      "name": "Commercial explosives, bombs, grenades, fireworks",
+      "type": "Subcategory",
+      "properties": {
+        "description": null,
+        "parent_category": "Weapons"
+      }
+    },
+    {
+      "id": "Blades (Knives & Swords)",
+      "name": "Edged Weapons (knives, switchblades, swords)",
+      "type": "Subcategory",
+      "properties": {
+        "description": null,
+        "parent_category": "Weapons"
+      }
+    },
+    {
+      "id": "Ammunition",
+      "name": "Ammunition (bullets, cartridges, shells)",
+      "type": "Subcategory",
+      "properties": {
+        "description": null,
+        "parent_category": "Weapons"
+      }
+    },
+    {
+      "id": "Weapons",
+      "name": "Weapons",
+      "type": "Category",
+      "properties": {}
+    },
+    {
+      "id": "Fashion",
+      "name": "Fashion",
+      "type": "ProductCategory",
+      "properties": {}
+    },
+    {
+      "id": "Carried Fashion Accessories",
+      "name": "Carried Fashion Accessories",
+      "type": "ProductTypeGroup",
+      "properties": {
+        "parent_category": "Fashion"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "Weapons",
+      "target": "Firearms",
+      "relationship": "PARENT_OF",
+      "properties": {}
+    },
+    {
+      "source": "Weapons",
+      "target": "Military-Grade Weapons",
+      "relationship": "PARENT_OF",
+      "properties": {}
+    },
+    {
+      "source": "Weapons",
+      "target": "Self-Defense Tools",
+      "relationship": "PARENT_OF",
+      "properties": {}
+    },
+    {
+      "source": "Weapons",
+      "target": "Emerging & Advanced Weapons",
+      "relationship": "PARENT_OF",
+      "properties": {}
+    },
+    {
+      "source": "Weapons",
+      "target": "Explosives & Incendiaries",
+      "relationship": "PARENT_OF",
+      "properties": {}
+    },
+    {
+      "source": "Weapons",
+      "target": "Blades (Knives & Swords)",
+      "relationship": "PARENT_OF",
+      "properties": {}
+    },
+    {
+      "source": "Weapons",
+      "target": "Ammunition",
+      "relationship": "PARENT_OF",
+      "properties": {}
+    },
+    {
+      "source": "Carried Fashion Accessories",
+      "target": "Key Cases",
+      "relationship": "HAS_PT",
+      "properties": {}
+    },
+    {
+      "source": "Fashion",
+      "target": "Carried Fashion Accessories",
+      "relationship": "HAS_PTG",
+      "properties": {}
+    }
+  ]
+}

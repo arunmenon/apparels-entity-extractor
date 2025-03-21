@@ -1,0 +1,260 @@
+{
+  "nodes": [
+    {
+      "id": "Key Cases",
+      "name": "Key Cases",
+      "type": "ProductType",
+      "properties": {
+        "category": "Fashion",
+        "product_type_group": "Carried Fashion Accessories"
+      }
+    },
+    {
+      "id": "Rain Umbrellas",
+      "name": "Rain Umbrellas",
+      "type": "ProductType",
+      "properties": {
+        "category": "Fashion",
+        "product_type_group": "Carried Fashion Accessories"
+      }
+    },
+    {
+      "id": "Historical_Nudity",
+      "name": "Historical/Documentary Nudity",
+      "type": "Subcategory",
+      "properties": {
+        "description": "Nudity presented in historical contexts or documentary materials, often for educational or archival purposes.",
+        "parent_category": "Nudity"
+      }
+    },
+    {
+      "id": "Entertainment_Nudity",
+      "name": "Film/TV Entertainment Nudity",
+      "type": "Subcategory",
+      "properties": {
+        "description": "Nudity portrayed in mainstream film, television, or streaming content for artistic or narrative purposes.",
+        "parent_category": "Nudity"
+      }
+    },
+    {
+      "id": "Accidental_Nudity",
+      "name": "Accidental/Unintentional Exposure",
+      "type": "Subcategory",
+      "properties": {
+        "description": "Inadvertent exposure of private body parts, often in candid photography, sports events, or wardrobe malfunctions.",
+        "parent_category": "Nudity"
+      }
+    },
+    {
+      "id": "Adult_Animated_Nudity",
+      "name": "Adult Animated/Cartoon Nudity",
+      "type": "Subcategory",
+      "properties": {
+        "description": "Animated or cartoon depictions of adult nudity, including anime, hentai, and adult-oriented cartoons.",
+        "parent_category": "Nudity"
+      }
+    },
+    {
+      "id": "Contextual_Nudity",
+      "name": "Contextual Nudity (e.g., bath scenes, medical)",
+      "type": "Subcategory",
+      "properties": {
+        "description": "Nudity shown within specific contexts that provide legitimate reasons for the display, such as bathing scenes or medical situations.",
+        "parent_category": "Nudity"
+      }
+    },
+    {
+      "id": "Fetish_Content",
+      "name": "Fetish or Kink-Based Nudity",
+      "type": "Subcategory",
+      "properties": {
+        "description": "Nudity associated with specific sexual preferences, fetishes, or kink communities, often involving specialized clothing, accessories, or scenarios.",
+        "parent_category": "Nudity"
+      }
+    },
+    {
+      "id": "Digitally_Altered_Nudity",
+      "name": "AI/Digitally Altered Nudity",
+      "type": "Subcategory",
+      "properties": {
+        "description": "Nudity created or modified using digital tools, AI generation, or manipulation techniques.",
+        "parent_category": "Nudity"
+      }
+    },
+    {
+      "id": "Child_Nudity",
+      "name": "Child Nudity",
+      "type": "Subcategory",
+      "properties": {
+        "description": "Any depiction of underage individuals in states of undress, requiring strict monitoring and often prohibited regardless of context.",
+        "parent_category": "Nudity"
+      }
+    },
+    {
+      "id": "Artistic_Nudity",
+      "name": "Artistic Nudity",
+      "type": "Subcategory",
+      "properties": {
+        "description": "Classical or modern art forms displaying nudity\u2014paintings, sculptures, and installations\u2014often protected under freedom of expression but needs review in retail/online settings.",
+        "parent_category": "Nudity"
+      }
+    },
+    {
+      "id": "Non_Sexual_Nudity",
+      "name": "Non-Sexual Nudity",
+      "type": "Subcategory",
+      "properties": {
+        "description": "Nudity represented in non-sexual contexts such as art, medicine, or educational content. Often requires nuanced classification to distinguish from inappropriate content.",
+        "parent_category": "Nudity"
+      }
+    },
+    {
+      "id": "Suggestive_Nudity",
+      "name": "Suggestive Nudity",
+      "type": "Subcategory",
+      "properties": {
+        "description": "Content where nudity is implied but not directly shown, using poses, partial clothing, or strategic coverage that suggests nakedness.",
+        "parent_category": "Nudity"
+      }
+    },
+    {
+      "id": "Explicit_Nudity",
+      "name": "Explicit Nudity",
+      "type": "Subcategory",
+      "properties": {
+        "description": "Depictions where genitals, breasts, or sexual acts are clearly visible and intended to sexually arouse or offend. Common in adult entertainment products, images, or accessories.",
+        "parent_category": "Nudity"
+      }
+    },
+    {
+      "id": "Nudity",
+      "name": "Nudity",
+      "type": "Category",
+      "properties": {}
+    },
+    {
+      "id": "Fashion",
+      "name": "Fashion",
+      "type": "ProductCategory",
+      "properties": {}
+    },
+    {
+      "id": "Carried Fashion Accessories",
+      "name": "Carried Fashion Accessories",
+      "type": "ProductTypeGroup",
+      "properties": {
+        "parent_category": "Fashion"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "Key Cases",
+      "target": "Adult_Animated_Nudity",
+      "relationship": "MAY_VIOLATE",
+      "properties": {
+        "confidence_score": 0.4,
+        "reasoning": "Key cases could potentially feature decorative designs that include animated or stylized nudity, though this would be uncommon in commercial products."
+      }
+    },
+    {
+      "source": "Rain Umbrellas",
+      "target": "Entertainment_Nudity",
+      "relationship": "MAY_VIOLATE",
+      "properties": {
+        "confidence_score": 0.3,
+        "reasoning": "While umbrellas themselves are not associated with nudity, certain artistic or novelty umbrella designs could potentially feature imagery from entertainment sources that contain nudity."
+      }
+    },
+    {
+      "source": "Nudity",
+      "target": "Historical_Nudity",
+      "relationship": "PARENT_OF",
+      "properties": {}
+    },
+    {
+      "source": "Nudity",
+      "target": "Entertainment_Nudity",
+      "relationship": "PARENT_OF",
+      "properties": {}
+    },
+    {
+      "source": "Nudity",
+      "target": "Accidental_Nudity",
+      "relationship": "PARENT_OF",
+      "properties": {}
+    },
+    {
+      "source": "Nudity",
+      "target": "Adult_Animated_Nudity",
+      "relationship": "PARENT_OF",
+      "properties": {}
+    },
+    {
+      "source": "Nudity",
+      "target": "Contextual_Nudity",
+      "relationship": "PARENT_OF",
+      "properties": {}
+    },
+    {
+      "source": "Nudity",
+      "target": "Fetish_Content",
+      "relationship": "PARENT_OF",
+      "properties": {}
+    },
+    {
+      "source": "Nudity",
+      "target": "Digitally_Altered_Nudity",
+      "relationship": "PARENT_OF",
+      "properties": {}
+    },
+    {
+      "source": "Nudity",
+      "target": "Child_Nudity",
+      "relationship": "PARENT_OF",
+      "properties": {}
+    },
+    {
+      "source": "Nudity",
+      "target": "Artistic_Nudity",
+      "relationship": "PARENT_OF",
+      "properties": {}
+    },
+    {
+      "source": "Nudity",
+      "target": "Non_Sexual_Nudity",
+      "relationship": "PARENT_OF",
+      "properties": {}
+    },
+    {
+      "source": "Nudity",
+      "target": "Suggestive_Nudity",
+      "relationship": "PARENT_OF",
+      "properties": {}
+    },
+    {
+      "source": "Nudity",
+      "target": "Explicit_Nudity",
+      "relationship": "PARENT_OF",
+      "properties": {}
+    },
+    {
+      "source": "Carried Fashion Accessories",
+      "target": "Key Cases",
+      "relationship": "HAS_PT",
+      "properties": {}
+    },
+    {
+      "source": "Carried Fashion Accessories",
+      "target": "Rain Umbrellas",
+      "relationship": "HAS_PT",
+      "properties": {}
+    },
+    {
+      "source": "Fashion",
+      "target": "Carried Fashion Accessories",
+      "relationship": "HAS_PTG",
+      "properties": {}
+    }
+  ]
+}

@@ -1,0 +1,1094 @@
+[
+  {
+    "product": {
+      "category": "Fashion",
+      "product_type_group": "Carried Fashion Accessories",
+      "product_type": "Key Cases",
+      "attributes": [
+        {
+          "example_values": "[\"4 keys\", \"6 keys\", \"8 keys\"]",
+          "name": "Capacity",
+          "description": "Indicates the number of keys the case can hold.",
+          "is_variant": false,
+          "type": "FUNCTIONAL"
+        },
+        {
+          "example_values": "[\"Zipper\", \"Snap\", \"Magnetic\"]",
+          "name": "Closure Type",
+          "description": "Determines how the case is secured.",
+          "is_variant": false,
+          "type": "FUNCTIONAL"
+        },
+        {
+          "example_values": "[\"Black\", \"Brown\", \"Red\"]",
+          "name": "Color",
+          "description": "Influences style and personal preference.",
+          "is_variant": true,
+          "type": "PHYSICAL"
+        },
+        {
+          "example_values": "[\"Leather\", \"Metal\", \"Fabric\"]",
+          "name": "Material",
+          "description": "Affects durability and aesthetic appeal.",
+          "is_variant": false,
+          "type": "PHYSICAL"
+        }
+      ]
+    },
+    "subcategory_id": "Historical_Nudity",
+    "analysis": {
+      "confidence_score": 0.0,
+      "reasoning": "No relationship between Key Cases and Historical_Nudity."
+    }
+  },
+  {
+    "product": {
+      "category": "Fashion",
+      "product_type_group": "Carried Fashion Accessories",
+      "product_type": "Key Cases",
+      "attributes": [
+        {
+          "example_values": "[\"4 keys\", \"6 keys\", \"8 keys\"]",
+          "name": "Capacity",
+          "description": "Indicates the number of keys the case can hold.",
+          "is_variant": false,
+          "type": "FUNCTIONAL"
+        },
+        {
+          "example_values": "[\"Zipper\", \"Snap\", \"Magnetic\"]",
+          "name": "Closure Type",
+          "description": "Determines how the case is secured.",
+          "is_variant": false,
+          "type": "FUNCTIONAL"
+        },
+        {
+          "example_values": "[\"Black\", \"Brown\", \"Red\"]",
+          "name": "Color",
+          "description": "Influences style and personal preference.",
+          "is_variant": true,
+          "type": "PHYSICAL"
+        },
+        {
+          "example_values": "[\"Leather\", \"Metal\", \"Fabric\"]",
+          "name": "Material",
+          "description": "Affects durability and aesthetic appeal.",
+          "is_variant": false,
+          "type": "PHYSICAL"
+        }
+      ]
+    },
+    "subcategory_id": "Entertainment_Nudity",
+    "analysis": {
+      "confidence_score": 0.0,
+      "reasoning": "No relationship between Key Cases and Entertainment_Nudity."
+    }
+  },
+  {
+    "product": {
+      "category": "Fashion",
+      "product_type_group": "Carried Fashion Accessories",
+      "product_type": "Key Cases",
+      "attributes": [
+        {
+          "example_values": "[\"4 keys\", \"6 keys\", \"8 keys\"]",
+          "name": "Capacity",
+          "description": "Indicates the number of keys the case can hold.",
+          "is_variant": false,
+          "type": "FUNCTIONAL"
+        },
+        {
+          "example_values": "[\"Zipper\", \"Snap\", \"Magnetic\"]",
+          "name": "Closure Type",
+          "description": "Determines how the case is secured.",
+          "is_variant": false,
+          "type": "FUNCTIONAL"
+        },
+        {
+          "example_values": "[\"Black\", \"Brown\", \"Red\"]",
+          "name": "Color",
+          "description": "Influences style and personal preference.",
+          "is_variant": true,
+          "type": "PHYSICAL"
+        },
+        {
+          "example_values": "[\"Leather\", \"Metal\", \"Fabric\"]",
+          "name": "Material",
+          "description": "Affects durability and aesthetic appeal.",
+          "is_variant": false,
+          "type": "PHYSICAL"
+        }
+      ]
+    },
+    "subcategory_id": "Accidental_Nudity",
+    "analysis": {
+      "confidence_score": 0.0,
+      "reasoning": "No relationship between Key Cases and Accidental_Nudity."
+    }
+  },
+  {
+    "product": {
+      "category": "Fashion",
+      "product_type_group": "Carried Fashion Accessories",
+      "product_type": "Key Cases",
+      "attributes": [
+        {
+          "example_values": "[\"4 keys\", \"6 keys\", \"8 keys\"]",
+          "name": "Capacity",
+          "description": "Indicates the number of keys the case can hold.",
+          "is_variant": false,
+          "type": "FUNCTIONAL"
+        },
+        {
+          "example_values": "[\"Zipper\", \"Snap\", \"Magnetic\"]",
+          "name": "Closure Type",
+          "description": "Determines how the case is secured.",
+          "is_variant": false,
+          "type": "FUNCTIONAL"
+        },
+        {
+          "example_values": "[\"Black\", \"Brown\", \"Red\"]",
+          "name": "Color",
+          "description": "Influences style and personal preference.",
+          "is_variant": true,
+          "type": "PHYSICAL"
+        },
+        {
+          "example_values": "[\"Leather\", \"Metal\", \"Fabric\"]",
+          "name": "Material",
+          "description": "Affects durability and aesthetic appeal.",
+          "is_variant": false,
+          "type": "PHYSICAL"
+        }
+      ]
+    },
+    "subcategory_id": "Adult_Animated_Nudity",
+    "analysis": {
+      "confidence_score": 0.4,
+      "reasoning": "Key cases could potentially feature decorative designs that include animated or stylized nudity, though this would be uncommon in commercial products."
+    }
+  },
+  {
+    "product": {
+      "category": "Fashion",
+      "product_type_group": "Carried Fashion Accessories",
+      "product_type": "Key Cases",
+      "attributes": [
+        {
+          "example_values": "[\"4 keys\", \"6 keys\", \"8 keys\"]",
+          "name": "Capacity",
+          "description": "Indicates the number of keys the case can hold.",
+          "is_variant": false,
+          "type": "FUNCTIONAL"
+        },
+        {
+          "example_values": "[\"Zipper\", \"Snap\", \"Magnetic\"]",
+          "name": "Closure Type",
+          "description": "Determines how the case is secured.",
+          "is_variant": false,
+          "type": "FUNCTIONAL"
+        },
+        {
+          "example_values": "[\"Black\", \"Brown\", \"Red\"]",
+          "name": "Color",
+          "description": "Influences style and personal preference.",
+          "is_variant": true,
+          "type": "PHYSICAL"
+        },
+        {
+          "example_values": "[\"Leather\", \"Metal\", \"Fabric\"]",
+          "name": "Material",
+          "description": "Affects durability and aesthetic appeal.",
+          "is_variant": false,
+          "type": "PHYSICAL"
+        }
+      ]
+    },
+    "subcategory_id": "Contextual_Nudity",
+    "analysis": {
+      "confidence_score": 0.0,
+      "reasoning": "No relationship between Key Cases and Contextual_Nudity."
+    }
+  },
+  {
+    "product": {
+      "category": "Fashion",
+      "product_type_group": "Carried Fashion Accessories",
+      "product_type": "Key Cases",
+      "attributes": [
+        {
+          "example_values": "[\"4 keys\", \"6 keys\", \"8 keys\"]",
+          "name": "Capacity",
+          "description": "Indicates the number of keys the case can hold.",
+          "is_variant": false,
+          "type": "FUNCTIONAL"
+        },
+        {
+          "example_values": "[\"Zipper\", \"Snap\", \"Magnetic\"]",
+          "name": "Closure Type",
+          "description": "Determines how the case is secured.",
+          "is_variant": false,
+          "type": "FUNCTIONAL"
+        },
+        {
+          "example_values": "[\"Black\", \"Brown\", \"Red\"]",
+          "name": "Color",
+          "description": "Influences style and personal preference.",
+          "is_variant": true,
+          "type": "PHYSICAL"
+        },
+        {
+          "example_values": "[\"Leather\", \"Metal\", \"Fabric\"]",
+          "name": "Material",
+          "description": "Affects durability and aesthetic appeal.",
+          "is_variant": false,
+          "type": "PHYSICAL"
+        }
+      ]
+    },
+    "subcategory_id": "Fetish_Content",
+    "analysis": {
+      "confidence_score": 0.0,
+      "reasoning": "No relationship between Key Cases and Fetish_Content."
+    }
+  },
+  {
+    "product": {
+      "category": "Fashion",
+      "product_type_group": "Carried Fashion Accessories",
+      "product_type": "Key Cases",
+      "attributes": [
+        {
+          "example_values": "[\"4 keys\", \"6 keys\", \"8 keys\"]",
+          "name": "Capacity",
+          "description": "Indicates the number of keys the case can hold.",
+          "is_variant": false,
+          "type": "FUNCTIONAL"
+        },
+        {
+          "example_values": "[\"Zipper\", \"Snap\", \"Magnetic\"]",
+          "name": "Closure Type",
+          "description": "Determines how the case is secured.",
+          "is_variant": false,
+          "type": "FUNCTIONAL"
+        },
+        {
+          "example_values": "[\"Black\", \"Brown\", \"Red\"]",
+          "name": "Color",
+          "description": "Influences style and personal preference.",
+          "is_variant": true,
+          "type": "PHYSICAL"
+        },
+        {
+          "example_values": "[\"Leather\", \"Metal\", \"Fabric\"]",
+          "name": "Material",
+          "description": "Affects durability and aesthetic appeal.",
+          "is_variant": false,
+          "type": "PHYSICAL"
+        }
+      ]
+    },
+    "subcategory_id": "Digitally_Altered_Nudity",
+    "analysis": {
+      "confidence_score": 0.0,
+      "reasoning": "No relationship between Key Cases and Digitally_Altered_Nudity."
+    }
+  },
+  {
+    "product": {
+      "category": "Fashion",
+      "product_type_group": "Carried Fashion Accessories",
+      "product_type": "Key Cases",
+      "attributes": [
+        {
+          "example_values": "[\"4 keys\", \"6 keys\", \"8 keys\"]",
+          "name": "Capacity",
+          "description": "Indicates the number of keys the case can hold.",
+          "is_variant": false,
+          "type": "FUNCTIONAL"
+        },
+        {
+          "example_values": "[\"Zipper\", \"Snap\", \"Magnetic\"]",
+          "name": "Closure Type",
+          "description": "Determines how the case is secured.",
+          "is_variant": false,
+          "type": "FUNCTIONAL"
+        },
+        {
+          "example_values": "[\"Black\", \"Brown\", \"Red\"]",
+          "name": "Color",
+          "description": "Influences style and personal preference.",
+          "is_variant": true,
+          "type": "PHYSICAL"
+        },
+        {
+          "example_values": "[\"Leather\", \"Metal\", \"Fabric\"]",
+          "name": "Material",
+          "description": "Affects durability and aesthetic appeal.",
+          "is_variant": false,
+          "type": "PHYSICAL"
+        }
+      ]
+    },
+    "subcategory_id": "Child_Nudity",
+    "analysis": {
+      "confidence_score": 0.0,
+      "reasoning": "No relationship between Key Cases and Child_Nudity."
+    }
+  },
+  {
+    "product": {
+      "category": "Fashion",
+      "product_type_group": "Carried Fashion Accessories",
+      "product_type": "Key Cases",
+      "attributes": [
+        {
+          "example_values": "[\"4 keys\", \"6 keys\", \"8 keys\"]",
+          "name": "Capacity",
+          "description": "Indicates the number of keys the case can hold.",
+          "is_variant": false,
+          "type": "FUNCTIONAL"
+        },
+        {
+          "example_values": "[\"Zipper\", \"Snap\", \"Magnetic\"]",
+          "name": "Closure Type",
+          "description": "Determines how the case is secured.",
+          "is_variant": false,
+          "type": "FUNCTIONAL"
+        },
+        {
+          "example_values": "[\"Black\", \"Brown\", \"Red\"]",
+          "name": "Color",
+          "description": "Influences style and personal preference.",
+          "is_variant": true,
+          "type": "PHYSICAL"
+        },
+        {
+          "example_values": "[\"Leather\", \"Metal\", \"Fabric\"]",
+          "name": "Material",
+          "description": "Affects durability and aesthetic appeal.",
+          "is_variant": false,
+          "type": "PHYSICAL"
+        }
+      ]
+    },
+    "subcategory_id": "Artistic_Nudity",
+    "analysis": {
+      "confidence_score": 0.0,
+      "reasoning": "No relationship between Key Cases and Artistic_Nudity."
+    }
+  },
+  {
+    "product": {
+      "category": "Fashion",
+      "product_type_group": "Carried Fashion Accessories",
+      "product_type": "Key Cases",
+      "attributes": [
+        {
+          "example_values": "[\"4 keys\", \"6 keys\", \"8 keys\"]",
+          "name": "Capacity",
+          "description": "Indicates the number of keys the case can hold.",
+          "is_variant": false,
+          "type": "FUNCTIONAL"
+        },
+        {
+          "example_values": "[\"Zipper\", \"Snap\", \"Magnetic\"]",
+          "name": "Closure Type",
+          "description": "Determines how the case is secured.",
+          "is_variant": false,
+          "type": "FUNCTIONAL"
+        },
+        {
+          "example_values": "[\"Black\", \"Brown\", \"Red\"]",
+          "name": "Color",
+          "description": "Influences style and personal preference.",
+          "is_variant": true,
+          "type": "PHYSICAL"
+        },
+        {
+          "example_values": "[\"Leather\", \"Metal\", \"Fabric\"]",
+          "name": "Material",
+          "description": "Affects durability and aesthetic appeal.",
+          "is_variant": false,
+          "type": "PHYSICAL"
+        }
+      ]
+    },
+    "subcategory_id": "Non_Sexual_Nudity",
+    "analysis": {
+      "confidence_score": 0.0,
+      "reasoning": "No relationship between Key Cases and Non_Sexual_Nudity."
+    }
+  },
+  {
+    "product": {
+      "category": "Fashion",
+      "product_type_group": "Carried Fashion Accessories",
+      "product_type": "Key Cases",
+      "attributes": [
+        {
+          "example_values": "[\"4 keys\", \"6 keys\", \"8 keys\"]",
+          "name": "Capacity",
+          "description": "Indicates the number of keys the case can hold.",
+          "is_variant": false,
+          "type": "FUNCTIONAL"
+        },
+        {
+          "example_values": "[\"Zipper\", \"Snap\", \"Magnetic\"]",
+          "name": "Closure Type",
+          "description": "Determines how the case is secured.",
+          "is_variant": false,
+          "type": "FUNCTIONAL"
+        },
+        {
+          "example_values": "[\"Black\", \"Brown\", \"Red\"]",
+          "name": "Color",
+          "description": "Influences style and personal preference.",
+          "is_variant": true,
+          "type": "PHYSICAL"
+        },
+        {
+          "example_values": "[\"Leather\", \"Metal\", \"Fabric\"]",
+          "name": "Material",
+          "description": "Affects durability and aesthetic appeal.",
+          "is_variant": false,
+          "type": "PHYSICAL"
+        }
+      ]
+    },
+    "subcategory_id": "Suggestive_Nudity",
+    "analysis": {
+      "confidence_score": 0.0,
+      "reasoning": "No relationship between Key Cases and Suggestive_Nudity."
+    }
+  },
+  {
+    "product": {
+      "category": "Fashion",
+      "product_type_group": "Carried Fashion Accessories",
+      "product_type": "Key Cases",
+      "attributes": [
+        {
+          "example_values": "[\"4 keys\", \"6 keys\", \"8 keys\"]",
+          "name": "Capacity",
+          "description": "Indicates the number of keys the case can hold.",
+          "is_variant": false,
+          "type": "FUNCTIONAL"
+        },
+        {
+          "example_values": "[\"Zipper\", \"Snap\", \"Magnetic\"]",
+          "name": "Closure Type",
+          "description": "Determines how the case is secured.",
+          "is_variant": false,
+          "type": "FUNCTIONAL"
+        },
+        {
+          "example_values": "[\"Black\", \"Brown\", \"Red\"]",
+          "name": "Color",
+          "description": "Influences style and personal preference.",
+          "is_variant": true,
+          "type": "PHYSICAL"
+        },
+        {
+          "example_values": "[\"Leather\", \"Metal\", \"Fabric\"]",
+          "name": "Material",
+          "description": "Affects durability and aesthetic appeal.",
+          "is_variant": false,
+          "type": "PHYSICAL"
+        }
+      ]
+    },
+    "subcategory_id": "Explicit_Nudity",
+    "analysis": {
+      "confidence_score": 0.0,
+      "reasoning": "No relationship between Key Cases and Explicit_Nudity."
+    }
+  },
+  {
+    "product": {
+      "category": "Fashion",
+      "product_type_group": "Carried Fashion Accessories",
+      "product_type": "Rain Umbrellas",
+      "attributes": [
+        {
+          "example_values": "[\"Yes\", \"No\"]",
+          "name": "Automatic Open",
+          "description": "Indicates if the umbrella opens automatically, affecting convenience.",
+          "is_variant": false,
+          "type": "FUNCTIONAL"
+        },
+        {
+          "example_values": "[\"Straight\", \"Curved\", \"Ergonomic\"]",
+          "name": "Handle Type",
+          "description": "The type of handle affects grip and comfort.",
+          "is_variant": false,
+          "type": "FUNCTIONAL"
+        },
+        {
+          "example_values": "[\"Black\", \"Blue\", \"Red\"]",
+          "name": "Color",
+          "description": "Color is important for style and visibility.",
+          "is_variant": true,
+          "type": "PHYSICAL"
+        },
+        {
+          "example_values": "[\"36 inches\", \"42 inches\", \"48 inches\"]",
+          "name": "Diameter",
+          "description": "The diameter of the umbrella when open affects coverage area.",
+          "is_variant": false,
+          "type": "PHYSICAL"
+        },
+        {
+          "example_values": "[\"Polyester\", \"Nylon\", \"Pongee\"]",
+          "name": "Canopy Material",
+          "description": "Material affects water resistance and durability.",
+          "is_variant": false,
+          "type": "PHYSICAL"
+        }
+      ]
+    },
+    "subcategory_id": "Historical_Nudity",
+    "analysis": {
+      "confidence_score": 0.0,
+      "reasoning": "No relationship between Rain Umbrellas and Historical_Nudity."
+    }
+  },
+  {
+    "product": {
+      "category": "Fashion",
+      "product_type_group": "Carried Fashion Accessories",
+      "product_type": "Rain Umbrellas",
+      "attributes": [
+        {
+          "example_values": "[\"Yes\", \"No\"]",
+          "name": "Automatic Open",
+          "description": "Indicates if the umbrella opens automatically, affecting convenience.",
+          "is_variant": false,
+          "type": "FUNCTIONAL"
+        },
+        {
+          "example_values": "[\"Straight\", \"Curved\", \"Ergonomic\"]",
+          "name": "Handle Type",
+          "description": "The type of handle affects grip and comfort.",
+          "is_variant": false,
+          "type": "FUNCTIONAL"
+        },
+        {
+          "example_values": "[\"Black\", \"Blue\", \"Red\"]",
+          "name": "Color",
+          "description": "Color is important for style and visibility.",
+          "is_variant": true,
+          "type": "PHYSICAL"
+        },
+        {
+          "example_values": "[\"36 inches\", \"42 inches\", \"48 inches\"]",
+          "name": "Diameter",
+          "description": "The diameter of the umbrella when open affects coverage area.",
+          "is_variant": false,
+          "type": "PHYSICAL"
+        },
+        {
+          "example_values": "[\"Polyester\", \"Nylon\", \"Pongee\"]",
+          "name": "Canopy Material",
+          "description": "Material affects water resistance and durability.",
+          "is_variant": false,
+          "type": "PHYSICAL"
+        }
+      ]
+    },
+    "subcategory_id": "Entertainment_Nudity",
+    "analysis": {
+      "confidence_score": 0.3,
+      "reasoning": "While umbrellas themselves are not associated with nudity, certain artistic or novelty umbrella designs could potentially feature imagery from entertainment sources that contain nudity."
+    }
+  },
+  {
+    "product": {
+      "category": "Fashion",
+      "product_type_group": "Carried Fashion Accessories",
+      "product_type": "Rain Umbrellas",
+      "attributes": [
+        {
+          "example_values": "[\"Yes\", \"No\"]",
+          "name": "Automatic Open",
+          "description": "Indicates if the umbrella opens automatically, affecting convenience.",
+          "is_variant": false,
+          "type": "FUNCTIONAL"
+        },
+        {
+          "example_values": "[\"Straight\", \"Curved\", \"Ergonomic\"]",
+          "name": "Handle Type",
+          "description": "The type of handle affects grip and comfort.",
+          "is_variant": false,
+          "type": "FUNCTIONAL"
+        },
+        {
+          "example_values": "[\"Black\", \"Blue\", \"Red\"]",
+          "name": "Color",
+          "description": "Color is important for style and visibility.",
+          "is_variant": true,
+          "type": "PHYSICAL"
+        },
+        {
+          "example_values": "[\"36 inches\", \"42 inches\", \"48 inches\"]",
+          "name": "Diameter",
+          "description": "The diameter of the umbrella when open affects coverage area.",
+          "is_variant": false,
+          "type": "PHYSICAL"
+        },
+        {
+          "example_values": "[\"Polyester\", \"Nylon\", \"Pongee\"]",
+          "name": "Canopy Material",
+          "description": "Material affects water resistance and durability.",
+          "is_variant": false,
+          "type": "PHYSICAL"
+        }
+      ]
+    },
+    "subcategory_id": "Accidental_Nudity",
+    "analysis": {
+      "confidence_score": 0.0,
+      "reasoning": "No relationship between Rain Umbrellas and Accidental_Nudity."
+    }
+  },
+  {
+    "product": {
+      "category": "Fashion",
+      "product_type_group": "Carried Fashion Accessories",
+      "product_type": "Rain Umbrellas",
+      "attributes": [
+        {
+          "example_values": "[\"Yes\", \"No\"]",
+          "name": "Automatic Open",
+          "description": "Indicates if the umbrella opens automatically, affecting convenience.",
+          "is_variant": false,
+          "type": "FUNCTIONAL"
+        },
+        {
+          "example_values": "[\"Straight\", \"Curved\", \"Ergonomic\"]",
+          "name": "Handle Type",
+          "description": "The type of handle affects grip and comfort.",
+          "is_variant": false,
+          "type": "FUNCTIONAL"
+        },
+        {
+          "example_values": "[\"Black\", \"Blue\", \"Red\"]",
+          "name": "Color",
+          "description": "Color is important for style and visibility.",
+          "is_variant": true,
+          "type": "PHYSICAL"
+        },
+        {
+          "example_values": "[\"36 inches\", \"42 inches\", \"48 inches\"]",
+          "name": "Diameter",
+          "description": "The diameter of the umbrella when open affects coverage area.",
+          "is_variant": false,
+          "type": "PHYSICAL"
+        },
+        {
+          "example_values": "[\"Polyester\", \"Nylon\", \"Pongee\"]",
+          "name": "Canopy Material",
+          "description": "Material affects water resistance and durability.",
+          "is_variant": false,
+          "type": "PHYSICAL"
+        }
+      ]
+    },
+    "subcategory_id": "Adult_Animated_Nudity",
+    "analysis": {
+      "confidence_score": 0.0,
+      "reasoning": "No relationship between Rain Umbrellas and Adult_Animated_Nudity."
+    }
+  },
+  {
+    "product": {
+      "category": "Fashion",
+      "product_type_group": "Carried Fashion Accessories",
+      "product_type": "Rain Umbrellas",
+      "attributes": [
+        {
+          "example_values": "[\"Yes\", \"No\"]",
+          "name": "Automatic Open",
+          "description": "Indicates if the umbrella opens automatically, affecting convenience.",
+          "is_variant": false,
+          "type": "FUNCTIONAL"
+        },
+        {
+          "example_values": "[\"Straight\", \"Curved\", \"Ergonomic\"]",
+          "name": "Handle Type",
+          "description": "The type of handle affects grip and comfort.",
+          "is_variant": false,
+          "type": "FUNCTIONAL"
+        },
+        {
+          "example_values": "[\"Black\", \"Blue\", \"Red\"]",
+          "name": "Color",
+          "description": "Color is important for style and visibility.",
+          "is_variant": true,
+          "type": "PHYSICAL"
+        },
+        {
+          "example_values": "[\"36 inches\", \"42 inches\", \"48 inches\"]",
+          "name": "Diameter",
+          "description": "The diameter of the umbrella when open affects coverage area.",
+          "is_variant": false,
+          "type": "PHYSICAL"
+        },
+        {
+          "example_values": "[\"Polyester\", \"Nylon\", \"Pongee\"]",
+          "name": "Canopy Material",
+          "description": "Material affects water resistance and durability.",
+          "is_variant": false,
+          "type": "PHYSICAL"
+        }
+      ]
+    },
+    "subcategory_id": "Contextual_Nudity",
+    "analysis": {
+      "confidence_score": 0.0,
+      "reasoning": "No relationship between Rain Umbrellas and Contextual_Nudity."
+    }
+  },
+  {
+    "product": {
+      "category": "Fashion",
+      "product_type_group": "Carried Fashion Accessories",
+      "product_type": "Rain Umbrellas",
+      "attributes": [
+        {
+          "example_values": "[\"Yes\", \"No\"]",
+          "name": "Automatic Open",
+          "description": "Indicates if the umbrella opens automatically, affecting convenience.",
+          "is_variant": false,
+          "type": "FUNCTIONAL"
+        },
+        {
+          "example_values": "[\"Straight\", \"Curved\", \"Ergonomic\"]",
+          "name": "Handle Type",
+          "description": "The type of handle affects grip and comfort.",
+          "is_variant": false,
+          "type": "FUNCTIONAL"
+        },
+        {
+          "example_values": "[\"Black\", \"Blue\", \"Red\"]",
+          "name": "Color",
+          "description": "Color is important for style and visibility.",
+          "is_variant": true,
+          "type": "PHYSICAL"
+        },
+        {
+          "example_values": "[\"36 inches\", \"42 inches\", \"48 inches\"]",
+          "name": "Diameter",
+          "description": "The diameter of the umbrella when open affects coverage area.",
+          "is_variant": false,
+          "type": "PHYSICAL"
+        },
+        {
+          "example_values": "[\"Polyester\", \"Nylon\", \"Pongee\"]",
+          "name": "Canopy Material",
+          "description": "Material affects water resistance and durability.",
+          "is_variant": false,
+          "type": "PHYSICAL"
+        }
+      ]
+    },
+    "subcategory_id": "Fetish_Content",
+    "analysis": {
+      "confidence_score": 0.0,
+      "reasoning": "No relationship between Rain Umbrellas and Fetish_Content."
+    }
+  },
+  {
+    "product": {
+      "category": "Fashion",
+      "product_type_group": "Carried Fashion Accessories",
+      "product_type": "Rain Umbrellas",
+      "attributes": [
+        {
+          "example_values": "[\"Yes\", \"No\"]",
+          "name": "Automatic Open",
+          "description": "Indicates if the umbrella opens automatically, affecting convenience.",
+          "is_variant": false,
+          "type": "FUNCTIONAL"
+        },
+        {
+          "example_values": "[\"Straight\", \"Curved\", \"Ergonomic\"]",
+          "name": "Handle Type",
+          "description": "The type of handle affects grip and comfort.",
+          "is_variant": false,
+          "type": "FUNCTIONAL"
+        },
+        {
+          "example_values": "[\"Black\", \"Blue\", \"Red\"]",
+          "name": "Color",
+          "description": "Color is important for style and visibility.",
+          "is_variant": true,
+          "type": "PHYSICAL"
+        },
+        {
+          "example_values": "[\"36 inches\", \"42 inches\", \"48 inches\"]",
+          "name": "Diameter",
+          "description": "The diameter of the umbrella when open affects coverage area.",
+          "is_variant": false,
+          "type": "PHYSICAL"
+        },
+        {
+          "example_values": "[\"Polyester\", \"Nylon\", \"Pongee\"]",
+          "name": "Canopy Material",
+          "description": "Material affects water resistance and durability.",
+          "is_variant": false,
+          "type": "PHYSICAL"
+        }
+      ]
+    },
+    "subcategory_id": "Digitally_Altered_Nudity",
+    "analysis": {
+      "confidence_score": 0.0,
+      "reasoning": "No relationship between Rain Umbrellas and Digitally_Altered_Nudity."
+    }
+  },
+  {
+    "product": {
+      "category": "Fashion",
+      "product_type_group": "Carried Fashion Accessories",
+      "product_type": "Rain Umbrellas",
+      "attributes": [
+        {
+          "example_values": "[\"Yes\", \"No\"]",
+          "name": "Automatic Open",
+          "description": "Indicates if the umbrella opens automatically, affecting convenience.",
+          "is_variant": false,
+          "type": "FUNCTIONAL"
+        },
+        {
+          "example_values": "[\"Straight\", \"Curved\", \"Ergonomic\"]",
+          "name": "Handle Type",
+          "description": "The type of handle affects grip and comfort.",
+          "is_variant": false,
+          "type": "FUNCTIONAL"
+        },
+        {
+          "example_values": "[\"Black\", \"Blue\", \"Red\"]",
+          "name": "Color",
+          "description": "Color is important for style and visibility.",
+          "is_variant": true,
+          "type": "PHYSICAL"
+        },
+        {
+          "example_values": "[\"36 inches\", \"42 inches\", \"48 inches\"]",
+          "name": "Diameter",
+          "description": "The diameter of the umbrella when open affects coverage area.",
+          "is_variant": false,
+          "type": "PHYSICAL"
+        },
+        {
+          "example_values": "[\"Polyester\", \"Nylon\", \"Pongee\"]",
+          "name": "Canopy Material",
+          "description": "Material affects water resistance and durability.",
+          "is_variant": false,
+          "type": "PHYSICAL"
+        }
+      ]
+    },
+    "subcategory_id": "Child_Nudity",
+    "analysis": {
+      "confidence_score": 0.0,
+      "reasoning": "No relationship between Rain Umbrellas and Child_Nudity."
+    }
+  },
+  {
+    "product": {
+      "category": "Fashion",
+      "product_type_group": "Carried Fashion Accessories",
+      "product_type": "Rain Umbrellas",
+      "attributes": [
+        {
+          "example_values": "[\"Yes\", \"No\"]",
+          "name": "Automatic Open",
+          "description": "Indicates if the umbrella opens automatically, affecting convenience.",
+          "is_variant": false,
+          "type": "FUNCTIONAL"
+        },
+        {
+          "example_values": "[\"Straight\", \"Curved\", \"Ergonomic\"]",
+          "name": "Handle Type",
+          "description": "The type of handle affects grip and comfort.",
+          "is_variant": false,
+          "type": "FUNCTIONAL"
+        },
+        {
+          "example_values": "[\"Black\", \"Blue\", \"Red\"]",
+          "name": "Color",
+          "description": "Color is important for style and visibility.",
+          "is_variant": true,
+          "type": "PHYSICAL"
+        },
+        {
+          "example_values": "[\"36 inches\", \"42 inches\", \"48 inches\"]",
+          "name": "Diameter",
+          "description": "The diameter of the umbrella when open affects coverage area.",
+          "is_variant": false,
+          "type": "PHYSICAL"
+        },
+        {
+          "example_values": "[\"Polyester\", \"Nylon\", \"Pongee\"]",
+          "name": "Canopy Material",
+          "description": "Material affects water resistance and durability.",
+          "is_variant": false,
+          "type": "PHYSICAL"
+        }
+      ]
+    },
+    "subcategory_id": "Artistic_Nudity",
+    "analysis": {
+      "confidence_score": 0.0,
+      "reasoning": "No relationship between Rain Umbrellas and Artistic_Nudity."
+    }
+  },
+  {
+    "product": {
+      "category": "Fashion",
+      "product_type_group": "Carried Fashion Accessories",
+      "product_type": "Rain Umbrellas",
+      "attributes": [
+        {
+          "example_values": "[\"Yes\", \"No\"]",
+          "name": "Automatic Open",
+          "description": "Indicates if the umbrella opens automatically, affecting convenience.",
+          "is_variant": false,
+          "type": "FUNCTIONAL"
+        },
+        {
+          "example_values": "[\"Straight\", \"Curved\", \"Ergonomic\"]",
+          "name": "Handle Type",
+          "description": "The type of handle affects grip and comfort.",
+          "is_variant": false,
+          "type": "FUNCTIONAL"
+        },
+        {
+          "example_values": "[\"Black\", \"Blue\", \"Red\"]",
+          "name": "Color",
+          "description": "Color is important for style and visibility.",
+          "is_variant": true,
+          "type": "PHYSICAL"
+        },
+        {
+          "example_values": "[\"36 inches\", \"42 inches\", \"48 inches\"]",
+          "name": "Diameter",
+          "description": "The diameter of the umbrella when open affects coverage area.",
+          "is_variant": false,
+          "type": "PHYSICAL"
+        },
+        {
+          "example_values": "[\"Polyester\", \"Nylon\", \"Pongee\"]",
+          "name": "Canopy Material",
+          "description": "Material affects water resistance and durability.",
+          "is_variant": false,
+          "type": "PHYSICAL"
+        }
+      ]
+    },
+    "subcategory_id": "Non_Sexual_Nudity",
+    "analysis": {
+      "confidence_score": 0.0,
+      "reasoning": "No relationship between Rain Umbrellas and Non_Sexual_Nudity."
+    }
+  },
+  {
+    "product": {
+      "category": "Fashion",
+      "product_type_group": "Carried Fashion Accessories",
+      "product_type": "Rain Umbrellas",
+      "attributes": [
+        {
+          "example_values": "[\"Yes\", \"No\"]",
+          "name": "Automatic Open",
+          "description": "Indicates if the umbrella opens automatically, affecting convenience.",
+          "is_variant": false,
+          "type": "FUNCTIONAL"
+        },
+        {
+          "example_values": "[\"Straight\", \"Curved\", \"Ergonomic\"]",
+          "name": "Handle Type",
+          "description": "The type of handle affects grip and comfort.",
+          "is_variant": false,
+          "type": "FUNCTIONAL"
+        },
+        {
+          "example_values": "[\"Black\", \"Blue\", \"Red\"]",
+          "name": "Color",
+          "description": "Color is important for style and visibility.",
+          "is_variant": true,
+          "type": "PHYSICAL"
+        },
+        {
+          "example_values": "[\"36 inches\", \"42 inches\", \"48 inches\"]",
+          "name": "Diameter",
+          "description": "The diameter of the umbrella when open affects coverage area.",
+          "is_variant": false,
+          "type": "PHYSICAL"
+        },
+        {
+          "example_values": "[\"Polyester\", \"Nylon\", \"Pongee\"]",
+          "name": "Canopy Material",
+          "description": "Material affects water resistance and durability.",
+          "is_variant": false,
+          "type": "PHYSICAL"
+        }
+      ]
+    },
+    "subcategory_id": "Suggestive_Nudity",
+    "analysis": {
+      "confidence_score": 0.0,
+      "reasoning": "No relationship between Rain Umbrellas and Suggestive_Nudity."
+    }
+  },
+  {
+    "product": {
+      "category": "Fashion",
+      "product_type_group": "Carried Fashion Accessories",
+      "product_type": "Rain Umbrellas",
+      "attributes": [
+        {
+          "example_values": "[\"Yes\", \"No\"]",
+          "name": "Automatic Open",
+          "description": "Indicates if the umbrella opens automatically, affecting convenience.",
+          "is_variant": false,
+          "type": "FUNCTIONAL"
+        },
+        {
+          "example_values": "[\"Straight\", \"Curved\", \"Ergonomic\"]",
+          "name": "Handle Type",
+          "description": "The type of handle affects grip and comfort.",
+          "is_variant": false,
+          "type": "FUNCTIONAL"
+        },
+        {
+          "example_values": "[\"Black\", \"Blue\", \"Red\"]",
+          "name": "Color",
+          "description": "Color is important for style and visibility.",
+          "is_variant": true,
+          "type": "PHYSICAL"
+        },
+        {
+          "example_values": "[\"36 inches\", \"42 inches\", \"48 inches\"]",
+          "name": "Diameter",
+          "description": "The diameter of the umbrella when open affects coverage area.",
+          "is_variant": false,
+          "type": "PHYSICAL"
+        },
+        {
+          "example_values": "[\"Polyester\", \"Nylon\", \"Pongee\"]",
+          "name": "Canopy Material",
+          "description": "Material affects water resistance and durability.",
+          "is_variant": false,
+          "type": "PHYSICAL"
+        }
+      ]
+    },
+    "subcategory_id": "Explicit_Nudity",
+    "analysis": {
+      "confidence_score": 0.0,
+      "reasoning": "No relationship between Rain Umbrellas and Explicit_Nudity."
+    }
+  }
+]
