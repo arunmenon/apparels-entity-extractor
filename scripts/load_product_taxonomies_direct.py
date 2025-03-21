@@ -106,6 +106,12 @@ class Neo4jLoader:
     
     def load_attribute_relationship(self, pt, attr_name, properties):
         """Load relationship between product type and attribute with properties"""
+        # Handle the unit_of_measure null value issue
+        unit_of_measure = properties.get("unit_of_measure", "")
+        # Set to empty string if None to avoid Neo4j null property error with MERGE
+        if unit_of_measure is None:
+            unit_of_measure = ""
+            
         query = """
         MATCH (pt:ProductType {name: $pt})
         MATCH (a:Attribute {name: $attr})
@@ -126,7 +132,7 @@ class Neo4jLoader:
                 type=properties.get("type", ""),
                 description=properties.get("description", ""),
                 example_values=json.dumps(properties.get("example_values", [])),
-                unit=properties.get("unit_of_measure"),
+                unit=unit_of_measure,
                 is_variant=properties.get("is_variant_attribute", False)
             )
     
