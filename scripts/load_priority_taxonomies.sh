@@ -1,10 +1,13 @@
 #!/bin/bash
 # Script to load priority taxonomies into Neo4j
 
-# Set Neo4j credentials and URI
-NEO4J_URI=$(grep -v "OPENAI_API_KEY" /Users/arunmenon/projects/apparels-entity-extractor/neo4j_uri.txt | head -n 1)
-NEO4J_USERNAME="neo4j"
-NEO4J_PASSWORD=$(grep "NEO4J_PASSWORD" /Users/arunmenon/projects/apparels-entity-extractor/neo4j_uri.txt | cut -d= -f2)
+# Neo4j connection parameters
+NEO4J_URI="bolt://localhost:7687"
+NEO4J_USER="neo4j"
+
+# Prompt for password securely (it won't be visible or saved in history)
+read -sp "Enter Neo4j password: " NEO4J_PASSWORD
+echo ""  # Add a newline after password input
 
 # Check if processes are complete
 check_process() {
@@ -76,7 +79,7 @@ echo "Loading Fashion taxonomy..."
 python $PROJECT_ROOT/scripts/catalog_taxonomy_loader.py \
   --input "$FASHION_PATH" \
   --uri "$NEO4J_URI" \
-  --username "$NEO4J_USERNAME" \
+  --username "$NEO4J_USER" \
   --password "$NEO4J_PASSWORD" \
   --log "$PROJECT_ROOT/priority_output/fashion/neo4j_load.log"
 
@@ -85,7 +88,7 @@ echo "Loading Arts & Crafts taxonomy..."
 python $PROJECT_ROOT/scripts/catalog_taxonomy_loader.py \
   --input "$ARTS_CRAFTS_PATH" \
   --uri "$NEO4J_URI" \
-  --username "$NEO4J_USERNAME" \
+  --username "$NEO4J_USER" \
   --password "$NEO4J_PASSWORD" \
   --log "$PROJECT_ROOT/priority_output/arts_crafts/neo4j_load.log"
 
@@ -94,7 +97,7 @@ echo "Loading Garden & Patio taxonomy..."
 python $PROJECT_ROOT/scripts/catalog_taxonomy_loader.py \
   --input "$GARDEN_PATIO_PATH" \
   --uri "$NEO4J_URI" \
-  --username "$NEO4J_USERNAME" \
+  --username "$NEO4J_USER" \
   --password "$NEO4J_PASSWORD" \
   --log "$PROJECT_ROOT/priority_output/garden_patio/neo4j_load.log"
 
