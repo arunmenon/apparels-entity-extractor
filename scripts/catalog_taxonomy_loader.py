@@ -113,7 +113,10 @@ class CypherQueryBuilder:
     @staticmethod
     def property_to_cypher(key: str, value: Any) -> str:
         """Convert a property key-value pair to Cypher syntax"""
-        if value is None:
+        # Special case: unit_of_measure needs to handle null values specially to avoid Neo4j errors
+        if key == 'unit_of_measure' and value is None:
+            return f"{key}: ''"
+        elif value is None:
             return f"{key}: null"
         elif isinstance(value, bool):
             return f"{key}: {str(value).lower()}"
