@@ -313,7 +313,7 @@ class CatalogTaxonomyLoader:
                     'type': attr.get('type', ''),
                     'description': attr.get('description', ''),
                     'example_values': json.dumps(attr.get('example_values', [])),
-                    'unit_of_measure': attr.get('unit_of_measure'),
+                    'unit_of_measure': attr.get('unit_of_measure', ''),  # Use empty string for null values
                     'is_variant_attribute': attr.get('is_variant_attribute', False)
                 }
                 
